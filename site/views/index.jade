@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  - var posts = getPosts(0,5)
+  - for post in posts
+    p!= post.content
