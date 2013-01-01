@@ -1,5 +1,6 @@
 var express = require('express'),
-    poet    = require('poet');
+    poet    = require('poet'),
+    path    = require('path');
 
 var app   = express(),
     blog  = poet(app);
@@ -14,9 +15,12 @@ blog.set({
   .createCategoryRoute()
   .init();
 
-app.set('view engine', 'jade');
-app.set('views', __dirname + '/views');
-app.use(express.static( __dirname + '/assets'));
+app.configure(function() {
+  app.set('view engine', 'jade');
+  app.set('views', path.join(__dirname, 'views'));
+  app.use(express.static(path.join(__dirname, 'assets')));
+})
+
 
 app.get('/', function(req, res){
   res.render('index', {pageTitle: 'Hello Title!'});
