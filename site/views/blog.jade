@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  p this is a blog
+  - each post in posts
+    != post.content
