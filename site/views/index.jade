@@ -1,7 +1,65 @@
 extends layout
 
+
+
 block content
-  - var posts = getPosts(0,5)
-  - for post in posts
-    p!= post.content
-    
+  .row#intro
+    .span4
+      img(src='/img/david2.jpg')
+    .span8.border-left
+      h3 Welcome!
+      p
+        :markdown
+          I am a third-year student in the [Computer Science
+          Engineering](http://cse.eecs.umich.edu) program at the University of
+          Michigan, with a [Mathematics Minor](http://www.math.lsa.umich.edu).
+          I am originally from Chelsea, Michigan. Currently, I work under
+          [Professor Robert Dick](http://robertdick.org) on the [Whisper
+          Project](http://whispercomm.org). Previously, I worked for the
+          [Computer-Aided Engineering
+          Network](http://www.engin.umich.edu/caen/) in the networking
+          department. I am interested in the overlap of computer security,
+          machine learning, and distributed systems. In my spare time I also
+          play drums, piano, and [video
+          games](http://www.lolking.net/summoner/na/26789205).
+
+      p
+        :markdown
+          Before my undergraduate studies, I attended Chelsea High School, in
+          Chelsea, Michigan. While there, I spent a lot of time playing music
+          in the band room, connecting unauthorized devices to the school's
+          Novell Netware intranet, and bypassing network access restrictions.
+
+      p
+        :markdown
+          I can be reached at [davadria@umich.edu](mailto:davadria@umich.edu),
+          or [davidcadrian@gmail.com](mailto:davidcadrian@gmail.com).
+  .row.padded
+    .span8
+      h3 Recent Posts
+      p more text
+    .span4.border-left
+      h3 Contact Information
+      .well
+        address
+          strong School Email
+          br
+          a(href='mailto:davadria@umich.edu') davadria@umich.edu
+        address
+          strong Personal Email
+          br
+          a(href='mailto:davidcadrian@gmail.com') davidcadrian@gmail.com
+        address
+          strong Github Profile
+          br
+          a(href='https://github.com/dadrian') dadrian
+        address
+          strong LinkedIn
+          br
+          a(href='http://www.linkedin.com/pub/david-adrian/42/726/1a') Public Profile
+        address
+          strong Twitter
+          br
+          a(href='https://twitter.com/thatDavidAdrian') @thatDavidAdrian
+
+

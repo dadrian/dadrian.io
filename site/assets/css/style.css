@@ -1,0 +1,38 @@
+.nav-pills li {
+  padding: 8px 12px;
+}
+
+#intro {
+  border-bottom: 1px solid #DDDDDD;
+  border-top: 1px solid #DDDDDD;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.padded {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.border-left {
+  border-left: 1px solid #DDDDDD;
+}
+
+hr {
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+h1 {
+    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+}
+ 
+p,
+address {
+    font-family: 'Vollkorn', Georgia, Times, serif;
+}
+
+body { 
+    background: url(/img/cream_dust.png) repeat 0 0;
+}
