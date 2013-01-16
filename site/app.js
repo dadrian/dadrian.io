@@ -8,10 +8,26 @@ var app   = express(),
     blog  = poet(app);
 
 blog.set({
-  posts: __dirname + '/_posts',
-  postsPerPage: 5,     // Posts per page in pagination
-  metaFormat: 'json'  // meta formatter for posts
-}).init();
+  posts: __dirname + '/_posts', // Post directory
+  postsPerPage: 5,              // Posts per page in pagination
+  metaFormat: 'json',           // Meta format for post head matter
+  routes : {
+    post : '/blog/post/:post',
+    page : '/blog/page/:page',
+    tag : '/blog/tag/:tag',
+    category : 'blog/category/:category'
+  },
+  readMoreLink: function(post) {
+    var anchor = '<a href="' + post.url + '" title="Read more of ' + 
+        post.title + '">read more</a>';
+    return '<p>' + anchor + '</p>';
+  },
+  readMoreTag: '<!--more-->'
+}).init(function(locals) {
+  locals.postList.forEach(function(post) {
+    console.log(post);
+  });
+});
 
 blog.postsPerPage = 5;
 
@@ -30,12 +46,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/blog', function(req, res) {
-  var posts = req.poet.getPosts(0, blog.postsPerPage);
-  console.log(posts);
-  res.render('blog', { 
-    pageTitle: 'David Adrian | Blog', 
-    posts: posts 
-  });
+  res.redirect('/blog/page/1');
 });
 
 app.get('/blog/page/:page', function(req, res) {

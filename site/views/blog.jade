@@ -1,6 +1,10 @@
 extends layout
 
 block content
-  p this is a blog
   - each post in posts
-    != post.content
+    - console.log(post)
+    .row
+      .span3
+        | text on the side
+      .span9
+        include includes/preview
