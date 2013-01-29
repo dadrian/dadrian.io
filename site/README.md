@@ -1,1 +1,0 @@
-The davidadrian.org website
