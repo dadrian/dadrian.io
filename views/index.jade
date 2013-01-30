@@ -37,29 +37,11 @@ block content
   .row.padded
     .span8
       h3 Recent Posts
-      p more text
-    .span4.border-left
-      h3 Contact Information
-      .well
-        address
-          strong School Email
-          br
-          a(href='mailto:davadria@umich.edu') davadria@umich.edu
-        address
-          strong Personal Email
-          br
-          a(href='mailto:davidcadrian@gmail.com') davidcadrian@gmail.com
-        address
-          strong Github Profile
-          br
-          a(href='https://github.com/dadrian') dadrian
-        address
-          strong LinkedIn
-          br
-          a(href='http://www.linkedin.com/pub/david-adrian/42/726/1a') Public Profile
-        address
-          strong Twitter
-          br
-          a(href='https://twitter.com/thatDavidAdrian') @thatDavidAdrian
+      - each post in posts
+        .row
+          .span8
+            include includes/preview
+    .span3.border-left
+      include includes/contact
 
 

@@ -1,10 +1,18 @@
 extends layout
 
 block content
-  - each post in posts
-    - console.log(post)
-    .row
-      .span3
-        | text on the side
-      .span9
-        include includes/preview
+  .row
+    .span3.border-right.padding
+      h3 Welcome to the blog!
+      p
+        :markdown
+          This is David Adrian's blog. Expect more blogging related site
+          features soon. For now, here's a simple post listing.
+
+      include includes/contact
+    .span9
+      hr
+      - each post in posts
+        .row
+          .span9
+            include includes/preview

@@ -1,2 +1,12 @@
-h1 #{post.title}
-!= post.preview
+div.post
+  h1
+    a(href=post.url)
+      = post.title
+  p
+    - months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December']
+    small #{months[post.date.getMonth()]} #{post.date.getDate()}, #{post.date.getFullYear()}
+  div.post.content
+    != post.preview
+  div.tags
+    // TODO
+  hr

@@ -3,7 +3,11 @@ extends layout
 block content
   .row
     .span3
-      | text on the side
     .span9
-      h1 #{post.title}
+      h1 
+        a(href=post.url)
+          =post.title          
+      p
+        - months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December']
+        small #{months[post.date.getMonth()]} #{post.date.getDate()}, #{post.date.getFullYear()}
       != post.content

@@ -19,7 +19,7 @@ blog.set({
   },
   readMoreLink: function(post) {
     var anchor = '<a href="' + post.url + '" title="Read more of ' + 
-        post.title + '">read more</a>';
+        post.title + '"> ...read more</a>';
     return '<p>' + anchor + '</p>';
   },
   readMoreTag: '<!--more-->'
@@ -42,7 +42,8 @@ app.configure(function() {
 
 
 app.get('/', function(req, res){
-  res.render('index', {pageTitle: 'David Adrian'});
+  var posts = req.poet.getPosts(0, 2);
+  res.render('index', {pageTitle: 'David Adrian', posts: posts});
 });
 
 app.get('/blog', function(req, res) {

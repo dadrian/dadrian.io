@@ -18,6 +18,10 @@
   border-left: 1px solid #DDDDDD;
 }
 
+.border-right {
+  border-right: 1px solid #DDDDDD;
+}
+
 hr {
   border-top: 1px solid #DDDDDD;
   border-bottom: 1px solid #DDDDDD;
@@ -29,7 +33,10 @@ h1 {
 }
  
 p,
-address {
+address,
+ol,
+ul,
+li {
     font-family: 'Vollkorn', Georgia, Times, serif;
 }
 
