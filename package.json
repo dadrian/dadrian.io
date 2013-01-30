@@ -9,5 +9,6 @@
     "jade":"latest",
     "markdown":"latest",
     "express-validator":"latest"
-  }
+  },
+  "engine":"node 0.8.18"
 }
