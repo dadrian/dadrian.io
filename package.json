@@ -8,10 +8,12 @@
     "poet":"0.2.4",
     "jade":"latest",
     "markdown":"latest",
-    "express-validator":"latest"
+    "express-validator":"latest",
+    "disqus":"0.1.x",
+    "config":"0.4.x",
   },
   "engines": {
-    "node": "0.8.x",
-    "npm": "1.1.x"
+    "node": "0.10.x",
+    "npm": "1.2.x"
   }
 }
