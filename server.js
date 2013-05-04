@@ -26,9 +26,11 @@ blog.set({
   readMoreTag: '<!--more-->'
 }).init(function(locals) {
   locals.postList.forEach(function(post) {
-    console.log(post);
+    //console.log(post);
   });
 });
+
+blog.postsPerPage = 5;
 
 app.configure(function() {
   app.set('view engine', 'jade');
@@ -58,6 +60,10 @@ app.get('/blog/page/:page', function(req, res) {
       lastPost  = page * blog.postsPerPage,
       firstPost = lastPost - blog.postsPerPage,
       posts     = req.poet.getPosts(firstPost, lastPost);
+  console.log(page);
+  console.log(firstPost);
+  console.log(lastPost);
+  console.log(posts.length);
   if (posts.length) {
     res.render('blog', {
       pageTitle: 'David Adrian | Blog Page ' + page,

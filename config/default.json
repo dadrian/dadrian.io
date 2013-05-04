@@ -6,6 +6,7 @@
   },
 
   "poet": {
-    "postdir":"_posts"
+    "postdir": "_posts",
+    "postsPerPage": 5
   }
 }
