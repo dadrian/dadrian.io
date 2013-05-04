@@ -10,7 +10,7 @@
     "markdown":"latest",
     "express-validator":"latest",
     "disqus":"0.1.x",
-    "config":"0.4.x",
+    "config":"0.4.x"
   },
   "engines": {
     "node": "0.10.x",

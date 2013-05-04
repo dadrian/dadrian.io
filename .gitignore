@@ -4,6 +4,7 @@
 # Node.js with Express and Stlyus
 /.monitor
 node_modules
+config/runtime.json
 
 # Eclipse
 /.project

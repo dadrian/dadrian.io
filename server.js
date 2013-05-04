@@ -2,13 +2,14 @@ var util      = require('util'),
     express   = require('express'),
     validator = require('express-validator')
     poet      = require('poet'),
+    CONF      = require('config'),
     path      = require('path');
 
 var app   = express(),
     blog  = poet(app);
 
 blog.set({
-  posts: __dirname + '/_posts', // Post directory
+  posts: path.join(__dirname, CONF.poet.postdir), // Post directory
   postsPerPage: 5,              // Posts per page in pagination
   metaFormat: 'json',           // Meta format for post head matter
   routes : {
@@ -28,9 +29,6 @@ blog.set({
     console.log(post);
   });
 });
-
-blog.postsPerPage = 5;
-
 
 app.configure(function() {
   app.set('view engine', 'jade');
@@ -85,5 +83,5 @@ app.get('/projects', function(req, res) {
   res.render('projects', {pageTitle: 'David Adrian | Projects'});
 });
 
-app.listen(80);
-console.log('Express started on port 80');
+app.listen(CONF.app.port);
+console.log('Express started on port ' + CONF.app.port);

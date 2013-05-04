@@ -2,5 +2,9 @@
   "app": {
     "port": 9001, // Set this with an environment variable
     "staticdir": "assets"
+  },
+
+  "poet": {
+    "postdir":"_posts"
   }
 }
