@@ -9,8 +9,8 @@
     "jade":"latest",
     "markdown":"latest",
     "express-validator":"latest",
-    "disqus":"0.1.x",
-    "config":"0.4.x"
+    "config":"0.4.x",
+    "node-rss":"1.0.x"
   },
   "engines": {
     "node": "0.10.x",

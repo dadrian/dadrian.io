@@ -2,7 +2,8 @@
   "title" : "Why?",
   "tags"  : [ "blog", "about", "learning", "node", "poet", "javascript" ],
   "category" : "about",
-  "date" : "1-28-2012"
+  "date" : "1-28-2012",
+  "description" : "Rationale behind the site"
 }}}
 
 You are probably wondering why someone would choose to write their own blog system in Node.js. It seems like a lot of work. And since this blog is mostly static (at time of launch, it doesn't have comments, accounts, etc.), why not use something like Jekyll? Isn't this blog incredibly over-engineered?
