@@ -16,9 +16,9 @@ block content
     .span9
       div#disqus_thread
       script(type='text/javascript')
-        var disqus_identifier = '#{post.date.getTime()}';
+        var disqus_identifier = '#{String(post.id)}';
         var disqus_title = '#{post.title}';
-        var disqus_url = '#{base_url + post.url}';
+        var disqus_url = '#{post.authority + post.url}';
         var disqus_shortname = 'davidadriandotorg';
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
