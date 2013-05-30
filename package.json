@@ -2,6 +2,9 @@
   "name": "davidadrian-website",
   "description": "David Adrian's Personal Website",
   "version": "0.0.1",
+  "scripts":{
+    "start":"./prod_start"
+  },
   "private": true,
   "dependencies": {
     "express": "3.x",
