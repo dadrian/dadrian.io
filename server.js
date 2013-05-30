@@ -6,6 +6,8 @@ var util      = require('util'),
     CONF      = require('config'),
     path      = require('path');
 
+CONF.app.rootdir = __dirname;
+
 // Import private libraries
 var app    = express(),
     routes = require('./lib/routes');
