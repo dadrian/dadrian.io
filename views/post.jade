@@ -11,3 +11,22 @@ block content
         - months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November', 'December']
         small #{months[post.date.getMonth()]} #{post.date.getDate()}, #{post.date.getFullYear()}
       != post.content
+  .row
+    .span3
+    .span9
+      div#disqus_thread
+      script(type='text/javascript')
+        var disqus_identifier = '#{post.date.getTime()}';
+        var disqus_title = '#{post.title}';
+        var disqus_url = '#{base_url + post.url}';
+        var disqus_shortname = 'davidadriandotorg';
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      noscript
+        | Please enable JavaScript to view the
+        a(href='http://disqus.com/?ref_noscript') coments powered by Disqus.
+      a(href='http://disqus.com', class='dsq-brlink') comments powered by  
+        span(class='logo-disqus') Disqus    
