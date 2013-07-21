@@ -7,9 +7,9 @@
   },
   "private": true,
   "dependencies": {
-    "express": "3.x",
+    "express": "3.2.5",
     "poet":"0.2.4",
-    "jade":"latest",
+    "jade":"0.30.0",
     "markdown":"latest",
     "express-validator":"latest",
     "config":"0.4.x",
