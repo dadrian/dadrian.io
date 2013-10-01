@@ -2,7 +2,7 @@
   "title" : "Why?",
   "tags"  : [ "blog", "about", "learning", "node", "poet", "javascript" ],
   "category" : "about",
-  "date" : "1-28-2012",
+  "date" : "1-28-2013",
   "description" : "Rationale behind the site",
   "id": 0
 }}}
