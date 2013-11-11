@@ -1,4 +1,0 @@
-applications:
-- name: davidadrian-website
-  mem: 64M
-  command: node server.js

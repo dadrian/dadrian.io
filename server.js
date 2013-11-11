@@ -26,5 +26,5 @@ app.use(express.static(path.join(CONF.app.rootdir, CONF.app.staticdir)));
 app.use(routes);
 
 // Start it up
-app.listen(process.env.VCAP_APP_PORT || CONF.app.port);
+app.listen(process.env.PORT || CONF.app.port);
 console.log('Express server listening on port ' + (process.env.VCAP_APP_PORT || CONF.app.port));
