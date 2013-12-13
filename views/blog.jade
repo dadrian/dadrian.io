@@ -3,13 +3,9 @@ extends layout
 block content
   .row
     .span3.border-right.padding
-      h3 Welcome to the blog!
-      p
-        :markdown
-          This is David Adrian's blog. Expect more blogging related site
-          features soon. For now, here's a simple post listing.
 
       include includes/contact
+      
     .span9
       hr
       - each post in posts
