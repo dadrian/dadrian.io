@@ -13,18 +13,26 @@ var app    = express(),
     routes = require('./lib/routes');
 
 // General global config of Express
-app.set('port', CONF.app.port);
 app.set('views', path.join(CONF.app.rootdir, 'views'));
 app.set('view engine', 'jade'); // I want to change this, probably ejs
-app.use(express.logger('dev'));
+if (process.env.NODE_ENV == 'development') {
+	app.use(express.logger('dev'));
+} else {
+	app.use(express.logger());
+}
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
-app.use(express.static(path.join(CONF.app.rootdir, CONF.app.staticdir)));
+
+// Set up static serving for development
+if (process.env.NODE_ENV == 'development') {
+	app.use(express.static(path.join(CONF.app.rootdir, CONF.app.staticdir)));
+}
 
 // Set up the routes
 app.use(routes);
 
 // Start it up
-app.listen(process.env.PORT || CONF.app.port);
-console.log('Express server listening on port ' + (process.env.VCAP_APP_PORT || CONF.app.port));
+var port = process.env.PORT || CONF.app.port
+app.listen(port);
+console.log('Express server listening on port ' + port);
