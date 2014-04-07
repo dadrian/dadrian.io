@@ -26,7 +26,7 @@ app.use(app.router);
 
 // Set up static serving for development
 if (process.env.NODE_ENV == 'development') {
-	app.use('/assets', express.static(path.join(CONF.app.rootdir, CONF.app.staticdir)));
+	app.use(express.static(path.join(CONF.app.rootdir, CONF.app.staticdir)));
 }
 
 // Set up the routes
