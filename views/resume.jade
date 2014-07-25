@@ -2,4 +2,15 @@ extends layout
 
 block content
   .row
+    .col-md-9
+      h1.text-center Résumé
+      .row.col-md-10.col-md-offset-1
+        p
+          :markdown
+            I am a [Computer Science Engineering](http://cse.eecs.umich.edu)
+            Master's student at the University of Michigan. I work under
+            [Professor J. Alex Halderman](https://jhalderm.com). I am interested
+            in computer security and privacy, centering around computer
+            networks.
     .col-md-3
+      include includes/contact
