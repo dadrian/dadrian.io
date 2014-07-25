@@ -4,13 +4,142 @@ block content
   .row
     .col-md-9
       h1.text-center Résumé
-      .row.col-md-10.col-md-offset-1
-        p
-          :markdown
-            I am a [Computer Science Engineering](http://cse.eecs.umich.edu)
-            Master's student at the University of Michigan. I work under
-            [Professor J. Alex Halderman](https://jhalderm.com). I am interested
-            in computer security and privacy, centering around computer
-            networks.
+      .row
+        .col-md-10.col-md-offset-1
+          p
+            :markdown
+              I am a [Computer Science Engineering](http://cse.eecs.umich.edu)
+              Master's student at the University of Michigan. I work under
+              [Professor J. Alex Halderman](https://jhalderm.com). My research
+              interests center around computer security and privacy, as well as
+              networks and systems.
+          hr
+      .row
+        .col-md-2.col-md-offset-1
+          b Education
+        .col-md-8
+          p
+            a(href="https://umich.edu") University of Michigan
+            | , Ann Arbor, MI
+            span.pull-right.resume-year Class of 2016
+            br
+            i Master of Engineering, Computer Science
+          ul.degree-list
+            li
+              br
+          p
+            a(href="https://umich.edu") University of Michigan
+            | , Ann Arbor, MI
+            span.pull-right.resume-year Class of 2014
+            br
+            i Bachelor of Engineering, Computer Science
+          ul.degree-list
+            li Minor in Mathematics
+            li Magna Cum Laude
+      .row
+        .col-md-2.col-md-offset-1
+          b Publications
+        .col-md-8
+          a(href="https://jhalderm.com/pub/papers/zmap10gig-woot14.pdf")
+            | Zippier ZMap: Internet-Wide Scanning at 10 Gbps
+          span.pull-right
+            | [<a href="/srv/papers/zmap10gig-woot14.bib">bibtex</a>]
+          ul.paper
+            li David Adrian, Zakir Durumeric, Gulshan Singh, and J. Alex Halderman
+            li To Appear: USENIX Workshop on Offensive Technologies (WOOT 14)
+      .row
+        .col-md-2.col-md-offset-1
+          b Relevant Experience
+        .col-md-8
+          p
+            a(href="https://duosecurity.com") Duo Security
+            | , Ann Arbor, MI
+            span.pull-right.resume-year Summer 2013
+            br
+            i Software Engineering Intern
+          ul.resume-list
+            li.
+              Offered two-factor authentication-as-a-service, using mobile
+              phones as the second authentication factor and push notications
+              for login approval.
+            li.
+              Grew various Python backend subsystems to support new features;
+              handled all bugs, feature requests, and security considerations
+              for the Duo Unix client.
+            li.
+              Wrote a patch for OpenSSH to securely allow third-party
+              authentication plugins
+          p
+            a(href="http://whispercomm.org") Whisper Project
+            | , University of Michigan
+            br
+            i Undergraduate Research with Professor Robert Dick
+          ul.resume-list
+            li.
+              Developed an Android framework (<a
+              href="http://whispercomm.org/manes">MANES</a>) for testing
+              feasibility, routing protocols, and location profile systems of
+              large-scale mobile ad hoc networks that could be used for
+              censorship-resistant communication.
+            li.
+              Built <a
+              href="https://play.google.com/store/apps/details?id=org.whispercomm.shout&hl=en">Shout</a>,
+              a user-friendly censorship-resistant communication Android
+              application on top of MANES.
+            li.
+              Managed and led student software development teams.
+      .row
+        .col-md-2.col-md-offset-1
+          b Teaching Experience
+        .col-md-8
+          p
+            | EECS 280: Programming and Data Structures
+            span.pull-right.resume-year Fall 2013
+            br
+            i Instructional Aide
+          ul.resume-list
+            li.
+              Introductory course on data structures, taught in C++. Covered
+              recursion, pointers, structs and classes, inheritance and dynamic
+              memory
+            li.
+              Held a weekly lab section where students coded examples based on
+              content from the week's lectures.
+            li.
+              Held biweekly office hours for help with concepts and projects
+
+          p
+            | EECS 281: Introduction to Algorithms
+            span.pull-right.resume-year Winter 2014
+            br
+            i Instructional Aide
+            ul.resume-list
+              li.
+                Introductory course on algorithms, taught in C++. Covered
+                runtime complexity, sorts, trees, heaps, and basic search and
+                graph algorithms.
+              li.
+                Held a weekly discussion section to reinforce concepts
+                introduced in lecture.
+              li.
+                Held weekly office hours for help with concepts and projects.
+      .row
+        .col-md-2.col-md-offset-1
+          b Leadership, Service, and Honors
+        .col-md-8
+          p
+            | Eta Kappa Nu, <a href="https://hkn.eecs.umich.edu">
+            | Beta Epsilon Chapter</a>
+            span.pull-right.resume-year Winter 2013 to Present
+            br
+            i Social Chair
+          ul.resume-list
+            li Organized social events for active members, electees, and alumni.
+            li Taught local middle school students Java and Android development.
+      .row
+        hr
+        p.text-center.
+          [<a href="/srv/resume.pdf">PDF</a>]
+
     .col-md-3
       include includes/contact
