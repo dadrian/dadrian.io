@@ -6,7 +6,7 @@ block content
     .span9
       h1 
         a(href=post.url)
-          =post.title          
+          =post.title
       p
         - months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
         small #{months[post.date.getMonth()]} #{post.date.getDate()}, #{post.date.getFullYear()}
@@ -28,5 +28,5 @@ block content
       noscript
         | Please enable JavaScript to view the
         a(href='http://disqus.com/?ref_noscript') coments powered by Disqus.
-      a(href='http://disqus.com', class='dsq-brlink') comments powered by  
-        span(class='logo-disqus') Disqus    
+      a(href='http://disqus.com', class='dsq-brlink') comments powered by
+        span(class='logo-disqus') Disqus

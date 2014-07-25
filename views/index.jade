@@ -4,30 +4,29 @@ extends layout
 
 block content
   .row#intro
-    .span4
-      img(src='/img/david2.jpg')
-    .span8.border-left
-      h3 Welcome!
+    .col-md-4
+      img(src='/img/david2.jpg', class='img-responsive')
+    .col-md-8.border-left
       p
         :markdown
           I am [Computer Science Engineering](http://cse.eecs.umich.edu)
-          Master's student at the University of Michigan. I also received a
-          Bachelor's Degree in Computer Science Engineering with a
-          [Mathematics Minor](http://www.math.lsa.umich.edu) from the
-          University of Michigan in 2014. I work under [Professor J. Alex
-          Halderman](https://jhalderm.com). I also collaborate with [Professor
+          Master's student at the University of Michigan. I received a
+          Bachelor's Degree in Computer Science Engineering with a [Mathematics
+          Minor](http://www.math.lsa.umich.edu) from the University of Michigan
+          in 2014. I work under [Professor J. Alex
+          Halderman](https://jhalderm.com) and also collaborate with [Professor
           Robert Dick](http://robertdick.org/). I often work with [Zakir
           Durumeric](https://zakird.com) and help maintain
           [ZMap](https://zmap.io). Previously, I have interned as a software
-          engineer at [Duo Security](http://www.duosecurity.com), and worked
-          for the [Computer-Aided Engineering
+          engineer at [Duo Security](http://www.duosecurity.com), and worked for
+          the [Computer-Aided Engineering
           Network](http://www.engin.umich.edu/caen/) in the networking
           department. I have been an instructional aide for EECS 280:
-          Introduction to Data Structures, as well as for EECS 281:
-          Introduction to Algorithms. I am interested in computer security and
-          privacy, and computer networks, as well as the overlap of these
-          fields into distributed systems, computer graphics, and embedded
-          systems. In my spare time I also play drums, piano, [video
+          Introduction to Data Structures, as well as for EECS 281: Introduction
+          to Algorithms. I am interested in computer security and privacy, and
+          computer networks, as well as the overlap of these fields into
+          distributed systems, computer graphics, and embedded systems. In my
+          spare time I also play drums, piano, [video
           games](http://www.lolking.net/summoner/na/26789205), and [drink
           beer](https://untappd.com/user/dadrian).
 
@@ -43,13 +42,11 @@ block content
           I can be reached at [davadria@umich.edu](mailto:davadria@umich.edu),
           or [davidcadrian@gmail.com](mailto:davidcadrian@gmail.com).
   .row.padded
-    .span8
-      h3 Recent Posts
+    .col-md-8
+      .row
+        h3 Recent Posts
       - each post in posts
         .row
-          .span8
-            include includes/preview
-    .span3.border-left
+          include includes/preview
+    .col-md-3.col-md-offset-1.border-left
       include includes/contact
-
-

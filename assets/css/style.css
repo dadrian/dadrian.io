@@ -1,5 +1,6 @@
-.nav-pills li {
-  padding: 8px 12px;
+.david-brand {
+  font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+  font-size: 42px;
 }
 
 #intro {
@@ -27,11 +28,13 @@ hr {
   border-bottom: 1px solid #DDDDDD;
 }
 
-h1 {
-    font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Vollkorn', Helvetica, Arial, sans-serif;
     font-weight: normal;
 }
- 
+
+
+
 p,
 address,
 ol,
@@ -40,6 +43,6 @@ li {
     font-family: 'Vollkorn', Georgia, Times, serif;
 }
 
-body { 
+body {
     background: url(/img/cream_dust.png) repeat 0 0;
 }

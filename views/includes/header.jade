@@ -1,11 +1,21 @@
-.navbar
-  a(class='brand') 
-    h1 
-      i david adrian
-  ul(class='nav nav-pills pull-right', style='font-style: italic;')
-    li() 
-      a(href='/') home
-    li()
-      a(href='/srv/resume.pdf') resume
-    li()
-      a(href='/blog/') blog
+nav(class=['navbar','navbar-default'], role="navigation")
+  .container-fluid
+    .navbar-header
+      button(type="button", class="navbar-toggle", data-toggle="collapse", data-target="#header-navbar-collapse")
+        span(class="sr-only") Toggle navigation
+        span(class="icon-bar")
+        span(class="icon-bar")
+        span(class="icon-bar")
+      a(class='navbar-brand david-brand', href="/")
+        i david adrian
+    .collapse.navbar-collapse#header-navbar-collapse
+      ul(class='nav navbar-nav navbar-right')
+        li()
+          a(href='/')
+            i home
+        li()
+          a(href='/resume')
+            i resume
+        li()
+          a(href='/blog/')
+            i blog

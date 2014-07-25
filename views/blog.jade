@@ -2,13 +2,15 @@ extends layout
 
 block content
   .row
-    .span3.border-right.padding
-
-      include includes/contact
-      
-    .span9
-      hr
+    .col-md-9
+      .row
+        h1.text-center Blog
+        hr
       - each post in posts
         .row
-          .span9
-            include includes/preview
+          include includes/preview
+      h1.text-center
+        small  Page #{page}
+    .col-md-3.padding
+
+      include includes/contact
