@@ -58,3 +58,8 @@ body {
     background: url(/img/cream_dust.png) repeat 0 0;
     font-family: 'Vollkorn', Georgia, Times, serif;
 }
+
+ul.paper {
+  padding-left: 2em;
+  text-indent: -2em;
+}
