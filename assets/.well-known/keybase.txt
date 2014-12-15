@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/dadrian
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://davidadrian.org
+  * I am dadrian (https://keybase.io/dadrian) on keybase.
+  * I have a public key with fingerprint 1A43 E9DC 0B4B 6EAF 547A  590B 07FD 8DBD F1A9 578B
+
+To claim this, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "1a43e9dc0b4b6eaf547a590b07fd8dbdf1a9578b",
+            "host": "keybase.io",
+            "key_id": "07fd8dbdf1a9578b",
+            "uid": "cebf74dd621f0fddb737c63b68e33300",
+            "username": "dadrian"
+        },
+        "revoke": {
+            "sig_ids": [
+                "3bbdb8db82e44eba6ba1bdde99d344a247b066548970d5ffc92f95c16f83ae8d0f"
+            ]
+        },
+        "service": {
+            "hostname": "davidadrian.org",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1418611512,
+    "expire_in": 157680000,
+    "prev": "fadc4f95dcca1fb5345a23e851be495c4e60f8f5462aa930610adfaab9a65fb8",
+    "seqno": 21,
+    "tag": "signature"
+}
+
+with the aforementioned key, yielding the PGP signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v1.1.6
+Comment: https://keybase.io/crypto
+
+yMImAnicbVJpSFVBFH5uYa9ee4QVRNMeandfnggZIZJBmf2wXiUzd2bsZt37vPe+
+l/UUDFKi7Y8IFRFGOxFUIIUVallRr4UWomgvKExJMMSgsuaK9av5M8w53/m+75w5
+naG0QDClumdBybzS2x9Tkh0lscDq/cVaAiAbbwPhBKgkQxc1rQriRB3T8kAY8FAS
+iY4NDklIIZDKkgplnUOcSrGGEaY81GVVQyAbbLRdv4LRIOiSXNNmMfYoNzGL/gcf
+G0oYBFFVwlgReMpRjJEqqoYiIkUjoihynA90iWPBLYShMcSOCS1Qmw0cErcrie/Y
+NSuYiAvCESAihBHT0QQiSQRBBUEeYUx0HYuSBAVJRZyiyJKmqxyWKTV0geqywStU
+EyHRMEfBesbNBOOmMUTud/VPPG4OG8i1nQrmLOrYnm3Ym1lyo+dF3bBvzNsW9dFb
+CSof5ilHpoXZWFlFnDiuaVsgzDOk4Zk+MS/xmsLzMi9kA1IdNR1SbvoIWVU0jh1f
+h8QZJYXYkJhfbBiQp0gWJRkKItFkHhGJtSERhaMa+yNFgFAXOYXnIKYQIh0qMkUa
+8DursmwQFnjmE1YwTjY8C3oxh4Da6+3r0gMpwcCIjFR/MwLBkeP+7sukgczA4ab7
+WWjkyuQ7M/J1zenWhl+RxrKcCYdm/RRbGi+Ka9u1zpr+vmWtN68MvMH19/bQCbdG
+Z5zcfFOu65jjaU9PJF7mZwpVRyfnzT+6vK3o/aW5RZU3Uu1PX+4tTjybMX9TInT3
+QfPh2P3tdxqKk0f4dnfD4JfSJ5nPp/R550+Kv9Oaz/R0/87cERnz9lp2YPb3nmdj
+j506MqqmbXDf2a6my6Hx2tL67ukvHo8mTkHLwVZ0Ic3Vu5ZM3R9a1FtX+qgkxyoc
+Ne1qf8mu6uTnWa0fvvW5uejjyvyxrzs35XQ9fLdi9apX19qOh4O9e89lPdpXdnDh
+vMGCAx0Tk7uPl/0wdrbE89JnFv4BxNE1ag==
+=Izq9
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dadrian
+
+==================================================================
+
