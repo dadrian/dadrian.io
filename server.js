@@ -2,7 +2,6 @@ var util      = require('util'),
     express   = require('express'),
     http      = require('http'),
     validator = require('express-validator')
-    poet      = require('poet'),
     CONF      = require('config'),
     path      = require('path');
 
