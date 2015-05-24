@@ -7,13 +7,6 @@
   font-style: italic;
 }
 
-#intro {
-  border-bottom: 1px solid #DDDDDD;
-  border-top: 1px solid #DDDDDD;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
 ul.degree-list {
   margin-top: -10px;
   list-style-type: none;
@@ -34,6 +27,22 @@ li.indent {
 .padded {
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.padded-top {
+  padding-top: 20px;
+}
+
+.padded-bottom {
+  padding-bottom: 20px;
+}
+
+.border-top {
+  border-top: 1px solid #DDDDDD;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #DDDDDD;
 }
 
 .border-left {

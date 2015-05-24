@@ -3,9 +3,13 @@ extends layout
 
 
 block content
-  .row#intro
+  .row.padded-top.border-top
     .col-md-4
-      img(src='/img/david2.jpg', class='img-responsive')
+      .row
+        .col-md-10.col-md-offset-1.border-bottom.padded-bottom
+          img(src='/img/david2.jpg', class='img-responsive img-rounded')
+      .row.padded-top
+          include includes/contact
     .col-md-8.border-left
       p
         :markdown
@@ -42,12 +46,5 @@ block content
       p
         :markdown
           I can be reached at [davadria@umich.edu](mailto:davadria@umich.edu),
-          or [davidcadrian@gmail.com](mailto:davidcadrian@gmail.com).
-  .row.padded
-    .col-md-8
-      .row
-        h3 Recent Posts
-      - each post in posts
-        .row
-    .col-md-3.col-md-offset-1.border-left
-      include includes/contact
+          or [davidcadrian@gmail.com](mailto:davidcadrian@gmail.com). Follow me
+          on Twitter [@davidcadrian](https://twitter.com/davidcadrian).
