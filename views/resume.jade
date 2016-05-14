@@ -3,7 +3,7 @@ extends layout
 block content
   .row
     .col-md-10.col-md-offset-1
-      h1.text-center Résumé
+      h1.text-center Curriculum Vitae
       .row
         .col-md-10.col-md-offset-1
           p
@@ -48,10 +48,28 @@ block content
           ul.degree-list
             li Minor in Mathematics
             li Magna Cum Laude       
-            
+
       .row
         .col-md-2.col-md-offset-1
           b Conference Publications
+        .col-md-8
+          b
+            a(href="https://drownattack.com/drown-attack-paper.pdf")
+              | DROWN: Breaking TLS using SSLv2
+          span.pull-right
+            | [<a href="/srv/papers/drown.bib">bibtex</a>]
+          ul.paper
+            li
+              | Nimrod Aviram, Sebastian Schinzel, Juraj Somorovsky, 
+              | Nadia Heninger, Maik Dankel, Jens Steube, Luke Valenta, 
+              | David Adrian, J. Alex Halderman, Viktor Dukhovni,
+              | Emilia Käsper, Shaanan Cohney, Susanne Engels, Christof Paar,
+              | and Yuval Shavitt    
+            li
+              i
+                | Proc. 25th USENIX Security Symposium, August 2016.
+      .row
+        .col-md-2.col-md-offset-1
         .col-md-8
           b
             a(href="https://jhalderm.com/pub/papers/mail-imc15.pdf")
@@ -156,23 +174,6 @@ block content
             li David Adrian, Zakir Durumeric, Gulshan Singh, and J. Alex Halderman
             li
               i USENIX Workshop on Offensive Technologies (WOOT 14), August 2014
-              
-      .row
-        .col-md-2.col-md-offset-1
-          b Under Submission                   
-        .col-md-8
-          b
-            a(href="https://drownattack.com/drown-attack-paper.pdf")
-              | DROWN: Breaking TLS using SSLv2
-          span.pull-right
-            | [<a href="/srv/papers/drown.bib">bibtex</a>]
-          ul.paper
-            li
-              | Nimrod Aviram, Sebastian Schinzel, Juraj Somorovsky, 
-              | Nadia Heninger, Maik Dankel, Jens Steube, Luke Valenta, 
-              | David Adrian, J. Alex Halderman, Viktor Dukhovni,
-              | Emilia Käsper, Shaanan Cohney, Susanne Engels, Christof Paar,
-              | and Yuval Shavitt
                       
       .row
         .col-md-2.col-md-offset-1
