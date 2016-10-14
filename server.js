@@ -14,17 +14,25 @@ var app    = express(),
 // General global config of Express
 app.set('views', path.join(CONF.app.rootdir, 'views'));
 app.set('view engine', 'jade'); // I want to change this, probably ejs
-if (process.env.NODE_ENV == 'development') {
-	app.use(express.logger('dev'));
-} else {
+
+var production = false;
+if (process.env.NODE_ENV == 'production') {
+        console.log("Using production config");
+	production = true;
+}
+
+if (production) {
 	app.use(express.logger());
+} else {
+	app.use(express.logger('dev'));
 }
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 
 // Set up static serving for development
-if (process.env.NODE_ENV == 'development') {
+if (!production) {
+	console.log("development mode, serving static content");
 	app.use(express.static(path.join(CONF.app.rootdir, CONF.app.staticdir)));
 }
 

@@ -4,10 +4,5 @@
     "rootdir": "./",      // Set this with an environment variable
     "staticdir": "assets",
     "base_url": "http://davidadrian.org"
-  },
-
-  "poet": {
-    "postdir": "_posts",
-    "postsPerPage": 5
   }
 }
