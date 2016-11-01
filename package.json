@@ -10,7 +10,8 @@
     "express": "3.2.5",
     "jade":"0.30.0",
     "express-validator":"0.3.x",
-    "config":"0.4.x"
+    "config":"0.4.x",
+    "markdown": "latest"
   },
   "engines": {
     "npm": "2.7.x"
