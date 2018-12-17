@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="pure-g">
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+    <img class="pure-img" src="{{ "/img/david4.jpg" | absURL }}"></img>
+  </div>
+  <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
+    <div class="pure-g">
+      <div class="pure-u-1">
+        <h1>David Adrian</h1>
+        <nav class="dad-nav">
+          <ul class="dad-nav__horizontal">
+            <li class="dad-nav__horizontal-element"><a href="{{ "/" | absURL }}">About</a></li>
+            <li class="dad-nav__horizontal-element"><a href="{{ "/blog" | absURL }}">Blog</a></li>
+            <li class="dad-nav__horizontal-element"><a href="{{ "/research" | absURL }}">Research</a></li>
+            <li class="dad-nav__horizontal-element"><a href="{{ "/code" | absURL }}">Code</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="pure-u-1">
+          {{ readFile "/content/snippets/dadrian-intro.md" | markdownify }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

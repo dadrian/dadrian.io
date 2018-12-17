@@ -1,0 +1,11 @@
+.dad-nav {
+
+}
+
+.dad-nav__horizontal {
+    display: block;
+}
+
+.dad-nav__horizontal-element {
+    display: inline;
+}

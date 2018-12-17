@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "dadrian"
+license = "Apache"
+licenselink = "https://github.com/dadrian/dadrian.io/blob/master/LICENSE"
+description = ""
+homepage = "https://dadrian.io/"
+tags = []
+features = []
+min_version = "0.41"
+
+[author]
+  name = "David Adrian"
+  homepage = "https://dadrian.io"

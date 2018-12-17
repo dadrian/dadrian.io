@@ -1,0 +1,10 @@
+<head>
+  <meta charset="utf-8">    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}</title>
+  {{ .Hugo.Generator }}
+  <link rel="stylesheet" href="{{ "/css/pure/pure-min.css" | absURL}}" />
+  <link rel="stylesheet" href="{{ "/css/pure/grids-responsive-min.css" | absURL}}" />
+  <link rel="stylesheet" href="{{ "/css/dad.css" | absURL}}" />
+  <link rel="shortcut icon" href="{{"/favicon.ico" | absURL }}" type="image/x-icon" />
+</head>
