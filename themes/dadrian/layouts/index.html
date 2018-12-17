@@ -7,14 +7,7 @@
     <div class="pure-g">
       <div class="pure-u-1">
         <h1>David Adrian</h1>
-        <nav class="dad-nav">
-          <ul class="dad-nav__horizontal">
-            <li class="dad-nav__horizontal-element"><a href="{{ "/" | absURL }}">About</a></li>
-            <li class="dad-nav__horizontal-element"><a href="{{ "/blog" | absURL }}">Blog</a></li>
-            <li class="dad-nav__horizontal-element"><a href="{{ "/research" | absURL }}">Research</a></li>
-            <li class="dad-nav__horizontal-element"><a href="{{ "/code" | absURL }}">Code</a></li>
-          </ul>
-        </nav>
+        {{- partial "nav.html" }}
       </div>
       <div class="pure-u-1">
         {{ .Content }}
