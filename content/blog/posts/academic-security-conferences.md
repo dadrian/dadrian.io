@@ -5,14 +5,14 @@ draft: false
 ---
 
 In my experience, a lot of the non-academics in the security research
-community aren't nearly as familar with which academic conferences are
+community aren't nearly as familiar with which academic conferences are
 notable, so here they are. These conferences are _not_ structured like many
 "industry" conferences. Instead, these conferences consist of presentations
 of peer-reviewed academic papers that were submitted to and peer-reviewed by
 the conference's publication committee (PC).
 ## Security Conferences
 
-This is a rundown of the "big four" top-tier academic conferences in computer security. While cryptography research does occaisionally appear in these conferences, these are distinct from the conferences for cryptography research. 
+This is a rundown of the "big four" top-tier academic conferences in computer security. While cryptography research does occasionally appear in these conferences, these are distinct from the conferences for cryptography research. 
 
 * [The Network and Distributed System Security Symposium (NDSS)](https://www.ndss-symposium.org/): Everyone just calls this NDSS. It's held by the Internet Society. I've never interacted with the Internet Society in any way, aside from attending this event. Until something changes, it's always at the Catamaran Resort in San Diego, sometime near mid-February.
 
