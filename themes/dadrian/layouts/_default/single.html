@@ -1,6 +1,22 @@
 {{ define "main" }}
-  <p>SINGLE</p>
+  {{ $section := .Site.GetPage "section" .Section }}
   <article>
-      
+    <header>
+      <p>
+        {{with .CurrentSection.Title }}{{. | upper }}{{end}}
+      </p>
+      <h1>
+        {{- .Title -}}
+      </h1>
+      {{/* Hugo uses Go's date formatting is set by example. Here are two formats */}}
+      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+        {{- .Date.Format "January 2, 2006" -}}
+      </time>      
+    </header>
+
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+        {{- .Content -}}
+    </main>
+
   </article>
 {{ end }}
