@@ -1,11 +1,34 @@
-.dad-nav {
-
+.dad-container {
+    padding: 20px;
 }
 
-.dad-nav__horizontal {
+.dad-nav ul {
     display: block;
 }
 
-.dad-nav__horizontal-element {
+.dad-nav-ul {
+    padding-inline-start: 0px;
+}
+
+.dad-nav-ul li::after {
+    content: "•";
+    margin-left: 10px;
+    margin-right: 7px;
+}
+
+.dad-nav-li__entry {
     display: inline;
+}
+
+.dad-nav-li__entry:last-child::after {
+    content: "";
+}
+
+.padded {
+    padding: 20px;
+}
+
+.padded-sides {
+    padding-left: 20px;
+    padding-right: 20px;
 }
