@@ -1,20 +1,31 @@
 {{ define "main" }}
 <div class="padded">
   <div class="pure-g">
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
-      <img class="pure-img" src="{{ "/img/david4.jpg" | absURL }}"></img>
-    </div>
-    <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
-      <div class="pure-g padded-sides">
-        <div class="pure-u-1">
-          <h1>David Adrian</h1>
-          {{- partial "nav.html" }}
+    <div class="pure-u-1 pure-u-lg-5-24"></div>
+    <div class="pure-u-1 pure-u-lg-7-12">
+      <div class="pure-g">
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-1-3">
+          <img class="pure-img" src="{{ "/img/david4.jpg" | absURL }}"></img>
         </div>
-        <div class="pure-u-1">
-          {{ .Content }}
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-2-3">
+          <div class="pure-g padded-sides">
+            <div class="pure-u-1 dad-name-splash">
+              <h1 class="dad-name-splash-h1__name">David Adrian</h1>
+              <address class="dad-name-spash-address">
+                <i class="far fa-envelope"></i>
+                <a class="dad-name-splash-address__link" href="mailto:davidcadrian@gmail.com">davidcadrian@gmail.com</a>
+                <br />
+                <i class="fab fa-twitter"></i>
+                <a class="dad-name-splash-address__link" href="https://twitter.com/davidcadrian">@davidcadrian</a>
+              </address>
+              {{- partial "nav.html" }}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      {{ .Content }}
+  </div>
+    <div class="pure-u-1 pure-u-lg-5-24"></div>
   </div>
 </div>
 {{ end }}

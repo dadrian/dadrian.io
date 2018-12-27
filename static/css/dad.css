@@ -1,16 +1,39 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+
 .dad-container {
     padding: 20px;
 }
 
-.dad-nav ul {
-    display: block;
+.dad-name-splash {
+
+}
+
+.dad-name-splash-h1__name {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 50px;
+    text-align: left;
+    margin: 0px;
+}
+
+.dad-name-splash-address {
+    font-style: normal;
+}
+
+.dad-name-splash-address__link {
+    margin-left: 5px;
+    font-style: normal;
 }
 
 .dad-nav-ul {
+    display: block;
     padding-inline-start: 0px;
 }
 
-.dad-nav-ul li::after {
+.dad-nav-li__entry::after {
     content: "•";
     margin-left: 10px;
     margin-right: 7px;
