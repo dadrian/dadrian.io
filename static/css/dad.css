@@ -1,11 +1,16 @@
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
     font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: #f8f8f8;
 }
 
 .dad-container {
     padding: 20px;
-    background-color: #f8f8f8;
 }
 
 .dad-name-splash {
