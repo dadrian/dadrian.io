@@ -3,7 +3,6 @@ html, button, input, select, textarea,
     font-family: 'Source Sans Pro', sans-serif;
 }
 
-
 .dad-container {
     padding: 20px;
     background-color: #f8f8f8;
@@ -31,6 +30,7 @@ html, button, input, select, textarea,
 
 .dad-nav-ul {
     display: block;
+    -webkit-padding-start: 0px;
     padding-inline-start: 0px;
 }
 
