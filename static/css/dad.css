@@ -76,6 +76,11 @@ body {
     font-size: 12pt;
 }
 
+.dad-cv-ul {
+    margin: 0px;
+    margin-top: 4px;
+}
+
 .padded {
     padding: 20px;
 }
