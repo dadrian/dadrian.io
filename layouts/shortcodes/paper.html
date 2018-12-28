@@ -11,6 +11,10 @@
   {{ with .Get "conference" }}
   <i>{{ . }}</i>
   {{ end }}
+  {{ with .Get "award" }}
+  <br />
+  <b>{{ . }}</b>
+  {{ end }}
 </div>
 <div class="pure-u-1 pure-u-md-1-8">
     {{ with .Get "bibtex" }}
