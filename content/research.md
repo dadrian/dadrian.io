@@ -1,7 +1,6 @@
 +++
 title = "Research"
 type = "page"
-layout = "individual"
 +++
 
 Blurb about research.

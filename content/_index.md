@@ -1,3 +1,8 @@
+---
+title = "About"
+---
+
+
 I am a developer and security researcher. I am a cofounder of
 [Censys][censys], where I currently work as a software engineer
 and architect.
