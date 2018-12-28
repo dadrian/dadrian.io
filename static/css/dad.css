@@ -84,3 +84,7 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.padded-bottom-small {
+    padding-bottom: 8px;
+}
