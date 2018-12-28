@@ -1,0 +1,26 @@
+<div class="pure-u-1 pure-u-md-1-8">
+  {{ with .Get "section" }}
+  <b>{{ . }}</b>
+  {{ end }}
+</div>
+<div class="pure-u-1 pure-u-md-3-4">
+  {{ .Get "name" }}
+  {{ with .Get "pdf" }}
+  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pdf</a>]
+  {{ end }}
+  {{ with .Get "key" }}
+  [<a href="{{ printf "srv/talks/%s" . | absURL }}">key</a>]
+  {{ end }}
+  {{ with .Get "pptx" }}
+  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pptx</a>]
+  {{ end }}
+  {{ with .Get "youtube" }}
+  [<a href="{{ . }}">YouTube</a>]
+  {{ end }}
+  {{ with .Get "conference" }}
+  <br />
+  <i>{{ . }}</i>
+  {{ end }}
+</div>
+<div class="pure-u-1 pure-u-md-1-8">
+</div>
