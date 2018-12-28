@@ -1,7 +1,6 @@
 +++
 title = "Code"
-type = "page"
-layout = "individual"
+layout = "bio"
 +++
 
 Links to code and stuff

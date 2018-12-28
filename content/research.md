@@ -1,6 +1,6 @@
 +++
 title = "Research"
-type = "page"
+layout = "bio"
 +++
 
 Blurb about research.

@@ -23,6 +23,9 @@
           </div>
         </div>
       </div>
+      {{ with .Param "title" }}
+        <h1>{{ . }}</h1>
+      {{ end }}
       {{ .Content }}
     </div>
     <div class="pure-u-1 pure-u-md-1-8 pure-u-lg-5-24"></div>
