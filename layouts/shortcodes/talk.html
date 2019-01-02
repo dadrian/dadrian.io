@@ -21,6 +21,26 @@
   {{ with .Get "youtube" }}
   [<a href="{{ . }}">YouTube</a>]
   {{ end }}
+
+
+  {{ with .Get "conference2" }}
+  <br />
+  <i>{{ . }}</i>
+  {{ end }}
+
+  {{ with .Get "pdf2" }}
+  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pdf</a>]
+  {{ end }}
+  {{ with .Get "key2" }}
+  [<a href="{{ printf "srv/talks/%s" . | absURL }}">key</a>]
+  {{ end }}
+  {{ with .Get "pptx2" }}
+  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pptx</a>]
+  {{ end }}
+  {{ with .Get "youtube2" }}
+  [<a href="{{ . }}">YouTube</a>]
+  {{ end }}
+
 </div>
 <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
 </div>
