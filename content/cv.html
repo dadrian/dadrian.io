@@ -161,85 +161,46 @@ layout = "bio"
       pptx="zmap10gig-woot14.pptx"
   >}}
 
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-    <b>Relevant Experience</b>
-  </div>
-  <div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
-    <b><a href="https://google.com">Google</a></b>, Mountain View, CA
-    <br />
-    <i>Software Engineering Intern</i>
-    <br />
-    <i><a href="https://www.chromium.org/Home/chromium-security">Chrome Security</a></i>
-    <ul class="dad-cv-ul">
-      <li>Implemented <a href="https://docs.google.com/document/d/1aISglJIIwglcOAhqNfK-2vtQl-_dWAapc-VLDh-9-BE/edit">OCSP Expect-Staple</a> in order to begin measuring the feasibility of OCSP Must-Staple.</li>
-    </ul>
-  </div>
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-    <i>2016</i>
-  </div>
-
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-  </div>
-  <div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
-    <b><a href="https://duosecurity.com/">Duo Security</a></b>, Ann Arbor, MI
-    <br />
-    <i>Software Engineering Intern</i>
-    <ul class="dad-cv-ul">
-      <li>Offered two-factor authentication-as-a-service, using mobile phones as the second authentication factor and push notications for login approval.</li>
-      <li>Grew various Python backend subsystems to support new features; handled all bugs, feature requests, and security considerations for the Duo Unix client.</li>
-      <li>Wrote a patch for OpenSSH to securely allow third-party authentication plugins.</li>
-    </ul>
-  </div>
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-    <i>2013</i>
-  </div>
-
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-  </div>
-  <div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
-    <b><a href="http://whispercomm.org">Whisper Project</a></b>, University of Michigan
-    <br />
-    <i>Undergraduate Research with Professor Robert Dick</i>
-    <ul class="dad-cv-ul">
-      <li>Developed an Android framework (MANES) for testing feasibility, routing protocols, and location profile systems of large-scale mobile ad hoc networks that could be used for censorship-resistant communication.</li>
-      <li>Built Shout, a user-friendly censorship-resistant communication Android application on top of MANES.</li>
-      <li>Managed and led student software development teams.</li>
-    </ul>
-  </div>
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-    <i>2012-2013</i>
-  </div>
-
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-  </div>
-  <div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
-    <b><a href="https://caen.engin.umich.edu/">CAEN</a></b>, University of Michigan College of Engineering
-    <br />
-    <i>Network Technician</i>
-    <ul class="dad-cv-ul">
-      <li>Maintained over 700 wireless access points for the College of Engineering campus.</li>
-      <li>Transitioned printing system from CAEN control to campus-wide IT department.</li>
-      <li>Diagnosed and performed network troubleshooting as needed.</li>
-    </ul>
-  </div>
-  <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
-    <i>2011-2012</i>
-  </div>
-
-  <div class="pure-u-1 pure-u-md-1-8">
-    <b>Teaching Experience</b>
-  </div>
-  <div class="pure-u-1 pure-u-md-3-4">
-    EECS 388: Introduction to Computer Security
-    <br />
-    <i>Lecturer</i>
-    <ul>
-      <li>Undergraduate course on computer security.</li>
-      <li>Cotaught with Professor Halderman and Professor Honeyman.</li>
-    </ul>
-  </div>
-  <div class="pure-u-1 pure-u-md-1-8">
-    <i>Fall 2016</i>
-  </div>
-
+  {{% experience
+      section="Relevant Experience"
+      name="Google"
+      link="https://google.com"
+      where="Mountain View, CA"
+      position="Software Engineering Intern"
+      year="Summer 2016"
+  %}}
+  - Implemented [OCSP Expect-Staple](https://docs.google.com/document/d/1aISglJIIwglcOAhqNfK-2vtQl-_dWAapc-VLDh-9-BE/edit) in order to begin measuring the feasibility of OCSP Must-Staple.
+  {{% /experience %}}
+  {{% experience
+      name="Duo Security"
+      link="https://duosecurity.com"
+      where="Ann Arbor, MI"
+      position="Software Engineering Intern"
+      year="Summer 2013"
+  %}}
+  - Offered two-factor authentication-as-a-service, using mobile phones as the second authentication factor and push notications for login approval.
+  - Grew various Python backend subsystems to support new features; handled all bugs, feature requests, and security considerations for the Duo Unix client.
+  - Wrote a patch for OpenSSH to securely allow third-party authentication plugins
+  {{% /experience %}}
+  {{% experience
+      name="Whisper Project"
+      where="University of Michigan"
+      position="Undergraduate Research with Professor Robert Dick"
+      year="2011-2012"
+  %}}
+  - Developed an Android framework ([MANES](http://whispercomm.org/manes)) for testing feasibility, routing protocols, and location profile systems of large-scale mobile ad hoc networks that could be used for censorship-resistant communication.
+  - Built [Shout](https://play.google.com/store/apps/details?id=org.whispercomm.shout&hl=en), a user-friendly censorship-resistant communication Android application on top of MANES.
+  - Managed and led student software development teams.
+  - Resulted in a [publication](https://dadrian.io/srv/papers/1am-mobihoc15.pdf) at MobiHoc 2015.
+  {{% /experience %}}
+  {{% experience
+      name="CAEN"
+      where="University of Michigan College of Engineering"
+      position="Network Technician"
+      year="2011-2012"
+  %}}
+  - Maintained over 700 wireless access points for the College of Engineering campus.
+  - Transitioned printing system from CAEN control to campus-wide IT department.
+  - Diagnosed and performed network troubleshooting as needed.
+  {{% /experience %}}
 </div>

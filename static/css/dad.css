@@ -76,6 +76,11 @@ body {
     font-size: 12pt;
 }
 
+.dad-cv-ul__wrapper ul {
+    margin: 0px;
+    margin-top: 4px;
+}
+
 .dad-cv-ul {
     margin: 0px;
     margin-top: 4px;
