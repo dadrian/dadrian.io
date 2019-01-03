@@ -1,3 +1,9 @@
+{{ define "rss" }}
+  {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+  {{ end -}}
+{{ end }}
+
 {{ define "main" }}
   {{ $section := .Site.GetPage "section" .Section }}
   <article>
@@ -11,7 +17,7 @@
       {{/* Hugo uses Go's date formatting is set by example. Here are two formats */}}
       <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
         {{- .Date.Format "January 2, 2006" -}}
-      </time>      
+      </time>
     </header>
     <main>
         {{- .Content -}}

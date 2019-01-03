@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
+    <head>
     {{- partial "head.html" . -}}
+    {{- block "rss" . }}{{- end }}
+    </head>
     <body>
         <div id="content" class="dad-container">
         {{- block "main" . }}{{- end }}
