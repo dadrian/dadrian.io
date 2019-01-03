@@ -1,0 +1,22 @@
+{{ define "main" }}
+  <div class="dad-blog-title">
+    <h1 class="dad-blog-title-h1">Closure <small class="dad-blog-title-small">Thoughts Hoisted to Posts</small></h1>
+  </div>
+  <article>
+    <main>
+      {{ .Content }}
+    </main>
+    <section>
+    {{ range .Paginator.Pages }}
+      <div>
+        <h3><a href="{{ .URL }}">{{ .Title }}</a></h3>
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{- .Date.Format "January 2, 2006" -}}
+        </time>      
+        <p>{{ .Summary }}</p>
+      </div>
+    {{ end }}
+    </section>
+  </article>
+  {{- partial "footer-nav.html" . -}}
+{{ end }}

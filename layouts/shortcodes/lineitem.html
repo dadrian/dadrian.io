@@ -1,0 +1,20 @@
+<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+  {{ with .Get "section" }}
+  <b>{{ . }}</b>
+  {{ end }}
+</div>
+<div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
+  {{ if and (.Get "title") (.Get "link") }}
+    <a href="{{ .Get "link"}}">{{ .Get "title" }}</a>{{ with .Get "subtitle" }}{{ . }}{{ end }}
+  {{ else }}
+    {{ with .Get "title" }}{{ . }}{{ end }}
+  {{ end }}
+  <div {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+    {{ .Inner }}
+  </div>
+</div>
+<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+  {{ with .Get "when" }}
+    <i>{{ . }}</i>
+  {{ end }}
+</div>

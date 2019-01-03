@@ -1,0 +1,100 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    font-family: 'Source Sans Pro', sans-serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.dad-container {
+    padding: 20px;
+}
+
+.dad-name-splash {
+
+}
+
+.dad-name-splash-h1__name {
+    font-size: 50pt;
+    text-align: left;
+    margin: 0px;
+}
+
+.dad-name-splash-address {
+    font-style: normal;
+}
+
+.dad-name-splash-address__link {
+    margin-left: 5px;
+    font-style: normal;
+}
+
+.dad-nav-ul {
+    display: block;
+    -webkit-padding-start: 0px;
+    padding-inline-start: 0px;
+}
+
+.dad-nav-li__entry::after {
+    content: "•";
+    margin-left: 10px;
+    margin-right: 7px;
+}
+
+.dad-nav-li__entry {
+    display: inline;
+}
+
+.dad-nav-li__entry:last-child::after {
+    content: "";
+}
+
+.dad-blog-title {
+
+}
+
+.dad-blog-title-h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 30pt;
+    font-weight: 400;
+}
+
+.dad-blog-title-small {
+    text-align: right;
+    font-size: 12pt;
+}
+
+.dad-cv-ul__wrapper ul {
+    margin: 0px;
+    margin-top: 4px;
+}
+
+.dad-cv-ul {
+    margin: 0px;
+    margin-top: 4px;
+}
+
+.padded {
+    padding: 20px;
+}
+
+.padded-sides {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.padded-bottom-small {
+    padding-bottom: 8px;
+}
