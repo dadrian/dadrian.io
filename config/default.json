@@ -1,8 +1,0 @@
-{
-  "app": {
-    "port": 9001,         // Set this with an environment variable
-    "rootdir": "./",      // Set this with an environment variable
-    "staticdir": "assets",
-    "base_url": "http://davidadrian.org"
-  }
-}
