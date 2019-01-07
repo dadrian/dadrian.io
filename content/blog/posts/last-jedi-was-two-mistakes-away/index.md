@@ -52,6 +52,18 @@ Jedi_ from the salt, instead the lightsaber battle on Crait was framed by a suns
 
 ### Rey and Kylo fight scene
 
+There's not much to say about this scene. It's really cool, and it's a lot
+better than watching Ewan McGregor fight some battle droids. Snoke was an
+underdeveloped character, so he either needed to be developed more or written
+out. I'm fine with writing him out and getting to watch this instead. Do you
+really want to watch Rey fight Snoke in Episode IX just like Luke fought
+Palpatine?
+
+{{% imgproc kylo-rey-back Resize "1080x" %}}
+Rey and Kylo kill some space fascists. Everybody loves this scene.
+{{% /imgproc  %}}
+
+
 ### The Return of Puppet Yoda
 
 - Yoda
