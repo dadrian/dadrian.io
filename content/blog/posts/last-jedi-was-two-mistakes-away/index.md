@@ -19,7 +19,18 @@ over a year old folks, go watch it.
 Before I talk about the mistakes, I want to talk about some good parts of The
 Last Jedi that do stand out.
 
-### Let the past die
+### Rey and Kylo Fight Scene
+
+There's not much to say about this scene. It's really cool, and it's a lot
+better than watching Ewan McGregor fight some battle droids. Snoke was an
+underdeveloped character, so he either needed to be developed more or written
+out. I'm fine with writing him out and getting to watch this instead. Do you
+really want to watch Rey fight Snoke in Episode IX just like Luke fought
+Palpatine?
+
+{{% imgproc kylo-rey-back Resize "1080x" %}}
+Rey and Kylo kill some space fascists. Everybody loves this scene.
+{{% /imgproc  %}}
 
 ### Cinematography on Crait
 
@@ -50,27 +61,52 @@ against a snowy, white background. While we did get a little bit of that in _The
 Jedi_ from the salt, instead the lightsaber battle on Crait was framed by a sunset.
 {{% /imgproc  %}}
 
-### Rey and Kylo fight scene
-
-There's not much to say about this scene. It's really cool, and it's a lot
-better than watching Ewan McGregor fight some battle droids. Snoke was an
-underdeveloped character, so he either needed to be developed more or written
-out. I'm fine with writing him out and getting to watch this instead. Do you
-really want to watch Rey fight Snoke in Episode IX just like Luke fought
-Palpatine?
-
-{{% imgproc kylo-rey-back Resize "1080x" %}}
-Rey and Kylo kill some space fascists. Everybody loves this scene.
-{{% /imgproc  %}}
-
-
 ### The Return of Puppet Yoda
 
-- Yoda
-- Let The Past Die
-- Cinematography on the planet
-- Rey + Kyle fight scene
+The character Yoda, while originally created and written by George Lucas, was
+conceived and brought to life by Frank Oz of The Muppets. Just like Kermit
+the Frog, Yoda was created as a puppet, and all the scenes in the original
+trilogy were filmed with Frank Oz voicing and puppeteering Yoda. In the
+prequels, Yoda was entirely CGI and also not good, so I was excited to see
+the puppet again. Oddly, Puppet Yoda is much more expressive than rendered
+Yoda, but that may be a symptom of 2002-era CGI as compared to 2018.
 
+{{% imgproc yoda-luke-background Resize "1080x" %}}
+Puppet Yoda is definitely superior to the CGI Yoda from the prequels.
+{{% /imgproc  %}}
+
+More important than Yoda being a puppet, was what Yoda actually had to say in
+The Last Jedi. Other people have [written about this extensively][yoda], but
+Yoda has never actually given good advice or acted as an effective leader.
+Throughout the past movies he's incorrectly allowed Anakin to be trained,
+sent dozens of Jedi to their deaths on Geonosis despite having a Clone Army
+minutes away, failed to discover Palpatine was Sith or defeat him in combat,
+ran away and hid on Dagobah instead of dealing with the problems he created,
+and failed to give Luke the proper training to protect him from Vader on
+Cloud City. This all changed in The Last Jedi.
+
+> We are what they grow beyond.
+
+This is the first movie in which Yoda gives good advice. And not only is good
+advice, it's fucking great advice. He smacks Luke in the forehead and tells
+him to get over himself. Don't do what Yoda did and wallow in your failure.
+It's alright that Luke doesn't know how to handle Kylo Ren. That doesn't mean
+he can't help Rey. Luke needs to pass on not just his knowledge of the Jedi,
+but pass on his own failures. He needs to let Rey make her own mistakes, but
+with enough support that they won't be fatal. He doesn't need to train Rey to
+be Luke, he needs to train Rey so she can grow herself. Yoda convinces Luke
+to stop wallowing in his own self-hatred, and fully give himself to the
+people he loves, and the causes he cares about.
+
+### Let the Past Die
+
+
+## Bad Things
+
+
+## Being Great
 
 This is the first time in three decades that we don't know what is going to
 happen in the next Star Wars movie.
+
+[yoda]: http://nautil.us/blog/-yoda-is-dead-but-star-wars-dubious-lessons-live-on
