@@ -44,3 +44,6 @@ Icon?
 /.cake_task_cache
 
 npm-debug.log
+
+# Hugo
+resources/
