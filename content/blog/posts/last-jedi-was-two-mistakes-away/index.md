@@ -96,10 +96,23 @@ but pass on his own failures. He needs to let Rey make her own mistakes, but
 with enough support that they won't be fatal. He doesn't need to train Rey to
 be Luke, he needs to train Rey so she can grow herself. Yoda convinces Luke
 to stop wallowing in his own self-hatred, and fully give himself to the
-people he loves, and the causes he cares about.
+people he loves, and the causes he cares about. This is probably my favorite
+scene in the movie, and not just because it reminds me of grad school.
 
 ### Let the Past Die
 
+Last Jedi hits you in the face with the theme of the movie, to the point of having Kylo Ren spell it out to Rey.
+
+> Let the past die.
+
+Each of the main characters goes through their own personal struggle with the
+past. Kylo Ren is striving to live up to Vader's legacy and gain approval
+from Snoke. As a result, he's haunted by the presence of Luke Skywalker, who
+is a living testament to his grandfather's failures.
+
+Rey desperately wants to know who her parents are.
+
+Luke is 
 
 ## Bad Things
 
@@ -110,3 +123,4 @@ This is the first time in three decades that we don't know what is going to
 happen in the next Star Wars movie.
 
 [yoda]: http://nautil.us/blog/-yoda-is-dead-but-star-wars-dubious-lessons-live-on
+[kotor2]:https://www.polygon.com/2018/1/3/16841630/star-wars-last-jedi-spoilers-kotor-2-obsidian
