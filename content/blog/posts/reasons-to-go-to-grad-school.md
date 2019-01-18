@@ -97,6 +97,7 @@ primarily working for Censys, it was incredibly important to me to write a
 dissertation and defend my PhD.
 
 - Don't go to grad school because you're good at school, and it's more school.
+- Don't get a PhD because you're avoiding "becoming an adult" or the "real world".
 - Don't get a PhD because you think you need one to get a good job.
 - Don't get a PhD because your company is paying for it.
 
