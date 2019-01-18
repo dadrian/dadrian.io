@@ -12,12 +12,13 @@ I do this?
 
 Prior to my senior year of undergrad, I cold-emailed [Zakir Durumeric][zakir]
 about the possibility of doing research. At the time, Zakir was a second-year
-graduate student working with [Alex Halderman][jhalderm]. I was convinced I
-wasn't smart enough to work with Halderman's research group, but a friend of
-mine told me to stop doubting myself and do it anyway. This was arguably
-single most important piece of advice I received in all of undergrad. I would not have PhD or a [company][censys] if not for this email.
-
-> TODO contents of email
+graduate student working with [Alex Halderman][jhalderm]. I'd met him before,
+and I had already taken the computer security course that he was a teaching
+assitant for. I was convinced I wasn't smart enough to work with
+Halderman's research group, a friend of mine told me to stop doubting myself
+and send the email. This was arguably single most important piece of advice I
+received in all of undergrad. I would not have PhD or a [company][censys] if
+I did not send that email.
 
 Why did I want to go to grad school? It was a combination of reasons, some
 good, some bad. I knew I didn't want to spend a career building CRUD apps, I
