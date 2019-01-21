@@ -1,6 +1,6 @@
 ---
 title: "Reasons to Go to Grad School"
-date: 2019-01-13T08:57:15-08:00
+date: 2019-01-21T08:30:00-05:00
 draft: true
 ---
 
@@ -55,7 +55,14 @@ candidates. Of these, only five candidates are qualified, and any given
 school will think that only three of the candidates out of the five are a
 match, and then only manage to send an offer to one or two of them. It is
 straightforward to identify who is at the top of the market. It is hard to
-actually _be_ at the top of the market.
+actually _be_ at the top of the market. As a grad student, you're have to be
+one top students in your field to have a chance at a faculty position. This
+is hard, but achievable. Many PhD students are flailing around, because they
+either don't actually want to be in a PhD program, aren't getting the support
+they want from their advisor, or don't really know what their goals are. If
+you can sort out what you want early on, and figure out how to get support
+(especially from faculty who are _not_ your advisor), you have a massive
+advantage over other students.[^1]
 
 Not all PhD students come in to the program with a faculty position as the
 goal. Others know they want to work on a specific problem that can only be
@@ -70,7 +77,7 @@ and are not academics.
 For better or for worse, a PhD is also effectively a union card that allows
 you to be teaching faculty at a university. If you have no interest in
 research, but want a full-time non-adjunct teaching position, especially at a
-top school[^1], you need a PhD. If you know that a teaching position is your
+top school[^2], you need a PhD. If you know that a teaching position is your
 goal, look for opportunities and advisors where you can do research about
 effective teaching. Take opportunities to teach while in grad school,
 especially opportunities to lecture rather than be a teaching assistant. If
@@ -99,11 +106,14 @@ than the other options, that's a fine reason to get started, but you're going
 to need to find some other motivation for sticking through it if you want to
 finish.
 
-At the same time, make sure you know what the alternatives are. You don't
-need a PhD to get an interesting job in industry, for whatever definition of
-"interesting" you want. Consider what you are going to do after you
-defend---do you need to have defended to have access the opportunities you
-want? There's certainly intrinsic value simply in finishing a PhD, but opportunity cost is also incredibly real, and the process can be isolating, demeaning, and disheartening.
+If you're in a PhD program, but you're not aiming for a faculty position, and
+you don't want to teach, make sure you know what the alternatives are. You
+don't need a PhD to get an interesting job in industry, for whatever
+definition of "interesting" you want. Consider what you are going to do after
+you defend---do you need to have defended to have access the opportunities
+you want? There's certainly intrinsic value simply in finishing a PhD, but
+opportunity cost is also incredibly real, and the process can be isolating,
+demeaning, and disheartening.
 
 For me, I stuck through it because I was proud of the work we were doing. I
 thought we had a positive impact on the security of the Internet as a whole.
@@ -137,7 +147,9 @@ know on Twitter][davidcadrian].
 [davidcadrian]: https://twitter.com/davidcadrian
 [gradschoolmentalhealth]: https://www.theatlantic.com/education/archive/2018/11/anxiety-depression-mental-health-graduate-school/576769
 [jhalderm]: https://jhalderm.com
+[sexism]: https://www.theatlantic.com/science/archive/2016/07/how-women-are-harassed-out-of-science/492521/
 [psqs]: https://factorable.net
 [zakir]: https://zakird.com
 
-[^1]: Some schools, such as Stanford, have tenure-track teaching faculty positions. Others, such as Michigan, have salaried non-adjunct Lecturer positions.
+[^1]: This is certainly easier said than done, and is a topic for a different post. You probably shouldn't take my advice on this anyway, since my CV would not get me a faculty job. This advice is also very computer-science specific, and if you're not a white male, you're going to have a [harder time][sexism].
+[^2]: Some schools, such as Stanford, have tenure-track teaching faculty positions. Others, such as Michigan, have salaried non-adjunct lecturer positions.
