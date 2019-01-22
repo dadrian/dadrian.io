@@ -9,7 +9,7 @@
   <article>
     <header>
       <p>
-        {{with .CurrentSection.Title }}{{. | upper }}{{end}}
+        <a href="{{.CurrentSection.URL}}">{{with .CurrentSection.Title }}{{. | upper }}{{end}}</a>
       </p>
       <h1>
         {{- .Title -}}
