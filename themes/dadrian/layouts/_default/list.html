@@ -5,7 +5,9 @@
 {{ end }}
 
 {{ define "title" }}
-{{ .CurrentSection.Title }}
+  {{ with .CurrentSection }}
+    {{ with .Title }}{{ . }}{{ end }}
+  {{ end }}
 {{ end }}
 
 {{ define "main" }}

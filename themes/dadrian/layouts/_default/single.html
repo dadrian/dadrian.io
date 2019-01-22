@@ -8,9 +8,11 @@
   {{ $section := .Site.GetPage "section" .Section }}
   <article>
     <header>
+      {{ with .CurrentSection }}
       <p>
-        <a href="{{.CurrentSection.URL}}">{{with .CurrentSection.Title }}{{. | upper }}{{end}}</a>
+        <a href="{{.URL}}">{{with .Title }}{{. | upper }}{{end}}</a>
       </p>
+      {{ end }}
       <h1>
         {{- .Title -}}
       </h1>
