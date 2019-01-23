@@ -64,20 +64,20 @@ either don't actually want to be in a PhD program, aren't getting the support
 they want from their advisor, or don't really know what their goals are. If
 you can sort out what you want early on, and figure out how to get support
 (especially from faculty who are _not_ your advisor), you have a massive
-advantage over other students[^1]. If you know want to be faculty, but are
-thinking of not getting a PhD because you think it's impossible to get a
-faculty job, it's not. If you want to be faculty, you should be getting a
-PhD.
+advantage over other students[^1]. If you know you want to be faculty, but
+are thinking of not getting a PhD because it's impossible to get a faculty
+job, you should know that it's achievable. If you want to be faculty you
+definitely have your work cut out for you, but you should definitely be
+getting a PhD.
 
-Not all PhD students come in to the program with a faculty position as the
-goal. Others know they want to work on a specific problem that can only be
-accomplished in academia. This is also a great reason to get a PhD. In my
-experience, not many people fit this description. Plenty of people have some
-research field they're interested in, but very few know exactly the problem
-they want to work on. Keep in mind it is possible to work on research or in
-research-adjacent fields without getting a PhD. For example, many people
-working on applied cryptography or cryptography engineering do not have a PhD
-and are not academics.
+Not all PhD students want to be faculty. Others know they want to
+work on a specific problem that can only be accomplished in academia. This is
+also a great reason to get a PhD. In my experience, not many people fit this
+description. Plenty of people have some research field they're interested in,
+but very few know exactly the problem they want to work on. Keep in mind it
+is possible to work on research or in research-adjacent fields without
+getting a PhD. For example, many people working on applied cryptography or
+cryptography engineering do not have a PhD and are not academics.
 
 For better or for worse, a PhD is also effectively a union card that allows
 you to be teaching faculty at a university. If you have no interest in
@@ -113,26 +113,29 @@ finish. A slightly different variant of this are the people getting a PhD
 because they don't want to "be an adult", or because they want to avoid the
 "real world". This is also a terrible decision. You're going to hate your
 life and want to quit (but likely won't, out of fear of failure). You should
-either find a real reason to stay a grad student, or leave. If you do finish,
-you'll like find out that whatever it is that you end up doing didn't
-actually require you to have a PhD in the first place. Unlike a PhD, a
-Master's program is a great place to avoid being an adult for a year or two,
-especially with the current explosion in undergraduate enrollment in computer
-science. Many undergraduate programs are short on staff, including on
-teaching assistants, so if you can get a free Master's degree by working as a
-teaching assistant, and you want another year of college to sort yourself
-out, _go for it_.
+either find a real reason to stay a grad student, or leave. If you do finish
+out of some sense of obligation, you'll likely find out that whatever it is
+that you end up doing didn't actually require you to have a PhD in the first
+place.
 
-Master's programs aren't just for people looking for more time playing beer
+Unlike a PhD, a Master's program is a great place to avoid being an adult for
+a year or two, especially with the current explosion in undergraduate
+enrollment in computer science. Many undergraduate programs are short on
+staff, including on teaching assistants, so if you can get a free Master's
+degree by working as a teaching assistant, and you want another year of
+college to sort yourself out, _go for it_.
+
+Master's programs aren't just for people looking for another year of beer
 pong. If you're shooting for a very specific job straight out of school, and
 want another internship or two to work towards that direction, a Master's can
 also make sense. Same with if you don't have an undergraduate degree from a
-traditionally top school---a Master's degree could help you be noticed by the
-classic large tech companies since you'll show up as part of their University
-recruiting efforts. Keep in mind getting a Master's degree for this reason is
-very expensive, both in terms of opportunity and direct financial cost. You
-might be better off with two years of industry experience under your belt.
-You'll certainly have more money that way.[^3]
+traditionally top school but are able to "level up" for your Master's---this
+could help you be noticed by the classic large tech companies since you'll
+show up as part of their University recruiting efforts. Keep in mind getting
+a Master's degree for this reason is very expensive, both in terms of
+opportunity and direct financial cost. You might be better off with two years
+of industry experience under your belt. You'll certainly have more money that
+way.[^3]
 
 If you're in a PhD program, but you're not aiming for a faculty position, and
 you don't want to teach, make sure you know what the alternatives are. You
@@ -144,17 +147,18 @@ opportunity cost is also incredibly real, and the process can be [isolating,
 demeaning, and disheartening][gradschoolmentalhealth].
 
 I've been in the notorious position in grad school where I hated my life, and
-was wondering why I was there. During the fall my second year, I was lucky to
-line up an internship at Google on the Chrome Security team for the following
-summer. While I was interviewing, I was originally planning on quitting the PhD
-program and hoping to get a full-time job at Google after my internship. By
-the time I actually started the internship, I had decided I wanted to stay in
-grad school. In November, I read a paper by Phil Rogaway, ["The Moral
-Character of Cryptographic Work"][moralcrypto], which inspired me to keep
-working on some projects that I thought were important, but wouldn't
-necessarily result in publications. I also sorted out what I actually wanted
-to do with my career and my life, at least for the next few years, and
-thought about what I enjoyed doing outside of school.
+was wondering why I was there. In the fall of 2015, the start of my second
+year, I was lucky to line up an internship at Google on the Chrome Security
+team for the following summer. While I was interviewing, I was originally
+planning on quitting the PhD program and hoping to get a full-time job at
+Google after my internship. By the time I actually started the internship, I
+had decided I wanted to stay in grad school. In November of 2015, I read a
+paper by Phil Rogaway, ["The Moral Character of Cryptographic
+Work"][moralcrypto], which inspired me to keep working on some projects that
+I thought were important, but wouldn't necessarily result in publications. I
+also sorted out what I actually wanted to do with my career and my life, at
+least for the next few years, and thought about what I enjoyed doing outside
+of school.
 
 For me, I finished my PhD because I was proud of the work we were doing. I
 thought we had a positive impact on the security of the Internet as a whole.
@@ -172,6 +176,7 @@ To sum up:
 - Don't get a PhD because you're avoiding "becoming an adult" or the "real world".
 - Don't get a PhD because you think you need one to get a good job.
 - Don't _not_ get a PhD because you think it would be impossible to be faculty anyway.
+- Definitely _actually enjoy_ the field you're studying
 
 I certainly don't want to suggest that this is an exhaustive list of reasons
 to go to grad school, but I hope it can provide some context for why people
