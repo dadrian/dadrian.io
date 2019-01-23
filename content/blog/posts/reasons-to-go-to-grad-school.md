@@ -37,32 +37,35 @@ be an adult (or have any idea what life was like outside of school), and I
 thought the [Mining Your Ps and Qs][psqs] paper was awesome. At the time, I
 also didn't want to move to the west coast.
 
-The best reason to get a PhD is because you want to be research faculty.
-There is no way to have a tenure-track faculty position without a
-PhD. Some people will tell you that the market for faculty positions is a
-random dice roll, since there are so few positions relative to candidates.
-This is not true in computer science, and especially not true in security and
-cryptography. Every year, there are a set of top faculty candidates on the
-market. Many schools will be interested in the same or overlapping subsets of
-candidates. If you're keeping up with the field and familiar with the hiring
-process, it's not hard to predict who will be offered tenure-track assistant
-professor positions. If the market was random, you would not be able to identify
-every year who on the market was going to get job offers. The random part of
-the market is figuring out _where_ that job will be (especially among the top
-fifteen or so schools), and which school will actually end up sending an
-offer to which candidate. Even if you're at the top of the market, don't
-expect to be able to get a faculty position in a city that you actually want
-to live in. The market is incredibly competitive. Imagine there's 100
-candidates. Of these, only five candidates are qualified, and any given
-school will think that only three of the candidates out of the five are a
-match, and then only manage to send an offer to one or two of them. It is
-straightforward to identify who is at the top of the market. It is hard to
-actually _be_ at the top of the market. As a grad student, you're have to be
-one top students in your field to have a chance at a faculty position. This
-is hard, but achievable. Many PhD students are flailing around, because they
-either don't actually want to be in a PhD program, aren't getting the support
-they want from their advisor, or don't really know what their goals are. If
-you can sort out what you want early on, and figure out how to get support
+The best reason to get a PhD is because you want a career in research as a
+tenure-track faculty member. There is no way to have a tenure-track faculty
+position without a PhD. Some people will tell you that the market for faculty
+positions is a random dice roll, since there are so few positions relative to
+candidates. This is not true in computer science, and especially not true in
+security and cryptography. Every year, there are a set of top faculty
+candidates on the market. Many schools will be interested in the same or
+overlapping subsets of candidates. If you're keeping up with the field and
+familiar with the hiring process, it's not hard to predict who will be
+offered tenure-track assistant professor positions. If the market was random,
+you would not be able to identify every year who on the market was going to
+get job offers. The random part of the market is figuring out _where_ that
+job will be (especially among the top fifteen or so schools), and which
+school will actually end up sending an offer to which candidate. Even if
+you're at the top of the market, don't expect to be able to get a faculty
+position in a city that you actually want to live in. The market is
+incredibly competitive.
+
+Imagine there's 100 candidates on the faculty market for computer security.
+Of these, only five candidates are qualified, and any given school will think
+that only three of the candidates out of the five are a match, and then only
+manage to send an offer to one or two of them. It is straightforward to
+identify who is at the top of the market. It is hard to actually _be_ at the
+top of the market. As a grad student, you're have to be one top students in
+your field to have a chance at a faculty position. This is hard, but
+achievable. Many PhD students are flailing around, because they either don't
+actually want to be in a PhD program, aren't getting the support they want
+from their advisor, or don't really know what their goals are. If you can
+sort out what you want early on, and figure out how to get support
 (especially from faculty who are _not_ your advisor), you have a massive
 advantage over other students[^1]. If you know you want to be faculty, but
 are thinking of not getting a PhD because it's impossible to get a faculty
@@ -202,7 +205,7 @@ know on Twitter][davidcadrian].
 [psqs]: https://factorable.net
 [zakir]: https://zakird.com
 
-[^1]: This is certainly easier said than done, and is a topic for a different post. You probably shouldn't take my advice on this anyway, since my CV would not get me a faculty job. This advice is also very computer-science specific, and if you're not a white male, you're going to have a [harder time][sexism].
+[^1]: This is certainly easier said than done, and is a topic for a different post. You probably shouldn't take my advice on this anyway, since my CV would not get me a faculty job. This advice is also very computer-science specific, and if you're not a white male, you're going to have a [harder time][sexism]. If you're applying to grad schools and considering a faculty career, definitely talk to senior grad students and assistant professors about what hiring is like in your field.
 [^2]: Some schools, such as Stanford, have tenure-track teaching faculty positions. Others, such as Michigan, have salaried non-adjunct lecturer positions.
 [^4]: This is standard in STEM fields. If you're paying for your own PhD, you are being exploited.
 [^3]: What I say about Master's degrees is _very_ computer science specific, and does not apply to other fields.
