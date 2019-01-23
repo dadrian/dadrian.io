@@ -12,11 +12,12 @@ years. Why did I do this?
 
 Before I go on, I want to say a few things up front. I went to graduate
 school in computer science. I can't speak from personal experience about
-other fields, and certainly can't speak for non-STEM fields. Everything I say
-about PhD programs is assuming that the students are all fully funded, either
-by teaching, fellowships, or their advisor[^4]. I'm also a white guy from a
-privileged upper-middle class background, and so everything I say is colored
-from that perspective.
+other fields, and certainly can't speak for non-STEM fields. This post is my
+opinion, not some official set of rules. Everything I say about PhD programs
+is assuming that the students are all fully funded, either by teaching,
+fellowships, or their advisor[^4]. I'm also a white guy from a privileged
+upper-middle class background, and so everything I say is colored from that
+perspective.
 
 Prior to my senior year of undergrad, I cold-emailed [Zakir Durumeric][zakir]
 about the possibility of doing research. At the time, Zakir was a second-year
