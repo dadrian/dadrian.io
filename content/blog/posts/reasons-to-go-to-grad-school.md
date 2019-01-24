@@ -1,6 +1,6 @@
 ---
 title: "Reasons to Go to Grad School"
-date: 2019-01-23T08:30:00-05:00
+date: 2019-01-24T07:30:00-05:00
 ---
 
 Last December, I {{< staticlink "srv/papers/david-adrian-dissertation.pdf"
