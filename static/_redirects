@@ -1,3 +1,4 @@
 # Redirect domain aliases to primary domain
+https://davidadrian.org/* https://dadrian.io/:splat 302!
 https://blog.dadrian.io/* https://dadrian.io/blog/:splat 302!
-
+https://blog.davidadrian.org/* https://dadrian.io/blog/:splat 302!
