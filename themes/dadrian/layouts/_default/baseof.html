@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ "/css/dad.css" | absURL}}" />
     <link rel="shortcut icon" href="{{"/favicon.ico" | absURL }}" type="image/x-icon" />
     {{- block "rss" . }}{{- end }}
+    {{- template "_internal/opengraph.html" . -}}
   </head>
   <body>
     <div id="content" class="dad-container">
