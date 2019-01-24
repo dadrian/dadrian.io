@@ -42,23 +42,23 @@ The best reason to get a PhD is because you want a career in research as a
 tenure-track faculty member. There is no way to have a tenure-track faculty
 position without a PhD. Some people will tell you that the market for faculty
 positions is a random dice roll, since there are so few positions relative to
-candidates. This is not true in computer science, and especially not true in
+candidates. This is not true in computer science, especially in
 security and cryptography. Every year, there are a set of top faculty
 candidates on the market. Many schools will be interested in the same or
 overlapping subsets of candidates. If you're keeping up with the field and
 familiar with the hiring process, it's not hard to predict who will be
 offered tenure-track assistant professor positions. If the market was random,
 you would not be able to identify every year who on the market was going to
-get job offers. The random part of the market is figuring out _where_ that
-job will be (especially among the top fifteen or so schools), and which
+get job offers[^5]. The random part of the market is figuring out _where_
+that job will be (especially among the top fifteen or so schools), and which
 school will actually end up sending an offer to which candidate. Even if
 you're at the top of the market, don't expect to be able to get a faculty
 position in a city that you actually want to live in. The market is
 incredibly competitive.
 
 Imagine there are 100 candidates on the faculty market for computer security.
-Of these, only five candidates are qualified, and any given school will think
-that only three of the candidates out of the five are a match, and then only
+Of these, only five candidates are qualified. Any given school will think
+that only three of the candidates out of the five are a match, then only
 manage to send an offer to one or two of them. It is straightforward to
 identify who is at the top of the market. It is hard to actually _be_ at the
 top of the market. As a grad student, you're have to be one top students in
@@ -108,26 +108,26 @@ will break you if completing more school is the reward you seek.
 A similar but distinct class of PhD students are getting a PhD because
 everything else seemed boring. This is an alright reason to start a PhD,
 especially if you are going directly from an undergraduate program and have
-some general research interests, but a bad reason to _stay_ in a PhD program.
-I put myself largely in this camp, with a little bit of "good at school, ergo
-do more school" thrown in. If getting a PhD and doing research sounds better
-than the other options, that's a fine reason to get started, but you're going
-to need to find some other motivation for sticking through it if you want to
-finish. A slightly different variant of this are the people getting a PhD
-because they don't want to "be an adult", or because they want to avoid the
-"real world". This is also a terrible decision. You're going to hate your
-life and want to quit (but you likely won't, out of fear of failure). You should
-either find a real reason to stay a grad student, or leave. If you do finish
-out of some sense of obligation, you'll likely find out that whatever it is
-that you end up doing didn't actually require you to have a PhD in the first
-place.
+some general research interests. This is a bad reason to _stay_ in a PhD
+program. I put myself largely in this camp, with a little bit of "good at
+school, ergo do more school" thrown in. If getting a PhD and doing research
+sounds better than the other options, that's a fine reason to get started,
+but you're going to need to find some other motivation for sticking through
+it if you want to finish. A slightly different variant of this are the people
+getting a PhD because they don't want to "be an adult", or because they want
+to avoid the "real world". This is also a terrible decision. You're going to
+hate your life and want to quit (but you likely won't, out of fear of
+failure). You should either find a real reason to stay a grad student, or
+leave. If you do finish out of some sense of obligation, you'll likely find
+out that whatever it is that you end up doing didn't actually require you to
+have a PhD in the first place.
 
 Unlike a PhD, a Master's program is a great place to avoid being an adult for
 a year or two, especially with the current explosion in undergraduate
 enrollment in computer science. Many undergraduate programs are short on
-staff---including on teaching assistants---so if you can get a free Master's
-degree by working as a teaching assistant and you want another year of
-college to sort yourself out, _go for it_.
+faculty, staff and teaching assistants. If you can get a free Master's degree
+by working as a teaching assistant and you want another year of college to
+sort yourself out, _go for it_.
 
 Master's programs aren't just for people looking for another year of beer
 pong. If you're shooting for a very specific job straight out of school, and
@@ -210,3 +210,4 @@ know on Twitter][davidcadrian].
 [^2]: Some schools, such as Stanford, have tenure-track teaching faculty positions. Others, such as Michigan, have salaried non-adjunct lecturer positions.
 [^4]: This is standard in STEM fields. If you're paying for your own PhD, you are being exploited.
 [^3]: What I say about Master's degrees is _very_ computer science specific, and does not apply to other fields.
+[^5]: There's always a few surprises each year, and there's certainly a random element to it, but it's not a random draw from a hat full of all PhD students graduating each year.
