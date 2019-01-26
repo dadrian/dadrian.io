@@ -61,7 +61,7 @@ Of these, only five candidates are qualified. Any given school will think
 that only three of the candidates out of the five are a match, then only
 manage to send an offer to one or two of them. It is straightforward to
 identify who is at the top of the market. It is hard to actually _be_ at the
-top of the market. As a grad student, you're have to be one top students in
+top of the market. As a grad student, you have to be one top students in
 your field to have a chance at a faculty position. This is hard, but
 achievable. Many PhD students are flailing around, because they either don't
 actually want to be in a PhD program, aren't getting the support they want
