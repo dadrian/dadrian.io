@@ -2,8 +2,7 @@
 layout = "bio"
 +++
 I am a developer and security researcher. I am a cofounder of
-[Censys][censys], where I currently work as a software engineer
-and architect.
+[Censys][censys], where I currently lead the engineering team.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. During my PhD, my research on using Internet-wide
