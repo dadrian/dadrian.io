@@ -17,9 +17,7 @@ lucky to be able to lecture for the undergraduate computer security course in
 Fall 2016. I was also fortunate enough to occasionally sneak out and intern
 with some outstanding teams. In 2016, I interned with the [Google Chrome
 security team][chromesecurity], and attempted to make [OCSP suck
-less][expect-staple]. I interned with [Duo Security][duo] in 2013. I'm
-still regularly referred to as a "former Duo intern". It's not clear
-why this identity stuck.
+less][expect-staple].
 
 [censys]: https://censys.io
 [chromesecurity]: https://www.chromium.org/Home/chromium-security
