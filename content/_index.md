@@ -2,7 +2,8 @@
 layout = "bio"
 +++
 I am a developer and security researcher. I am a cofounder of
-[Censys][censys], where I currently lead data engineering.
+[Censys][censys], where I currently lead data engineering. I am
+[hiring][censys-careers].
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. During my PhD, my research on using Internet-wide
@@ -20,6 +21,7 @@ security team][chromesecurity], and attempted to make [OCSP suck
 less][expect-staple].
 
 [censys]: https://censys.io
+[censys-careers] https://censys.io/careers
 [chromesecurity]: https://www.chromium.org/Home/chromium-security
 [drown]: https://drownattack.com
 [duo]: https://duo.com
