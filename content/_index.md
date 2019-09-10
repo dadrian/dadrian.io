@@ -16,8 +16,8 @@ University of Michigan. I've been a teaching assistant for most of the
 security and introductory computer science courses at Michigan, and I was
 lucky to be able to lecture for the undergraduate computer security course in
 Fall 2016. I was also fortunate enough to occasionally sneak out and intern
-with some outstanding teams. In 2016, I interned with the [Google Chrome
-security team][chromesecurity], and attempted to make [OCSP suck
+with some outstanding teams, including the [Google Chrome
+security team][chromesecurity] in 2016, where I attempted to make [OCSP suck
 less][expect-staple].
 
 [censys]: https://censys.io
