@@ -21,7 +21,7 @@ security team][chromesecurity], and attempted to make [OCSP suck
 less][expect-staple].
 
 [censys]: https://censys.io
-[censys-careers] https://censys.io/careers
+[censys-careers]: https://censys.io/careers
 [chromesecurity]: https://www.chromium.org/Home/chromium-security
 [drown]: https://drownattack.com
 [duo]: https://duo.com
