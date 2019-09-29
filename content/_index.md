@@ -2,7 +2,8 @@
 layout = "bio"
 +++
 I am a developer and security researcher. I am a cofounder of
-[Censys][censys], where I currently lead the engineering team.
+[Censys][censys], where I currently lead data engineering. I am
+[hiring][censys-careers].
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. During my PhD, my research on using Internet-wide
@@ -15,13 +16,12 @@ University of Michigan. I've been a teaching assistant for most of the
 security and introductory computer science courses at Michigan, and I was
 lucky to be able to lecture for the undergraduate computer security course in
 Fall 2016. I was also fortunate enough to occasionally sneak out and intern
-with some outstanding teams. In 2016, I interned with the [Google Chrome
-security team][chromesecurity], and attempted to make [OCSP suck
-less][expect-staple]. I interned with [Duo Security][duo] in 2013. I'm
-still regularly referred to as a "former Duo intern". It's not clear
-why this identity stuck.
+with some outstanding teams, including the [Google Chrome
+security team][chromesecurity] in 2016, where I attempted to make [OCSP suck
+less][expect-staple].
 
 [censys]: https://censys.io
+[censys-careers]: https://censys.io/careers
 [chromesecurity]: https://www.chromium.org/Home/chromium-security
 [drown]: https://drownattack.com
 [duo]: https://duo.com
