@@ -4,30 +4,36 @@ layout = "bio"
 +++
 
 <div class="pure-g">
-  {{% education
+  {{< education
       section="Education"
       name="University of Michigan"
       link="https://umich.edu"
       location="Ann Arbor, MI"
       degree="PhD, Computer Science"
       when="2019"
-  %}}
-  _Dissertation: [Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems](/srv/papers/david-adrian-dissertation.pdf)_
-  {{% /education %}}
-  {{< education
+  >}}
+  <i>Dissertation:
+    <a href="{{ "/srv/papers/david-adrian-dissertation.pdf" | absURL }}">
+      Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems
+    </a>
+  </i>
+  {{< /education >}}
+  {{% education
       name="University of Michigan"
       link="https://umich.edu"
       location="Ann Arbor, MI"
       degree="Master of Engineering, Computer Science"
       when="2016"
-  >}}
-  {{< education
+  %}}
+  {{% /education %}}
+  {{% education
       name="University of Michigan"
       link="https://umich.edu"
       location="Ann Arbor, MI"
       degree="Bachelor of Engineering, Computer Science"
       when="2014"
-  >}}
+  %}}
+  {{% /education %}}
 
   {{< paper
       section="Conference Publications"
