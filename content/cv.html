@@ -12,20 +12,28 @@ layout = "bio"
       degree="PhD, Computer Science"
       when="2019"
   >}}
-  {{< education
+  <i>Dissertation:
+    <a href="{{ "/srv/papers/david-adrian-dissertation.pdf" | absURL }}">
+      Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems
+    </a>
+  </i>
+  {{< /education >}}
+  {{% education
       name="University of Michigan"
       link="https://umich.edu"
       location="Ann Arbor, MI"
       degree="Master of Engineering, Computer Science"
       when="2016"
-  >}}
-  {{< education
+  %}}
+  {{% /education %}}
+  {{% education
       name="University of Michigan"
       link="https://umich.edu"
       location="Ann Arbor, MI"
       degree="Bachelor of Engineering, Computer Science"
       when="2014"
-  >}}
+  %}}
+  {{% /education %}}
 
   {{< paper
       section="Conference Publications"
