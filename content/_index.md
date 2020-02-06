@@ -4,7 +4,8 @@ layout = "bio"
 I am a developer and security researcher. I am a cofounder of
 [Censys][censys], a security startup that helps organizations secure their
 Internet-facing assets. Censys is based in Ann Arbor, Michigan, and is
-[hiring][censys-careers].
+[hiring][censys-careers]. I'm also a core contributor to the [ZMap][zmap]
+open-source project.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. During my PhD, my research on using Internet-wide
@@ -29,3 +30,4 @@ less][expect-staple].
 [expect-staple]: https://docs.google.com/document/d/1aISglJIIwglcOAhqNfK-2vtQl-_dWAapc-VLDh-9-BE/edit
 [jhalderm]: https://jhalderm.com
 [logjam]: https://weakdh.org
+[zmap]: https://zmap.io
