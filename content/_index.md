@@ -2,7 +2,8 @@
 layout = "bio"
 +++
 I am a developer and security researcher. I am a cofounder of
-[Censys][censys], where I currently lead data engineering. I am
+[Censys][censys], a security startup that helps organizations secure their
+Internet-facing assets. Censys is based in Ann Arbor, Michigan, and is
 [hiring][censys-careers].
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
