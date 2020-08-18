@@ -1,10 +1,11 @@
 +++
 layout = "bio"
 +++
-I am a developer and security researcher. I cofounded [Censys][censys], a
+I am an engineer and security researcher. I cofounded [Censys][censys], a
 security startup that helps organizations secure their Internet-facing
-assets. Censys is based in Ann Arbor, Michigan. I'm also a core contributor
-to the [ZMap][zmap] open-source project.
+assets. I left Censys after the Series A, and I'm currently looking for what
+comes next. I'm also a core contributor to the [ZMap][zmap] open-source
+project.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. During my PhD, my research on using Internet-wide
