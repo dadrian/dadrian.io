@@ -3,7 +3,7 @@ layout = "bio"
 +++
 I am an engineer and security researcher. I cofounded [Censys][censys], a
 security startup that helps organizations secure their Internet-facing
-assets. I left Censys after the Series A, and I'm currently looking for what
+assets. I left Censys after their Series A, and I'm currently looking for what
 comes next. I'm also a core contributor to the [ZMap][zmap] open-source
 project.
 
