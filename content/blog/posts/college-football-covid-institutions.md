@@ -150,17 +150,48 @@ trips to the store and avoiding crowds, literally watching as the world
 passes by. Economic factors make this even more complex, for those who aren’t
 privileged to be able to work from, or stay home.
 
-The United States response to COVID is a disaster, and an avoidable one. Compared to many European and East Asian countries, where life almost looks normal, the United States is a joke. Across most of the country, we still have limited access to testing, requiring symptoms or doctor referrals to get a test that returns results in under two weeks. Our institutions are failing us.
+The United States response to COVID is a disaster, and an avoidable one.
+Compared to many European and East Asian countries, where life almost looks
+normal, the United States is a joke. Across most of the country, we still
+have limited access to testing, requiring symptoms or doctor referrals to get
+a test that returns results in under two weeks. Our institutions are failing
+us.
 
-After eight months of quarantine, it’s not surprising to see people taking more risks than they did in March or June. People want to see sports, including college football. Our understanding of how to treat COVID and how it spreads has progressed beyond where it was in March, but that doesn’t mean high-risk activities are any safer. Despite this, we see people getting on a plane to go see a concert with their friends, throwing house parties, and going to bars. In the cases where this results in COVID breakouts, we often blame and shame the individuals, wishing that if people would just behave better, then the pandemic would finally end.
+After eight months of quarantine, it’s not surprising to see people taking
+more risks than they did in March or June. People want to see sports,
+including college football. Our understanding of how to treat COVID and how
+it spreads has progressed beyond where it was in March, but that doesn’t mean
+high-risk activities are any safer. Despite this, we see people getting on a
+plane to go see a concert with their friends, throwing house parties, and
+going to bars. In the cases where this results in COVID breakouts, we often
+blame and shame the individuals, wishing that if people would just behave
+better, then the pandemic would finally end.
 
-There is certainly truth to that. For the entirety of the pandemic, there are stories worldwide of symptomatic individuals selfishly breaking quarantine and putting others at risk, simply so they can go have fun for themselves. But at the same time, we cannot expect individual responsibility to save us from systemic and institutional failures. Better than wishing that if only people would behave better is to wish if only our institutions were effective! And when they are not, work to fix them. This is not to excuse individual behavior, but to say that a system is a problem when we get to a point where it is so easy for individuals to have such an outsized, negative impact.
+There is certainly truth to that. For the entirety of the pandemic, there are
+stories worldwide of symptomatic individuals selfishly breaking quarantine
+and putting others at risk, simply so they can go have fun for themselves.
+But at the same time, we cannot expect individual responsibility to save us
+from systemic and institutional failures. Better than wishing that if only
+people would behave better is to wish if only our institutions were
+effective! And when they are not, work to fix them. This is not to excuse
+individual behavior, but to say that a system is a problem when we get to a
+point where it is so easy for individuals to have such an outsized, negative
+impact.
 
 Zeynep Tufekci captures [this phenomenon well][zeynep-got]:
 
 > It’s reasonable, for example, for a corporation to ponder who would be the best CEO or COO, but it’s not reasonable for us to expect that we could take any one of those actors and replace them with another person and get dramatically different results without changing the structures, incentives and forces that shape how they and their companies act in this world.
 
-Similarly, we can wonder what might be different if Harbaugh took a larger pay cut and didn’t go protest the lack of football with his players. A dozen athletic department staffers could have kept their jobs, but we’d still ultimately be in the same fundamental situation we are now. It would certainly be a better psychological story, where the coach takes a pay cut from the goodness of their heart to save local families, one well suited for the evening news, yet zooming out, we’d still be expecting organizations fundamentally misstructured for handling a response to a pandemic, to be responsible for the personal safety for thousands of college players and students.
+Similarly, we can wonder what might be different if Harbaugh took a larger
+pay cut and didn’t go protest the lack of football with his players. A dozen
+athletic department staffers could have kept their jobs, but we’d still
+ultimately be in the same fundamental situation we are now. It would
+certainly be a better psychological story, where the coach takes a pay cut
+from the goodness of their heart to save local families, one well suited for
+the evening news, yet zooming out, we’d still be expecting organizations
+fundamentally misstructured for handling a response to a pandemic, to be
+responsible for the personal safety for thousands of college players and
+students.
 
 It’s easy to focus on stories surrounding strong personalities, especially in
 college football. There’s hometown favorite Scott Frost, suggesting that
@@ -186,9 +217,25 @@ why are they still not getting paid? Similarly, while individual head coaches
 may be capable of changing recruiting, team, and transfer culture, they have
 limited ability to affect change at the NCAA level.
 
-The power in the NCAA and its member conferences entirely resides in the board of governors largely consisting of current and former university presidents, which govern the NCAA itself, and for conferences such as the Big Ten, which are directly controlled by the member university presidents. The University presidents can make changes, and do hold the power. However, it is extremely unlikely the system will act to change itself without external pressure, and as with big tech companies, we should not expect replacing any individual at the top would cause dramatically different results. This does not mean that Schlissel should keep his job, but that to get to where we should be, we need broader change than who leads the University of Michigan.
+The power in the NCAA and its member conferences entirely resides in the
+board of governors largely consisting of current and former university
+presidents, which govern the NCAA itself, and for conferences such as the Big
+Ten, which are directly controlled by the member university presidents. The
+University presidents can make changes, and do hold the power. However, it is
+extremely unlikely the system will act to change itself without external
+pressure, and as with big tech companies, we should not expect replacing any
+individual at the top would cause dramatically different results. This does
+not mean that Schlissel should keep his job, but that to get to where we
+should be, we need broader change than who leads the University of Michigan.
 
-This does not mean that we should give up, or that we should not hold individuals accountable. It is not a fatalist message, but a hopefully one. It means that if we concentrate on fixing broken systems than the personalities within them, then we can create a more equitable future that doesn’t rely on the quality of any one individual. I look at everything that’s happening with college football, and I see a reflection of everything happening in the country—an institutional failure, but one that we have the capacity to fix, if only we concentrate on the systems themselves.
+This does not mean that we should give up, or that we should not hold
+individuals accountable. It is not a fatalist message, but a hopefully one.
+It means that if we concentrate on fixing broken systems than the
+personalities within them, then we can create a more equitable future that
+doesn’t rely on the quality of any one individual. I look at everything
+that’s happening with college football, and I see a reflection of everything
+happening in the country—an institutional failure, but one that we have the
+capacity to fix, if only we concentrate on the systems themselves.
 
 [unc-online]: https://www.nytimes.com/2020/08/17/us/unc-chapel-hill-covid.html
 [rutgers-quarantine]: https://www.cnn.com/2020/07/30/us/rutgers-football-covid-quarantine/index.html
