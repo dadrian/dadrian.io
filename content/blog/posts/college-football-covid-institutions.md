@@ -202,7 +202,7 @@ continue playing football, the twenty-five or so angry Big Ten parents
 College GameDay filmed primarily in the hosts' own residences. But Scott
 Frost can’t actually control what conference Nebraska is in, and twenty-five
 parents making poor armchair lawyer arguments about football isn’t a protest,
-it’s a [tailgate][tailgate-tweet] Herbstreit’s tears were a powerful moment,
+it’s a [tailgate][tailgate-tweet]. Herbstreit’s tears were a powerful moment,
 but a much deeper and interesting story is how Herbstreit went from decrying
 kneeling in 2016, along with the vast majority of white sports commentators,
 to standing in solidarity. What aspects of sports media caused the commentary
