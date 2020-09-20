@@ -229,7 +229,7 @@ not mean that Schlissel should keep his job, but that to get to where we
 should be, we need broader change than who leads the University of Michigan.
 
 This does not mean that we should give up, or that we should not hold
-individuals accountable. It is not a fatalist message, but a hopefully one.
+individuals accountable. It is not a fatalist message, but a hopeful one.
 It means that if we concentrate on fixing broken systems than the
 personalities within them, then we can create a more equitable future that
 doesn’t rely on the quality of any one individual. I look at everything
