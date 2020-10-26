@@ -18,6 +18,9 @@
   {{ with .Get "pptx" }}
   [<a href="{{ printf "srv/talks/%s" . | absURL }}">pptx</a>]
   {{ end }}
+  {{ with .Get "gdrive" }}
+  [<a href="{{ . }}">Google Drive</a>]
+  {{ end }}
   {{ with .Get "youtube" }}
   [<a href="{{ . }}">YouTube</a>]
   {{ end }}
