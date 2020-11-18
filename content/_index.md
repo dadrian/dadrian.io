@@ -12,12 +12,10 @@ cryptography on the Internet. This work led to the discovery of the
 [Logjam][logjam] and [DROWN][drown] attacks on TLS, and the creation of
 [Censys][censys].
 
-I completed both my undergraduate and graduate studies at the University of
-Michigan. I was also a lecturer and teaching assistant. I taught computer
-security and introductory programming courses. While in school, I was lucky
-to intern with some outstanding teams. I interned with the [Google Chrome
-security team][chromesecurity] in 2016, where I attempted to [make OCSP suck
-less][expect-staple].
+Throughout my nine years at Michigan as an undergrad and graduate student, I
+taught computer security as both a lecturer and a teaching assistant. I was
+also lucky to intern with the [Google Chrome security team][chromesecurity]
+in 2016, where I attempted to [make OCSP suck less][expect-staple].
 
 [censys]: https://censys.io
 [censys-raise]: https://venturebeat.com/2020/08/05/censys-raises-15-5-million-to-bring-attack-surface-management-to-more-companies/
