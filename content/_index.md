@@ -3,9 +3,8 @@ layout = "bio"
 +++
 I am an engineer and security researcher. I cofounded [Censys][censys], an
 attack-surface management security startup. I left Censys after their [Series
-A][censys-raise] (they're [hiring!][censys-careers]), and I’m currently
-looking for what comes next. I’m also a core contributor to the [ZMap][zmap]
-open-source project.
+A][censys-raise], and I’m currently looking for what comes next. I’m also a
+core contributor to the [ZMap][zmap] open-source project.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. I used Internet-wide scanning to study uses of
