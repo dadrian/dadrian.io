@@ -23,7 +23,7 @@ use if you were writing the equivalent code in C:
   the same [`write(2)`][write2], and takes a sequence of bytes to send over a
   socket.
 
-For TCP clients, a Go `net.TCPConn` corresponds with a C socket descriptor in of type
+For TCP clients, a Go `net.TCPConn` corresponds with a C socket descriptor of type
 `SOCK_STREAM` that has already has been passed to [`connect(2)`][connect2],
 which establishes a TCP connection via the three-way TCP handshake. In Go,
 the `connect` happens when you call `net.Dial("tcp", address)`. For TCP servers,
@@ -76,8 +76,8 @@ not call `connect`.
 A non-connected socket does not have a bound remote end. To handle this,
 POSIX introduces two additional system calls:
   - [`recvfrom(2)`][recvfrom2], which takes a buffer to receive data into,
-  and additionally writes out the source address of the received data
-  (equivalent to the remote address)
+  and a pointer into which it writes out the source address of the
+  received data (equivalent to the remote address)
   - [`sendto(2)`][sendto2], which takes a buffer of data to send, a
   remote address to send the data to.
 
@@ -95,9 +95,9 @@ The `read` system call still works on non-connected sockets. Similarly, a
 non-connected `net.UDPConn` can still call `Read`. This is equivalent to
 calling `recvfrom` or `ReadFrom` with a null source address. The application
 data is returned, but the address information is lost. The `send` system call
-does not work on non-connected socket. There is no way for the system to
-determine what the remote host is. Calling `send` on a non-connected socket
-will fail, similarly calling `Write` on a non-connected `net.UDPConn` will
+does not work on non-connected socket; there is no way for the system to
+determine who the remote host is. Calling `send` on a non-connected socket
+will fail. Similarly, calling `Write` on a non-connected `net.UDPConn` will
 fail. In C, a non-connected UDP socket can be made connected via the
 `connect` system call. In Golang, there is no way to turn a non-connected
 UDPConn into a connected `net.UDPConn` without going through the `syscall`
@@ -105,10 +105,10 @@ interface. Therefore, only `WriteTo` can write data through a connection
 opened by `net.ListenUDP`.
 
 The behavior of `net.UDPConn` might seem odd, but ultimately it reflects the
-relevant system calls. At any given time, a `UDPConn` can only be used with a
-subset of its available methods, but by tracking what the underlying system
-calls would be, you can determine which methods are safe to use for
-connection.
+behavior of the relevant system calls. At any given time, a `UDPConn` can 
+only be used with a subset of its available methods, but by tracking what 
+the underlying system calls would be, you can determine which methods are
+safe to use for connection.
 
 Failing that, here's a table:
 
