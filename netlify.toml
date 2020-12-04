@@ -1,5 +1,5 @@
 [context.production.environment]
-HUGO_VERSION = "0.74"
+HUGO_VERSION = "0.74.3"
 HUGO_BASEURL = "https://dadrian.io"
 
 [context.deploy-preview]
