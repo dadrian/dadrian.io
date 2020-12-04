@@ -10,7 +10,7 @@
     <i>{{ . }}</i>
   {{ end }}
   <div class="dad-cv-ul__wrapper">
-    {{ .Inner }}
+    {{ .Inner | markdownify }}
   </div>
 </div>
 <div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
