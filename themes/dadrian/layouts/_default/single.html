@@ -10,7 +10,7 @@
     <header>
       {{ with .CurrentSection }}
       <p>
-        <a href="{{.URL}}">{{with .Title }}{{. | upper }}{{end}}</a>
+        <a href="{{.Permalink}}">{{with .Title }}{{. | upper }}{{end}}</a>
       </p>
       {{ end }}
       <h1>
@@ -24,7 +24,7 @@
     <main>
       <div class="pure-g">
         <div class="pure-u-1 pure-u-md-3-4 pure-u-lg-2-3">
-          {{- .Content -}}
+          {{ .Content }}
         </div>
       </div>
     </main>
