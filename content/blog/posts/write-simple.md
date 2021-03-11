@@ -4,7 +4,7 @@ date: 2021-03-11T13:00:00-07:00
 draft: false
 ---
 
-Paul Graham recently posted ["Write Simply"][write-simply]. I respect Paul
+Paul Graham recently posted _[Write Simply][write-simply]_. I respect Paul
 Graham as a founder and an investor. His essays on startups are insightful,
 but I always felt like something was [a little bit off][chicken-sexers]. It
 turns out that this is because he presents opinions as facts, then
