@@ -8,7 +8,7 @@ Paul Graham recently posted ["Write Simply"][write-simply]. I respect Paul
 Graham as a founder and an investor. His essays on startups are insightful,
 but I always felt like something was [a little bit off][chicken-sexers]. It
 turns out that this is because he presents opinions as facts, then
-masquerades this with [his writing style][it-turns-out]. His [more recent
+disguises this with [his writing style][it-turns-out]. His [more recent
 essays][pg-aoc] have also strayed away from his original technical and
 startup-focused writing, and are much less compelling.
 
