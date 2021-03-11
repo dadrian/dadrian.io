@@ -1,7 +1,7 @@
 ---
 title: "Write Simple"
 date: 2021-03-11T13:00:00-07:00
-draft: true
+draft: false
 ---
 
 Paul Graham recently posted ["Write Simply"][write-simply]. I respect Paul
@@ -30,8 +30,8 @@ What follows is satire:
 > keep going till the end because this style of writing makes people who went
 > to Stanford feel smart.
 >
-> There's an Italian dish called saltimbocca, which means "leap into the
-> mouth." My goal when writing might be called saltintesta: the ideas leap into
+> There's an Italian dish called _saltimbocca_, which means "leap into the
+> mouth." My goal when writing might be called _saltintesta_: the ideas leap into
 > your head and you barely notice the words that got them there. You don’t
 > notice that my essays are opinion pieces, because I present them like facts.
 >
@@ -48,7 +48,7 @@ What follows is satire:
 > And remember, if you're writing in English, that a lot of your readers won't
 > be native English speakers. Their understanding of ideas will be way ahead of
 > their understanding of English. So you can't assume that writing about a
-> difficult topic means you can safely use difficult words, like saltintesta.
+> difficult topic means you can safely use difficult words, like _saltintesta_.
 >
 > Of course, fancy writing doesn't just conceal ideas. It can also conceal the
 > lack of them. That's why the left writes that way, to conceal the fact that
