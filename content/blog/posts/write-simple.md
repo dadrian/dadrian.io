@@ -75,7 +75,7 @@ What follows is satire:
 > unnecessarily intellectual words, it doesn't seem fancy to me. It seems
 > clumsy.
 >
-> There are of course times when you want to use a complicated sentence or
+> There are ~~of course~~ times when you want to use a complicated sentence or
 > fancy word for effect. But you should never do it by accident.
 >
 > The other reason my writing ends up being simple is the way I do it. I write
