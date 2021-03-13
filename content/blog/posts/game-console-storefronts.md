@@ -1,6 +1,6 @@
 ---
 title: "Why is there no order queue for game consoles?"
-date: 2021-02-04T10:41:00-07:00
+date: 2021-03-12T18:01:00-07:00
 ---
 The preorders for the latest generation of game consoles (PS5, Xbox Series
 X/S) were snapped up, and the restocks are flying off the shelves in minutes.
