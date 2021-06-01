@@ -9,7 +9,7 @@ development][trunk-dev], and vice-versa. I wrote it for work in reference to
 Github, but it applies to any Git web UI that supports pull requests. I've been
 told it's a useful reference, so I'm posting a lightly-edited version publicly._
 
-> **tl;dr:** One idea is one commit. Implement [trunk-based
+> **tl;dr:** One [idea is one commit][one-commit]. Implement [trunk-based
 development][trunk-dev] using the standard Github branch and PR-based
 development process, defaulting to squash commits.  Rebase onto `main` to
 resolve merge conflicts.
@@ -178,3 +178,4 @@ git push --force-with-lease origin pr-two
 [squash-commits]: https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/about-merge-methods-on-github#squashing-your-merge-commits
 [branch-abstraction]: https://trunkbaseddevelopment.com/branch-by-abstraction/
 [zmq-merge]: http://hintjens.com/blog:106
+[one-commit]: https://secure.phabricator.com/book/phabflavor/article/recommendations_on_revision_control/
