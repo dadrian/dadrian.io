@@ -1,6 +1,6 @@
 ---
 title: "Trunk-Based Development with Git"
-date: 2021-05-01T11:56:00-07:00
+date: 2021-06-01T11:56:00-07:00
 draft: false
 ---
 
