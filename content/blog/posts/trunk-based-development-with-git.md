@@ -39,10 +39,10 @@ merging][zmq-merge]._
 
 ## Review
 
-Branches should be reviewed before merging. Nametag does not yet have a concept
-of code owners, so use your own discretion when selecting a reviewer. Unless
-explicitly noted in the PR description, approval from a single reviewer is
-sufficient to merge. Approval is indicated using the "approve" button on Github.
+Branches should be reviewed before merging. Unless explicitly noted in the PR
+description, approval from a single reviewer is sufficient to merge. If the
+code has an OWNERS file, you must request review from the owner. Approval is
+indicated using the "approve" button on Github.
 
 ### LGTM % Approvals
 
