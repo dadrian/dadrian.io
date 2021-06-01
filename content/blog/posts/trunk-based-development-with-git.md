@@ -37,7 +37,7 @@ _This depends significantly on your organizations engineering culture, and will
 likely need to be tweaked. For example, ZeroMQ uses [optimistic
 merging][zmq-merge]._
 
-## Review
+### Approval
 
 Branches should be reviewed before merging. Unless explicitly noted in the PR
 description, approval from a single reviewer is sufficient to merge. If the
