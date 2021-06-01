@@ -9,7 +9,7 @@ development][trunk-dev], and vice-versa. I wrote it for work in reference to
 Github, but it applies to any Git web UI that supports pull requests. I've been
 told it's a useful reference, so I'm posting a lightly-edited version publicly._
 
-> **tl;dr:** One [idea is one commit][one-commit]. Implement [trunk-based
+> **tl;dr:** [One idea is one commit][one-commit]. Implement [trunk-based
 development][trunk-dev] using the standard Github branch and PR-based
 development process, defaulting to squash commits.  Rebase onto `main` to
 resolve merge conflicts.
