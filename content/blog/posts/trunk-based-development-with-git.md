@@ -14,6 +14,8 @@ development][trunk-dev] using the standard Github branch and PR-based
 development process, defaulting to squash commits.  Rebase onto `main` to
 resolve merge conflicts.
 
+🚨 **Do not merge `main` into your branch!** 🚨
+
 ## Branch PR Workflow
 
 Github documents a common workflow in [this guide][gh-guide]. We adapt
@@ -23,6 +25,8 @@ the approach slightly:
 * Unless you are a Git Pro (TM) and have specifically cleaned your branch's
   history for clarity, merge using a [squash commit][squash-commits]. This
   should be set as the default merge strategy.
+* **Never** merge `main` into your branch. Instead, rebase your branch onto
+  `main`.
 * Repositories should be set up to delete branches after merging, so
   that we don't pollute the global namespace
 * If you are opening a PR before it is ready for review, prefix the PR name in
