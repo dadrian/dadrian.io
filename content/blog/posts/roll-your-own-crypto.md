@@ -27,7 +27,7 @@ I agree with Thomas Ptacek when he said that "don't roll your own crypto" means
 that any system with a serious cryptographic component should have consistent
 design input and review from "actual cryptographers". This doesn't mean that you
 can't write code that calls AES unless you have a PhD. On the flip side, it also
-doesn't mean that people with PhDs in cryptography should we writing code that
+doesn't mean that people with PhDs in cryptography should be writing code that
 calls AES. As Deirdre Connolly said, plenty of the cryptographic code written by
 "serious cryptographers" with PhDs is a mess for both cryptographic and software
 engineering related reasons.
