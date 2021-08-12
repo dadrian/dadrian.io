@@ -70,13 +70,12 @@ what happens when you reuse a nonce.
 How do you learn all this stuff? Like any niche field, it's very opaque until it
 isn't. I think there's more resources online for practical and applied
 cryptography now than there were 5-10 years ago. Coursera is still a great place
-to start, and [Dan Boneh's book][http://toc.cryptobook.us/], while unfinished,
-is more complete than it was and still available for free online. You can find
-talks and blog posts by authors of most cryptographic libraries for major
-languages online. The Real World Cryptography conference is a great place to
-meet people and learn about what's being built, not just what's happening to the
-theory. And, always, the [Cryptopals][cryptopals] challenges are a great place
-to start.
+to start, and [Dan Boneh's book][book], while unfinished, is more complete than
+it was and still available for free online. You can find talks and blog posts by
+authors of most cryptographic libraries for major languages online. The [Real
+World Cryptography][rwc] conference is a great place to meet people and learn
+about what's being built, not just what's happening to the theory. As always,
+the [Cryptopals][cryptopals] challenges are a great place to start.
 
 In summary, don't roll your own crypto. Build it for someone else, and charge a lot of money[^2]. It's hard!
 
@@ -89,3 +88,6 @@ In summary, don't roll your own crypto. Build it for someone else, and charge a 
 [deirdre]: https://twitter.com/durumcrustulum
 [transcript]: https://securitycryptographywhatever.buzzsprout.com/1822302/8953842-the-great-roll-your-own-crypto-debate-feat-filippo-valsorda
 [cryptopals]: https://cryptopals.com/
+[thesis]: https://dadrian.io/srv/papers/david-adrian-dissertation.pdf
+[book]: http://toc.cryptobook.us/
+[rwc]: https://rwc.iacr.org/
