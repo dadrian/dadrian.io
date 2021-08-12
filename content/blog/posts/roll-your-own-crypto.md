@@ -1,6 +1,6 @@
 ---
 title: "Roll your own crypto, then smoke it."
-date: 2021-08-11T22:30:00-07:00
+date: 2021-08-12T10:56:00-06:00
 ---
 
 The July 31st, 2021 episode of the [Security, Cryptography, Whatever
@@ -30,7 +30,7 @@ can't write code that calls AES unless you have a PhD. On the flip side, it also
 doesn't mean that people with PhDs in cryptography should we writing code that
 calls AES. As Deirdre Connolly said, plenty of the cryptographic code written by
 "serious cryptographers" with PhDs is a mess for both cryptographic and software
-engineering related reasons. 
+engineering related reasons.
 
 Who counts as a cryptographer? That's the tough part. The "don't roll your own
 crypto" messaging can make qualified people think that they shouldn't work on
@@ -40,7 +40,7 @@ be cryptographers who don't have any degrees, let alone PhDs. Graduate school
 isn't a requirement, but it certainly can be part of a path to becoming a
 cryptographer. Cryptography is also a broad enough field that you could be
 perfectly competent at understanding and implementing certain things, and not
-others. I consider myself reasonably confident at working with secure
+others. I consider myself reasonably competent at working with secure
 transports, PKI, identity, and authentication, but I know almost nothing about
 zero-knowledge proofs or post-quantum cryptography.
 
