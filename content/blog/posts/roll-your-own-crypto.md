@@ -57,15 +57,20 @@ expect anyone qualified to roll their own cryptography to:
     in the first place.
   - Understand attacks on similar cryptosystems, and when they do or do not
     apply.
+  - Understand the layer you're operating at, and enough about the layer
+    underneath you to know when to be scared.
   - Know the limits of their own understanding, and have a list of people they
     would contact when they push up against topics outside their core wheelhouse
     and need to learn more or get advice on a particular problem.
 
-Working on any specific subfield has its own set of expected knowledge, e.g. if
-you're designing hash functions and block ciphers, I expect you to understand
-differential cryptanalysis. If you're implementing TLS, I don't care if you know
-anything about the internals of AES-GCM, so long as you know what it does and
-what happens when you reuse a nonce.
+Working on any specific subfield or at any specific abstraction level will have
+its own set of expected knowledge. If you're designing hash functions and block
+ciphers, I expect you to understand differential cryptanalysis. If you're
+implementing TLS, I don't care if you know anything about the internals of
+AES-GCM, so long as you know what it does and what happens when you reuse a
+nonce. Similarly, many security engineers who aren't cryptography-focused are
+qualified to use libraries to verify authentication tokens, even if they
+wouldn't be qualified to implement TLS.
 
 How do you learn all this stuff? Like any niche field, it's very opaque until it
 isn't. I think there's more resources online for practical and applied
