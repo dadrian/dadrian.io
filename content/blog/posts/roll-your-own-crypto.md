@@ -40,9 +40,9 @@ be cryptographers who don't have any degrees, let alone PhDs. Graduate school
 isn't a requirement, but it certainly can be part of a path to becoming a
 cryptographer. Cryptography is also a broad enough field that you could be
 perfectly competent at understanding and implementing certain things, and not
-others. I consider myself reasonably confident at working with secure transports
-and identity and authentication, but I know almost nothing about zero-knowledge
-proofs or post-quantum cryptography.
+others. I consider myself reasonably confident at working with secure
+transports, PKI, identity, and authentication, but I know almost nothing about
+zero-knowledge proofs or post-quantum cryptography.
 
 I'm not an authority on who counts as a cryptographer, but if I were hiring
 cryptographers or evaluating myself when offering consulting services, I'd
