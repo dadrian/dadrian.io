@@ -3,9 +3,9 @@ layout = "bio"
 +++
 I am an engineer and security researcher. I cofounded [Censys][censys], an
 attack-surface management security startup. I left Censys after their [Series
-A][censys-raise]. I’m currently building something new as employee #2 at a
-stealth-ish startup. I’m also a core contributor to the [ZMap][zmap]
-open-source project. I do part-time consulting and advising for startups. I can
+A][censys-raise]. I’m currently building something new as employee #2 at
+[Nametag][nt]. I’m also a core contributor to the [ZMap][zmap] open-source
+project. I do part-time consulting and advising for startups. I can
 help with building out early engineering teams and cryptography engineering.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
@@ -31,6 +31,7 @@ Connolly][deirdre] and [Thomas Ptacek][tqbf].
 [expect-staple]: https://docs.google.com/document/d/1aISglJIIwglcOAhqNfK-2vtQl-_dWAapc-VLDh-9-BE/edit
 [jhalderm]: https://jhalderm.com
 [logjam]: https://weakdh.org
+[nt]: https://getnametag.com
 [scw]: https://securitycryptographywhatever.com
 [tqbf]: https://twitter.com/tqbf
 [zmap]: https://zmap.io
