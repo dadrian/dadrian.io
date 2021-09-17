@@ -1,9 +1,10 @@
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+<tr>
+<td>
   {{ with .Get "section" }}
   <b>{{ . }}</b>
   {{ end }}
-</div>
-<div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
+</td>
+<td>
   {{ if and (.Get "title") (.Get "link") }}
     <a href="{{ .Get "link"}}">{{ .Get "title" }}</a>{{ with .Get "subtitle" }}{{ . }}{{ end }}
   {{ else }}
@@ -12,9 +13,10 @@
   <div {{ with .Get "class" }}class="{{ . }}"{{ end }}>
     {{ .Inner | markdownify}}
   </div>
-</div>
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+</td>
+<td>
   {{ with .Get "when" }}
     <i>{{ . }}</i>
   {{ end }}
-</div>
+</td>
+</tr>

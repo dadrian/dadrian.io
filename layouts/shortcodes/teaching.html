@@ -1,20 +1,22 @@
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+<tr>
+<td>
   {{ with .Get "section" }}
   <b>{{ . }}</b>
   {{ end }}
-</div>
-<div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
+</td>
+<td>
   {{ .Get "course" }}
   <br />
   {{ with .Get "position" }}
   <i>{{ . }}</i>
   {{ end }}
   <div class="dad-cv-ul__wrapper">
-  {{ .Inner }}
+  {{ .Inner | markdownify }}
   </div>
-</div>
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+</td>
+<td>
   {{ with .Get "when" }}
     <i>{{ . }}</i>
   {{ end }}
-</div>
+</td>
+</tr>

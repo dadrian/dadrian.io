@@ -1,8 +1,50 @@
-html, button, input, select, textarea,
-.pure-g [class *= "pure-u"] {
+html * {
     font-family: 'Source Sans Pro', sans-serif;
-    -webkit-font-smoothing: subpixel-antialiased;
-    -webkit-font-smoothing: antialiased;
+}
+
+.da {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.dc {
+    padding: 20px;
+}
+
+@media only screen and (min-width: 1222px) {
+    .db {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media only screen and (max-width: 945px) {
+    .di {
+        width: 100%;
+        padding-right: 0;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 945px) {
+    .di {
+        max-width: 500px;
+        padding-right: 20px;
+        min-width: 250px;
+        object-fit: cover;
+    }
+}
+
+.dp {
+    max-width: 945px;
+}
+
+.dn {
+    min-width: 368px;
+}
+
+.da-cv > tbody > tr > td {
+    vertical-align: text-top;
 }
 
 h1 {
@@ -12,18 +54,6 @@ h1 {
 
 body {
     background-color: #f8f8f8;
-}
-
-.centered-text {
-    text-align: center;
-}
-
-.dad-container {
-    padding: 20px;
-}
-
-.dad-name-splash {
-
 }
 
 .dad-name-splash-h1__name {
@@ -61,10 +91,6 @@ body {
     content: "";
 }
 
-.dad-blog-title {
-
-}
-
 .dad-blog-title-h1 {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 30pt;
@@ -84,17 +110,4 @@ body {
 .dad-cv-ul {
     margin: 0px;
     margin-top: 4px;
-}
-
-.padded {
-    padding: 20px;
-}
-
-.padded-sides {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.padded-bottom-small {
-    padding-bottom: 8px;
 }

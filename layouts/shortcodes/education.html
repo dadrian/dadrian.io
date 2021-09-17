@@ -1,19 +1,21 @@
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+<tr>
+<td>
   {{ with .Get "section" }}
   <b>{{ . }}</b>
   {{ end }}
-</div>
-<div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
+</td>
+<td>
   <b><a href="{{ .Get "link" }}">{{ .Get "name" }}</a></b>, {{ .Get "location" }}
   <br />
   {{ .Get "degree" }}
   {{ with .Inner }}
-  <br />
-  {{ . }}
+    <br />
+    {{ . }}
   {{ end }}
-</div>
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+</td>
+<td>
   {{ with .Get "when" }}
     <i>{{ . }}</i>
   {{ end }}
-</div>
+</td>
+</tr>

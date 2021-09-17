@@ -1,9 +1,10 @@
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+<tr>
+<td>
   {{ with .Get "section" }}
   <b>{{ . }}</b>
   {{ end }}
-</div>
-<div class="pure-u-1 pure-u-md-3-4 padded-bottom-small">
+</td>
+<td>
   <b><a href="{{ .Get "link" }}">{{ .Get "name" }}</a></b>{{ with .Get "where" }}, {{ . }} {{ end }}
   <br />
   {{ with .Get "position" }}
@@ -12,9 +13,10 @@
   <div class="dad-cv-ul__wrapper">
     {{ .Inner | markdownify }}
   </div>
-</div>
-<div class="pure-u-1 pure-u-md-1-8 padded-bottom-small">
+</td>
+<td>
   {{ with .Get "year" }}
     <i>{{ . }}</i>
   {{ end }}
-</div>
+</td>
+</tr>

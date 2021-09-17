@@ -3,7 +3,7 @@ title = "Curriculum Vitae"
 layout = "bio"
 +++
 
-<div class="pure-g">
+<table class="da-cv">
   {{< education
       section="Education"
       name="University of Michigan"
@@ -18,23 +18,20 @@ layout = "bio"
     </a>
   </i>
   {{< /education >}}
-  {{% education
+  {{< education
       name="University of Michigan"
       link="https://umich.edu"
       location="Ann Arbor, MI"
       degree="Master of Engineering, Computer Science"
       when="2016"
-  %}}
-  {{% /education %}}
-  {{% education
+  />}}
+  {{< education
       name="University of Michigan"
       link="https://umich.edu"
       location="Ann Arbor, MI"
       degree="Bachelor of Engineering, Computer Science"
       when="2014"
-  %}}
-  {{% /education %}}
-
+  />}}
   {{< paper
       section="Conference Publications"
       name="On the Origin of Scanning: The Impact of Location on Internet-Wide Scans"
@@ -119,10 +116,11 @@ layout = "bio"
       conference="USENIX Workshop on Offensive Technologies (WOOT), August 2014"
       bibtex="zmap10gig-woot14.bib"
   >}}
-  <div class="pure-u-1 pure-u-md-1-8">
-    <b>Program Committees</b>
-  </div>
-  <div class="pure-u-1 pure-u-md-7-8">
+  <tr>
+    <td>
+      <b>Program Committees</b>
+    </td>
+    <td>
     PC Member
     <ul class="dad-cv-ul">
       <li>
@@ -142,7 +140,8 @@ layout = "bio"
       </li>
     </ul>
     <br />
-  </div>
+    </td>
+  </tr>
 
   {{< talk
       section="Talks"
@@ -210,7 +209,6 @@ layout = "bio"
   - Recruited to join by [Ross Kinder](https://crewjam.com) after I left Censys.
   {{% /experience %}}
   {{% experience
-      section="Relevant Experience"
       name="Censys"
       link="https://censys.io"
       where="Ann Arbor, MI"
@@ -378,5 +376,4 @@ layout = "bio"
   %}}
   [Training for Intervention ProcedureS (TIPS)](http://www.tipsalcohol.com) Certified Bartender
   {{% /lineitem %}}
-
-</div>
+</table>
