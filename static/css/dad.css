@@ -29,6 +29,7 @@ html * {
 @media only screen and (min-width: 945px) {
     .di {
         max-width: 500px;
+        max-height: 333px;
         padding-right: 20px;
         min-width: 250px;
         object-fit: cover;
