@@ -1,3 +1,84 @@
+{{ define "page-css" }}
+<style>
+@media only screen and (min-width: 1222px) {
+    .db {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
+@media only screen and (max-width: 945px) {
+    .di {
+        width: 100%;
+        padding-right: 0;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (min-width: 945px) {
+    .di {
+        max-width: 500px;
+        max-height: 333px;
+        padding-right: 20px;
+        min-width: 250px;
+        object-fit: cover;
+    }
+}
+.da {
+    display: flex;
+    flex-flow: wrap;
+}
+.dc {
+    padding: 20px;
+}
+.dp {
+    max-width: 945px;
+}
+.dn {
+    min-width: 368px;
+}
+.da-cv > tbody > tr > td {
+    vertical-align: text-top;
+}
+.dad-name-splash-h1__name {
+    font-size: 50pt;
+    text-align: left;
+    margin: 0px;
+}
+.dad-name-splash-address {
+    font-style: normal;
+}
+.dad-name-splash-address__link {
+    margin-left: 5px;
+    font-style: normal;
+}
+.dad-nav-ul {
+    display: block;
+    -webkit-padding-start: 0px;
+    padding-inline-start: 0px;
+}
+.dad-nav-li__entry::after {
+    content: "•";
+    margin-left: 10px;
+    margin-right: 7px;
+}
+.dad-nav-li__entry {
+    display: inline;
+}
+.dad-nav-li__entry:last-child::after {
+    content: "";
+}
+.dad-cv-ul__wrapper ul {
+    margin: 0px;
+    margin-top: 4px;
+}
+.dad-cv-ul {
+    margin: 0px;
+    margin-top: 4px;
+}
+
+</style>
+{{ end }}
 {{ define "main" }}
 <div class="db">
   <div class="da">

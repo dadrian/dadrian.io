@@ -1,8 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+html * {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+}
+body {
+    background-color: #f8f8f8;
+}
+.dp {
+    max-width: 945px;
+}
+.dn {
+    min-width: 368px;
+}
+    </style>
+    {{- block "page-css" . }}{{- end }}
     <title>
       {{- block "title" . }}
       {{ if .CurrentSection.Title }}{{ .CurrentSection.Title }}{{else}}{{ .Site.Title }}{{ end }}{{ with .Params.Title }} | {{ . }}{{ end }}
@@ -10,7 +30,6 @@
     </title>
     {{ hugo.Generator }}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Sans+Pro&display=swap" />
-    <link rel="stylesheet" href="{{ "/css/dad.css" | absURL}}" />
     <link rel="shortcut icon" href="{{"/favicon.ico" | absURL }}" type="image/x-icon" />
     {{- block "rss" . }}{{- end }}
     {{- template "_internal/opengraph.html" . -}}
