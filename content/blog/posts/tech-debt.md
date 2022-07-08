@@ -104,7 +104,7 @@ problems at the right time, for the right reasons.
 ### What if this article was all bullet points?
 
 * Don’t treat tech debt as separate from feature work
-* Understand what you’re doing on why
+* Understand what you’re doing and why
 * Work on things causing problems now or causing problems soon
 
 [kellan]: https://kellanem.com
