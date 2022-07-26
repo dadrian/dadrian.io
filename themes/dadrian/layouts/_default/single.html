@@ -4,6 +4,26 @@
   {{ end -}}
 {{ end }}
 
+{{ define "page-css" }}
+<style>
+figure.df {
+  margin: 8px;
+}
+figure.df > img {
+  height: auto;
+  max-width: 100%;
+}
+figure.df > figcaption {
+  margin-left: 0px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+figure.df > figcaption > h4 {
+  margin: 0px;
+}
+</style>
+{{ end }}
+
 {{ define "main" }}
   {{ $section := .Site.GetPage "section" .Section }}
   <article>
@@ -16,8 +36,6 @@
       <h1>
         {{- .Title -}}
       </h1>
-      {{/* Hugo uses Go's date formatting is set by example. Here are two formats */}}
-      <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
         <small>{{- .Date.Format "January 2, 2006" -}}</small>
       </time>
     </header>

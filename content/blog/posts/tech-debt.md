@@ -4,7 +4,7 @@ date: 2022-07-06T20:00:00-05:00
 draft: false
 ---
 
-{{< figure src="/img/rodents.gif" title="Rodents of Unusual Size? I don't believe they exist." >}}
+{{< figure src="/img/rodents.gif" title="Rodents of Unusual Size? I don't believe they exist." class="df">}}
 
 There’s endless discourse around tech debt. [Kellan][kellan] has some really
 good [categorizations][kellan-debt] of different types, [Will
