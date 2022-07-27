@@ -89,9 +89,9 @@ soon, and isn’t the task to be done, doesn’t need to be done.
 ### So what does this all mean?
 
 Sometimes people want to schedule tech debt in, saying things like “20% of each
-sprint should be dedicated to tech debt” or allocating a debt fix-it week. This
-is an anti-pattern that indicates you don’t actually know what your problems
-are, or where you want to go and why you want to go there.
+sprint should be dedicated to tech debt” or allocating a debt fix-it week[^1].
+This is an anti-pattern that indicates you don’t actually know what your
+problems are, or where you want to go and why you want to go there.
 
 If you can’t identify work in any space between “feature” and “tech debt”, you
 don’t actually understand the work you’re trying to do or the problem you’re
@@ -113,3 +113,4 @@ problems at the right time, for the right reasons.
 [elegant]: https://press.stripe.com/an-elegant-puzzle
 [product-debt]: https://andrewchen.com/product-design-debt-versus-technical-debt/
 
+[^1]: Fix-it weeks work great as a way to bulk priotize a set of low priority bugs, but less so as a way to blanket "fix debt" in-between feature work.
