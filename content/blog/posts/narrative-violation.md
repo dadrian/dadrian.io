@@ -1,7 +1,7 @@
 ---
 title: "Narrative Violation"
 date: 2021-06-11T08:31:09-05:00
-draft: false
+draft: true
 ---
 
 Conventional wisdom in venture capital is that you have to be contrarian to be
