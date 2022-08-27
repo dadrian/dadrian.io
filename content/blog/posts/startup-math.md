@@ -4,10 +4,10 @@ date: 2022-08-27T05:00:00-05:00
 draft: false
 ---
 
-The market is a “downturn” (cough recession cough), and this is percolating into
-the venture-backed startup ecosystem. The broad consensus is that the top end of
-startup valuations are coming back to reality. But what does this mean? What
-makes a valuation out of this world? And how does this affect employees?
+The market is in a “downturn”, and this is percolating into the venture-backed
+startup ecosystem. The broad consensus is that the top end of startup valuations
+are coming back to reality. But what does this mean? What makes a valuation out
+of this world? And how does this affect employees?
 
 The general rule of thumb for valuations of startup software companies is that
 the valuation is 10x the annual revenue, with 20x for companies with incredibly
@@ -15,7 +15,7 @@ strong growth potential. This starts to have meaning usually around Series A.
 Very early companies raising seed and pre-seed rounds likely have zero or
 next-to-zero revenue, and will usually be given a valuation in the $5-20M range
 based on how good of a team and a story the founders can put together, and
-whether or not the founders are white men.
+whether or not the [founders are white men][white-male-founders].
 
 Once a startup reaches a point where they’re actually selling a product and
 making some revenue, they will eventually need to get to an annual revenue
@@ -31,12 +31,12 @@ If you are offered options or stock as part of a compensation package at a
 startup, the strike price and value of those options are based on the valuation
 of the company at the time that you join. Some people who took jobs with
 startups that offered stock worth a lot of money “on-paper” are realizing that
-the company is not able to reach the amount of growth required to sustain its
-valuation. These companies will have to raise a down round or drastically cut
-costs in order to have enough runway to stay alive long enough to get revenue to
-a sustainable level, unless they can somehow find a greater fool to sell to at
-an even higher valuation. This may result in the stock becoming worth a lot less
-than it initially appeared.
+the company is [not able to reach the amount of growth required][bolt-oops] to
+sustain its valuation. These companies will have to raise a down round or
+drastically cut costs in order to have enough runway to stay alive long enough
+to get revenue to a sustainable level, unless they can somehow find a greater
+fool to sell to at an even higher valuation. This may result in the stock
+becoming worth a lot less than it initially appeared.
 
 The loftier the goals of the startup and the better the economy, the longer an
 unrealistic disconnect between valuation and revenue can be maintained. Founders
@@ -47,13 +47,14 @@ investors. They may have aspirations for the company that match a higher
 valuation. And venture capitalists generally would rather see you try to get to
 $10B exit and fail, than “sell out” for less than $1B.
 
-With a large enough reality distortion field, some startups might even manage to
-IPO at multiples considerably above 10x revenue. This can be especially good for
-early investors and employees, since after the lock-out period, they can all
-dump their shares on the retail stock market. This is fairly rare, and likely
-still requires $100M-$1B in annual revenue. Even in cases with sane multiples,
-it’s not necessarily wrong to think of venture capital as a dump on
-retail---someone is paying out the valuation back to the investors.
+With a large enough reality distortion field, [some startups][nyse-net] might
+even manage to IPO at multiples considerably above 10x revenue. This can be
+especially good for early investors and employees, since after the lock-out
+period, they can all dump their shares on the retail stock market. This is
+fairly rare, and likely still requires $100M-$1B in annual revenue. Even in
+cases with sane multiples, it’s not necessarily wrong to think of venture
+capital as a dump on retail---someone is paying out the valuation back to the
+investors.
 
 Given some public information about raises, and ideally, a share price or strike
 price, you should be able to figure out valuations and how much you would make
@@ -82,3 +83,7 @@ Rules of Thumb:
 
 This might seem complicated, but it's nothing harder than a high school algebra
 homework problem.
+
+[white-male-founders]: https://www.techstars.com/the-line/pov/why-do-white-men-raise-more-vc-dollars-than-anyone-else
+[bolt-oops]: https://www.nytimes.com/2022/05/10/business/bolt-start-up-ryan-breslow-investors.html
+[nyse-net]: https://www.google.com/finance/quote/NET:NYSE
