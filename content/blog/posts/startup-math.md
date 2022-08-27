@@ -67,7 +67,7 @@ If not, know that the money is going to dry up. This might be OK, depending on
 your career, and your cash salary, and your value to the company, or it might
 make your offer much worse than it appears on paper.
 
-Rules of Thumb:
+**Rules of Thumb**:
 * Dilution is usually 20-30% for earlier rounds, and 10-20% for later rounds (Series D+)
 * Valuation is capital raised divided by the dilution
 * Strike price is a 60% discount on the share price, assuming there’s not an active secondary market for the stock
