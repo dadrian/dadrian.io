@@ -26,18 +26,17 @@ together, and whether or not the [founders are white men][white-male-founders].
 Because the startup probably doesn't have any revenue at this point, it's often
 simpler to just think of Seed rounds in terms of ownership: you give away 15-20%
 of the company in exchange for money, a good story, and maybe some initial
-traction. Nowadays, this can continue all the way through Series A and B.
-Including the seed round, a company is usually diluted 20-30% by the Series A,
-and then another 10-20% for the Series B and each round after that.
+traction. Including the seed round, a company is usually diluted 20-30% by the
+Series A, and then another 10-20% for the Series B and each round after that.
 
 Once a startup reaches a point where they’re actually selling a product and
-making some revenue, they will _eventually_ need to get to an annual revenue
-number that is 10% of their valuation. The better the growth potential and the
-better of a storyteller the CEO is, the longer they can put this off. If the
-startup has network effects (like a social network), or if user growth is really
-strong and bottom-up (like a developer-focused infra startup), and there's a
-clear way to _eventually_ convert the users into revenue, this can further delay
-the need to align revenue with valuation.
+making some revenue, they need to start thinking about how to get to an annual
+revenue number that is 10% of their valuation. The better the growth potential
+and the better of a storyteller the CEO is, the longer they can put this off. If
+the startup has network effects (like a social network), or if user growth is
+really strong and bottom-up (like a developer-focused infra startup), and
+there's a clear way to _eventually_ convert the users into revenue, this can
+further delay the need to align revenue with valuation.
 
 If you are offered options or stock as part of a compensation package at a
 startup, the strike price and value of those options are based on the valuation
