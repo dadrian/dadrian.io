@@ -108,6 +108,8 @@ acquistion details, the common stock holders might not get anything at all.
 This might seem complicated, but it's nothing harder than a high school algebra
 homework problem.
 
+_Thank you to Andrew Sardone, Martin Casado, and Chase Roberts for reading an earlier draft of this post_
+
 [white-male-founders]: https://www.techstars.com/the-line/pov/why-do-white-men-raise-more-vc-dollars-than-anyone-else
 [bolt-oops]: https://www.nytimes.com/2022/05/10/business/bolt-start-up-ryan-breslow-investors.html
 [nyse-net]: https://www.google.com/finance/quote/NET:NYSE
