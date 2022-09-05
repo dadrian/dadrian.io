@@ -83,10 +83,13 @@ Sometimes a company will also have [penny warrants][penny-warrant], or investors
 with [liquidation preferences][liq-prefs], or "regular" debt that needs to be
 paid back. Investors have preferred stock, whereas employees and founders will
 usually have common stock. Preferred stock often has more rights and at least a
-1.0 liquidation preference. It's usually a safe bet to assume that even if you
-know your exact ownership percentage and the exact purchase price, that you'll
-end up with less than that once all the dust settles. Even worse, depending on
-the acquistion details, the common stock holders might not get anything at all.
+1.0 liquidation preference. In an acquisition, if the purchase price is below
+the last valuation, preferred shareholders will still get paid out as if the
+price was the previous valuation, which will squeeze common stock
+shareholders[^5].  It's usually a safe bet to assume that even if you know your
+exact ownership percentage and the exact purchase price, that you'll end up with
+less than that once all the dust settles. Even worse, depending on the
+acquistion details, the common stock holders might not get anything at all.
 
 **Rules of Thumb**:
 * Dilution is usually at 20-30% after the Series A, and 10-20% for later rounds (Series B+)
@@ -116,3 +119,4 @@ homework problem.
 [^2]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
 [^3]: There might also be a _pre-seed_ or _angel_ round, which is when a company loosely raises some money, usually from individual angel investors.
 [^4]: Snowflake IPO'd after raising a Series G.
+[^5]: In this scenario, no one is actually happy. No one wants this, not even the preferred shareholders. Again, details will vary depending on the terms.
