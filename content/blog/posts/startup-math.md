@@ -81,21 +81,22 @@ make your offer much worse than it appears on paper.
 However, know that deals and even IPOs can get arbitrarily complicated.
 Sometimes a company will also have [penny warrants][penny-warrant], or investors
 with [liquidation preferences][liq-prefs], or "regular" debt that needs to be
-paid back. It's usually a safe bet to assume that even if you know your exact
-ownership percentage and the exact purchase price, that you'll end up with less
-than that once all the dust settles. Even worse, depending on the acquistion
-details, employees might not get anything at all.
+paid back. Investors have preferred stock, whereas employees and founders will
+usually have common stock. Preferred stock often has more rights and at least a
+1.0 liquidation preference. It's usually a safe bet to assume that even if you
+know your exact ownership percentage and the exact purchase price, that you'll
+end up with less than that once all the dust settles. Even worse, depending on
+the acquistion details, the common stock holders might not get anything at all.
 
 **Rules of Thumb**:
 * Dilution is usually at 20-30% after the Series A, and 10-20% for later rounds (Series B+)
 * Valuation is capital raised divided by the dilution
-* Strike price is a 60% discount on the share price, assuming there’s not an active secondary market for the stock
+* Strike price is a 60-70% discount on the share price as determined by the latest [409A valuation][409a], assuming there’s not an active secondary market for the stock
 * The share price is the valuation divided by the number of shares
 * Your ownership is the number of shares in your grant divided by the total number of shares
-* There is usually 8-12M shares issued when a company is founded, of which 15-30% will be allocated for employees
-* Each round, new shares are issued to the investors participating in the round, in proportion to the dilution.
-* Investors that don't pro-rata up (put in more money to maintain ownership), will also get diluted on future rounds.
-* At acquisition, money is (usually) paid out in proportion to percentage ownership, with the investors getting paid out their principle first.
+* Each round, new preferred shares are issued to the investors participating in the round, in proportion to the dilution
+* Investors that don't pro-rata up (put in more money to maintain ownership), will also get diluted on future rounds
+* At acquisition, money is (usually) paid out in proportion to percentage ownership, with the preferred shareholders getting paid out first
 * Once you have stock, you will be diluted on future rounds
 * Your ownership percentage will decrease by the dilution, but ideally the total value of your ownership will increase because the valuation is also increasing.
 * Your new ownership percentage is the old percentage scaled by 1 minus the dilution.
@@ -109,6 +110,7 @@ homework problem.
 [nyse-net]: https://www.google.com/finance/quote/NET:NYSE
 [liq-prefs]: https://www.investopedia.com/terms/l/liquidation-preference.asp
 [penny-warrant]: https://www.cooleygo.com/what-you-should-know-about-warrants/
+[409a]: https://carta.com/blog/what-is-a-409a-valuation
 
 [^1]: This is meant to be a rough explanation for employees, or anyone who is not a founder and not an investor. Don't read this, then immediately start trying to price deals on AngelList. This is also _not_ investment advice.
 [^2]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
