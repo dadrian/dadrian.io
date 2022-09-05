@@ -7,14 +7,14 @@ draft: false
 The market is in a “downturn”, and this is percolating into the venture-backed
 startup ecosystem. The broad consensus is that the top end of startup valuations
 are coming back to reality. But what does this mean? What makes a valuation out
-of this world? And how does this affect employees?
+of this world? And how does this affect employees[^1]?
 
 Startup valuations are determined by the amount of money a company raises in
-exchange for a percentage of ownership. Usually[^1], this is a 20% stake, meaning
+exchange for a percentage of ownership. Usually[^2], this is a 20% stake, meaning
 that a company that raises a $15M Series A is usually valued at $15M / 0.2 =
-$75M. The Seed round is the first round a company raises[^2], followed by the
+$75M. The Seed round is the first round a company raises[^3], followed by the
 Series A, then Series B, and so on. If a company successfully IPOs, it will
-usually raise at least through a Series D first[^3].
+usually raise at least through a Series D first[^4].
 
 The general rule of thumb for valuations of startup software companies is that
 the valuation _eventually_ (Series C-ish) needs to be around 10x the annual
@@ -110,6 +110,7 @@ homework problem.
 [liq-prefs]: https://www.investopedia.com/terms/l/liquidation-preference.asp
 [penny-warrant]: https://www.cooleygo.com/what-you-should-know-about-warrants/
 
-[^1]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
-[^2]: There might also be a _pre-seed_ or _angel_ round, which is when a company loosely raises some money, usually from individual angel investors.
-[^3]: Snowflake IPO'd after raising a Series G.
+[^1]: This is meant to be a rough explanation for employees, or anyone who is not a founder and not an angel investor. Don't read this, then immediately start trying to price deals on AngelList. This is also _not_ investment advice.
+[^2]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
+[^3]: There might also be a _pre-seed_ or _angel_ round, which is when a company loosely raises some money, usually from individual angel investors.
+[^4]: Snowflake IPO'd after raising a Series G.
