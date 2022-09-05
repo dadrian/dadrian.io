@@ -9,23 +9,35 @@ startup ecosystem. The broad consensus is that the top end of startup valuations
 are coming back to reality. But what does this mean? What makes a valuation out
 of this world? And how does this affect employees?
 
+Startup valuations are determined by the amount of money a company raises in
+exchange for a percentage of ownership. Usually[^1], this is a 20% stake, meaning
+that a company that raises a $15M Series A is usually valued at $15M / 0.2 =
+$75M. The Seed round is the first round a company raises[^2], followed by the
+Series A, then Series B, and so on. If a company successfully IPOs, it will
+usually raise at least through a Series D first[^3].
+
 The general rule of thumb for valuations of startup software companies is that
-the valuation is 10x the annual revenue, with 20x for companies with incredibly
-strong growth potential. This starts to have meaning usually around Series A.
-Very early companies raising seed and pre-seed rounds likely have zero or
-next-to-zero revenue, and will usually be given a valuation in the $5-20M range
-based on how good of a team and a story the founders can put together, and
-whether or not the [founders are white men][white-male-founders].
+the valuation _eventually_ (Series C-ish) needs to be around 10x the annual
+revenue, with 20x for companies with incredibly strong growth potential. Very
+early companies raising seed and pre-seed rounds likely have zero or
+next-to-zero revenue, and will usually raise $1-20M be given a valuation in the
+$5-100M range based on how good of a team and a story the founders can put
+together, and whether or not the [founders are white men][white-male-founders].
+Because the startup probably doesn't have any revenue at this point, it's often
+simpler to just think of Seed rounds in terms of ownership: you give away 15-20%
+of the company in exchange for money, a good story, and maybe some initial
+traction. Nowadays, this can continue all the way through Series A and B.
+Including the seed round, a company is usually diluted 20-30% by the Series A,
+and then another 10-20% for the Series B and each round after that.
 
 Once a startup reaches a point where they’re actually selling a product and
-making some revenue, they will eventually need to get to an annual revenue
+making some revenue, they will _eventually_ need to get to an annual revenue
 number that is 10% of their valuation. The better the growth potential and the
-better of a storyteller the CEO is, the longer they can put this off. Startup
-valuations are determined by the amount of money a company raises in exchange
-for a percentage of ownership. Usually, this is a 20% stake, meaning that a
-company that raises a $15M Series A is usually valued at $15M / 0.2 = $75M. This
-means the company needs $75M / 10 = $7.5M in annual revenue to maintain that
-valuation.
+better of a storyteller the CEO is, the longer they can put this off. If the
+startup has network effects (like a social network), or if user growth is really
+strong and bottom-up (like a developer-focused infra startup), and there's a
+clear way to _eventually_ convert the users into revenue, this can further delay
+the need to align revenue with valuation.
 
 If you are offered options or stock as part of a compensation package at a
 startup, the strike price and value of those options are based on the valuation
@@ -67,14 +79,23 @@ If not, know that the money is going to dry up. This might be OK, depending on
 your career, and your cash salary, and your value to the company, or it might
 make your offer much worse than it appears on paper.
 
+However, know that deals and even IPOs can get arbitrarily complicated.
+Sometimes a company will also have [penny warrants][penny-warrant], or investors
+with [liquidation preferences][liq-prefs], or "regular" debt that needs to be
+paid back. It's usually a safe bet to assume that even if you know your exact
+ownership percentage and the exact purchase price, that you'll end up with less
+than that once all the dust settles. Even worse, depending on the acquistion
+details, employees might not get anything at all.
+
 **Rules of Thumb**:
-* Dilution is usually 20-30% for earlier rounds, and 10-20% for later rounds (Series D+)
+* Dilution is usually at 20-30% after the Series A, and 10-20% for later rounds (Series B+)
 * Valuation is capital raised divided by the dilution
 * Strike price is a 60% discount on the share price, assuming there’s not an active secondary market for the stock
 * The share price is the valuation divided by the number of shares
 * Your ownership is the number of shares in your grant divided by the total number of shares
 * There is usually 8-12M shares issued when a company is founded, of which 15-30% will be allocated for employees
 * Each round, new shares are issued to the investors participating in the round, in proportion to the dilution.
+* Investors that don't pro-rata up (put in more money to maintain ownership), will also get diluted on future rounds.
 * At acquisition, money is (usually) paid out in proportion to percentage ownership, with the investors getting paid out their principle first.
 * Once you have stock, you will be diluted on future rounds
 * Your ownership percentage will decrease by the dilution, but ideally the total value of your ownership will increase because the valuation is also increasing.
@@ -87,3 +108,9 @@ homework problem.
 [white-male-founders]: https://www.techstars.com/the-line/pov/why-do-white-men-raise-more-vc-dollars-than-anyone-else
 [bolt-oops]: https://www.nytimes.com/2022/05/10/business/bolt-start-up-ryan-breslow-investors.html
 [nyse-net]: https://www.google.com/finance/quote/NET:NYSE
+[liq-prefs]: https://www.investopedia.com/terms/l/liquidation-preference.asp
+[penny-warrant]: https://www.cooleygo.com/what-you-should-know-about-warrants/
+
+[^1]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
+[^2]: There might also be a _pre-seed_ or _angel_ round, which is when a company loosely raises some money, usually from individual angel investors.
+[^3]: Snowflake IPO'd after raising a Series G.
