@@ -110,7 +110,7 @@ homework problem.
 [liq-prefs]: https://www.investopedia.com/terms/l/liquidation-preference.asp
 [penny-warrant]: https://www.cooleygo.com/what-you-should-know-about-warrants/
 
-[^1]: This is meant to be a rough explanation for employees, or anyone who is not a founder and not an angel investor. Don't read this, then immediately start trying to price deals on AngelList. This is also _not_ investment advice.
+[^1]: This is meant to be a rough explanation for employees, or anyone who is not a founder and not an investor. Don't read this, then immediately start trying to price deals on AngelList. This is also _not_ investment advice.
 [^2]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
 [^3]: There might also be a _pre-seed_ or _angel_ round, which is when a company loosely raises some money, usually from individual angel investors.
 [^4]: Snowflake IPO'd after raising a Series G.
