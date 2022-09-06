@@ -69,7 +69,7 @@ investors.
 
 Given some public information about raises, and ideally, a share price or strike
 price, you should be able to figure out valuations and how much you would make
-on potential exits. You can plug in the values you know, either from press
+on potential exits[^6]. You can plug in the values you know, either from press
 releases or an offer letter, and backcalculate how much your offer is worth, and
 if the company is at a sustainable valuation. If the company is not at a
 sustainable valuation, try to figure out if there’s a path for the sales numbers
@@ -116,9 +116,12 @@ _Thank you to Andrew Sardone, Martin Casado, and Chase Roberts for reading an ea
 [liq-prefs]: https://www.investopedia.com/terms/l/liquidation-preference.asp
 [penny-warrant]: https://www.cooleygo.com/what-you-should-know-about-warrants/
 [409a]: https://carta.com/blog/what-is-a-409a-valuation
+[holman-options]: https://zachholman.com/posts/fuck-your-90-day-exercise-window/
+[wong-options]: https://jamie-wong.com/post/valley-equity/
 
 [^1]: This is meant to be a rough explanation for employees, or anyone who is not a founder and not an investor. Don't read this, then immediately start trying to price deals on AngelList. This is also _not_ investment advice.
 [^2]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
 [^3]: There might also be a _pre-seed_ or _angel_ round, which is when a company loosely raises some money, usually from individual angel investors.
 [^4]: Snowflake IPO'd after raising a Series G.
 [^5]: In this scenario, no one is actually happy. No one wants this, not even the preferred shareholders. Again, details will vary depending on the terms.
+[^6]: There is a whole separate discussion to be had about how options work and the tax implications of vesting and exercising. I'm not trying to cover that here, this post is helping answer the question "Is it _possible_ for this startup to have a successful exit?". For more details on equity and strike prices, see these posts by [Zach Holman][holman-options] and [Jamie Wong][wong-options].
