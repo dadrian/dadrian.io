@@ -2,6 +2,7 @@
 title: "Tech Debt? I don't believe it exists."
 date: 2022-07-06T20:00:00-05:00
 draft: false
+uses: ["figures"]
 ---
 
 {{< figure src="/img/rodents.gif" title="Rodents of Unusual Size? I don't believe they exist." class="df">}}
