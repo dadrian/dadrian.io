@@ -14,9 +14,11 @@ schema because I've worked with it a lot in the last 10 years or so. When
 describing schemas, I represent types in [protobuf] format, since it's a
 universal type language. I include field numbers to make the syntax valid, but
 their individual values are not important. Fields marked as `repeated`
-correspond to arrays/lists.
+correspond to arrays or lists, which I use interchangably. Protobuf Message
+types are defined by the `message` keyword, and I consider the terms "message",
+"type", and "object" to be interchangable.
 
-### X.509 Background
+## X.509 Background
 
 X.509 certificates are used for a variety of purposes, but are primarily known
 for their use in HTTPS. The certificates are an [ASN.1][asn1] structure
@@ -34,7 +36,7 @@ root programs. However, the logs are not in a searachable format. It's common
 for these users to ingest certificates from logs and store them in a queryable
 format for analysis (or to [buy access][censys-enterprise] to it).
 
-### Denormalization
+## Denormalization
 
 Unlike relational databases, storing data for data analysis in an OLAP should be
 _denormalized_. Relational databases prefer _normalized_ data, meaning any
@@ -57,11 +59,17 @@ information, like subject and issuer, will be "duplicated" across records.
 Modern OLAP databases can still optimize this storage by storing data in
 [columnar] format.
 
-### Avoid nested arrays and arrays of structs
+## Avoid nested arrays and arrays of objects
 
-TODO
+In most query languages and programming languages, identifying an individual
+element is an array or list is straightforward if one of the following are true:
+* You know the index of the element and can access it directly, or
+* The element is a primitive value and the `IN` operator exists.
 
-### Convert flags to repeated enums
+Nested arrays (arrays of arrays)
+
+
+## Convert flags to repeated enums
 
 If you need to represent a set of flags or a bitfield, define each flag as an
 enum, and then store the set flags as a list of enums. Do not store the flags as
@@ -83,22 +91,25 @@ message Certificate {
 }
 ```
 
-This structure makes it easy to answer questions about individual values like
-"Which certificates have the `ServerAuth` and `ClientAuth` flag?"
+An object containing many bools makes it easy to answer questions about
+individual values like "Which certificates have the `ServerAuth` and
+`ClientAuth` flag?"
 
 ```sql
 -- How many set SERVER_AUTH and CLIENT_AUTH?
 SELECT COUNT(*) FROM certificates
 WHERE key_usages.server_auth = TRUE
-    AND key_usages.client_auth = TRUE;
+    AND key_usages.client_auth = TRUE
+;
 ```
-Unfortunately, it makes it hard to answer questions about the overall makeup of
-`KeyUsages`, such as "Which certificates have no key usage flags set?" or "Of
-certificates that set ServerAuth, how many don't assert any other key usage?".
-This is because questions about the full set of flags require writing a series
-of `OR` statements across all fields in `KeyUsage`. This is annoying to do, and
-easy to get out of date---every past query will be wrong when a new value is
-added.
+
+Unfortunately, this structure also makes it hard to answer questions about the
+overall makeup of `KeyUsages`, such as "Which certificates have no key usage
+flags set?" or "Of certificates that have the Server Auth flag, how many don't
+assert any other key usage?".  This is because questions about the full set of
+flags require writing a series of `OR` statements across all fields in
+`KeyUsage`.  This is annoying to do, and easy to get out of date---every past
+query will be wrong when a new value is added.
 
 ```sql
 -- How many set SERVER_AUTH and no other usages?
@@ -107,7 +118,7 @@ WHERE key_usages.server_auth = TRUE
     AND key_usages.client_auth = FALSE
     AND key_usages.key_signing = FALSE
     AND key_usages.code_signing = FALSE
-
+;
 -- Among those that set SERVER_AUTH, how many usages do they have?
 --
 -- Not even going to write this out, because it would involve counting every
@@ -133,28 +144,26 @@ message Certificate {
 }
 ```
 
-This way, it's still easy to query about individual flags. Instead of using
-boolean equals, query for individual using the `IN` operator. However, queries
-about the general makeup of flags can leverage the array length to do breakdowns
-by how many flags are set, without needing to specify each individual flag
-values. The harder queries from the previous structure become easier:
+This way, it's still easy to query about individual flags. Queries use the `IN`
+operator instead of boolean equals. However, queries about the general makeup of
+flags can leverage the array length to do breakdowns by how many flags are set,
+without needing to specify each individual flag values. The harder queries from
+the previous structure become easier:
 
 ```sql
 -- How many set SERVER_AUTH and CLIENT_AUTH?
 SELECT COUNT(*) FROM Certificates
-WHERE 'SERVER_AUTH' IN KeyUsage AND 'CLIENT_AUTH' in KeyUsage
-
+WHERE 'SERVER_AUTH' IN KeyUsage AND 'CLIENT_AUTH' in KeyUsage;
 -- How many set SERVER_AUTH and no other usages?
 SELECT COUNT(*) FROM Certificates
 WHERE 'SERVER_AUTH' IN KeyUsage AND LEN(KeyUsage) = 0;
-
 -- Among those that set SERVER_AUTH, how many usages do they have?
 SELECT COUNT(*), LEN(KeyUsage) FROM Certificates
 WHERE 'SERVER_AUTH' IN KeyUsage
 GROUP BY 2;
 ```
 
-### Aggregating over known and unknown values
+## Aggregating over known and unknown values
 
 When parsing data into a fixed schema for analysis, parsers might only be able
 to "break out" specific fields that the parser has prior knowledge of, and then
@@ -166,14 +175,22 @@ skip over the value and move on to the next extension.
 
 First, let's consider just the unknown extensions. These could be represented as a map:
 
-{{<highlight protobuf>}}
-message Extensions {
-    map<string, bytes>
+```protobuf
+map<string, bytes> unknown_extensions;
+```
+
+However, this won't translate well into most schema descriptions because the
+fieldnames (keys of the map) are dynamic[^1].  Instead, flatten the map into an
+array.
+
+```protobuf
+message Certificate {
+    // ...
+    Extensions extensions = 20;
+    // ...
 }
-{{</highlight>}}
 
-
-{{<highlight protobuf>}}
+// Extensions contains parsed and unknown extensions.
 message Extensions {
     // Parsed
     AlternativeName subject_alt_name = 0;
@@ -181,9 +198,11 @@ message Extensions {
     KeyID akid = 2;
     KeyID skid = 3;
 
+    // Unknown
     repeated UnknownExtensions unknown_extensions = 255;
 }
 
+// UnknownExtension is an (OID, bytes) tuple.
 message UnknownExtension {
     string ID = 0;
     bytes value = 1;
@@ -195,15 +214,121 @@ message KeyID {
 message AlternativeName {
     // ...
 }
-{{</highlight>}}
+```
 
-This is more text.
+This will hold all extensions, known and unknown, without any information loss
+(subject to parsing), and without any dynamic field names. It's now possible to
+get a breakdown of unknown extensions, and to access rich, structured data about
+the known extensions.
 
-> This is a quote
+```sql
+-- Access individual extensions
+SELECT COUNT(*) FROM certificates WHERE extensions.akid = "<value>"
+-- Unknown extensions broken down by ID
+SELECT COUNT(*), e.ID FROM certificates c
+CROSS JOIN UNNEST(c.extensions.unknown_extensions) as e
+GROUP BY 2
+```
 
-This is a:
-* bulleted
-* list
+However, we do not have the ability to easily understand the breakdown of _all_
+extensions because we don't store the IDs of the _parsed_ extensions. We can fix
+this by storing it alongside the unknown extensions, even though the data is
+implied by the existance of specific parsed fields. Similar to the flags-to-enum
+case, this avoids having to write another massive `OR` across all fields in
+`extensions`.
+
+```protobuf
+// Extensions contains the IDs of all extensions. Known extensions are parsed.
+message Extensions {
+    // Parsed
+    AlternativeName subject_alt_name = 0;
+    AlternativeName issuer_alt_name = 1;
+    KeyID akid = 2;
+    KeyID skid = 3;
+
+    // IDs
+    repeated string IDs = 4;
+
+    // Unknown
+    repeated UnknownExtensions unknown_extensions = 255;
+}
+```
+
+Now we can easily write breakdowns across all extension values!
+
+This structure violates the earlier recommendation of avoiding arrays of
+objects, since `unknown_extensions` is a repeated object. This is only required
+if we need to store the raw bytes for the unknown extensions, separated out. Do
+we really need this?
+
+## Think carefully about if and where you store raw values
+
+Try to avoid storing unparsed values alongside parsed values whenever possible. In an ideal world, there is a separate datastore for raw values that is not your OLAP database. In practice, you might have both. If you do include raw values, be thoughtful about where you put them. Continuing the previous example, let's see what happens when we move the array of raw unknown extensions a single blob for all extensions.
+
+```protobuf
+// Extensions contains the IDs of all extensions. Known extensions are parsed.
+message Extensions {
+    // Parsed
+    AlternativeName subject_alt_name = 0;
+    AlternativeName issuer_alt_name = 1;
+    KeyID akid = 2;
+    KeyID skid = 3;
+
+    // IDs
+    repeated string IDs = 4;
+    repeated string unknown_extensions = 5;
+
+    // Full extension bytes
+    bytes raw = 254;
+}
+```
+
+What happens to our queries? We still have the unnest for aggregates, but we can
+query for individual extensions directly. Depending on your needs, this is
+likely a better setup.
+
+```sql
+-- Access individual extensions
+SELECT COUNT(*) FROM certificates WHERE extensions.akid = "<value>"
+-- Access individual extensions by ID
+SELECT COUNT(*) FROM certificates WHERE "1.2.3.4" IN extensions.ids;
+-- Unknown extensions broken down by ID
+SELECT COUNT(*), id FROM certificates c
+CROSS JOIN UNNEST(c.extensions.unknown_extensions) as id
+GROUP BY 2
+-- All extensions broken down by ID
+SELECT COUNT(*), id FROM certificates c
+CROSS JOIN UNNEST(c.extensions.unknown_extensions) as id
+GROUP BY 2
+```
+
+## Save storage by shipping functions
+
+If you have the ability to ship a set of macros or functions with your OLAP
+dataset (e.g. [UDFs][udf] in BigQuery), you can save some storage space by providing
+functions that calculate derived fields at runtime. For example, instead of
+storing all extension IDs, you could write a function that materializes a list
+of IDs based on the contents of the `extensions` object. If you know you're
+going to be in a single system, and you have the ability to provide importable
+functions for each version of your dataset easily, this might be a good option.
+
+```sql
+SELECT COUNT(*), id FROM certificates c
+CROSS JOIN UNNEST(ExtensionIDs(c.extensions)) as id
+GROUP BY 2
+```
+
+In this eample, `ExtensionIDs` is a function that takes an `Extension` object
+and returns an array of strings.
+
+If you don't have the ability to easily ship functions bound to specific
+versions of your dataset, don't do this.
+
+## Timeseries and current state are probably different
+
+You probably don't want to store full objects in timeseries tables, even in an
+OLAP system. This is a reasonable use case to rely on joins, and just store
+identifiers in the timeseries table.
 
 [certs]: https://en.wikipedia.org/wiki/X.509
 [asn1]: https://letsencrypt.org/docs/a-warm-welcome-to-asn1-and-der/
@@ -211,3 +336,6 @@ This is a:
 [olap]: https://www.snowflake.com/guides/olap-vs-oltp
 [columnar]: https://en.wikipedia.org/wiki/Column-oriented_DBMS
 [censys-enterprise]: https://censys.io/data-and-search/
+[udf]: https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions
+
+[^1]: If you're dealing with files and scripts, this might be fine. Python will happily parse a map, and stronger-typed languages like Go can fallback to string maps. And technically, you could make it a JSON field in something like BigQuery. But in all cases, you're pushing at the edge of features, compatibility, and consistency as soon as field names become dynamic.
