@@ -1,7 +1,8 @@
 ---
 title: "Denormalized Schema Design with X.509"
-date: 2022-10-30T11:51:00-05:00
+date: 2022-10-30T11:54:00-05:00
 uses: ["code"]
+draft: false
 ---
 
 Designing schemas for large-scale data analysis for [OLAP][olap] (e.g. BigQuery,
