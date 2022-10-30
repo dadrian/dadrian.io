@@ -5,7 +5,8 @@
 {{ end }}
 
 {{ define "page-css" }}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" />
+{{ with .Page.Params }}
+{{ if in .uses "figures" }}
 <style>
 figure.df {
   margin: 8px;
@@ -22,6 +23,11 @@ figure.df > figcaption {
 figure.df > figcaption > h4 {
   margin: 0px;
 }
+</style>
+{{ end }}
+{{ if in .uses "code" }}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" />
+<style>
 blockquote {
   background: #f9f9f9;
   border-left: 2px solid #000;
@@ -29,12 +35,17 @@ blockquote {
   font-style: italic;
 }
 .highlight > pre {
-  padding: 8px
+  padding: 8px;
+  box-shadow: 5px 5px 5px 0;
+  border-radius: 8px;
 }
 code, code > span {
   font-family: 'Source Code Pro', Courier, monospace;
 }
 </style>
+{{ end }}
+{{ end }}
+
 {{ end }}
 
 {{ define "main" }}

@@ -4,5 +4,5 @@ title = "David Adrian"
 theme = ["dadrian"]
 [markup]
   [markup.highlight]
-    tabWidth = 2
+    tabWidth = 4
     style = "monokai"
