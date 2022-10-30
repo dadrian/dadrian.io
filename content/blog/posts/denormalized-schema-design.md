@@ -1,6 +1,6 @@
 ---
 title: "Denormalized Schema Design with X.509"
-date: 2022-10-22T12:01:00-07:00
+date: 2022-10-30T11:51:00-05:00
 uses: ["code"]
 ---
 
@@ -337,5 +337,7 @@ identifiers in the timeseries table.
 [columnar]: https://en.wikipedia.org/wiki/Column-oriented_DBMS
 [censys-enterprise]: https://censys.io/data-and-search/
 [udf]: https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions
+[protobuf]: https://developers.google.com/protocol-buffers/docs/proto3
+[ct]: https://certificate.transparency.dev/
 
 [^1]: If you're dealing with files and scripts, this might be fine. Python will happily parse a map, and stronger-typed languages like Go can fallback to string maps. And technically, you could make it a JSON field in something like BigQuery. But in all cases, you're pushing at the edge of features, compatibility, and consistency as soon as field names become dynamic.
