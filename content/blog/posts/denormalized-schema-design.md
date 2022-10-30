@@ -1,6 +1,6 @@
 ---
 title: "Denormalized Schema Design with X.509"
-date: 2022-10-30T11:54:00-05:00
+date: 2022-10-30T11:54:00-0500
 draft: false
 uses: ["code"]
 ---

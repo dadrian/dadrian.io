@@ -1,6 +1,6 @@
 ---
 title: "Paper Napkin Math for Evaluating Startup Opportunities"
-date: 2022-08-27T05:00:00-05:00
+date: 2022-08-27T05:00:00-0500
 draft: false
 ---
 
