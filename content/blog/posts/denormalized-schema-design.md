@@ -63,7 +63,7 @@ Modern OLAP databases can still optimize this storage by storing data in
 ## Avoid nested arrays and arrays of objects
 
 In most query languages and programming languages, identifying an individual
-element is an array or list is straightforward if one of the following are true:
+element in an array or list is straightforward if one of the following are true:
 * You know the index of the element and can access it directly, or
 * The element is a primitive value and the `IN` operator exists.
 
