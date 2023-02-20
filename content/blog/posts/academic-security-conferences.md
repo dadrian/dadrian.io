@@ -1,7 +1,6 @@
 ---
 title: "Academic Security Conferences"
 date: 2018-10-29T19:38:09-05:00
-draft: false
 ---
 
 In my experience, a lot of the non-academics in the security research
