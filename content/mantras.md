@@ -10,3 +10,6 @@ layout = "bio"
 * It is always good to remove requirements that are bad
 * Figuring out how to run the thing is building the thing
 * The politics are so high because the stakes are so low
+* Raising the bar is usually a good thing
+* Doing less work is generally better than doing more work
+* It's better to make things better than to not make things better
