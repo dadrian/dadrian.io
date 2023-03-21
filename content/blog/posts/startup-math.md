@@ -120,9 +120,20 @@ _Thank you to Andrew Sardone, Martin Casado, and Chase Roberts for reading an ea
 [wong-options]: https://jamie-wong.com/post/valley-equity/
 [dan-options]: https://medium.com/@DanEyman/8-questions-to-ask-about-startup-equity-before-accepting-the-job-a9c8954b6ad7
 
-[^1]: This is meant to be a rough explanation for employees, or anyone who is not a founder and not an investor. Don't read this, then immediately start trying to price deals on AngelList. This is also _not_ investment advice.
-[^2]: This is heavily caveated. Everything can change deal to deal, but the current conventional wisdown is 20-30% dilution for Series A, including Seed, and 10-20% for each round after that.
-[^3]: There might also be a _pre-seed_ or _angel_ round, which is when a company loosely raises some money, usually from individual angel investors.
+[^1]: This is meant to be a rough explanation for employees, or anyone who is
+  not a founder and not an investor. Don't read this, then immediately start
+  trying to price deals on AngelList. This is also _not_ investment advice.
+[^2]: This is heavily caveated. Everything can change deal to deal, but the
+  current conventional wisdown is 20-30% dilution for Series A, including Seed,
+  and 10-20% for each round after that.
+[^3]: There might also be a _pre-seed_ or _angel_ round, which is when a
+  company loosely raises some money, usually from individual angel investors.
 [^4]: Snowflake IPO'd after raising a Series G.
-[^5]: In this scenario, no one is actually happy. No one wants this, not even the preferred shareholders. Again, details will vary depending on the terms.
-[^6]: There is a whole separate discussion to be had about how options work and the tax implications of vesting and exercising. I'm not trying to cover that here, this post is helping answer the question "Is it _possible_ for this startup to have a successful exit?". For more details on equity and strike prices, see these posts by [Zach Holman][holman-options], [Jamie Wong][wong-options], and [Dan Eyman][dan-options].
+[^5]: In this scenario, no one is actually happy. No one wants this, not even
+  the preferred shareholders. Again, details will vary depending on the terms.
+[^6]: There is a whole separate discussion to be had about how options work and
+  the tax implications of vesting and exercising. I'm not trying to cover that
+  here, this post is helping answer the question "Is it _possible_ for this
+  startup to have a successful exit?". For more details on equity and strike
+  prices, see these posts by [Zach Holman][holman-options], [Jamie
+  Wong][wong-options], and [Dan Eyman][dan-options].

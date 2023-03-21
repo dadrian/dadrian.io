@@ -1,0 +1,10 @@
+{{ $image := $.Page.Resources.GetMatch "layoff-diagram.jpg" }}
+{{ with .Get "resize" }}
+  {{ $image = $image.Resize . }}
+{{ end }}
+<figure class="{{ .Get "class" }}" style="max-width: 600px">
+  {{ with $image }}
+  <img src="{{ .RelPermalink }}"/>
+  {{ end }}
+  <figcaption style="text-align: center"><small><b>{{ .Get "title" }}</b></small></figcaption>
+</figure>

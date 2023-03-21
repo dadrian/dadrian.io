@@ -341,4 +341,8 @@ identifiers in the timeseries table.
 [protobuf]: https://developers.google.com/protocol-buffers/docs/proto3
 [ct]: https://certificate.transparency.dev/
 
-[^1]: If you're dealing with files and scripts, this might be fine. Python will happily parse a map, and stronger-typed languages like Go can fallback to string maps. And technically, you could make it a JSON field in something like BigQuery. But in all cases, you're pushing at the edge of features, compatibility, and consistency as soon as field names become dynamic.
+[^1]: If you're dealing with files and scripts, this might be fine. Python will
+  happily parse a map, and stronger-typed languages like Go can fallback to
+  string maps. And technically, you could make it a JSON field in something
+  like BigQuery. But in all cases, you're pushing at the edge of features,
+  compatibility, and consistency as soon as field names become dynamic.

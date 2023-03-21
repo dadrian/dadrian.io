@@ -114,4 +114,5 @@ problems at the right time, for the right reasons.
 [elegant]: https://press.stripe.com/an-elegant-puzzle
 [product-debt]: https://andrewchen.com/product-design-debt-versus-technical-debt/
 
-[^1]: Fix-it weeks work great as a way to bulk priotize a set of low priority bugs, but less so as a way to blanket "fix debt" in-between feature work.
+[^1]: Fix-it weeks work great as a way to bulk priotize a set of low priority
+  bugs, but less so as a way to blanket "fix debt" in-between feature work.
