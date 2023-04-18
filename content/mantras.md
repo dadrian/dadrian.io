@@ -14,3 +14,4 @@ layout = "bio"
 * Doing less work is generally better than doing more work
 * It's better to make things better than to not make things better
 * It's good to be good at things
+* Ask the quiet part out loud, but like, fun
