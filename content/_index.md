@@ -4,18 +4,19 @@ layout = "bio"
 I am currently a product manager at Google, adding value to [Chrome
 Security][chromesecurity]. Despite this, I identify both as an engineer and
 security researcher. I cofounded [Censys][censys], an attack-surface management
-security startup. I left Censys after their [Series A][censys-raise]. They've since raised a
-[Series B][censys-raise-b]! I was employee #2 at [Nametag][nt]. I’m also a
-core contributor to the [ZMap][zmap] open-source project. I do part-time
-consulting and advising for startups. I can help with building out early
-engineering teams, evaluating market opportunities for B2B security software,
-and cryptography engineering.
+security startup. I left Censys after their [Series A][censys-raise]. They've
+since raised a [Series B][censys-raise-b]! I was employee #2 at [Nametag][nt].
+I’m also a core contributor to the [ZMap][zmap] open-source project. I do
+part-time consulting and advising for startups. I can help with building out
+early engineering teams, evaluating market opportunities for B2B security
+software, and cryptography engineering.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
-Alex Halderman][jhalderm]. I used Internet-wide scanning to study uses of
-cryptography on the Internet. This work led to the discovery of the
-[Logjam][logjam] and [DROWN][drown] attacks on TLS, and the creation of
-[Censys][censys]. I was also a lecturer for the undergraduate security course.
+Alex Halderman][jhalderm]. My research was based on using Internet-wide
+scanning to measure how cryptography is used on the Internet, and led to the
+discovery of the [Logjam][logjam] and [DROWN][drown] attacks on TLS, and the
+creation of [Censys][censys]. I also a lectured for the undergraduate security
+course.
 
 In 2021, I accidentally started the ["Security. Cryptography. Whatever."][scw]
 podcast with [Deirdre Connolly][deirdre] and [Thomas Ptacek][tqbf].
