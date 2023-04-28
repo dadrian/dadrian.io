@@ -13,7 +13,7 @@ software, and cryptography engineering.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. My research was based on using Internet-wide
-scanning to measure how cryptography is used on the Internet, and led to the
+scanning to measure how cryptography is used on the Internet. It led to the
 discovery of the [Logjam][logjam] and [DROWN][drown] attacks on TLS, and the
 creation of [Censys][censys]. I also a lectured for the undergraduate security
 course.
