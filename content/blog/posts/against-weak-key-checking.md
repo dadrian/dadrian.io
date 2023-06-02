@@ -34,8 +34,8 @@ a certificate earlier than expected. The term “bug bounty” wasn’t in use, 
 very few websites had security disclosure processes. It made sense to mitigate
 the vulnerability at the CA level at the time.
 
-That being said, let’s think about some of the other ways you can generate weak
-keys (this list is incomplete):
+That being said, here's a non-exhaustive list of some of the other ways you can
+generate weak keys:
 * RSA primes too close (Fermat factorization)[^2]
 * RSA moduli has one small factor
 * GCD factorization
@@ -50,22 +50,22 @@ example, [GCD factorization works best][ps-and-qs] when you have access to all
 RSA keys at the same time, and can multiply their moduli together.
 
 Even with the multitude of ways key generation can fail, nowadays [we’re much
-better at managing randomness and key generation][linux-csprng]. We have key
-types that definitionally must be valid so long as they are minimally and
-properly encoded, and where key generation is as simple as reading 32 random
-bytes. The randomness APIs on operating systems behave much smarter than they
-did in 2012. And we have enough compute capacity and automation that every
-certificate and host can use different keys.
+better at managing randomness and key generation][linux-csprng] than we were in
+2008 or 2012. We have key types that definitionally must be valid so long as
+they are minimally and properly encoded, and where key generation is as simple
+as reading 32 random bytes. The randomness APIs on operating systems behave
+much smarter than they did in 2012. And we have enough compute capacity and
+automation that every certificate and host can use different keys.
 
-At this point, there is no reason for subscribers to be generating weak keys,
-unless they go out of their way to have an insecure setup. At the same time, if
-another ROCA happens, and the best course of action is to revoke and reissue a
-large set of certificates, the mitigation for that is not better pre-issuance
-weak key checks, it’s automating validation and reissuance so that mass
-reissuance events can happen easily throughout the ecosystem, and reducing
-certificate lifetimes, so that the vast majority of clients that do not have
-access to complete revocation data are exposed to unexpired but revoked
-certificates for less time.
+At this point, there is no reason for _subscribers_ (users who are issued a
+certificate by a CA) to be generating weak keys, unless they go out of their
+way to have an insecure setup. At the same time, if another ROCA happens, and
+the best course of action is to revoke and reissue a large set of certificates,
+the mitigation for that is not better pre-issuance weak key checks. Automating
+validation and reissuance allows for mass reissuance events to happen easily
+throughout the ecosystem. Reducing certificate lifetimes reduces the exposure
+of a compromised key or misissued certificate, especially for the vast majority
+of clients that do not have access to complete revocation data.
 
 Every time someone finds a new way to trick a certification authority into
 issuing a weak key that violates the baseline requirements, CAs and root
@@ -76,31 +76,32 @@ weak key itself. CAs are not able to check for all types of weak keys, so the
 onus of not generating a weak key is already on the subscriber, even in the
 presence of the existing checks performed by CAs.
 
-CAs should be enforcing minimum key lengths, and ensuring the keys are
-minimally encoded and well-formed. CAs should not be required to check anything
-else. This is not to say that CAs shouldn’t choose to enforce stricter
-requirements on keys. Maybe some CAs do want to block certificates with Debian
-Weak Keys, or block known compromised keys from device vendors with poor
-security practices. But that should be a business decision made by the CA, not
-something that needs to be codified by the baseline requirements, and enforced
-by root programs. The ultimate responsibility for weak keys should rely on the
-subscriber, not the CA.
+CAs should be enforcing minimum key sizes, and ensuring the keys are minimally
+encoded and well-formed. CAs should not be required to check anything else.
+This is not to say that CAs shouldn’t choose to enforce stricter requirements
+on keys. Maybe some CAs do want to block certificates with Debian Weak Keys, or
+block known compromised keys from device vendors with poor security practices.
+But that should be a business decision made by the CA, not something that needs
+to be codified by the baseline requirements, and enforced by root programs.
+Unlike many forms of misissuance, and all forms of validation failure, the
+security impact of a weak key is limited to the subscriber, not other sites.
+The ultimate responsibility for weak keys should rely on the subscriber, not
+the CA.
 
 **Root programs and CAs should focus on adding requirements to the BRs that add
 clear security value and are observable externally**, like they did with the
 introduction of [Certificate Transparency][ct]. Similarly, they should be
-**cutting requirements that add process with limited security value**. Right
-now, every time someone finds a new way to encode a Debian Weak Key and submits
-it to a CA, root programs and CAs have to manage an “incident”. The incident
-needs to be tracked and responded-to, which creates work for root programs. For
-weak keys, this is a waste of root program time and energy.
+**cutting requirements that add process with limited security value**. Weak key
+"incidents" are process without security value.
 
 The Web PKI has many upcoming challenges---migrating to post-quantum
 cryptography efficiently, improving and expanding ACME and issuance automation,
 and reducing certificate lifetimes. Focusing on Debian Weak Keys, an over
-fifteen-year old bug, is a waste of time. **The Web PKI would be better off if we
-removed the requirement to check weak key checks at issuance time from BRs,
-instead of codifying it even further.**
+fifteen-year old bug, is a waste of time. We only have weak key checks because
+it was a convient way to do a specific vulnerability mitigation over a decade
+ago. Weak key checking does not need to be a permenant resonsibility of CAs.
+**The Web PKI would be better off if we removed the requirement to check weak
+key checks at issuance time from BRs, instead of codifying it even further.**
 
 [^1]: Also to revoke outstanding certificates, if they are made aware after
   issuance.
