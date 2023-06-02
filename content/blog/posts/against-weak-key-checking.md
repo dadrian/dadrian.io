@@ -1,6 +1,6 @@
 ---
 title: "Against Weak Key Checking"
-date: 2023-06-01T05:05:00-06:00
+date: 2023-06-01T06:34:00-06:00
 ---
 
 _Certification authorities_ (CAs) are the entities responsible for validating
