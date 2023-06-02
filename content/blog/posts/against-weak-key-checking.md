@@ -7,10 +7,10 @@ _Certification authorities_ (CAs) are the entities responsible for validating
 domain control and issuing the certificates used for HTTPS. The _Baseline
 Requirements_ (BRs) are technical and policy requirements that govern
 certification CA behavior, compliance with the BRs is "verified" by external
-auditors. _Root programs_ require compliance with the BRs. Root programs are
-ran by certificate consumers that maintain root stores, such as Mozilla, Apple,
-Microsoft, and Chrome, require compliance with the BRs. The BRs are maintained
-by the _CA/Browser Forum_ (CABF).
+auditors. _Root programs_ are ran by certificate consumers that maintain root
+stores, such as Mozilla, Apple, Microsoft, and Chrome. Root programs require
+compliance with the BRs. The BRs are maintained by the _CA/Browser Forum_
+(CABF).
 
 CAs are currently [required by the BRs][br-weak-keys] to reject issuance
 requests if they are made aware of a demonstrated or proven method that can
