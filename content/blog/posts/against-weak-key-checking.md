@@ -67,8 +67,8 @@ throughout the ecosystem. Reducing certificate lifetimes reduces the exposure
 of a compromised key or misissued certificate, especially for the vast majority
 of clients that do not have access to complete revocation data.
 
-Every time someone finds a new way to trick a certification authority into
-issuing a weak key that violates the baseline requirements, CAs and root
+Every time [someone][hanno] finds a new way to trick a certification authority
+into issuing a weak key that violates the baseline requirements, CAs and root
 programs participating in the CAB Forum are obligated to treat it as a formal
 incident. This is a massive waste of time, for something that effectively has
 no security impact on the web as a whole, beyond the subscriber who made the
@@ -115,3 +115,4 @@ key checks at issuance time from BRs, instead of codifying it even further.**
 [linux-csprng]: https://words.filippo.io/dispatches/linux-csprng/
 [ct]: https://certificate-transparency.org
 [sc59]: https://lists.cabforum.org/pipermail/servercert-wg/2023-May/003735.html
+[hanno]: https://groups.google.com/a/mozilla.org/g/dev-security-policy/c/gIbj0kRfyko/m/__MeiUeWBQAJ
