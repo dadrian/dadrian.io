@@ -7,17 +7,17 @@ _Certification authorities_ (CAs) are the entities responsible for validating
 domain control and issuing the certificates used for HTTPS. The _Baseline
 Requirements_ (BRs) are technical and policy requirements that govern
 certification CA behavior, compliance with the BRs is "verified" by external
-auditors. _Root programs_, which are run by certificate consumers that maintain
-root stores, such as Mozilla, Apple, Microsoft, and Chrome, require compliance
-with the BRs. The BRs are maintained by the _CA/Browser Forum_ (CABF).
+auditors. _Root programs_ require compliance with the BRs. Root programs are
+ran by certificate consumers that maintain root stores, such as Mozilla, Apple,
+Microsoft, and Chrome, require compliance with the BRs. The BRs are maintained
+by the _CA/Browser Forum_ (CABF).
 
-CAs are currently (June 1, 2023) [required bGy the BRs][br-weak-keys] to reject
-issuance requests if they are made aware of a demonstrated or proven method
-that can easily compute the Applicant’s Private Key[^1]. In practice, this
-means that CAs are supposed to reject requests for certificates where the
-private key is vulnerable to [ROCA][roca] or [Debian Weak
-Keys][debian-weak-keys]. There is currently a [CABF ballot][sc59] to codify
-this checking even further.
+CAs are currently [required by the BRs][br-weak-keys] to reject issuance
+requests if they are made aware of a demonstrated or proven method that can
+easily compute the Applicant’s Private Key[^1]. In practice, this means that
+CAs are supposed to reject requests for certificates where the private key is
+vulnerable to [ROCA][roca] or [Debian Weak Keys][debian-weak-keys]. There is
+currently a [CABF ballot][sc59] to codify this checking even further.
 
 At first glance, this seems reasonable---we should try to keep a high bar for
 security in the web PKI, and CAs are a natural place to enforce rules about
