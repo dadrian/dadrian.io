@@ -1,11 +1,18 @@
 ---
-title: "Certificates, explained without cryptography"
-date: 2023-05-06T04:11:00-06:00
+title: "Certificates, Explained"
+date: 2023-06-14T18:53:00-06:00
 ---
 
-# Certificates and Web PKI Background
+This post is about HTTPS (X.509) certificates used on the web[^14]. It has two
+parts:
 
-## Certificates and certification authorities, explained without cryptography
+1. [Certificates explained without cryptography](#p1)
+2. [Certificates explained with cryptography](#p2)
+
+The explanation with cryptography depends on the explanation without
+cryptography, so you'll want to either read both, or only read Part 1.
+
+## Certificates and certification authorities, explained without cryptography {#p1}
 
 Websites use certificates to prove that they're the "real" website[^13], and not
 an imposter. The certificate is used to bootstrap a secure connection between
@@ -18,29 +25,30 @@ CAs act as a trusted third-party that validate the authenticity of operators of
 domains. After validating the operator, a CA issues a **certificate** that
 attests to their identity. CAs are responsible for validating that a site is
 operated by the entity requesting the certificate before issuing a certificate.
-Chrome additionally requires that CAs append all certificates they issue to a
-publicly-accessible [Certificate Transparency] log, so that they can be
-inspected for correctness. Certificates are encoded in a format called X.509.
+Some browsers, such as Chrome and Safari, additionally require that CAs append
+all certificates they issue to a publicly-accessible [Certificate Transparency]
+log, so that they can be inspected for correctness. Certificates are encoded in
+a format called X.509.
 
 Every certificate has a **Subject** and an **Issuer**. When a web browser connects to a
 website using HTTPS:
 
-1.  Chrome verifies that the domain name is included in the subject[^1] of the
+1.  The browser verifies that the domain name is included in the subject[^1] of the
     certificate.
 2.  The browser builds a **chain**[^2] of certificates from the website certificate
     (the **leaf**) by recursively finding a **parent** certificate whose
     *Subject* matches the *Issuer* of the **child** certificate. The chain
     starts with the leaf certificate and ends at a **root certificate** managed
     by a trusted certification authority.
-3.  At each step in the chain, Chrome verifies the authenticity of the issuer,
+3.  At each step in the chain, the browser verifies the authenticity of the issuer,
     the browser verifies that the parent issued the child certificate, which ensures
     the certificate is not an unauthorized "fake" certificate used by an
     attacker to intercept the connection.
 
 Once the browser finishes this verification process, it can open a secure HTTPS
 connection between itself and the website[^5]. If the verification process
-fails, the browser will display a certificate error interstitial. In Chrome, see
-`chrome://interstitials` for examples.
+fails, the browser will display a certificate error interstitial. You can see
+examples of these errors in Chrome by navigating to `chrome://interstitials`.
 
 ## Root certificates and root stores
 
@@ -201,7 +209,7 @@ sites, and therefore may need to include root certificates intended to be used
 for non-web purposes. These root certificates should be stored separately or
 configured with an intended usage.
 
-## Certificates, once more, with cryptography
+## Certificates, once more, with cryptography {#p2}
 
 A certificate for the web PKI is a signed statement that binds a set of names to
 a public key. Certificates used on the web are encoded using the X.509 format,
@@ -219,7 +227,7 @@ in the chain, the subject of the parent certificate will match the issuer of the
 child certificate. For the link to be valid, the child certificate must contain
 a valid signature from the key contained in the parent certificate. The
 signature requirement ensures that the browser can tell the difference between
-the "real" issuer and a "fake" issuer with a matching name[<sup>3</sup>](#fn3).
+the "real" issuer and a "fake" issuer with a matching name[^3].
 
 A trusted certificate chain ends at a root certificate, which is a self-signed
 certificate[^8] that is included in the root store, and acts as a trust anchor.
@@ -288,9 +296,16 @@ to the public key in the root certificate.
 [^13]: In this case, a real website is defined as the content the domain owner
     intends to serve at that domain. However, the domain itself may still be
     part of a phishing attempt. A phishing page that pretends to be
-    `google.com` but uses a different domain name such as `fake-google.com`
-    can still get a certificate that verifies in Chrome for the
+    `google.com` but uses a different domain name such as `fake-google.com` can
+    still get a certificate that verifies in a browser for the
     `fake-google.com` name. Certificates in the Web PKI are used to bind a
-    cryptographic key pair to a domain name. They are not used to
-    authenticate the identities of businesses or individuals who operate the
-    domain.
+    cryptographic key pair to a domain name. They are not used to authenticate
+    the identities of businesses or individuals who operate the domain.
+[^14]: This post assumes the client is a web browser, and that only the server
+    is providing a certificate. Similar rules apply for when the client is a
+    TLS library in code, or if the client is an operating system verifying the
+    signature on a package, with slight variations. If the client is also
+    providing a certficate, like in mTLS, the process is largely the same, but
+    the server will also act as a verifier, and the name being verified might
+    not be a hostname.
+
