@@ -50,7 +50,7 @@ connection between itself and the website[^5]. If the verification process
 fails, the browser will display a certificate error interstitial. You can see
 examples of these errors in Chrome by navigating to `chrome://interstitials`.
 
-## Root certificates and root stores
+### Root certificates and root stores
 
 A **root certificate** is a certificate that represents a *certification
 authority* that the browser trusts to vouch for the identity of websites. Root
@@ -84,7 +84,7 @@ To bootstrap trust, root stores are shipped as part of the platform they're
 associated with. For example, the Chrome Root Store is included in the Chrome
 download package.
 
-## Root Programs and Policies
+### Root Programs and Policies
 
 A **root program** is the set of rules and policies that govern which root
 certificates are included in a root store. While any individual application is
@@ -121,7 +121,7 @@ corresponding root store. Root programs need to balance the security of the Web
 PKI with the risk of breaking users' access to websites when choosing to
 distrust a certification authority.
 
-## Local Roots and Private PKIs
+### Local Roots and Private PKIs
 
 The Web PKI is an example of a **public PKI** because it governs, secures, and
 enables certificate issuance for any website that is publicly accessible on the
@@ -187,7 +187,7 @@ their own trust decisions for their own networks and devices, while still
 allowing root programs to enable and enforce a baseline of security for the
 public Internet.
 
-## Non-web PKI
+### Non-web PKI
 
 X.509 certificates issued by certification authorities are used for other
 purposes, including authenticating emails ([S/MIME]), authenticating connections
