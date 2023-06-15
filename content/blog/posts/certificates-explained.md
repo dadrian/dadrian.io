@@ -257,9 +257,8 @@ to the public key in the root certificate.
     [key pinning]), however these rely on PKI expertise on the part of the
     domain owner, and have varying degrees of efficacy, risk, and scalability.
 [^4]: In practice, it's difficult for root programs to enforce non-public-facing
-    requirements. For more information, see
-    *[The Dirty Laundry of the Web PKI]*, a talk by estark@ from Usenix Enigma
-    2023.
+    requirements. For more information, see *[The Dirty Laundry of the Web
+    PKI]*, a talk by Emily Stark from Usenix Enigma 2023.
 [^5]: This is not a full description of all of the checks enforced during a
     secure certificate verification process. See go/chrome-cert-verifier for
     more details. Do not use this description as the basis for a verifier.
