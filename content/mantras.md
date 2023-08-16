@@ -15,3 +15,4 @@ layout = "bio"
 * It's better to make things better than to not make things better
 * It's good to be good at things
 * Ask the quiet part out loud, but like, fun
+* Prefer strategies that result in step changes rather than incremental changes
