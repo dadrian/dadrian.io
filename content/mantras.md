@@ -16,3 +16,4 @@ layout = "bio"
 * It's good to be good at things
 * Ask the quiet part out loud, but like, fun
 * Prefer strategies that result in step changes rather than incremental changes
+* Have the serenity to accept what you can't change. It is what it is. But you have more agency than you realize, so make sure you apply your courage to change things the right direction.
