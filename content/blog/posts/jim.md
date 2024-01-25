@@ -16,7 +16,8 @@ first time since 1997, when I was five. I loosely remember that championship. I
 learned the lyrics to The Victors that year. I knew the names of the
 quarterback, Brian Griese, and the coach, Lloyd Carr. I remember my childhood
 friend's father walking around their house, singing the fight song after
-Michigan won the Rose Bowl. I became a Michigan fan.
+Michigan won the Rose Bowl. I remember Charles Woodson with a rose between his
+teeth. I became a Michigan fan.
 
 In the years after, my interest in Michigan faded Throughout the 2000s, football
 had been slowly moving to ESPN and other cable networks that I didn’t have
