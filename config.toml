@@ -7,3 +7,5 @@ paginate = 100
   [markup.highlight]
     tabWidth = 4
     style = "monokai"
+[params]
+  images = [ "img/david4.jpg" ]

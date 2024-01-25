@@ -1,6 +1,8 @@
 ---
 title: "Jim"
 date: 2024-01-24T20:10:00-05:00
+images:
+- img/rose-bowl.jpg
 ---
 
 This evening, it was announced that Jim Harbaugh was leaving his job as head
