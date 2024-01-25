@@ -152,8 +152,10 @@ If it wasn’t for the three years of Rich Rodriguez, and the four years of Brad
 Hoke; if it wasn’t for the eight straight losses to Ohio and the only two wins
 in nineteen games against them, we wouldn’t have had the experience we got the
 last three years from these Jim Harbaugh led teams. Even when the team was bad,
-we came back, because we believed in Michigan. Although there were times we may
-have stopped believing in Harbaugh, he never gave up.
+we came back, because we believed in Michigan.  Although there were times we may
+have stopped believing in Harbaugh, he never gave up. At the start of 2021,
+Jim's record as head coach was 49-22. Three years later, as he exits, Jim's
+final record is an incredible 89-25.
 
 I am sad to see Jim go. But I know that the highs of these past three years
 wouldn’t have been as meaningful without the lows of the last two decades. I
