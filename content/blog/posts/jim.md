@@ -136,7 +136,7 @@ remember thinking that we will simply never win again in 2018 and 2019. I
 remember all the times people came over to my apartment, and I cooked way too
 much food and meat, and we watched away games that we all hoped we would win,
 but often didn’t. And it was because of all those times, that this meant so
-much. Brain Cook from MGoBlog [put it best][edge], after we won:
+much. Brian Cook from MGoBlog [put it best][edge], after we won:
 
 > I said that everyone was going to float that night, but the people who had
 invested more would find themselves lighter, and go higher. I said that the
