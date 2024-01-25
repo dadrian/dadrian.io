@@ -156,7 +156,8 @@ Bowl, it wouldn’t be the same. The championship that means the most to me has
 already happened. Because of the journey it took to get back here.
 
 I am thankful for the time with Jim Harbaugh as our coach, and for the time
-spent with the best friends, family, and fanbase in the world.
+spent with the best friends, family, and fanbase in the world. Who's got it
+better than us?
 
 Go Blue!
 
