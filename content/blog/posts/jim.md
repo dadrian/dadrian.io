@@ -160,5 +160,7 @@ spent with the best friends, family, and fanbase in the world.
 
 Go Blue!
 
+🫡
+
 [edge]: https://mgoblog.com/content/edge-space-0
 [mgoblog]: https://mgoblog.com
