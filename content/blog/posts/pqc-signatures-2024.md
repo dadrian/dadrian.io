@@ -21,7 +21,9 @@ it.
 Unfortunately, there has not been enough discussion about how what NIST has
 standardized is simply not good enough to deploy on the public web in most
 cases. We need better algorithms. Specifically, we need algorithms that use less
-bytes on the wire.
+bytes on the wire---a KEM that when embedded in a TLS ClientHello is still under
+one MTU, a signature that performs on par with ECDSA that is no larger than
+RSA-2048, and a sub-100 byte signature that can have a larger public key.
 
 To understand why, we'll look at the current state of HTTPS. Cryptography is
 primarily used in five ways for HTTPS on the public web:
@@ -171,6 +173,9 @@ straight "copy-and-replace" with PQC algorithms.
   Solutions in this form may be a performance optimization for browser clients,
   but are likely not feasible for non-browser clients. That being said,
   handshake latency matters considerably less for non-browser clients.
+- **Shrink the size of the root store**: A post-quantum root store with less
+  than 10 certificates containing UOV public keys would be within an order of
+  magnitude of the size of current root stores.
 
 All together, this means that combining Mayo and UOV with other changes to the
 PKI _may_ be enough to transition to quantum-resistant authentication in the
@@ -185,13 +190,18 @@ WebPKI. Unfortunately, all of this armchair design remains subject to several ri
 
 So what can we do to derisk all this? Well, for any solution, we need to get
 better a trust anchor agility, intermediate suppresion, and PKI migrations. This
-is happening already.
+is [happening already][trust-expressions].
 
 The best thing we could do to make the post-quantum transition more feasible is
-to come up with better algorithms. Specifically:
-1. A post-quantum KEM that fits in a single MTU when combined with the rest of the TLS ClientHello
-2. A 10,000x signing speed improvement and 100x verification speed improvement in SQISign (or an equivalent algorithm).
+to come up with better algorithms that have performance characteristics no worse
+than RSA-2048. Specifically:
+1. A post-quantum KEM that fits in a single MTU when combined with the rest of
+   the TLS ClientHello
+2. A 10,000x signing speed improvement and 100x verification speed improvement
+   in SQISign (or a new, equivalent algorithm with these characteristics)
 
+To some extent, this may be yelling for the impossible. Unfortunately, a Web PKI
+based on ML-DSA is also impossible.
 
 [nist-pqc-competition]: https://csrc.nist.gov/projects/post-quantum-cryptography
 [nist-final-candidates]: https://www.nist.gov/news-events/news/2022/07/pqc-standardization-process-announcing-four-candidates-be-standardized-plus
