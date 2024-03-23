@@ -51,7 +51,7 @@ primarily used in five ways for HTTPS on the public web:
 - **Handshake Authentication**: The identity of the server needs to be bound to
   the connection itself during the TLS handshake. In TLS 1.3, this is provided
   by a signature over the server key share message from the key in the server
-  certificate in the \TK message.
+  certificate in the CertificateVerify message.
 
 There is a threat from _future_ quantum computers to encrypted network
 connections _today_ in the form of ["harvest now, decrypt later"][hndl] attacks.
@@ -217,6 +217,7 @@ based on ML-DSA is also impossible.
 [chrome-kyber]: https://blog.chromium.org/2023/08/protecting-chrome-traffic-with-hybrid.html
 [firefox-kyber]: https://www.reddit.com/r/firefox/comments/1827g86/tls_13_hybridized_kyber_support_for_firefox/
 [isogeny-break]: https://securitycryptographywhatever.com/2022/08/11/hot-cryptanalytic-summer-with-steven-galbraith/
+[pqc-sig-zoo]: https://pqshield.github.io/nist-sigs-zoo/
 
 [^1]: A case could be made that the entire quantum threat is not important, but
   I'm not here to argue that today. Whatever the importantance of the quantum
