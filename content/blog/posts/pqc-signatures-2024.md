@@ -161,7 +161,7 @@ competition are not quite there yet, but some do have potential:
 There's a couple other performance knobs we can attempt to tweak, but they all
 require larger changes to how HTTPS, TLS, and the Web PKI interact than doing a
 straight "copy-and-replace" with PQC algorithms.
-- **Intermediate ellision**: Predistributing known intermediate certificates to
+- **Intermediate elision**: Predistributing known intermediate certificates to
   browsers would save ~1.5K bytes for the median intermediate certificate. This
   doesn't fundamentally change any of the feasibility of the NIST candidates, but
   it likely helps Mayo stay within bounds of what's currently feasible.
