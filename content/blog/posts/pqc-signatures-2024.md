@@ -223,6 +223,7 @@ ML-DSA for the Web PKI in its current form is also impossible.
 [isogeny-break]: https://securitycryptographywhatever.com/2022/08/11/hot-cryptanalytic-summer-with-steven-galbraith/
 [pqc-sig-zoo]: https://pqshield.github.io/nist-sigs-zoo/
 [trust-expressions]: https://datatracker.ietf.org/doc/draft-davidben-tls-trust-expr/
+[mtc-draft]: https://datatracker.ietf.org/doc/draft-davidben-tls-merkle-tree-certs/
 
 [^1]: A case could be made that the entire quantum threat is not important, but
   I'm not here to argue that today. However important the quantum threat is, key
