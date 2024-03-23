@@ -109,7 +109,7 @@ the only signature algorithm that could be used in the context of TLS and it has
 public key is bigger than all of the 5 signatures and 2 public keys currently
 transmitted during an HTTPS connection_. In a direct "copy-and-replace" of
 current signature algorithms with ML-DSA, a TLS handshake would contain 5\*2420
-+ 2\*1312 = 14,724 bytes of signatures and public keys, an over 10x increase.
+\+ 2\*1312 = 14,724 bytes of signatures and public keys, an over 10x increase.
 
 Barring a large-scale quantum computer staring us in the face, this is not a
 tenable amount of data to send simply to _open_ a connection. As a baseline
