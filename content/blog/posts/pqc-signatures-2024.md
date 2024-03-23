@@ -202,8 +202,8 @@ than RSA-2048. Specifically:
 2. A 10,000x signing speed improvement and 100x verification speed improvement
    in SQISign (or a new, equivalent algorithm with these characteristics)
 
-To some extent, this may be yelling for the impossible. Unfortunately, a Web PKI
-based on ML-DSA is also impossible.
+To some extent, this may be yelling for the impossible. Unfortunately, using
+ML-DSA for the Web PKI in its current form is also impossible.
 
 [nist-pqc-competition]: https://csrc.nist.gov/projects/post-quantum-cryptography
 [nist-final-candidates]: https://www.nist.gov/news-events/news/2022/07/pqc-standardization-process-announcing-four-candidates-be-standardized-plus
