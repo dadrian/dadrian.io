@@ -156,7 +156,7 @@ competition are not quite there yet, but some do have potential:
   speed, and a 100x performance improvement in verification.
 - **Mayo**: Mayo is possibly feasible. Mayo1 has 1,168-byte public keys and
   321-byte signatures, which makes it a candidate for use in certificates and
-  for handshake authentication (1168*2 + 321*3 = 3,299 bytes). Mayo2 has 5,488-byte keys, but only 180-byte signatures, which makes it a candidate for SCTs if UOV doesn't pan out.
+  for handshake authentication (1168\*2 + 321\*3 = 3,299 bytes). Mayo2 has 5,488-byte keys, but only 180-byte signatures, which makes it a candidate for SCTs if UOV doesn't pan out.
 
 There's a couple other performance knobs we can attempt to tweak, but they all
 require larger changes to how HTTPS, TLS, and the Web PKI interact than doing a
