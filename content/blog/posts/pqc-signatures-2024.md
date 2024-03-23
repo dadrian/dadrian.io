@@ -24,7 +24,8 @@ standardized is simply not good enough to deploy on the public web in most
 cases. We need better algorithms. Specifically, we need algorithms that use less
 bytes on the wire---a KEM that when embedded in a TLS ClientHello is still under
 one MTU, a signature that performs on par with ECDSA that is no larger than
-RSA-2048, and a sub-100 byte signature that can have a larger public key.
+RSA-2048, and a sub-100 byte signature where we can optionally handle a larger
+public key.
 
 To understand why, we'll look at the current state of HTTPS. Cryptography is
 primarily used in five ways for HTTPS on the public web:
