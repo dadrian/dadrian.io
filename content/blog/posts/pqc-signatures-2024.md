@@ -102,13 +102,14 @@ The current breakdown of key and signature sizes in TLS is roughly:
 - Each SCT contains a 64-byte ECDSA signature.
 
 In total, this is 512 + 256 + 256 + 32 + 64 + 2\*64 = 1,248 bytes of signatures
-and public keys in a normal TLS handshake for HTTPS. The winning signature
-algorithm of the first NIST PQC competition, [ML-DSA (Dilithium)][ml-dsa], has
+and public keys in a normal TLS handshake for HTTPS. Of the winning signature
+algorithms from the first NIST PQC competition, [ML-DSA (Dilithium)][ml-dsa] is
+the only signature algorithm that could be used in the context of TLS and it has
 1,312-byte public keys and 2,420-byte signatures. This means _a single ML-DSA
 public key is bigger than all of the 5 signatures and 2 public keys currently
 transmitted during a TLS connection_. In a direct "copy-and-replace" of current
-signature algorithms with ML-DSA, a TLS handshake would contain 5\*2420 + 2\*1312
-= 14,724 bytes of signatures and public keys, an over 10x increase.
+signature algorithms with ML-DSA, a TLS handshake would contain 5\*2420 +
+2\*1312 = 14,724 bytes of signatures and public keys, an over 10x increase.
 
 Barring a large-scale quantum computer staring us in the face, this is not a
 tenable amount of data to send simply to _open_ a connection. As a baseline
