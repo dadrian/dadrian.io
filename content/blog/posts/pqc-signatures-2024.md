@@ -1,6 +1,8 @@
 ---
 title: "Post-quantum cryptography is too damn big."
 date: 2024-03-22T19:51:46-04:00
+images:
+- img/rent-too-damn-high.webp
 ---
 
 Large-scale quantum computers are capable of breaking all of the common forms of
