@@ -107,17 +107,18 @@ The current breakdown of key and signature sizes in TLS is roughly:
 In total, this is 512 + 256 + 256 + 32 + 64 + 2\*64 = 1,248 bytes of signatures
 and public keys in a normal TLS handshake for HTTPS. Of the winning signature
 algorithms from the first NIST PQC competition, [ML-DSA (Dilithium)][ml-dsa] is
-the only signature algorithm that could be used in the context of TLS and it has
-1,312-byte public keys and 2,420-byte signatures. This means _a single ML-DSA
-public key is bigger than all of the 5 signatures and 2 public keys currently
-transmitted during an HTTPS connection_. In a direct "copy-and-replace" of
-current signature algorithms with ML-DSA, a TLS handshake would contain 5\*2420
-\+ 2\*1312 = 14,724 bytes of signatures and public keys, an over 10x increase.
+the only signature algorithm that could be used in the context of TLS[^5] and it
+has 1,312-byte public keys and 2,420-byte signatures. This means _a single
+ML-DSA public key is bigger than all of the 5 signatures and 2 public keys
+currently transmitted during an HTTPS connection_. In a direct
+"copy-and-replace" of current signature algorithms with ML-DSA, a TLS handshake
+would contain 5\*2420 \+ 2\*1312 = 14,724 bytes of signatures and public keys,
+an over 10x increase.
 
 Barring a large-scale quantum computer staring us in the face, this is not a
 tenable amount of data to send simply to _open_ a connection. As a baseline
 reality check, we should not be sending over 1\% of a 3.5" floppy disk purely in
-signatures and public keys.
+signatures and public keys[^4].
 
 In more concrete terms, for the server-sent messages, [Cloudflare
 found][cf-pq-2024] that every 1K of additional data added to the server response
@@ -148,15 +149,17 @@ competition are not quite there yet, but some do have potential:
   certificates---there's too many root certificates and root stores would be too
   big to embed in a binary.
 - **SQISign**: SQISign has 64-byte keys and 177-byte signatures. If used for
-  certificates and the handshake signature, it would be 2\*64 + 3\*177 = 659
-  bytes. This is compared to the current RSA+ECDSA approach, which is 4096/8 +
-  2048/8 + 2048/8 + 32 + 64 = 1,120 bytes. SQISign is a net win (and comparable
-  to an ECDSA-only chain)! Unforunately, SQISign is incredibly slow. For SQISign
-  to be feasible, it needs around a 10,000x performance improvement in signing
-  speed, and a 100x performance improvement in verification.
+  certificates and the handshake signature, it would be 2\*64 \+ 3\*177 = 659
+  bytes. This is compared to the current RSA+ECDSA approach, which is 4096/8 \+
+  2048/8 \+ 2048/8 \+ 32 \+ 64 = 1,120 bytes. SQISign is a net win (and
+  comparable to an ECDSA-only chain)! Unforunately, SQISign is incredibly slow.
+  For SQISign to be feasible, it needs around a 10,000x performance improvement
+  in signing speed, and a 100x performance improvement in verification.
 - **Mayo**: Mayo is possibly feasible. Mayo1 has 1,168-byte public keys and
   321-byte signatures, which makes it a candidate for use in certificates and
-  for handshake authentication (1168\*2 + 321\*3 = 3,299 bytes). Mayo2 has 5,488-byte keys, but only 180-byte signatures, which makes it a candidate for SCTs if UOV doesn't pan out.
+  for handshake authentication (1168\*2 \+ 321\*3 = 3,299 bytes). Mayo2 has
+  5,488-byte keys, but only 180-byte signatures, which makes it a candidate for
+  SCTs if UOV doesn't pan out.
 
 There's a couple other performance knobs we can attempt to tweak, but they all
 require larger changes to how HTTPS, TLS, and the Web PKI interact than doing a
@@ -180,16 +183,28 @@ straight "copy-and-replace" with PQC algorithms.
   than 10 certificates containing UOV public keys would be within an order of
   magnitude of the size of current root stores.
 
-All together, this means that combining Mayo and UOV with other changes to the
-PKI _may_ be enough to transition to quantum-resistant authentication in the
-WebPKI. Unfortunately, all of this armchair design remains subject to several risks:
-- The performance impact might actually be larger than what Cloudflare measured.
+This means that combining Mayo and UOV with other changes to the PKI _may_ be
+enough to transition to quantum-resistant authentication in the WebPKI.
+Unfortunately, all of this armchair design remains subject to several risks:
+- The performance impact is almost definitely larger than what Cloudflare measured.
   Cloudflare's experiment likely was primarily ideal clients (enterprise users
   on desktop) accessing a login page (served by a low-RTT edge server).
+- The performance impact is also probably worse than Chrome current sees! The
+  4\% latency increase is the net increase across all connections once ML-KEM
+  was added to the key shares in the ClientHello. At this point in the
+  deployment, ML-KEM is primarily only supported by Google properties and
+  Cloudflare. Most servers are _not_ selecting ML-KEM and responding with the
+  ~1K of an ML-KEM encapsulation. As ML-KEM deployment expands, the 4\% latency
+  impact seen by Chrome will get _worse_ as the cipher finishes standardization
+  and servers start to deploy ML-KEM.
 - The security of Mayo and UOV might not hold. This would not be the first time
   a promising post-quantum algorithm [turns out to be broken][isogeny-break].
-- 10\% might be too much of a performance hit unless quantum computers are
-  immenient.
+- Even if the performance estimates are accurate, it may be that 10\% is still
+  too much of a performance hit unless quantum computers are immenient.
+
+Putting this all together, even a drastic change like Merkele Tree Certs, when
+combined with ML-DSA for handshake authentication, is likely still too big and
+only suitable for browser clients.
 
 So what can we do to derisk all this? Well, for any solution, we need to get
 better a trust anchor agility, intermediate suppresion, and PKI migrations. This
@@ -238,3 +253,13 @@ ML-DSA for the Web PKI in its current form is also impossible.
   enough to impact actual page load metrics or "Core Web Vitals", such as First
   Contentful Paint and Largest Contentful Paint until the threat has much more
   clear and present danger.
+[^4]: This may not seem like very many bytes for today's Internet connections,
+  but even ignoring the latency impact, it's important to remember that billions
+  of people are on metered, low-quality data connections on low-end phones.
+  Alternatively, consider that the Markdown source for this blog post is ~15K.
+  The TLS handshake should not consume as many bytes as this page, regardless of
+  how fast networks are.
+[^5]: The other winning signature algorithms are not feasible at all for the
+  web. SPHINCS signatures are gigantic. Stateful hash-based signatures are a
+  non-starter due to state. And the variable-time floating-point operations take
+  FN-DSA off the table.
