@@ -21,11 +21,11 @@ it.
 
 Unfortunately, there has not been enough discussion about how what NIST has
 standardized is simply not good enough to deploy on the public web in most
-cases. We need better algorithms. Specifically, we need algorithms that use less
-bytes on the wire---a KEM that when embedded in a TLS ClientHello is still under
-one MTU, a signature that performs on par with ECDSA that is no larger than
-RSA-2048, and a sub-100 byte signature where we can optionally handle a larger
-public key.
+cases. We need better algorithms. Specifically, we need algorithms that use
+fewer bytes on the wire---a KEM that when embedded in a TLS ClientHello is still
+under one MTU, a signature that performs on par with ECDSA that is no larger
+than RSA-2048, and a sub-100 byte signature where we can optionally handle a
+larger public key.
 
 To understand why, we'll look at the current state of HTTPS. Cryptography is
 primarily used in five ways for HTTPS on the public web:
@@ -179,7 +179,7 @@ straight "copy-and-replace" with PQC algorithms.
   Solutions in this form may be a performance optimization for browser clients,
   but are likely not feasible for non-browser clients. That being said,
   handshake latency matters considerably less for non-browser clients.
-- **Shrink the size of the root store**: A post-quantum root store with less
+- **Shrink the size of the root store**: A post-quantum root store with fewer
   than 10 certificates containing UOV public keys would be within an order of
   magnitude of the size of current root stores.
 
