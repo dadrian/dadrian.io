@@ -203,8 +203,8 @@ Unfortunately, all of this armchair design remains subject to several risks:
   too much of a performance hit unless quantum computers are immenient.
 
 Putting this all together, even a drastic change like Merkele Tree Certs, when
-combined with ML-DSA for handshake authentication, is likely still too big and
-only suitable for browser clients.
+combined with ML-DSA or Mayo for handshake authentication, is likely still too
+big and only suitable for browser clients.
 
 So what can we do to derisk all this? Well, for any solution, we need to get
 better a trust anchor agility, intermediate suppresion, and PKI migrations. This
