@@ -220,9 +220,9 @@ based on ML-DSA is also impossible.
 [pqc-sig-zoo]: https://pqshield.github.io/nist-sigs-zoo/
 
 [^1]: A case could be made that the entire quantum threat is not important, but
-  I'm not here to argue that today. Whatever the importantance of the quantum
-  threat is, the importantance of key exchange and authentication is the
-  same---both get broken by the same large-scale quantum computer.
+  I'm not here to argue that today. However important the quantum threat is, key
+  exchange and authentication are just as important---both get broken by the
+  same large-scale quantum computer.
 [^2]: The same concern applies to the server messages, but since certificates
   are already 1.5-2K, we already have a multi-packet reponse size that varies
   server to server, so the impact of additional bytes is not directly aligned
