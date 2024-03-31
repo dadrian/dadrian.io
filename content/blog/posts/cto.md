@@ -17,7 +17,7 @@ There are two and a half valid forms of CTO. The two valid CTO roles are:
   between a technical IC leader, and a chief product officer.
 * A public company that needs a person on the executive team to explain
   technology to the C-suite, and do technical marketing, and generally help
-  with technology ✨_synergy_✨. Notably, this person is not in any form
+  with technology ✨ _synergy_ ✨. Notably, this person is not in any form
   “leading engineering” or acting as a "chief engineer".
 
 The remaining half-valid form of CTO is actually just:
