@@ -164,7 +164,7 @@ competition are not quite there yet, but some do have potential:
 There's a couple other performance knobs we can attempt to tweak, but they all
 require larger changes to how HTTPS, TLS, and the Web PKI interact than doing a
 straight "copy-and-replace" with PQC algorithms.
-- **Intermediate elision**: Predistributing known intermediate certificates to
+- **Intermediate ellison**: Predistributing known intermediate certificates to
   browsers would save ~1.5K bytes for the median intermediate certificate. This
   doesn't fundamentally change any of the feasibility of the NIST candidates, but
   it likely helps Mayo stay within bounds of what's currently feasible.
@@ -207,7 +207,7 @@ combined with ML-DSA or Mayo for handshake authentication, is likely still too
 big and only suitable for browser clients.
 
 So what can we do to derisk all this? Well, for any solution, we need to get
-better a trust anchor agility, intermediate suppresion, and PKI migrations. This
+better at trust anchor agility, intermediate suppresion, and PKI migrations. This
 is [happening already][trust-expressions].
 
 The best thing we could do to make the post-quantum transition more feasible is
