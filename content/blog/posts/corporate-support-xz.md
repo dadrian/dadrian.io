@@ -19,7 +19,7 @@ offering some sort of Universal Basic Income (UBI) so that developers can work
 on open source full time.
 
 Unfortunately, money does not prevent this backdoor. First off, remember that
-aside from funding infrastructure, money is mostly only useful for open source
+aside from funding infrastructure, money is mostly only useful for open-source
 projects if it can enable the maintainer to work on open source _in place of_
 their current full-time job, rather than nights and weekends. A living wage UBI
 doesn't reach this threshold for most software developers, who currently largely
@@ -34,7 +34,7 @@ Companies could:
   the project. This could be a mix of ensuring the project remains useful to the
   company's goals, general open source maintenance, and other company work. For
   example, this is what Microsoft does with Electron.
-* Pay the maintainer a salary-equivalent to desrisk the likelihood the project
+* Pay the maintainer a salary-equivalent to derisk the likelihood the project
   goes under, but don't actually engage with them as a consultant.
 
 The first approach, paying the maintainer as a consultant, may sound appealing
@@ -43,32 +43,32 @@ find clients to provide services to in exchange for money. Perhaps you get
 yourself to a state where you can spend most of your time working on whatever it
 is that you choose, and find a few small, high-value contracts here and there to
 support what you do, but that's difficult. The good news is that it's already an
-option! Open source developers in high leverage situations can do this right
+option! Open-source developers in high leverage situations can do this right
 now.
 
 Unfortunately, being a consultant is not the same thing as working on an
-open source project for love of the game. There's a lot of other work involved
+open-source project for love of the game. There's a lot of other work involved
 in running a business, supporting clients, and finding work. You're going to
 find yourself with SLAs and contracts and wait a minute, now you're not an
-open source project, you're running a software consultancy with open code. The
+open-source project, you're running a software consultancy with open code. The
 concerns for something that needs to make the author money are fundamentally
-different than the concerns for an open source project.
+different than the concerns for an open-source project.
 
-Open source development is enjoyable for many people because they can set the
+Open-source development is enjoyable for many people because they can set the
 direction and the feature set and the tech stack of the project without having
 to be beholden to their users or clients. The goal of the project can be the
 technology itself, rather than to provide value to users[^1]. Unfortunately,
 once it becomes your source of income, you start to be beholden to your users.
 If you're a consultant, you can you end up with perverse incentives to make the
-open source project _worse_ so that your users are more likely to convert into
-paying clients nho want custom features that otherwise could have been open
+open-source project _worse_ so that your users are more likely to convert in to
+paying clients who want custom features that otherwise could have been open
 source.
 
 What about hiring maintainers as employees? Well, you still have to be an
 employee. You're going to have to do employee things like performance reviews
-and goal setting. Instead of what was a self-guided open source project, you
+and goal setting. Instead of what was a self-guided open-source project, you
 have a job with a salary open code and maybe open governance, but you've lost
-the freedom that came with an open source project. You have a job, and having a
+the freedom that came with an open-source project. You have a job, and having a
 job is fundamentally different from building something [as a
 gift][apenwarr-open-source]. Eventually, this starts to look like corporate open
 source, which has its own [set of problems][corporate-open-source].
@@ -83,17 +83,17 @@ doesn't work because not only is it incredibly unrealistic, but there's no
 guarantees. I've only seen this accomplished [once][filippo-paid-maintainer], by
 someone who walked the line between consultant and influencer. Funding
 maintainers without consulting or employment agreements is simply throwing money
-at open source developers and hoping security gets fixed. As much as it would be
-nice to work on whatever you want and still make a Big Tech salary with no
+at open-source developers and hoping security gets fixed. As much as it would be
+nice to work on whatever you want and still make a Big Tech salary with limited
 accountability[^3], that's not how exchanging money for goods and services
 works.
 
-To make all of this even worse, now consider the case where the open source
+To make all of this even worse, consider the case where the open-source
 project is mostly "done". A compression library for a "finished" compression
 format is fairly stable, all things considered. There's bugs to fix, CI to
 manage, new platforms to support. But there is not 40 hours of work each week,
-nor are there going to be a large enough target market to support a full-time
-consulting job. Turning it into someone's job risks expanding scope of the
+nor is there a large enough target market to support a full-time consulting job.
+Turning projects like this in to a consulting job risks expanding scope of the
 project in a way that's actually net harmful and increases attack surface.
 
 At the end of the day, none of these arguments about money even matter, because
@@ -101,10 +101,10 @@ regardless of whether or not the maintainer is being paid, who is paying them,
 and what the expectations are of the maintainer, there is still a succession
 problem! At some point, maintainers will either want to step away, or life will
 force them to move on, and the project will need to be handed off or will need a
-second maintainer. Where doees that maintainer come from? They could still be
+second maintainer. Where does that maintainer come from? They could still be
 another [Jia Tan][wired-jia-tan]. If there was a magical pot of money paying for
-maintainence, then Jia Tan could still backdoor the project, _and get paid at
-the same time!_ What a gig!
+maintenance, then Jia Tan could still backdoor the project, _and get paid for
+it!_ What a gig!
 
 Let's separate out the discourse about open source from the actual security
 steps consumers of open source should be taking. For security, there are
@@ -116,12 +116,13 @@ tangible steps you can take to mitigate the impact of another Jia Tan:
 * If you still want to use third-party build tooling, consider avoiding projects
   that use autotools, a build system that thinks it's a good idea to invoke gcc
   around 6000 times to figure out if you're running a 30-year old version of
-  Solaris.
-* Prefer using languagues and dependency systems that have support for
+  Solaris. Better yet, submit patches to move projects off of autotools.
+* Prefer using languages and dependency systems that have support for
   auditing[^4], and build a process in your organization for evaluating and
-  updating new third-party dependencies.
-* Avoid dependencies written in languagues that could introduce a memory safety
-  bug, enabling them to stop all around your application's address space.
+  updating new third-party dependencies, and tracking their security advisories.
+* Avoid dependencies written in languages that could introduce a memory safety
+  bug, enabling them to stop all around your application's address space. No
+  need to let a bull into the china cabinet.
 
 For the discourse, consider:
 * Is your suggestion for open source actually suggestion mass societal change in a
@@ -132,8 +133,8 @@ For the discourse, consider:
   people have resulted in a different outcome?
 
 And finally, consider that _this was a success story_. The open source community
-caught the backdoor before it percolated into anything beyond nightly release
-channels. Now, if only Microsoft could channel their [appreciation for
+caught the backdoor before it percolated beyond nightly release channels. Now,
+if only Microsoft could channel their [appreciation for
 speed][microsoft-backdoor-speed] towards [Microsoft
 Teams...][microsoft-teams-speed]
 
