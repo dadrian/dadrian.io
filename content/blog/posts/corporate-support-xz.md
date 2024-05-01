@@ -132,9 +132,12 @@ For the discourse, consider:
   paid to do what, by who, and why are they getting paid? Why would paying those
   people have resulted in a different outcome?
 
-And finally, consider that _this was a success story_. The open source community
-caught the backdoor before it percolated beyond nightly release channels. Now,
-if only Microsoft could channel their [appreciation for
+And finally, consider that _this was a success story_. The open-source community
+caught the backdoor before it percolated beyond nightly release channels. And
+while it's likely that this is not the only backdoor in open-source software,
+there's [no evidence][hermoine] to suggest backdoors are endemic.
+
+Now, if only Microsoft could channel their [appreciation for
 speed][microsoft-backdoor-speed] towards [Microsoft
 Teams...][microsoft-teams-speed]
 
@@ -159,6 +162,7 @@ _Inspiration for the [Dire Straits title format][money-for-nothing] came from [P
 [nluug-keynote]: https://nluug.social/@nluug/112098792834106087
 [money-for-nothing]: https://www.youtube.com/watch?v=wTP2RUD_cL0
 [honey]: http://peter.honeyman.org/
+[hermoine]: https://x.com/davidcadrian/status/1774466067177361818
 
 [^1]: Not all open source projects run like this, and you have to balance your
   desires for users with your goals as a maintainer. But at the end of the day,
