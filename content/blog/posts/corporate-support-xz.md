@@ -1,6 +1,8 @@
 ---
 title: "Money for nothing, commits for free"
 date: 2024-05-01T15:04:13-04:00
+images:
+- img/money-for-nothing.jpeg
 ---
 
 In early April 2024, the open source community discovered a backdoor in XZ
