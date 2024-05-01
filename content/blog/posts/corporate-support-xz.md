@@ -5,9 +5,9 @@ images:
 - img/money-for-nothing.jpeg
 ---
 
-In early April 2024, the open source community discovered a backdoor in XZ
-Utils, a suite of tools that use the xz compression algorithm. The xz backdoor
-was embedded inside liblzma, and took effect when liblzma was used in OpenSSH, a
+In Late March 2024, the open source community discovered a backdoor in XZ Utils,
+a suite of tools that use the xz compression algorithm. The xz backdoor was
+embedded inside liblzma, and took effect when liblzma was used in OpenSSH, a
 common remote-login tool.  You can read about this extensively in
 [many][xz-filippo] [places][xz-ars] [elsewhere][xz-blog].
 
