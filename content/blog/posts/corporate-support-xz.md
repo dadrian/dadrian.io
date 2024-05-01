@@ -1,6 +1,6 @@
 ---
 title: "Money for nothing, commits for free"
-date: 2024-05-01T09:10:00-05:00
+date: 2024-05-01T15:03:00-04:00
 ---
 
 In early April 2024, the open-source community discovered a backdoor in XZ
@@ -135,8 +135,7 @@ Teams...][microsoft-teams-speed]
 
 ---
 
-_Inspiration for the Dire Straits title format came from Peter Honeyman's [NLUUG
-keynote][nluug-keynote] "Money for nothing, chips for free"._
+_Inspiration for the [Dire Straits title format][money-for-nothing] came from [Peter Honeyman's][honey] [NLUUG][nluug-keynote] keynote "Money for nothing, chips for free"._
 
 
 [xz-filippo]: https://abyssdomain.expert/@filippo/112185827553387306
@@ -153,6 +152,8 @@ keynote][nluug-keynote] "Money for nothing, chips for free"._
 [microsoft-backdoor-speed]: https://www.nytimes.com/2024/04/03/technology/prevent-cyberattack-linux.html
 [microsoft-teams-speed]: https://www.youtube.com/watch?v=CT7nnXej2K4
 [nluug-keynote]: https://nluug.social/@nluug/112098792834106087
+[money-for-nothing]: https://www.youtube.com/watch?v=wTP2RUD_cL0
+[honey]: http://peter.honeyman.org/
 
 [^1]: Not all open-source projects run like this, and you have to balance your
   desires for users with your goals as a maintainer. But at the end of the day,
