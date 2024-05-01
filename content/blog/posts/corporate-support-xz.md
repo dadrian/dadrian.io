@@ -168,7 +168,7 @@ _Inspiration for the [Dire Straits title format][money-for-nothing] came from [P
 
 [^1]: Not all open source projects run like this, and you have to balance your
   desires for users with your goals as a maintainer. But at the end of the day,
-  an open source maintainer whose in it "for love of the game" can simply choose
+  an open source maintainer who's in it "for love of the game" can simply choose
   to not doing something and their users have to deal with it.
 [^2]: This is not about "corporate open source", where a company makes a
   strategic business decision to build their product around an open source
