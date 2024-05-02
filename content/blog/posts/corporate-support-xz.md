@@ -123,11 +123,11 @@ tangible steps you can take to mitigate the impact of another Jia Tan:
   auditing[^4], and build a process in your organization for evaluating and
   updating new third-party dependencies, and tracking their security advisories.
 * Avoid dependencies written in languages that could introduce a memory safety
-  bug, enabling them to stop all around your application's address space. No
+  bug, enabling them to stomp all around your application's address space. No
   need to let a bull into the china cabinet.
 
 For the discourse, consider:
-* Is your suggestion for open source actually suggestion mass societal change in a
+* Is your suggestion for open source actually suggesting mass societal change in a
   way that benefits me, personally? If so, consider focusing on the societal
   change bits, rather than the open source bits.
 * How, specifically, would any proposal have stopped Jia Tan? Who is getting
@@ -174,7 +174,9 @@ _Inspiration for the [Dire Straits title format][money-for-nothing] came from [P
   strategic business decision to build their product around an open source
   project. Corporate open source definitionally has corporate support, but has
   its own set of problems.
-[^3]: Who wouldn't like a high-paying job with no responsibilities or accountability?
+[^3]: Who wouldn't like a high-paying job with no responsibilities or
+  accountability? Jokes on you, I already have that job. It's called "Product
+  Manager at Big Tech".
 [^4]: By support for auditing, I mean the dependency manager has a concept of
   "someone in my organization, or another organization I trust, has audited this
   specific version of this dependency". An example of this is [cargo
