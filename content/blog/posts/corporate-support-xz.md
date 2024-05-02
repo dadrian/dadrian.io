@@ -69,7 +69,7 @@ source.
 What about hiring maintainers as employees? Well, you still have to be an
 employee. You're going to have to do employee things like performance reviews
 and goal setting. Instead of what was a self-guided open-source project, you
-have a job with a salary open code and maybe open governance, but you've lost
+have a job with a salary, open code, and maybe open governance, but you've lost
 the freedom that came with an open-source project. You have a job, and having a
 job is fundamentally different from building something [as a
 gift][apenwarr-open-source]. Eventually, this starts to look like corporate open
@@ -168,12 +168,12 @@ chips for free"._
 [honey]: http://peter.honeyman.org/
 [hermoine]: https://x.com/davidcadrian/status/1774466067177361818
 
-[^1]: Not all open source projects run like this, and you have to balance your
+[^1]: Not all open-source projects run like this, and you have to balance your
   desires for users with your goals as a maintainer. But at the end of the day,
-  an open source maintainer who's in it "for love of the game" can simply choose
+  an open-source maintainer who's in it "for love of the game" can simply choose
   to not doing something and their users have to deal with it.
 [^2]: This is not about "corporate open source", where a company makes a
-  strategic business decision to build their product around an open source
+  strategic business decision to build their product around an open-source
   project. Corporate open source definitionally has corporate support, but has
   its own set of problems.
 [^3]: Who wouldn't like a high-paying job with no responsibilities or
