@@ -145,7 +145,9 @@ Teams...][microsoft-teams-speed]
 
 ---
 
-_Inspiration for the [Dire Straits title format][money-for-nothing] came from [Peter Honeyman's][honey] [NLUUG][nluug-keynote] keynote "Money for nothing, chips for free"._
+_Inspiration for the [Dire Straits title format][money-for-nothing] came from
+[Peter Honeyman's][honey] [NLUUG][nluug-keynote] keynote, "Money for nothing,
+chips for free"._
 
 
 [xz-filippo]: https://abyssdomain.expert/@filippo/112185827553387306
