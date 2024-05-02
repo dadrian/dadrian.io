@@ -128,7 +128,7 @@ tangible steps you can take to mitigate the impact of another Jia Tan:
 
 For the discourse, consider:
 * Is your suggestion for open source actually suggesting mass societal change in a
-  way that benefits me, personally? If so, consider focusing on the societal
+  way that benefits you, personally? If so, consider focusing on the societal
   change bits, rather than the open source bits.
 * How, specifically, would any proposal have stopped Jia Tan? Who is getting
   paid to do what, by who, and why are they getting paid? Why would paying those
