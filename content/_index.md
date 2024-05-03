@@ -25,7 +25,7 @@ podcast with [Deirdre Connolly][deirdre] and [Thomas Ptacek][tqbf].
 [censys-raise]: https://venturebeat.com/2020/08/05/censys-raises-15-5-million-to-bring-attack-surface-management-to-more-companies/
 [censys-raise-b]: https://techcrunch.com/2022/01/27/censys-iot-search-engine-new-ceo/
 [censys-careers]: https://censys.io/careers
-[chromesecurity]: https://www.chromium.org/Home/chromium-security
+[chromesecurity]: https://chrome.security
 [deirdre]: https://twitter.com/durumcrustulum
 [drown]: https://drownattack.com
 [duo]: https://duo.com
