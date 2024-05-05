@@ -4,5 +4,6 @@
   X-Content-Type-Options: nosniff
   X-Hey-Kid: I'm a computer; Stop all the downloadin'!
   Content-Security-Policy: default-src 'none'; script-src 'none'; script-src-elem 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; style-src-attr 'unsafe-inline'; img-src 'self'; base-uri https://dadrian.io
+  Permissions-Policy: *=()
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
