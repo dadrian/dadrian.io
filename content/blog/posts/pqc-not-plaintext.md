@@ -1,6 +1,6 @@
 ---
 title: "Lack of post-quantum security is not plaintext."
-date: 2024-05-06T11:24:00-04:00
+date: 2024-05-07T08:03:00-07:00
 ---
 
 HTTPS adoption in 2024 is around [95-98\%][goog-https-transparency], as measured
@@ -150,7 +150,7 @@ bad for the Internet, but it won't work.
   going to affect bleeding edge servers that have deployed post-quantum key
   exchange. However, browsers accepting post-quantum signatures in certificates
   would be basically impossible to roll back, because certificates are valid for
-  [a long time][dadrian-strangeloop-lifetimes].
+  [a long time][zane-stale].
 
 [chocolate]: https://dl.acm.org/doi/pdf/10.1145/3319535.3363192
 [goog-https-transparency]: https://transparencyreport.google.com/https/overview
@@ -161,5 +161,5 @@ bad for the Internet, but it won't work.
 [isrg]: https://www.abetterinternet.org/
 [firesheep]: https://en.wikipedia.org/wiki/Firesheep
 [google-pqc-threat]: https://bughunters.google.com/blog/5108747984306176/google-s-threat-model-for-post-quantum-cryptography
-[dadrian-strangeloop-lifetimes]: \TODO
+[zane-stale]: https://zanema.com/papers/imc23_stale_certs.pdf
 [chrome-kyber]: https://blog.chromium.org/2023/08/protecting-chrome-traffic-with-hybrid.html
