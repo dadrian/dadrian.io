@@ -5,11 +5,11 @@ I am currently a product manager at Google, adding value to [Chrome
 Security][chromesecurity]. Despite this, I identify both as an engineer and
 security researcher. I cofounded [Censys][censys], an attack-surface management
 security startup. I left Censys after their [Series A][censys-raise]. They've
-since raised a ~~[Series B][censys-raise-b]~~ [Series C][censys-raise-c]! I was employee #2 at [Nametag][nt].
-I’m also a core contributor to the [ZMap][zmap] open-source project. I do
-part-time consulting and advising for startups. I can help with building out
-early engineering teams, evaluating market opportunities for B2B security
-software, and cryptography engineering.
+since raised a ~~[Series B][censys-raise-b]~~ [Series C][censys-raise-c]! I was
+employee #2 at [Nametag][nt].  I’m also a core contributor to the [ZMap][zmap]
+open-source project. I do part-time consulting and advising for startups. I can
+help with building out early engineering teams, evaluating market opportunities
+for B2B security software, and cryptography engineering.
 
 I defended my PhD at the University of Michigan in 2018. My advisor was [J.
 Alex Halderman][jhalderm]. My research was based on using Internet-wide
