@@ -209,7 +209,7 @@ sites, and therefore may need to include root certificates intended to be used
 for non-web purposes. These root certificates should be stored separately or
 configured with an intended usage.
 
-## Client Certificates
+### Client Certificates
 
 Everything described above has implicitly been assuming _server certificates_,
 i.e. that the certificates are used to identify servers, usually via their site
