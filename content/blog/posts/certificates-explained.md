@@ -209,6 +209,36 @@ sites, and therefore may need to include root certificates intended to be used
 for non-web purposes. These root certificates should be stored separately or
 configured with an intended usage.
 
+## Client Certificates
+
+Everything described above has implicitly been assuming _server certificates_,
+i.e. that the certificates are used to identify servers, usually via their site
+name. _Client certificates_ are certificates that are used to identify a client.
+
+Client certificates operate the same as server certificates. There is still a
+root certificate and a chain of trust that can be used to verify a client
+certificate. However, instead of a site name embedded in the certificate, the
+certificate will instead have some identifier for a client, usually either an
+email address, employee ID number, or a device name. In a client certificate
+scenario, the root certificate that anchors trust in the client certificates
+will be distributed to servers, and certificates will be issued for keys held by
+clients. This is the reverse of the server certificate use case, where root
+certificates are distributed to clients and used to authenticate the
+certificates that identify the keys held by servers.
+
+Client certificates are not part of the Web PKI. Instead, they are often part of
+a private PKI. The root of trust for a client certificate PKI is often the
+directory of employees at a company. Some process attached to corporate
+single-sign on or corporate device issuance may additionally issue a client
+certificate that can be used by other corporate services to identify clients or
+devices. The best practice for client certificates is to use a completely
+different PKI hierarchy (root certificate with distinct non-overlapping chains)
+from other PKI use cases.
+
+Client certificates are often used by government PKIs to identify government
+employees or citizens of some country. This is often implemented using Smart
+Cards (PIV).
+
 ## Certificates, once more, with cryptography {#p2}
 
 A certificate for the web PKI is a signed statement that binds a set of names to
