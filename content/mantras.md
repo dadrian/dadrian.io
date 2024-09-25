@@ -14,7 +14,7 @@ layout = "bio"
 9. Doing less work is generally better than doing more work.
 10. It's better to make things better than to not make things better.
 11. It's good to be good at things.
-12. Ask the quiet part out loud, but like, fun.
+12. Be direct and ask the quiet part out loud, but like, fun.
 13. Prefer strategies that result in step changes rather than incremental changes
 14. Have the serenity to accept what you can't change. It is what it is. But you have more agency than you realize, so make sure you actually apply your courage to change things where you can.
 15. Any two things are two completely different things.
