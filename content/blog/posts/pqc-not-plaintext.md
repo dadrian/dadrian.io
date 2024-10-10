@@ -1,5 +1,5 @@
 ---
-title: "Lack of post-quantum security is not plaintext."
+title: "Lack of post-quantum security is not plaintext"
 date: 2024-05-07T08:03:00-07:00
 ---
 

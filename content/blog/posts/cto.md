@@ -1,5 +1,5 @@
 ---
-title: "Stop trying to make CTO happen."
+title: "Stop trying to make CTO happen"
 date: 2024-03-31T17:14:46-04:00
 ---
 
