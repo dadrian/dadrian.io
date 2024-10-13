@@ -44,6 +44,10 @@
   {{ with .Get "youtube2" }}
   [<a href="{{ . }}">YouTube</a>]
   {{ end }}
+  {{ with .Inner }}
+    <br />
+    {{ . }}
+  {{ end }}
 </td>
 <td>
 </td>

@@ -16,6 +16,10 @@
   <br />
   <b>{{ . }}</b>
   {{ end }}
+  {{ with .Inner }}
+    <br />
+    {{ . }}
+  {{ end }}
 </td>
 <td>
   {{ with .Get "bibtex" }}
