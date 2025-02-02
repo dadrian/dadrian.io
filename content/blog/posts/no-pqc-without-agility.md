@@ -151,8 +151,18 @@ when presented with the cross-signed certificate.
 
 Cross-signatures can be within an organization, e.g. CA Root 2 gets cross-signed
 by CA Root 1, or they can be cross-organization, e.g. CA1 gets cross-signed by
-CA2. For the purposes of post-quantum, we're mostly interested in
-intra-organization cross-signing.
+CA2. For the purposes of post-quantum, we're mostly interested in cross-signing
+that is internal to a single CA operator. For an ML-DSA root, the cross-sign
+would be an RSA or ECDSA signature over the ML-DSA public key[^2]. Site
+operators would then serve the cross-sign alongside any other intermediate
+certificates[^3], effectively increasing the server-presented certificate chain
+length by one[^4].
+
+Aggresively serving the cross-sign enables the post-quantum transition for
+existing CAs because it allows them to leverage their legacy trust into
+compatibility at the cost of serving yet another certificate. This isn't really
+an option for a new CA attempting to leverage post-quantum as a way to enter the
+market[^5].
 
 [^1]: This assumes the existence of a single intermediate certificate shipped
   with the leaf certificate, and a single algorithm per chain. Each cert would
@@ -160,6 +170,17 @@ intra-organization cross-signing.
   ECDSA is a 32-bit key and 64-bit signature. ML-DSA is 2,420 byte signatures
   and 1,312-byte keys. A hybrid ECDSA-leaf-RSA-intermediate chain
   would be around 0.6Kb of cryptographic material.
+[^2]: This would be another 1.3kB for the public key, 64-512 bytes for the
+  signature, and 400-800 bytes for the rest of the certificate. So at least
+  _another_ 2kB all together.
+[^3]: It may be possible to construct a post-quantum web PKI that doesn't
+  require intermediates in the common case, or to standardize some sort of
+  generic way to supress them. However, well-designed intermediate suppression
+  looks like trust anchor negotiation.
+[^4]: The server has no explicit way to determine if the client needs the
+  cross-sign, so it has to serve it to any client that wants to use ML-DSA.
+[^5]: To be fair, this is a problem for all new CAs, regardless of if
+  post-quantum is involved or not.
 
 [pqc-too-damn-big]: https://dadrian.io/blog/posts/pqc-signatures-2024/
 [advancing-asymmetric-bet]: https://blog.chromium.org/2024/05/advancing-our-amazing-bet-on-asymmetric.html
