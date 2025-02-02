@@ -133,11 +133,26 @@ The good news is that given the incentives to never actually serve the ML-DSA
 certificate if you can avoid it, ossification probably won't take place for a
 while. No one will want to take the performance hit of migrating to post-quantum
 authentication, and so no one will choose to actually use ML-DSA certificates
-for real connections. Performance hits are much more palatable when the
-alternative is actually "no security", rather than ["no security against a
-threat that doesn't exist, but might in the future"](/no-pqc-without-agility).
+for real connections until 2035 is much closer. Performance hits are much more
+palatable when the alternative is actually "no security", rather than ["no
+security against a threat that doesn't exist, but might in the future, and I
+still have 10 years of good times before compliance makes me
+change"](/no-pqc-without-agility).
 
-So, how do we avoid ossification and provide a better path to deployment?
+So, how do we avoid ossification and provide a better path to deployment
+post-quantum roots? There are two options:
+- Cross-signing post-quantum roots with pre-quantum roots
+- Some form of [trust-anchor negotiation][tan] at the TLS protocol level
+
+Cross-signing is when the key from one root is used to sign a new root. The
+output is a new certificate, with an Issuer of the old root, and a Subject set
+to the new root. Clients that do not have the new root can instead inherit trust
+when presented with the cross-signed certificate.
+
+Cross-signatures can be within an organization, e.g. CA Root 2 gets cross-signed
+by CA Root 1, or they can be cross-organization, e.g. CA1 gets cross-signed by
+CA2. For the purposes of post-quantum, we're mostly interested in
+intra-organization cross-signing.
 
 [^1]: This assumes the existence of a single intermediate certificate shipped
   with the leaf certificate, and a single algorithm per chain. Each cert would
@@ -150,3 +165,4 @@ So, how do we avoid ossification and provide a better path to deployment?
 [advancing-asymmetric-bet]: https://blog.chromium.org/2024/05/advancing-our-amazing-bet-on-asymmetric.html
 [pqc-not-plaintext]: https://dadrian.io/blog/posts/pqc-not-plaintext/
 [chrome-ml-kem]: https://security.googleblog.com/2024/09/a-new-path-for-kyber-on-web.html
+[tan]: https://github.com/davidben/tls-trust-expressions/blob/main/explainer.md
