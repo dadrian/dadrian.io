@@ -21,34 +21,45 @@ h1 {
   font-size: 2em;
 }
 h1, h2, h3 {
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight: 400;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 400;
 }
 body {
-    background-color: #f8f8f8;
-    margin: 8px;
+  margin: 0;
+  background-color: #f8f8f8;
 }
-
+footer {
+  min-height: fit-content;
+  display: inline-block;
+}
 /* Add dark mode support */
 @media (prefers-color-scheme: dark) {
-    html * {
-        color: #f8f8f8;
-    }
-    body {
-        background-color: #171717;
-    }
-    a {
-        color: #89CFF0; /* Light blue for better contrast in dark mode */
-    }
-    a:visited {
-        color: #DDA0DD; /* Light purple for visited links */
-    }
-}
-.dp {
-    max-width: 945px;
+  html * {
+    color: #f8f8f8;
+  }
+  body {
+    background-color: #171717;
+  }
+  a {
+    color: #89CFF0; /* Light blue for better contrast in dark mode */
+  }
+  a:visited {
+    color: #DDA0DD; /* Light purple for visited links */
+  }
 }
 .dn {
-    min-width: 368px;
+  min-width: 368px;
+}
+.dc {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the wrapper takes at least the full viewport height */
+}
+main {
+  flex: 1;
+}
+footer {
+  margin-bottom: 8px;
 }
     </style>
     {{- block "page-css" . }}{{- end }}
@@ -66,6 +77,7 @@ body {
   <body>
     <div id="content" class="dc">
       {{- block "main" . }}{{- end }}
+      {{- block "footer" . }}{{- end }}
     </div>
   </body>
 </html>

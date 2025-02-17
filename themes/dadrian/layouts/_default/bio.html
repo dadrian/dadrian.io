@@ -70,12 +70,14 @@
     margin: 0px;
     margin-top: 4px;
 }
-
+main {
+    margin: 8px;
+}
 </style>
 {{ end }}
 {{ define "main" }}
-<div class="db">
-  <div class="da">
+<main class="db">
+  <header class="da">
     <img class="di" decoding="async" src="{{ "/img/david4.jpg" | absURL }}"></img>
     <div class="dn">
       <h1 class="dad-name-splash-h1__name">David Adrian</h1>
@@ -86,12 +88,14 @@
       </address>
       {{- partial "nav.html" }}
     </div>
-  </div>
-  <div>
+  </header>
+  <article>
   {{ with .Param "title" }}
-    <h1>{{ . }}</h1>
+  <h1>{{ . }}</h1>
   {{ end }}
+  <content>
   {{ .Content }}
-  </div>
-</div>
+  </content>
+  </article>
+</main>
 {{ end }}

@@ -55,12 +55,17 @@ sup {
   top: -0.5em;
   font-size: 75%;
 }
+main {
+  max-width: 945px;
+  margin: 8px;
+}
 </style>
 {{ end }}
 
 {{ end }}
 
 {{ define "main" }}
+<main>
   {{ $section := .Site.GetPage "section" .Section }}
   <article>
     <header>
@@ -75,12 +80,12 @@ sup {
         <small>{{- .Date.Format "January 2, 2006" -}}</small>
       </time>
     </header>
-    <main>
-      <div class="dp">
-        {{ .Content }}
-      </div>
-    </main>
+    <content>
+    {{ .Content }}
+    </content>
   </article>
-
-  {{- partial "footer-nav.html" . -}}
+</main>
+{{ end }}
+{{ define "footer" }}
+{{- partial "footer-nav.html" . -}}
 {{ end }}

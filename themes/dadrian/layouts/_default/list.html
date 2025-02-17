@@ -23,7 +23,7 @@
 }
 .post-date {
   font-size: 10pt;
-  width: 110px;
+  min-width: 110px;
   text-align: right;
   margin-right: 10px;
 }
@@ -31,33 +31,31 @@
   margin-bottom: 0;
   margin-top: 8px;
 }
-.d {
+article {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  padding-left: 8px;
 }
-
 </style>
 {{ end }}
 
 {{ define "main" }}
+<main>
   <h1 class="blog-title">Closure <small class="blog-subtitle">Thoughts Hoisted to Posts</small></h1>
-  <article class="dp">
-    <main>
-      {{ .Content }}
-    </main>
-    <section>
-    {{ range .Paginator.Pages }}
-      <div class="d">
-        <small class="post-date">
-          <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
-            {{- .Date.Format "January 2, 2006" -}}
-          </time>
-        </small>
-        <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-      </div>
-    {{ end }}
-    </section>
-  </article>
-  {{- partial "footer-nav.html" . -}}
+  {{ range .Paginator.Pages }}
+    <article>
+      <small class="post-date">
+        <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+          {{- .Date.Format "January 2, 2006" -}}
+        </time>
+      </small>
+      <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    </article>
+  {{ end }}
+</main>
+{{ end }}
+
+{{ define "footer" }}
+{{- partial "footer-nav.html" . -}}
 {{ end }}
