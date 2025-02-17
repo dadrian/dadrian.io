@@ -5,7 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 html * {
-    font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+}
+a {
+  color: #0000EE;
+}
+a:visited {
+  color: #551A8B;
 }
 strong {
   font-weight: 600;
@@ -20,6 +27,22 @@ h1, h2, h3 {
 body {
     background-color: #f8f8f8;
     margin: 8px;
+}
+
+/* Add dark mode support */
+@media (prefers-color-scheme: dark) {
+    html * {
+        color: #f8f8f8;
+    }
+    body {
+        background-color: #171717;
+    }
+    a {
+        color: #89CFF0; /* Light blue for better contrast in dark mode */
+    }
+    a:visited {
+        color: #DDA0DD; /* Light purple for visited links */
+    }
 }
 .dp {
     max-width: 945px;

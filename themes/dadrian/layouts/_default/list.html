@@ -12,35 +12,49 @@
 
 {{ define "page-css" }}
 <style>
-.dad-blog-title-h1 {
+.blog-title {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 30pt;
     font-weight: 400;
 }
-
-.dad-blog-title-small {
+.blog-subtitle {
     text-align: right;
     font-size: 12pt;
 }
+.post-date {
+  font-size: 10pt;
+  width: 110px;
+  text-align: right;
+  margin-right: 10px;
+}
+.post-title {
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+.d {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
 </style>
 {{ end }}
 
 {{ define "main" }}
-  <h1 class="dad-blog-title-h1">Closure <small class="dad-blog-title-small">Thoughts Hoisted to Posts</small></h1>
+  <h1 class="blog-title">Closure <small class="blog-subtitle">Thoughts Hoisted to Posts</small></h1>
   <article class="dp">
     <main>
       {{ .Content }}
     </main>
     <section>
     {{ range .Paginator.Pages }}
-      <div>
-        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-        <small>
+      <div class="d">
+        <small class="post-date">
           <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
             {{- .Date.Format "January 2, 2006" -}}
           </time>
         </small>
-        <p>{{ .Summary }}</p>
+        <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
       </div>
     {{ end }}
     </section>
