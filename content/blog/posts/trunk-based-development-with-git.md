@@ -2,6 +2,7 @@
 title: "Trunk-Based Development with Git"
 date: 2021-06-01T11:56:00-06:00
 draft: false
+uses: ["code"]
 ---
 
 _This introduces people familiar with Git to [trunk-based
@@ -104,7 +105,7 @@ long-term work, prefer to [branch by abstraction][branch-abstraction].
 
 Checkout an existing branch:
 
-```
+```console
 git checkout dadrian/my-existing-branch
 ```
 
@@ -113,25 +114,25 @@ git checkout dadrian/my-existing-branch
 
 Create a new branch relative to the current branch:
 
-```
+```console
 git branch dadrain/my-new-branch
 ```
 
 Create a new branch relative to another branch:
 
-```
+```console
 git branch dadrian/rabbit-hole dadrian/my-existing-branch
 ```
 
 Create a new branch relative to the current branch, and switch to it:
 
-```
+```console
 git checkout -b dadrian/my-new-branch
 ```
 
 Create a new branch relative to specific branch, and switch to it:
 
-```
+```console
 git checkout -b dadrian/my-new-branch dadrian/my-existing-branch
 ```
 
@@ -139,12 +140,13 @@ git checkout -b dadrian/my-new-branch dadrian/my-existing-branch
 
 Push a branch:
 
-```
+```console
 git push origin dadrian/my-existing-branch
 ```
 
 Push a new branch for the first time:
-```
+
+```console
 git push -u origin dadrian/my-existing-branch
 # The -u prevents you from having to run git branch --set-upstream-to later
 ```
@@ -153,7 +155,7 @@ git push -u origin dadrian/my-existing-branch
 
 Rebase a branch onto latest main (useful to resolve merge conflicts)
 
-```
+```console
 git checkout main
 git pull --rebase
 git checkout dadrian/out-of-date-branch
@@ -168,7 +170,7 @@ Did you branch off main to create `pr-one`, then branch off `pr-one` to create
 Usually the easiest fix is to rebase `pr-two` onto main and "drop" each commit
 that got squashed by merging `pr-one`
 
-```
+```console
 git checkout main
 git pull --rebase
 git checkout pr-two
