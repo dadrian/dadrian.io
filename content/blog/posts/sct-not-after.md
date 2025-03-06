@@ -1,6 +1,6 @@
 ---
 title: "How to distrust a CA without any certificate errors"
-date: 2025-03-04T15:19:00-05:00
+date: 2025-03-06T15:14:08-05:00
 ---
 
 A "distrust" is when a certification authority (CA) that issues [HTTPS
