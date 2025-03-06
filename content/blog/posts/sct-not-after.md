@@ -60,16 +60,18 @@ cutoff continue to work, even if their validity extends past the cut off. The
 threshold only needs to be applied to the `NotBefore` (start) date, rather than
 the `NotAfter` (expiration) date.
 
-SCTNotAfter is a way of a getting cryptographic assurance about the
-NotBefore date, and can be used to implement distrusts that "grandfather in"
-existing certificates, without risking a CA backdating a certificate to get
-around the distrust (which [has happened in the past][wosign-backdate]!). The
-way it works is by selecting an "SCTNotAfter date" for some CA certificate, and
-then requiring any leaf certificate that chains through that CA to have at least
-one SCT with a timestamp from _before_ the SCTNotAfter date. This means that the
-certificate was disclosed to at least one CT log prior to the SCTNotAfter date.
-Even if the CA backdates the NotBefore field, the timestamp in the SCT
-should[^4] still be accurate.
+The mechanism for forward-looking, interstitial free distrusts, is
+_SCTNotAfter_. An SCTNotAfter constraint is a mechanism for cryptographic
+assurance about the NotBefore date, and can be used to implement distrusts that
+"grandfather in" existing certificates, without risking a CA backdating a
+certificate to get around the distrust (which [has happened in the
+past][wosign-backdate]!). Existing certificates from the distrusted CA will
+continue to work without errors. SCTNotAfter works by selecting an "SCTNotAfter
+date" for some CA certificate, and then requiring any leaf certificate that
+chains through that CA to have at least one SCT with a timestamp from _before_
+the SCTNotAfter date. This means that the certificate was disclosed to at least
+one CT log prior to the SCTNotAfter date.  Even if the CA backdates the
+NotBefore field, the timestamp in the SCT should[^4] still be accurate.
 
 For a CA that's distrusted over repeated compliance failures, this date can be
 in the future. This gives time for the CA to reissue any existing certificates
