@@ -110,7 +110,7 @@ security, distrusts are few and far between.
 [symantec-distrust]: https://security.googleblog.com/2017/09/chromes-plan-to-distrust-symantec.html
 [cne]: https://securitycryptographywhatever.com/2024/06/24/mdowd/
 [sc81]: https://github.com/cabforum/servercert/pull/553/files
-[wosign-backdate]: https://groups.google.com/g/mozilla.dev.security.policy/c/k9PBmyLCi8I
+[wosign-backdate]: https://wiki.mozilla.org/CA/WoSign_Issues#Issue_S:_Backdated_SHA-1_Certs_(January_2016)
 [ecommerce-distrust]: https://groups.google.com/a/ccadb.org/g/public/c/wRs-zec8w7k/m/MeZgTE4PAgAJ
 [entrust-distrust]: https://security.googleblog.com/2024/06/sustaining-digital-certificate-security.html
 [certs-explained]: https://dadrian.io/blog/posts/certificates-explained/
