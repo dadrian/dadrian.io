@@ -20,10 +20,13 @@ transparency][ct] (CT) logs. Since the introduction of CT, most distrusts are no
 longer due to key compromise and domain validation failures. Today, CAs are much
 less attractive target to exploit than they were in the early 2010s because any
 maliciously issued certificate still needs to be logged to CT[^2] to be trusted
-in browsers. This requirement means that maliciously issued certificates via CA
-key compromise are publicly auditable and visible. This drastically decreases
-the value of using a compromised CA key as a vector for targeted MITM attacks,
-compared to other [exploitation methods][cne].
+in browsers. Each certificate must be served with a set of Signed Certificate
+Timestamps (SCTs) that are usually embedded in the certificate, but can be
+served in the TLS handshake instead. An SCT is a promise that a certificate will
+be included in a CT log. The CT logging requirement means that maliciously
+issued certificates via CA key compromise are publicly auditable and visible.
+This drastically decreases the value of using a compromised CA key as a vector
+for targeted MITM attacks, compared to other [exploitation methods][cne].
 
 Instead of key compromise, most distrusts today are over a pattern of repeated
 failures by a CA to comply with the [Baseline Requirements][brs] (BRs). The BRs
