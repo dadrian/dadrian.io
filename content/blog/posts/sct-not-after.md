@@ -64,7 +64,7 @@ threshold only needs to be applied to the `NotBefore` (start) date, rather than
 the `NotAfter` (expiration) date.
 
 The mechanism for forward-looking, interstitial free distrusts, is
-_SCTNotAfter_. An SCTNotAfter constraint is a mechanism for cryptographic
+**SCTNotAfter**. An SCTNotAfter constraint is a mechanism for cryptographic
 assurance about the NotBefore date, and can be used to implement distrusts that
 "grandfather in" existing certificates, without risking a CA backdating a
 certificate to get around the distrust (which [has happened in the

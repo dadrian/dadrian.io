@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 html * {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans 3', sans-serif;
   color: black;
 }
 a {
@@ -14,8 +14,8 @@ a {
 a:visited {
   color: #551A8B;
 }
-strong {
-  font-weight: 600;
+b, strong {
+  font-weight: 500;
 }
 h1 {
   font-size: 2em;
@@ -69,7 +69,9 @@ footer {
       {{- end }}
     </title>
     {{ hugo.Generator }}
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed|Source+Sans+Pro&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{"/favicon.ico" | absURL }}" type="image/x-icon" />
     {{- block "rss" . }}{{- end }}
     {{- template "_internal/opengraph.html" . -}}
