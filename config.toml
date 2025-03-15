@@ -7,5 +7,8 @@ paginate = 100
   [markup.highlight]
     tabWidth = 4
     style = "monokai"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 [params]
   images = [ "img/david4.jpg" ]
