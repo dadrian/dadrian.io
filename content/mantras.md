@@ -19,4 +19,5 @@ layout = "bio"
 14. Have the serenity to accept what you can't change. It is what it is. But you have more agency than you realize, so make sure you actually apply your courage to change things where you can.
 15. Any two things are two completely different things.
 16. You can increase state/bureaucratic capacity by reducing rules.
-17. Sometimes you just have to define the game and let God sort 'em out. 
+17. Sometimes you just have to define the game and let God sort 'em out.
+18. Belt-tightening can't make you smart. It just makes you short-term thrifty.
