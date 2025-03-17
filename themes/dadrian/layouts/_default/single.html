@@ -6,45 +6,46 @@
 
 {{ define "page-css" }}
 {{ with .Page.Params }}
-{{ if in .uses "figures" }}
-<style>
-figure.df {
-  margin: 8px;
-}
-figure.df > img {
-  height: auto;
-  max-width: 100%;
-}
-figure.df > figcaption {
-  margin-left: 0px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-figure.df > figcaption > h4 {
-  margin: 0px;
-}
-</style>
-{{ end }}
-{{ if in .uses "code" }}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" />
-<style>
-.highlight > pre {
-  padding: 8px;
-  box-shadow: 5px 5px 5px 0 #171717;
-  border-radius: 8px;
-}
-
-.highlight, .highlight * {
-  font-family: 'Source Code Pro', Courier, monospace !important;
-  color: #f8f8f8;
-}
-@media (prefers-color-scheme: dark) {
-  .highlight > pre {
-    box-shadow: 5px 5px 5px 0 #000000;
+  {{ if in .uses "figures" }}
+  <style>
+  figure.df {
+    margin: 8px;
   }
-}
-</style>
-{{ end }}
+  figure.df > img {
+    height: auto;
+    max-width: 100%;
+  }
+  figure.df > figcaption {
+    margin-left: 0px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  figure.df > figcaption > h4 {
+    margin: 0px;
+  }
+  </style>
+  {{ end }}
+
+  {{ if in .uses "code" }}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" />
+  <style>
+  .highlight > pre {
+    padding: 8px;
+    box-shadow: 5px 5px 5px 0 #171717;
+    border-radius: 8px;
+  }
+
+  .highlight, .highlight * {
+    font-family: 'Source Code Pro', Courier, monospace !important;
+    color: #f8f8f8;
+  }
+  @media (prefers-color-scheme: dark) {
+    .highlight > pre {
+      box-shadow: 5px 5px 5px 0 #000000;
+    }
+  }
+  </style>
+  {{ end }}
 <style>
 p {
   line-height: 16pt;
@@ -60,8 +61,12 @@ main {
   margin: 8px;
 }
 </style>
+
+{{ with .js }}
+<script src="/js/bundle.js"></script>
 {{ end }}
 
+{{ end }}
 {{ end }}
 
 {{ define "main" }}
