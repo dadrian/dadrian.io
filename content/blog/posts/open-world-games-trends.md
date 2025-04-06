@@ -1,5 +1,5 @@
 ---
-title: "Is open-world making games worse, or am I just getting old?"
+title: "Is open-world design making games worse, or am I just getting old?"
 date: 2025-03-15T14:25:08-05:00
 js: games-bundle.js
 ---
@@ -40,13 +40,13 @@ games, this hypothesis is based on a premise that is testable with some basic
 data analysis---**are there more open-world and more large franchise AAA games
 now, than there were in the 2000s?**.
 
-## Methodology
+## Methodology[^1]
 
 The [Internet Game Database][igdb] (IGDB) has a dataset consisting of just about
 every game and its release date(s), platforms, publisher, developer, and
 [MetaCritic][metacritic] score. The population for the data analysis will be
-_any game released on a [Generation V][gen5] or newer non-smartphone console
-platform in IGDB.
+_any game released on a [Generation V][gen5] or newer non-smartphone,
+non-portable console platform in IGDB.
 
 {{% rawhtml %}}
 <div id="aaa-platforms"></div>
@@ -59,4 +59,10 @@ platform in IGDB.
 Another paragraph. Such writing. Wow.
 
 [david-tweet-thread]: https://x.com/davidcadrian/status/1631767778347876352
-[aaa-cost]: \TODO
+[aaa-cost]: https://www.matthewball.co/all/stateofvideogaming2025
+[igdb]: https://www.igdb.com/
+[metacritic]: https://www.metacritic.com/
+[gen5]: https://en.wikipedia.org/wiki/Fifth_generation_of_video_game_consoles
+[igdb-colab]: https://colab.research.google.com/drive/1frptKLlDTRKvdQ4tggNzXyntTwjYiq6p#scrollTo=0W1HDHVR6XTu
+
+[^1]: If you'd rather stare at a Python notebook without my colorful prose, the raw analysis for this post is available [here][igdb-colab].
