@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "tsx scripts/convertCsvToTs.ts",
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "",
@@ -11,12 +13,14 @@
   "description": "",
   "dependencies": {
     "d3": "^7.9.0",
+    "d3-dsv": "^3.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "esbuild": "^0.25.1"
+    "esbuild": "^0.25.2",
+    "tsx": "^4.19.3"
   }
 }
