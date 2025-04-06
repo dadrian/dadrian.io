@@ -1,0 +1,25 @@
+category,id,name,slug,generation
+CONSOLE,11,Xbox,xbox,6
+CONSOLE,12,Xbox 360,xbox360,7
+OPERATING_SYSTEM,13,DOS,dos,
+CONSOLE,130,Nintendo Switch,switch,8
+OPERATING_SYSTEM,14,Mac,mac,
+CONSOLE,165,PlayStation VR,psvr,8
+CONSOLE,167,PlayStation 5,ps5,9
+CONSOLE,169,Xbox Series X|S,series-x-s,9
+CONSOLE,21,Nintendo GameCube,ngc,6
+CONSOLE,23,Dreamcast,dc,6
+OPERATING_SYSTEM,3,Linux,linux,
+CONSOLE,32,Sega Saturn,saturn,5
+CONSOLE,390,PlayStation VR2,psvr2,9
+CONSOLE,4,Nintendo 64,n64,5
+CONSOLE,41,Wii U,wiiu,8
+CONSOLE,471,Meta Quest 3,meta-quest-3,9
+CONSOLE,48,PlayStation 4,ps4--1,8
+CONSOLE,49,Xbox One,xboxone,8
+CONSOLE,5,Wii,wii,7
+CONSOLE,508,Nintendo Switch 2,nintendo-switch-2,9
+OPERATING_SYSTEM,6,PC (Microsoft Windows),win,
+CONSOLE,7,PlayStation,ps,5
+CONSOLE,8,PlayStation 2,ps2,6
+CONSOLE,9,PlayStation 3,ps3,7
