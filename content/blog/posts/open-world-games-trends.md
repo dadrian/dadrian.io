@@ -38,9 +38,11 @@ based on faulty assumptions. Let's be specific, so here's the hypothesis:
 Ignoring whether or not open-world games and franchise games are worse than other
 games, this hypothesis is based on a premise that is testable with some basic
 data analysis---**are there more open-world and more large franchise AAA games
-now, than there were in the 2000s?**.
+now, than there were in the 2000s?**
 
 ## Methodology[^1]
+
+### Games
 
 The [Internet Game Database][igdb] (IGDB) has a dataset consisting of just about
 every game and its release date(s), platforms, publisher, developer, and
@@ -51,6 +53,68 @@ non-portable console platform in IGDB.
 {{% rawhtml %}}
 <div id="aaa-platforms"></div>
 {{% /rawhtml %}}
+
+Given that, we can filter the IGDB game list to include only titles released on
+those platforms since Sony launched the PS1 in 1994. That filter yields 124,917
+games. I'm not going to include them here, but if you're interested, check out
+the [underlying Colab][igdb-colab].
+
+### AAA vs. Indie
+
+To understand if AAA games are more open-world or more often part of a franchise
+than in the past, we need to label which games count as AAA. We'll use the
+"indie" tag from IGDB to identify indie games[^2]. This identified **62561 indie
+games** in our game population.
+
+Identifying AAA games is harder. I actually started this analysis in early 2023,
+and didn't finish because I didn't have a good way to label AAA or not. Most
+non-indie games should not be counted as a AAA---there's a long tail of just
+normal "games" put out by reasonably sized well-funded publishers, but that
+don't necessarily reach the level of what would be considered full AAA. The best
+way to identity AAA would be to somehow join to a dataset of development cost
+and marketing spend, and take, say, the top decile. However, that data is much
+harder to come by if you're just an armchair analyst, like me.
+
+It turns out that Gemini 2.0 Flash is actually quite good at labeling whether or
+not a game is AAA, given the game entry from IGDB (and it's quite easy to call
+from Colab!). It works best if you ask it one game at a time whether or not it's
+AAA. This is a little slow, since you have to make one API call per row.
+However, it still only costs around 30 cents to annotate every game.
+Spot-checking the results seemed reasonable, so let's use Gemini as our AAA
+labeler.
+
+Gemini labeled **3396 AAA games** in our game population.
+
+### Open-World
+
+IGDB labels games with an "open-world" tag in the "theme" category. This is
+straightforward to extract from our base game population. There are **2,166
+open-world games** included in our game population.
+
+### Franchise Games
+
+A few sequels can be fine[^3], but sometimes franchises like Assassin's Creed,
+Call of Duty, and FIFA, seem to go on _forever_. This isn't necessarily bad
+thing, but is it more common recently? To understand this, let's pick an
+arbitrary threshold of four or more games per franchise, and label them as
+"late-stage franchise games". Again, IGDB has a concept of franchises, and any
+game can be in zero, one, or more franchises. We'll count any game that is at
+least number 4 in _all_ its franchises as a late-stage franchise game.
+
+Across 955 franchises with at least 4 games, there were **5483 "late-stage"
+franchise games** released within our game population.
+
+## Results
+
+{{% rawhtml %}}
+<div id="game-categorization-by-year"></div>
+{{% /rawhtml %}}
+
+{{% rawhtml %}}
+<div id="franchise-games-by-year"></div>
+{{% /rawhtml %}}
+
+
 
 {{% rawhtml %}}
 <div id="graph-root"></div>
@@ -63,6 +127,11 @@ Another paragraph. Such writing. Wow.
 [igdb]: https://www.igdb.com/
 [metacritic]: https://www.metacritic.com/
 [gen5]: https://en.wikipedia.org/wiki/Fifth_generation_of_video_game_consoles
+[ethos]: https://www.imdb.com/title/tt0118715/quotes/?item=qt0464759
 [igdb-colab]: https://colab.research.google.com/drive/1frptKLlDTRKvdQ4tggNzXyntTwjYiq6p#scrollTo=0W1HDHVR6XTu
 
-[^1]: If you'd rather stare at a Python notebook without my colorful prose, the raw analysis for this post is available [here][igdb-colab].
+[^1]: If you'd rather stare at a Python notebook without my colorful prose, the
+  raw analysis for this post is available [here][igdb-colab].
+[^2]: This has the same caveats as any crowdsourced data, but like, [at least
+  it's an ethos][ethos].
+[^3]: Halo 3 has entered the chat.

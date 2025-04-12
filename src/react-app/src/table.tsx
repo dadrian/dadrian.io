@@ -1,5 +1,3 @@
-// src/components/table.tsx
-
 import React, { useState, useMemo } from "react";
 
 type Row = Record<string, string>;
