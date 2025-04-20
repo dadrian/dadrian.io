@@ -7,10 +7,10 @@ js: games-bundle.js
 Around the time that Elden Ring came out (an actually good open-world game), I
 had the thought that it seemed like AAA games were getting worse, especially
 post-pandemic. It also seemed like there were more and more open-world games and
-more games in large franchises (rather than new IP). My hypothesis was that open-world was increasing because it's
-easier to scale-up an open-world game to match the expectations on today's
-games---give each designer a separate region, cut dependencies between various
-levels and teams.
+more games in large franchises (rather than new IP). My hypothesis was that
+open-world was increasing because it's easier to scale-up an open-world game to
+match the expectations on today's games---give each designer a separate region,
+cut dependencies between various levels and teams.
 
 It's easier to pitch "We'll build this giant world, it'll be dope" than it
 is to say "Trust us, we're gonna design 10 incredible levels". However, just
@@ -39,6 +39,8 @@ Ignoring whether or not open-world games and franchise games are worse than othe
 games, this hypothesis is based on a premise that is testable with some basic
 data analysis---**are there more open-world and more large franchise AAA games
 now, than there were in the 2000s?**
+
+No attention span? Jump to the [summary](#tldr).
 
 ## Analysis[^1]
 
@@ -182,10 +184,12 @@ are less late-stage franchise games in the 2020s than there were in the 2010s or
 
 TODO
 
-## Summary
+## Summary {#tldr}
 
-
-
+For AAA games, neither open-world games, nor late-stage franchise games are more
+common now, than they were in the 2000s. Open-world AAA games peaked in the late
+2010s, and have been decreasing. Late-stage franchise AAA games have been decreasing
+over time.
 
 [david-tweet-thread]: https://x.com/davidcadrian/status/1631767778347876352
 [aaa-cost]: https://www.matthewball.co/all/stateofvideogaming2025
