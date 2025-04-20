@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Graph from "./graph";
 import { AAAByYear, AAAPlatforms, GameCountsByYear } from "./games";
 
 document.addEventListener("DOMContentLoaded", () => {
