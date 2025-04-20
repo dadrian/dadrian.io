@@ -63,7 +63,7 @@ main {
 </style>
 
 {{ with .js }}
-<script src="/js/bundle.js"></script>
+<script src="{{ absURL "/js/bundle.js" }}"></script>
 {{ end }}
 
 {{ end }}
