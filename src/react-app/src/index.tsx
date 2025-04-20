@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { AAAByYear, AAAPlatforms, GameCountsByYear } from "./games";
+import { AAAByYear, AAAPlatforms, GameCountsByYear, OpenWorldAbsolute, OpenWorldFraction } from "./games";
 
 document.addEventListener("DOMContentLoaded", () => {
   const aaaTableMountPoint = document.getElementById("aaa-platforms");
@@ -16,5 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const aaaByYearMountPoint = document.getElementById("aaa-by-year");
   if (aaaByYearMountPoint) {
     ReactDOM.createRoot(aaaByYearMountPoint).render(<AAAByYear />);
+  }
+
+  const openWorldAbsoluteMountPoint = document.getElementById("open-world-absolute-by-year");
+  if (openWorldAbsoluteMountPoint) {
+    ReactDOM.createRoot(openWorldAbsoluteMountPoint).render(<OpenWorldAbsolute />);
+  }
+
+  const openWorldFractionMountPoint = document.getElementById("open-world-fraction-by-year");
+  if (openWorldFractionMountPoint) {
+    ReactDOM.createRoot(openWorldFractionMountPoint).render(<OpenWorldFraction />);
   }
 });

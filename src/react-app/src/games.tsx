@@ -1,6 +1,8 @@
 import React from "react";
 import { aaa_platforms } from "./gen/aaa_platforms";
 import { yearly_categories } from "./gen/yearly_categories";
+import { open_world_absolute } from "./gen/open_world_absolute";
+import { fractions } from "./gen/fractions";
 
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 
@@ -107,4 +109,32 @@ export const AAAByYear: React.FC = () => {
       </LineChart>
     </ResponsiveContainer>
   );
+}
+
+export const OpenWorldAbsolute: React.FC = () => {
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <LineChart data={[...open_world_absolute]}>
+        <Line dataKey="indie_open_world_games" stroke="#8884d8" yAxisId="linear_counts"/>
+        <Line dataKey="aaa_open_world_games" stroke="red" yAxisId="linear_counts"/>
+        <XAxis dataKey="year" />
+        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 175]} />
+        <Tooltip />
+      </LineChart>
+    </ResponsiveContainer>
+  )
+}
+
+export const OpenWorldFraction: React.FC = () => {
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <LineChart data={[...fractions]}>
+        <Line dataKey="indie_open_world_fraction" stroke="#8884d8" yAxisId="linear_counts"/>
+        <Line dataKey="aaa_open_world_fraction" stroke="red" yAxisId="linear_counts"/>
+        <XAxis dataKey="year" />
+        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} />
+        <Tooltip />
+      </LineChart>
+    </ResponsiveContainer>
+  )
 }
