@@ -160,4 +160,4 @@ Another paragraph. Such writing. Wow.
   it's an ethos][ethos].
 [^3]: Halo 3 has entered the chat.
 [^4]: Remember, since a game can be neither AAA nor indie, these two lines will
-  not add to the total line.
+  not sum to the total line.
