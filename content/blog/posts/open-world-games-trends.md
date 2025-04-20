@@ -21,7 +21,7 @@ with the characters, and becomes completing a map and making stats go up. The
 games become less fun and more repetitive.
 
 It's also less risky to pitch a game in an existing, successful franchise, than
-it is to make something new. So as [costs of AAA games are going up][aaa-cost],
+it is to make something new. So as [costs of AAA games are going up][aaa-cost][^5],
 I expected there to be more franchise games.
 
 The idea that there were more open-world games and more franchise games, and
@@ -202,3 +202,4 @@ TODO
 [^3]: _Halo 3_ has entered the chat.
 [^4]: Remember, since a game can be neither AAA nor indie, these two lines will
   not sum to the total line.
+[^5]: Slides 109-127
