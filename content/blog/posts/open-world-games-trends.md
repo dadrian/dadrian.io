@@ -85,6 +85,28 @@ labeler.
 
 Gemini labeled **3396 AAA games** in our game population.
 
+Let's take a look at our labeling by graphing game counts per year, for the
+whole population, indie, and AA games[^4]. Keep in mind this graph uses a log
+scale.
+
+{{% rawhtml %}}
+<div id="game-categorization-by-year"></div>
+{{% /rawhtml %}}
+
+First, there's clearly an explosion in indie games, starting in the mid-2000s.
+
+Second, we can see a jump in game counts across the board between 1994 and 1995.
+This is because the Generation V consoles were released halfway through the
+year. but since we don't slice out by generation _after_ GenV, we don't ever see it drop back down once the later generations come out.
+
+If we look at just the AAA game counts, we can see it increasing roughly
+linearly over time, although the beginning of the curve is artifically deflated
+due to the generation restriction.
+
+{{% rawhtml %}}
+<div id="aaa-by-year"></div>
+{{% /rawhtml %}}
+
 ### Open-World
 
 IGDB labels games with an "open-world" tag in the "theme" category. This is
@@ -106,9 +128,11 @@ franchise games** released within our game population.
 
 ## Results
 
-{{% rawhtml %}}
-<div id="game-categorization-by-year"></div>
-{{% /rawhtml %}}
+
+
+Let's look at open-world games over time, split by AAA and indie. For late-stage
+franchise games, we won't split by indie / AAA, since it's fairly difficult for
+an indie game to have at least four entries in a franchise.
 
 {{% rawhtml %}}
 <div id="franchise-games-by-year"></div>
@@ -135,3 +159,5 @@ Another paragraph. Such writing. Wow.
 [^2]: This has the same caveats as any crowdsourced data, but like, [at least
   it's an ethos][ethos].
 [^3]: Halo 3 has entered the chat.
+[^4]: Remember, since a game can be neither AAA nor indie, these two lines will
+  not add to the total line.
