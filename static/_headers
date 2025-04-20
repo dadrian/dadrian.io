@@ -2,7 +2,7 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-Hey-Kid: I'm a computer; Stop all the downloadin'!
-  Content-Security-Policy: default-src 'none'; script-src-elem 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; style-src-attr 'unsafe-inline'; img-src 'self'; base-uri https://dadrian.io
+  Content-Security-Policy: default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; style-src-attr 'unsafe-inline'; img-src 'self'; base-uri https://dadrian.io
   Cross-Origin-Embedder-Policy: credentialless
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: *=()
