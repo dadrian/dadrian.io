@@ -1,15 +1,21 @@
 import React from "react";
 import { aaa_platforms } from "./gen/aaa_platforms";
 import { yearly_categories } from "./gen/yearly_categories";
-import { open_world_absolute } from "./gen/open_world_absolute";
+import { absolutes } from "./gen/absolutes";
 import { fractions } from "./gen/fractions";
 
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
+import { Label, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
 
 import { createTheme } from '@mui/material/styles';
 import type {} from '@mui/x-data-grid/themeAugmentation';
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { ThemeProvider } from "@emotion/react";
+
+const colors = {
+  indie: '#8884d8',
+  aaa: 'red',
+  population: 'orange',
+}
 
 const theme = createTheme({
   palette: {
@@ -87,11 +93,13 @@ export const GameCountsByYear: React.FC = () => {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart data={[...yearly_categories]}>
-        <Line dataKey="indie_games" stroke="#8884d8" yAxisId="all"/>
-        <Line dataKey="aaa_games" stroke="red" yAxisId="all"/>
-        <Line dataKey="all_games" stroke="green" yAxisId="all"/>
+        <Line dataKey="indie_games" stroke={colors.indie} yAxisId="all"/>
+        <Line dataKey="aaa_games" stroke={colors.aaa} yAxisId="all"/>
+        <Line dataKey="all_games" stroke={colors.population} yAxisId="all"/>
         <XAxis dataKey="year" />
-        <YAxis yAxisId="all" scale="log" domain={[1, 100000]} />
+        <YAxis yAxisId="all" scale="log" domain={[1, 100000]} >
+          <Label value="Games (Log Count)" angle={-90} position={"insideLeft"}/>
+        </YAxis>
         <Tooltip />
       </LineChart>
     </ResponsiveContainer>
@@ -102,9 +110,11 @@ export const AAAByYear: React.FC = () => {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart data={[...yearly_categories]}>
-        <Line dataKey="aaa_games" stroke="red" yAxisId="aaa"/>
+        <Line dataKey="aaa_games" stroke={colors.aaa} yAxisId="aaa"/>
         <XAxis dataKey="year" />
-        <YAxis yAxisId="aaa" scale="linear" domain={[0, 250]} />
+        <YAxis yAxisId="aaa" scale="linear" domain={[0, 250]} >
+          <Label value="Games (Count)" angle={-90} position={"insideLeft"}/>
+        </YAxis>
         <Tooltip />
       </LineChart>
     </ResponsiveContainer>
@@ -114,11 +124,13 @@ export const AAAByYear: React.FC = () => {
 export const OpenWorldAbsolute: React.FC = () => {
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={[...open_world_absolute]}>
-        <Line dataKey="indie_open_world_games" stroke="#8884d8" yAxisId="linear_counts"/>
-        <Line dataKey="aaa_open_world_games" stroke="red" yAxisId="linear_counts"/>
+      <LineChart data={[...absolutes]}>
+        <Line dataKey="indie_open_world_games" stroke={colors.indie} yAxisId="linear_counts"/>
+        <Line dataKey="aaa_open_world_games" stroke={colors.aaa} yAxisId="linear_counts"/>
         <XAxis dataKey="year" />
-        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 175]} />
+        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 175]} >
+          <Label value="Games (Count)" angle={-90} position={"insideLeft"}/>
+        </YAxis>
         <Tooltip />
       </LineChart>
     </ResponsiveContainer>
@@ -129,10 +141,44 @@ export const OpenWorldFraction: React.FC = () => {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart data={[...fractions]}>
-        <Line dataKey="indie_open_world_fraction" stroke="#8884d8" yAxisId="linear_counts"/>
-        <Line dataKey="aaa_open_world_fraction" stroke="red" yAxisId="linear_counts"/>
+        <Line dataKey="indie_open_world_fraction" stroke={colors.indie} yAxisId="linear_counts"/>
+        <Line dataKey="aaa_open_world_fraction" stroke={colors.aaa} yAxisId="linear_counts"/>
         <XAxis dataKey="year" />
-        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} />
+        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} >
+          <Label value="Games (Fraction)" angle={-90} position={"insideLeft"}/>
+        </YAxis>
+        <Tooltip />
+      </LineChart>
+    </ResponsiveContainer>
+  )
+}
+
+export const LateStageFranchiseAbsolute: React.FC = () => {
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <LineChart data={[...absolutes]}>
+        <Line dataKey="indie_late_franchise_games" stroke={colors.indie} yAxisId="linear_counts"/>
+        <Line dataKey="aaa_late_franchise_games" stroke={colors.aaa} yAxisId="linear_counts" />
+        <XAxis dataKey="year"/>
+        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 175]} >
+          <Label value="Games (Count)" angle={-90} position={"insideLeft"}/>
+        </YAxis>
+        <Tooltip />
+      </LineChart>
+    </ResponsiveContainer>
+  )
+}
+
+export const LateStageFranchiseFraction: React.FC = () => {
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <LineChart data={[...fractions]}>
+        <Line dataKey="indie_late_franchise_fraction" stroke={colors.indie} yAxisId="linear_counts"/>
+        <Line dataKey="aaa_late_franchise_fraction" stroke={colors.aaa} yAxisId="linear_counts"/>
+        <XAxis dataKey="year" />
+        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} >
+          <Label value="Games (Fraction)" angle={-90} position={"insideLeft"}/>
+        </YAxis>
         <Tooltip />
       </LineChart>
     </ResponsiveContainer>

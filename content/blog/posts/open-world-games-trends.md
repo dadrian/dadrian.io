@@ -156,25 +156,36 @@ least number 4 in _all_ its franchises as a late-stage franchise game.
 Across 955 franchises with at least 4 games, there were **5,483 "late-stage"
 franchise games** released within our game population.
 
+Looking at the data over time, we see a clear trend of an increase
+year-over-year in the absolute count of AAA late stage franchise games, _but it ends in the late
+2010s!_. Again, similar to open-world, we see it decrease in the 2020s.
+
+{{% rawhtml %}}
+<div id="franchise-absolute-by-year"></div>
+{{% /rawhtml %}}
+
+Normalizing it as a fraction of AAA games total, we see a continued decrease
+since the launch of Generation 5. Nearly all AAA games used to be part of a
+large franchise (e.g. Mario). Now, there's far more non-franchise or early
+franchise AAA games than there were in the 90s.
+
+{{% rawhtml %}}
+<div id="franchise-fraction-by-year"></div>
+{{% /rawhtml %}}
+
+This suggests that the second half of the hypothesis is also false---games
+cannot be getting worse because there are more franchise games, because **there
+are less late-stage franchise games in the 2020s than there were in the 2010s or
+2000s**.
+
+## Rankings
+
+TODO
+
 ## Summary
 
 
 
-Let's look at open-world games over time, split by AAA and indie. For late-stage
-franchise games, we won't split by indie / AAA, since it's fairly difficult for
-an indie game to have at least four entries in a franchise.
-
-{{% rawhtml %}}
-<div id="franchise-games-by-year"></div>
-{{% /rawhtml %}}
-
-
-
-{{% rawhtml %}}
-<div id="graph-root"></div>
-{{% /rawhtml %}}
-
-Another paragraph. Such writing. Wow.
 
 [david-tweet-thread]: https://x.com/davidcadrian/status/1631767778347876352
 [aaa-cost]: https://www.matthewball.co/all/stateofvideogaming2025

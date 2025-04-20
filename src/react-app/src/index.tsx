@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { AAAByYear, AAAPlatforms, GameCountsByYear, OpenWorldAbsolute, OpenWorldFraction } from "./games";
+import { AAAByYear, AAAPlatforms, GameCountsByYear, LateStageFranchiseAbsolute, LateStageFranchiseFraction, OpenWorldAbsolute, OpenWorldFraction } from "./games";
 
 document.addEventListener("DOMContentLoaded", () => {
   const aaaTableMountPoint = document.getElementById("aaa-platforms");
@@ -26,5 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const openWorldFractionMountPoint = document.getElementById("open-world-fraction-by-year");
   if (openWorldFractionMountPoint) {
     ReactDOM.createRoot(openWorldFractionMountPoint).render(<OpenWorldFraction />);
+  }
+
+  const franchiseAbsoluteMountPoint = document.getElementById("franchise-absolute-by-year");
+  if (franchiseAbsoluteMountPoint) {
+    ReactDOM.createRoot(franchiseAbsoluteMountPoint).render(<LateStageFranchiseAbsolute />);
+  }
+
+  const franchiseFractionMountPoint = document.getElementById("franchise-fraction-by-year");
+  if (franchiseFractionMountPoint) {
+    ReactDOM.createRoot(franchiseFractionMountPoint).render(<LateStageFranchiseFraction />);
   }
 });
