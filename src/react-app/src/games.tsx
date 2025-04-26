@@ -3,8 +3,9 @@ import { aaa_platforms } from "./gen/aaa_platforms";
 import { yearly_categories } from "./gen/yearly_categories";
 import { absolutes } from "./gen/absolutes";
 import { fractions } from "./gen/fractions";
+import { ratings } from "./gen/ratings";
 
-import { Label, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
+import { Label, LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 import { createTheme } from '@mui/material/styles';
 import type {} from '@mui/x-data-grid/themeAugmentation';
@@ -183,4 +184,33 @@ export const LateStageFranchiseFraction: React.FC = () => {
       </LineChart>
     </ResponsiveContainer>
   )
+}
+
+
+export const RatingsByYear: React.FC = () => {
+  const cleanedRatings = ratings.map((row) => {
+    const cleanedRow: any = { ...row };
+    Object.keys(cleanedRow).forEach((key) => {
+      if (cleanedRow[key] === "") {
+        cleanedRow[key] = undefined; // or null
+      }
+    });
+    return cleanedRow;
+  });
+
+  return (
+    <ResponsiveContainer width="100%" height={400}>
+      <LineChart data={cleanedRatings}>
+        <Line dataKey="indie_ratings_p50" stroke={colors.indie} yAxisId="linear_counts" connectNulls/>
+        <Line dataKey="aaa_ratings_p50" stroke={colors.aaa} yAxisId="linear_counts" connectNulls/>
+        <Line dataKey="aaa_open_world_ratings_p50" stroke={colors.aaa} yAxisId="linear_counts" connectNulls strokeDasharray="3 3"/>
+        <Line dataKey="aaa_late_franchise_ratings_p50" stroke={colors.aaa} yAxisId="linear_counts" connectNulls strokeDasharray="10 5"/>
+        <XAxis dataKey="year" />
+        <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} >
+          <Label value="Rating (P50)" angle={-90} position={"insideLeft"}/>
+        </YAxis>
+        <Tooltip />
+      </LineChart>
+    </ResponsiveContainer>
+  );
 }
