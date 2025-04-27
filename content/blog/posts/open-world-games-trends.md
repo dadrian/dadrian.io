@@ -6,7 +6,7 @@ js: bundle.js
 
 Around the time that Elden Ring came out, I had the thought that it seemed like
 AAA games were getting worse, especially post-pandemic. Elden Ring was both
-open-world and loudly hearlded as one of the best games in years, however it
+open-world and loudly heralded as one of the best games in years; however it
 seemed like, in general, there were more and more open-world games and more
 games in large franchises (rather than new IP). Unlike Elden Ring, on average, I
 felt like these games were not very good. My hypothesis was that the open-world
@@ -199,7 +199,7 @@ ranking for various game types.
 
 Above, we can see that for the most part, **open-world AAA games have a higher
 median rating than AAA games do generally**. Late-stage franchise games do as
-well, but the effect is less prounced. Interestingly, there are two small dips
+well, but the effect is less pronounced. Interestingly, there are two small dips
 in the ratings of open-world games---during the post-Skyrim boom, and a clear
 downward trend in the 2020s. So **it's possible that open-world AAA games are
 getting worse** than they used to be in the last five years, but they don't seem
