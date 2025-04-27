@@ -234,7 +234,7 @@ Instead, I think I'm just old.
   raw analysis for this post is available [here][igdb-colab].
 [^2]: This has the same caveats as any crowdsourced data, but like, [at least
   it's an ethos][ethos].
-[^3]: _Halo 3_ has entered the chat.
+[^3]: Halo 3 has entered the chat.
 [^4]: Remember, since a game can be neither AAA nor indie, these two lines will
   not sum to the total line.
 [^5]: Slides 109-127
