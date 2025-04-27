@@ -216,7 +216,7 @@ decreasing over time. It _may_ be the case that open-world AAA games in the
 worse than they were in the mid-2010s post-Skyrim.
 
 This means I'm mostly wrong---**_games overall_ can't be getting worse because
-they're more open-world or more franchise-y than they used to be, because
+they're _more_ open-world or _more_ franchise-y than they used to be, since
 they're actually _less_ of both**.
 
 Instead, I think I'm just [old][old-man-yells].
