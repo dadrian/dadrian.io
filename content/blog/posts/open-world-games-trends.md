@@ -215,9 +215,9 @@ decreasing over time. It _may_ be the case that open-world AAA games in the
 2020s are rated worse than they were in the late 2000s, but they're actually not
 worse than they were in the mid-2010s post-Skyrim.
 
-This means I'm mostly wrong---_games overall_ can't be getting worse because
+This means I'm mostly wrong---**_games overall_ can't be getting worse because
 they're more open-world or more franchise-y than they used to be, because
-they're actually _less_ of both.
+they're actually _less_ of both**.
 
 Instead, I think I'm just old.
 
