@@ -204,7 +204,7 @@ in the ratings of open-world games---during the post-Skyrim boom, and a clear
 downward trend in the 2020s. So **it's possible that open-world AAA games are
 getting worse** than they used to be in the last five years, but they don't seem
 to be worse than AAA games in most time periods. We'll see if the trend
-continues into the rest of the 2020s.
+continues into the rest of the 2020s[^7].
 
 ## Summary {#tldr}
 
@@ -240,3 +240,5 @@ Instead, I think I'm just old.
 [^5]: Slides 109-127
 [^6]: Day9 has a video about this somewhere, but I can't find it. Let me know if
   you know what it is, and I'll update the post.
+[^7]: If you're thinking "David, shouldn't you do a regression instead of
+  eyeballing all of this?", the answer is "Probably?". But ¯\\_(ツ)_/¯.
