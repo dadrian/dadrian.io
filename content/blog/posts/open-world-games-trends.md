@@ -123,11 +123,11 @@ numbers for both indie and AAA open-world games over time.
 <div id="open-world-absolute-by-year"></div>
 {{% /rawhtml %}}
 
-There's certainly a "post-Skyrim bump" in open-world games starting around 2012,
-with AAA decreasing from the post-Skyrim peak in the late 2010s.  There is a
-drastic increase in _indie_ open-world games. We already know there's been an
-explosion in indie games overall, so how does this look if we normalize the
-counts as a fraction of total indie and AAA games?
+There's certainly a "post-Skyrim bump" in AAA open-world games starting around
+2012, with a peak in the late 2010s. There is also a drastic increase in _indie_
+open-world games. We already know there's been an explosion in indie games
+overall, so how does this look if we normalize the counts as a fraction of total
+indie and AAA games?
 
 {{% rawhtml %}}
 <div id="open-world-fraction-by-year"></div>
