@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/react-app/node_modules/@mui/x-data-grid/esm/index.css"],
+  "sourcesContent": ["/* Placeholder file to ensure CSS imports are working */\n\n.MuiDataGrid {\n  display: block;\n}\n"],
+  "mappings": "AAEA,CAAC,YACC,QAAS,KACX",
+  "names": []
+}
