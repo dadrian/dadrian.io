@@ -219,7 +219,7 @@ This means I'm mostly wrong---**_games overall_ can't be getting worse because
 they're more open-world or more franchise-y than they used to be, because
 they're actually _less_ of both**.
 
-Instead, I think I'm just old.
+Instead, I think I'm just [old][old-man-yells].
 
 
 [david-tweet-thread]: https://x.com/davidcadrian/status/1631767778347876352
@@ -229,6 +229,7 @@ Instead, I think I'm just old.
 [gen5]: https://en.wikipedia.org/wiki/Fifth_generation_of_video_game_consoles
 [ethos]: https://www.imdb.com/title/tt0118715/quotes/?item=qt0464759
 [igdb-colab]: https://colab.research.google.com/drive/1frptKLlDTRKvdQ4tggNzXyntTwjYiq6p#scrollTo=0W1HDHVR6XTu
+[old-man-yells]: https://knowyourmeme.com/memes/old-man-yells-at-cloud
 
 [^1]: If you'd rather stare at a Python notebook without my colorful prose, the
   raw analysis for this post is available [here][igdb-colab].
