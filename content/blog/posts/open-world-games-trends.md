@@ -1,19 +1,21 @@
 ---
 title: "Is open-world design making games worse, or am I just getting old?"
 date: 2025-03-15T14:25:08-05:00
-js: games-bundle.js
+js: bundle.js
 ---
 
-Around the time that Elden Ring came out (an actually good open-world game), I
-had the thought that it seemed like AAA games were getting worse, especially
-post-pandemic. It also seemed like there were more and more open-world games and
-more games in large franchises (rather than new IP). My hypothesis was that
-open-world was increasing because it's easier to scale-up an open-world game to
-match the expectations on today's games---give each designer a separate region,
-cut dependencies between various levels and teams.
+Around the time that Elden Ring came out, I had the thought that it seemed like
+AAA games were getting worse, especially post-pandemic. Elden Ring was both
+open-world and loudly hearlded as one of the best games in years, , but it
+seemed like in general, there were more and more open-world games and more games
+in large franchises (rather than new IP), and that (unlike Elden Ring) these
+games were not very good. My hypothesis was that the open-world "genre" was
+increasing because it's easier to scale-up an open-world game to match the
+expectations on today's games---give each designer a separate region, cut
+dependencies between various levels and teams.
 
-It's easier to pitch "We'll build this giant world, it'll be dope" than it
-is to say "Trust us, we're gonna design 10 incredible levels". However, just
+It's easier to pitch "We'll build this giant world, it'll be dope" than it is to
+say "Trust us, we'll design ten incredible levels"[^6]. However, just
 because something is open-world and big, doesn't mean that it will be fun. The
 risk with open-world is that you exchange scale for cohesion and quality. The
 main driver for progressing in a game stops being winning or going on a journey
@@ -233,3 +235,5 @@ Instead, I think I'm just old.
 [^4]: Remember, since a game can be neither AAA nor indie, these two lines will
   not sum to the total line.
 [^5]: Slides 109-127
+[^6]: Day9 has a video about this somewhere, but I can't find it. Let me know if
+  you know what it is, and I'll update the post.
