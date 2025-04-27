@@ -6,13 +6,13 @@ js: bundle.js
 
 Around the time that Elden Ring came out, I had the thought that it seemed like
 AAA games were getting worse, especially post-pandemic. Elden Ring was both
-open-world and loudly hearlded as one of the best games in years, , but it
-seemed like in general, there were more and more open-world games and more games
-in large franchises (rather than new IP), and that (unlike Elden Ring) these
-games were not very good. My hypothesis was that the open-world "genre" was
-increasing because it's easier to scale-up an open-world game to match the
-expectations on today's games---give each designer a separate region, cut
-dependencies between various levels and teams.
+open-world and loudly hearlded as one of the best games in years, however it
+seemed like, in general, there were more and more open-world games and more
+games in large franchises (rather than new IP). Unlike Elden Ring, on average, I
+felt like these games were not very good. My hypothesis was that the open-world
+"genre" was increasing because it's easier to scale-up an open-world game to
+match the expectations on today's games---give each designer a separate region,
+cut dependencies between various levels and teams.
 
 It's easier to pitch "We'll build this giant world, it'll be dope" than it is to
 say "Trust us, we'll design ten incredible levels"[^6]. However, just
