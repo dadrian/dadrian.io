@@ -219,8 +219,7 @@ This means I'm mostly wrong---**_games overall_ can't be getting worse because
 they're _more_ open-world or _more_ franchise-y than they used to be, since
 they're actually _less_ of both**.
 
-Instead, I think I'm just [old][old-man-yells].
-
+Instead, I think I'm just [old][old-man-yells].[^8]
 
 [david-tweet-thread]: https://x.com/davidcadrian/status/1631767778347876352
 [aaa-cost]: https://www.matthewball.co/all/stateofvideogaming2025
@@ -243,3 +242,5 @@ Instead, I think I'm just [old][old-man-yells].
   you know what it is, and I'll update the post.
 [^7]: If you're thinking "David, shouldn't you do a regression instead of
   eyeballing all of this?", the answer is "Probably?". But ¯\\_(ツ)_/¯.
+[^8]: There may be other factors causing AAA games to be worse, but it's not
+  shown in the ratings and it's not correlated with open-world-ness.
