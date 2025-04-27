@@ -31,6 +31,7 @@ const light_colors = {
   indie_open_world: '#d1b897',
   indie_late_franchise: '#80845e',
   text: 'black',
+  background: '#f8f8f8',
 }
 
 const dark_colors = {
@@ -41,6 +42,7 @@ const dark_colors = {
   indie_open_world: '#8cde94',
   indie_late_franchise: invertColor(light_colors.indie_late_franchise),
   text: "#f8f8f8",
+  background: '#171717',
 }
 
 const colors = isDarkMode ? dark_colors : light_colors;
@@ -128,7 +130,7 @@ export const GameCountsByYear: React.FC = () => {
         <YAxis yAxisId="all" scale="log" domain={[1, 100000]} stroke={colors.text} >
           <Label value="Games (Log Count)" angle={-90} position={"insideLeft"} fill={colors.text} />
         </YAxis>
-        <Tooltip />
+        <Tooltip contentStyle={{"background": colors.background}}/>
         <Legend
           layout="horizontal"
           verticalAlign="bottom"
@@ -148,7 +150,7 @@ export const AAAByYear: React.FC = () => {
         <YAxis yAxisId="aaa" scale="linear" domain={[0, 250]} stroke={colors.text} >
           <Label value="Games (Count)" angle={-90} position={"insideLeft"} fill={colors.text} />
         </YAxis>
-        <Tooltip />
+        <Tooltip contentStyle={{"background": colors.background}}/>
         <Legend
           layout="horizontal"
           verticalAlign="bottom"
@@ -169,7 +171,7 @@ export const OpenWorldAbsolute: React.FC = () => {
         <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 175]} stroke={colors.text} >
           <Label value="Games (Count)" angle={-90} position={"insideLeft"} fill={colors.text} />
         </YAxis>
-        <Tooltip />
+        <Tooltip contentStyle={{"background": colors.background}}/>
         <Legend
           layout="horizontal"
           verticalAlign="bottom"
@@ -190,7 +192,7 @@ export const OpenWorldFraction: React.FC = () => {
         <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} stroke={colors.text} >
           <Label value="Games (Fraction)" angle={-90} position={"insideLeft"} fill={colors.text} />
         </YAxis>
-        <Tooltip />
+        <Tooltip contentStyle={{"background": colors.background}}/>
         <Legend
           layout="horizontal"
           verticalAlign="bottom"
@@ -211,7 +213,7 @@ export const LateStageFranchiseAbsolute: React.FC = () => {
         <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 175]} stroke={colors.text} >
           <Label value="Games (Count)" angle={-90} position={"insideLeft"} fill={colors.text} />
         </YAxis>
-        <Tooltip />
+        <Tooltip contentStyle={{"background": colors.background}}/>
         <Legend
           layout="horizontal"
           verticalAlign="bottom"
@@ -232,7 +234,7 @@ export const LateStageFranchiseFraction: React.FC = () => {
         <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} stroke={colors.text} >
           <Label value="Games (Fraction)" angle={-90} position={"insideLeft"} fill={colors.text} />
         </YAxis>
-        <Tooltip />
+        <Tooltip contentStyle={{"background": colors.background}}/>
         <Legend
           layout="horizontal"
           verticalAlign="bottom"
@@ -265,7 +267,7 @@ export const RatingsByYear: React.FC = () => {
         <YAxis yAxisId="linear_counts" scale="linear" domain={[0, 1.0]} stroke={colors.text} >
           <Label value="Rating (P50)" angle={-90} position={"insideLeft"} fill={colors.text} />
         </YAxis>
-        <Tooltip />
+        <Tooltip contentStyle={{"background": colors.background}}/>
         <Legend
           layout="horizontal"
           verticalAlign="bottom"
