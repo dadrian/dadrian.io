@@ -1,6 +1,6 @@
 ---
 title: "Is open-world design making games worse, or am I just getting old?"
-date: 2025-03-15T14:25:08-05:00
+date: 2025-04-26T09:18:00-05:00
 js: bundle.js
 ---
 
