@@ -161,8 +161,9 @@ Across 955 franchises with at least 4 games, there were **5,483 "late-stage"
 franchise games** released within our game population.
 
 Looking at the data over time, we see a clear trend of an increase
-year-over-year in the absolute count of AAA late stage franchise games, _but it ends in the late
-2010s!_. Again, similar to open-world, we see it decrease in the 2020s.
+year-over-year in the absolute count of AAA late stage franchise games, _but it
+ends in the late 2010s!_. Again, similar to open-world, we see it decrease in
+the 2020s.
 
 {{% rawhtml %}}
 <div id="franchise-absolute-by-year"></div>
@@ -187,22 +188,23 @@ are less late-stage franchise games in the 2020s than there were in the 2010s or
 IGDB has Metacritic scores, so we can look at those. Since Metacritic is an
 aggregator, we can expect some sort of smoothing of the underlying curve to a
 target distribution to account for rating inflation, which might hide some
-trends. However, assuming uniform modification by Metacritic, we can still look
-at the relative ratings of open-world and late-stage franchise AAA games,
-compared to AAA and indie games generally. Below if the median (P50) ranking for
-various game types.
+trends. However, regardless of any potential smoothing by Metacritic, we can
+still look at the relative ratings of open-world and late-stage franchise AAA
+games, compared to AAA and indie games generally. Below is the median (P50)
+ranking for various game types.
 
 {{% rawhtml %}}
 <div id="ratings-by-year"></div>
 {{% /rawhtml %}}
 
-We can see above, that for the most part, open-world AAA games have a higher
-median rating than AAA games do generally. Late-stage franchise games do as
+Above, we can see that for the most part, **open-world AAA games have a higher
+median rating than AAA games do generally**. Late-stage franchise games do as
 well, but the effect is less prounced. Interestingly, there are two small dips
 in the ratings of open-world games---during the post-Skyrim boom, and a clear
-downard trend in the 2020s. So maybe open-world AAA games are worse than they
-used to be, but they don't seem to be worse than AAA games generally. We'll see
-if the trend continues into the rest of the 2020s.
+downward trend in the 2020s. So **it's possible that open-world AAA games are
+getting worse** than they used to be in the last five years, but they don't seem
+to be worse than AAA games in most time periods. We'll see if the trend
+continues into the rest of the 2020s.
 
 ## Summary {#tldr}
 
@@ -210,11 +212,12 @@ For AAA games, neither open-world games, nor late-stage franchise games are more
 common now, than they were in the 2000s. Open-world AAA games peaked in the late
 2010s, and have been decreasing. Late-stage franchise AAA games have been
 decreasing over time. It _may_ be the case that open-world AAA games in the
-2020s are worse than they were in the late 2000s, but they're actually not worse
-than they were in the mid-2010s post-Skyrim.
+2020s are rated worse than they were in the late 2000s, but they're actually not
+worse than they were in the mid-2010s post-Skyrim.
 
-This means I'm mostly wrong---games can't be getting worse because they're more
-open-world or more franchise-y, because they're actually _less_ of both.
+This means I'm mostly wrong---_games overall_ can't be getting worse because
+they're more open-world or more franchise-y than they used to be, because
+they're actually _less_ of both.
 
 Instead, I think I'm just old.
 
