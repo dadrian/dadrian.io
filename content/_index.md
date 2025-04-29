@@ -1,7 +1,7 @@
 +++
 layout = "bio"
 +++
-I am currently at Google, working on adding value to [Chrome
+I am currently a product manager at Google, working on adding value to [Chrome
 Security][chromesecurity]. Despite this, I identify both as an engineer and
 security researcher. I cofounded [Censys][censys], an attack-surface management
 security startup. I left Censys after their [Series A][censys-raise]. They've
