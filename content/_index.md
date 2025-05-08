@@ -7,16 +7,13 @@ security researcher. I cofounded [Censys][censys], an attack-surface management
 security startup. I left Censys after their [Series A][censys-raise]. They've
 since raised a ~~[Series B][censys-raise-b]~~ [Series C][censys-raise-c]! I was
 employee #2 at [Nametag][nt].  I’m also a core contributor to the [ZMap][zmap]
-open-source project. I do part-time consulting and advising for startups. I can
-help with building out early engineering teams, evaluating market opportunities
-for B2B security software, and cryptography engineering.
+open-source project.
 
-I defended my PhD at the University of Michigan in 2018. My advisor was [J.
-Alex Halderman][jhalderm]. My research was based on using Internet-wide
+I have a PhD from the University of Michigan. I defended in 2018. My advisor was [J.
+Alex Halderman][jhalderm]. My research focus was using Internet-wide
 scanning to measure how cryptography is used on the Internet. It led to the
 discovery of the [Logjam][logjam] and [DROWN][drown] attacks on TLS, and the
-creation of [Censys][censys]. I also a lectured for the undergraduate security
-course.
+creation of [Censys][censys].
 
 In 2021, I accidentally started the ["Security. Cryptography. Whatever."][scw]
 podcast with [Deirdre Connolly][deirdre] and [Thomas Ptacek][tqbf].
