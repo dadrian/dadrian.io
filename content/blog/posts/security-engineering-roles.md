@@ -1,5 +1,5 @@
 ---
-title: "Building a security product is not the same thing as security engineering."
+title: "Building a security product is not the same thing as security engineering"
 date: 2025-06-11T16:38:08-04:00
 ---
 
