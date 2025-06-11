@@ -1,6 +1,6 @@
 ---
 title: "Building a security product is not the same thing as security engineering."
-date: 2025-06-11T16:38:08-05:00
+date: 2025-06-11T16:38:08-04:00
 ---
 
 I recently found myself being repeatedly asked for career advice. I'm not very
