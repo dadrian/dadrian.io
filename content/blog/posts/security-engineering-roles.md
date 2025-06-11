@@ -9,9 +9,9 @@ basically "[get overeducated][grad-school-reasons], then make better decisions
 10 years ago".
 
 In the context of "cybersecurity", one piece of advice I can give, that's
-applicable to both careers, leadership, and getting things done, is to
-understand the various types of security roles and teams that exist, and what
-kinds of companies have each type of team.
+applicable to careers, leadership, and getting things done, is to understand the
+types of security roles and teams that exist, and which kinds of companies have
+them.
 
 I'd roughly bucket security roles into three high-level groups:
 1. Securing the organization
@@ -22,7 +22,7 @@ I'd roughly bucket security roles into three high-level groups:
 
 Most security teams exist to secure an organization from threats. Many types of
 organizations have this role, including companies, non-profits, schools, and
-government agency. Security teams responsible for securing an organization are
+government agencies. Security teams responsible for securing an organization are
 often not builders, particularly if the organization is fairly old and
 well-established. This doesn't mean they aren't talented, smart, capable people,
 but if you're looking for a security _engineering_ job, those are harder to find
@@ -30,7 +30,7 @@ in jobs that secure organizations, rather than jobs that secure products.
 
 ### Securing the product
 
-Some security jobs are have a goal of securing a product. This type of job often
+The goal of some security jobs is to build a secure product. This type of job often
 looks more like a typical software engineering role than, say, a threat-hunting
 role. You'll often see this role at a company that is offering some type of
 platform. This is because the core feature---running someone else's code---is a
@@ -53,7 +53,7 @@ day-to-day. It certainly helps to have security knowledge at a security product
 company, in the same way that having domain-specific knowledge for whatever the
 domain is for any company. For example, it's beneficial for someone building tax
 software to understand how taxes work. However, much of the work of building a
-security product with be the same slog as any other enterprise product, and
+security product will be the same slog as any other enterprise product, and
 there's no reason to expect everyone working on, e.g., a SIEM, to be a security
 expert. There will often be security people in a security product somewhere,
 often on some combination of the product team, the research team, or a
