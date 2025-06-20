@@ -2,6 +2,7 @@
 title: "UDP in Go"
 date: 2020-12-03T20:31:09-05:00
 draft: false
+uses: ["code"]
 ---
 
 Go uses the [`net.Conn`][net-conn] interface to abstract different types of
@@ -105,8 +106,8 @@ interface. Therefore, only `WriteTo` can write data through a connection
 opened by `net.ListenUDP`.
 
 The behavior of `net.UDPConn` might seem odd, but ultimately it reflects the
-behavior of the relevant system calls. At any given time, a `UDPConn` can 
-only be used with a subset of its available methods, but by tracking what 
+behavior of the relevant system calls. At any given time, a `UDPConn` can
+only be used with a subset of its available methods, but by tracking what
 the underlying system calls would be, you can determine which methods are
 safe to use for connection.
 
