@@ -29,6 +29,11 @@
   {{ if in .uses "code" }}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" />
   <style>
+  :not(pre):not(.highlight) > code,
+  :not(pre):not(.highlight) code {
+    font-family: 'Source Code Pro', Courier, monospace;
+    font-size: 90%;
+  }
   .highlight > pre {
     padding: 8px;
     box-shadow: 5px 5px 5px 0 #171717;
