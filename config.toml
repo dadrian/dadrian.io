@@ -2,7 +2,6 @@ baseURL = "https://dadrian.io"
 languageCode = "en-us"
 title = "David Adrian"
 theme = ["dadrian"]
-paginate = 100
 [pagination]
 pagerSize = 100
 [markup]
