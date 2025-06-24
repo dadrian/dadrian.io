@@ -68,7 +68,7 @@ worker cloud environments[^4].
 Breaking this down further, this is basically three types of programs that all
 manage some sort of capability:
 - **Programs with the specific purpose of running other people's code.**
-  Operating systems run arbitrary programs and apps of dubious provenece and
+  Operating systems run arbitrary programs and apps of dubious provence and
   provide them capabilities, such as \TK. Web browsers do the same, but the code
   is implemented in Javascript and WebAssembly and the DOM, and isn't native.
 - **Programs that need to manage external hardware** are also effectively
@@ -93,13 +93,13 @@ platform, but have such odd execution properties that rewriting them in a
 memory-safe language doesn't actually achieve what we normally mean when we say
 a program is memory-safe.
 
-This raises the quesetion---what is the actual security property we get from
+This raises the question---what is the actual security property we get from
 memory-safety anyway? If we take the usual description of memory-safety that all
 pointers are guaranteed to only point at live objects of the same type (size)
 that they were pointing to when the memory was allocated, without any new
 allocations in between, what do we actually gain from this?
 
-The best description of this proprety comes from [Thomas Dullien][halvar] in his
+The best description of this property comes from [Thomas Dullien][halvar] in his
 [presentation at DistrictCon][flake-memory-safety]. The basic idea is that a
 program is, in theory, intended to be a finite-state machine and do some sort of
 computational task, as written by the programmer. During the execution, the
@@ -121,7 +121,7 @@ reduces the attackers ability to enter a weird machine[^6], if, once they find a
 bug, they are still forced to stay within the memory-safe states, rather than
 any state. Other mitigations and technologies such as [W^X][wxorx] and
 [control-flow integrity][CFI] (CFI), also attempt to constrain the state space,
-but empircal evidence suggests they do not constraint the state space enough to
+but empirical evidence suggests they do not constraint the state space enough to
 be as as effective as memory safety.
 
 The main way in which we achieve strong memory safety (and performance) is
@@ -129,7 +129,83 @@ compile-time checks of properties that we believe (or have proved!) are
 equivalent to memory-safety. The Rust borrow checker enforces that there is only
 one mutable reference to any object at a time, and no references are dangling,
 and that a reference of one type cannot be switched to a reference of another
-type. In practice, this results in a memory-safe program (subject to the user of `unsafe`[^6]),
+type. In practice, this results in a memory-safe program (subject to the use of
+`unsafe`[^6]). \TODO check if this is proved
+
+You can also have the compiler shift some responsibility to runtime. For
+example, you could instrument every load and store, and enforce pointer
+provenance in something that looks like a garbage collector, so long as you
+also prevent the compiler from letting you alias[^7].
+
+So if we have mechanisms that rely on the compiler to generate code that is safe
+or otherwise enforce safety at runtime, assuming we adopted those solutions (big
+if), can we still find ourselves in a situation where code could become a weird
+machine?
+
+The failing point in all of this is---what if there are _bugs in the compiler_
+(the call is coming from inside the house!). Compilers, being programs as well,
+can have bugs. For the most part, compiler bugs are rare when you interact with
+a trusted codebase. Occasionally, you may encounter missed optimizations, or
+more likely, incorrect optimizations downstream of undefined behavior[^8]. A
+sufficiently large codebase such as Chrome or Windows will likely encounter
+compiler bugs whenever they roll to a new major compiler version. But that's not
+most problems, and those bugs tend to get detected and fixed, as they likely
+manifest in failing functional tests.
+
+But what happens if the code being compiled is untrusted, but the compiler is at
+least semi-trusted? This is a slightly different threat model from sandboxing a
+binary (e.g. a hosting provider that executes your compiled binary for you[^9]),
+where we already assume some machine code is malicious, since an attacker could
+provide it directly.
+
+In this case, an attacker has a large number of attempts to provide and run code
+that could trigger a logic bug in the compiler that would then cause the
+compiled output to be exploited into entering a weird machine. But in what
+situation would we ever have a semi-trusted compiler but untrusted source code?
+
+Enter Just-In-Time compilers (JITs). These are compilers that write out machine
+code _into the current process_. While originally, JITs were often used in the
+context of a runtime for your own code (e.g. the JVM, or PyPy), JITs have grown
+to be used web browsers and serverless worker (function-as-a-service) platforms.
+
+Similarly, often time the way in which GPU drivers load and run shaders today is
+effectively a JIT. The userspace program provides source or
+[platform-independent IR][spirv] to the driver, which compiles it into whatever
+hardware-specific representation is required by the physical GPU, and then hands
+it to the kernelspace driver to execute it on the hardware. This happens at
+runtime, meaning the driver is effectively JITing code. This is why many
+userspace GPU drivers include a full copy (or fork) of LLVM in their source
+code.
+
+In these situations, the JIT needs to be at least semi-trusted for the security
+model to work out:
+- Many worker platforms can't afford the performance penalty of spinning up a
+  new process for every request, so instead they use a [JIT configured to
+  isolate][cf-isolates] each individual workload (source input).
+- Web browsers [isolate the renderer for individual sites][site-isolation].
+  However, given the surface area of the renderer/browser process split, code
+  execution in the renderer is still a high severity vulnerability. Individual
+  sites have the ability to write and execute arbitrary (malicious) Javascript
+  that is then JITed by the Javascript runtime. In this case, the JIT is
+  expected to generate code that compiles with the security model of of the
+  renderer, rather than arbitrary attacker-controlled machine code.
+- In the GPU case, the drivers assume the userspace code is trusted. In the case
+  of a game, this makes sense, since the shaders are shipped (or generated)
+  directly as part of the game. An individual gamer wishing to force the driver
+  into a weird machine by altering the shader code, could instead run the
+  malicious code directly on their own computer.
+
+The failure case for the JIT in these situations is that a logic bug results in
+machine code that can be leveraged to create a weird machine. It's rare that a
+JIT will output fully invalid or directly attacker-controlled machine code, but
+instead it will have a logic bug that can be triggered in such a way that we
+move from the expected finite state machine and into a weird machine.
+
+What makes this difficult to defend against is the fact that this can and does
+happen _even if the JIT is implemented in a memory-safe language_. [V8][v8] is
+not the only JIT with bugs, even [wasmtime][wasmtime] / [cranelift][cranelift],
+which are implemented in Rust, have logic bugs that can result in weird
+machines.
 
 ## Real Life
 
@@ -143,24 +219,59 @@ in the runtime, but it won't solve the problem that _logic_ bugs resulting in
 miscompilations leading to runtime type confusion are fundamentally _equivalent
 to memory safety bugs_ leading to RCE.
 
-### Money
+The only way that we have to secure against weird machines is to alter the
+architecture so that weird machines exist outside of the threat model. For
+compile-ahead code, we do this with safety built into the tooling. For some use
+cases, we can do this by writing minimally sized, safe VMMs. For other use
+cases, like the worker platforms and web browsers, we have to try other
+solutions, ranging from "just write less bugs" to "in-process, software-enforced
+sandboxes". While prioritizing correctness can help a lot, it's unlikely to get
+you to zero bugs. This brings us to in-process sandboxes.
 
+## In-process Sandboxes
 
+What is an in-process sandbox, anyway? Basically, you want to restric some
+memory region containing executable code to only be able to access data in some
+other memory region, and tightly control any inputs and outputs from that
+region. This looks very similar to the [WebAssembly security model][wasm-sec].
 
+One attempt to do this is via the [V8 sandbox][v8-sandbox], which is a
+rearchiteture of V8 to never directly generate a raw load instruction. Instead,
+all generated (JITed) code uses indicies that are loaded relative to a base
+address stored in a specific register that is never loaded into memory. The V8
+runtime then needs to enforce that any communication between the untrusted
+sandboxed region and trusted V8 runtime code is santized, and that there are no
+edges (function calls via pointer) that are functionally equivalent to arbitrary
+read or write.
 
+### Hardware-enforced in-process sandboxes
 
-[mmu]: \TODO
-[mmio]: \TODO
+\TODO
+
+### What are you gonna do, trap my syscalls?
+
+\TODO
+
+[mmu]: https://en.wikipedia.org/wiki/Memory_management_unit
+[mmio]: https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O
 [alex-coreutils]: https://alexgaynor.net/2025/mar/22/coreutils-in-rust/
 [v8]: https://v8.dev
 [v8-sandbox]: https://v8.dev/blog/sandbox
 [reasons]: https://alexgaynor.net/2025/mar/06/things-have-reasons/
 [avery-gift]: https://apenwarr.ca/log/20211229
 [dadrian-isolate-tweet]: https://x.com/davidcadrian/status/1834645627147329688
-[ian-beer-bugs]: \TODO
+[ian-beer-bugs]: https://docs.google.com/presentation/d/16LZ6T-tcjgp3T8_N3m0pa5kNA1DwIsuMcQYDhpMU7uU/edit?slide=id.g3e7cac054a_0_89#slide=id.g3e7cac054a_0_89
 [flake-memory-safety]: https://docs.google.com/presentation/d/1-CgBbVuFE1pJnB84wfeq_RadXQs13dCvHTFFVLPYTeg/edit?slide=id.p#slide=id.p
-[wxorx]: \TODO
-[cfi]: \TODO
+[wxorx]: https://en.wikipedia.org/wiki/W%5EX
+[cfi]: https://en.wikipedia.org/wiki/Control-flow_integrity
+[halvar]: https://addxorrol.blogspot.com/
+[starscan]: https://security.googleblog.com/2022/09/use-after-freedom-miracleptr.html
+[spirv]: https://registry.khronos.org/SPIR-V/specs/unified1/SPIRV.html
+[cf-isolates]: https://developers.cloudflare.com/workers/reference/security-model/
+[site-isolation]: https://www.chromium.org/Home/chromium-security/site-isolation/
+[cranelift]: https://cranelift.dev/
+[wasmtime]: https://github.com/bytecodealliance/wasmtime
+[wasm-sec]: https://webassembly.org/docs/security/
 
 [^1]: \TODO expand on how Zig or Jai tooling makes your program more likely to be correct
 [^2]: Spoiler alert! It's JITs.
@@ -178,3 +289,18 @@ to memory safety bugs_ leading to RCE.
   program if the attacker is able to enter a weird machine from the unsafe code,
   is not nearly as risky as unsafe C/C++ code generally, in which an attacker
   can potentially entire a weird machine from _any_ line of code.
+[^7]: You can probably drop the alisasing requirement if you do something like
+  [*Scan][starscan], but like, at some point you're just writing a deeply
+  inefficient garbage collector. If it can be bolted on to legacy codebases,
+  this might be useful, but it's likely the reason we're still using that
+  "legacy" codebase is because it's fast.
+[^8]: Arguably not a bug in the compiler, but an issue with the language design,
+  depending on if the undefined behavior is detectable at the point in which the
+  compiler applies the optimization or not. However, that's not really relevant
+  to what I'm talking about here, where I'm primarily concerned with actual
+  logic bugs in the compiler itself, even when the input code is well-formed.
+[^9]: The hosting provider might also compile the code for you, but they'll
+  likely compile it in the same sandbox they'll execute it in, so there's really
+  no security boundary difference between the compiler and the binary. In other
+  words, it doesn't matter if the attacker can trigger a bug in the compiler if
+  they could also just run arbitrary machine code out of the box.
