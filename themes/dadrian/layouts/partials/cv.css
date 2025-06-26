@@ -1,0 +1,9 @@
+p {
+    margin: 0;
+}
+.dad-cv-exp {
+    border-left-style: solid;
+    border-left-width: 2px;
+    padding-left: 6px;
+    margin-left: 2px;
+}

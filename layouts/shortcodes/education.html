@@ -1,21 +1,11 @@
-<tr>
-<td>
-  {{ with .Get "section" }}
-  <b>{{ . }}</b>
+<div class="dad-margin-bottom">
+  <p>
+  <b><a href="{{ .Get "link" }}">{{ .Get "school" }}</a></b>, {{ .Get "location"}}
+  <br>{{ .Get "name" }}
+  <br><i>{{ .Get "when" }}</i>
+  {{ with .InnerDeindent }}
+  <br>
+  {{ . }}
   {{ end }}
-</td>
-<td>
-  <b><a href="{{ .Get "link" }}">{{ .Get "name" }}</a></b>, {{ .Get "location" }}
-  <br />
-  {{ .Get "degree" }}
-  {{ with .Inner }}
-    <br />
-    {{ . }}
-  {{ end }}
-</td>
-<td>
-  {{ with .Get "when" }}
-    <i>{{ . }}</i>
-  {{ end }}
-</td>
-</tr>
+  </p>
+</div>

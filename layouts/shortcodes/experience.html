@@ -1,22 +1,16 @@
-<tr>
-<td>
-  {{ with .Get "section" }}
-  <b>{{ . }}</b>
-  {{ end }}
-</td>
-<td>
-  <b><a href="{{ .Get "link" }}">{{ .Get "name" }}</a></b>{{ with .Get "where" }}, {{ . }} {{ end }}
-  <br />
-  {{ with .Get "position" }}
-    <i>{{ . }}</i>
-  {{ end }}
-  <div class="dad-cv-experience">
-    {{ .Inner | markdownify }}
+<div class="dad-margin-bottom">
+  <p>
+    <b><a href="{{ .Get "link" }}">{{ .Get "name" }}</a></b>{{ with .Get "where" }}, {{ . }} {{ end }}
+    {{ with .Get "position" }}
+    <br>{{ . }}
+    {{ end }}
+    {{ with .Get "year" }}
+    <br><i>{{ . }}</i>
+    {{ end }}
+  </p>
+  {{ if .Inner }}
+  <div class="{{ .Get "class" }}">
+  {{ .InnerDeindent | markdownify }}
   </div>
-</td>
-<td class="dad-cv-year">
-  {{ with .Get "year" }}
-    <i>{{ . }}</i>
   {{ end }}
-</td>
-</tr>
+</div>

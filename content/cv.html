@@ -1,416 +1,427 @@
 +++
 title = "Curriculum Vitae"
 layout = "bio"
+css = ["cv.css"]
 +++
 
-<table class="da-cv">
-  {{< education
-      section="Education"
-      name="University of Michigan"
-      link="https://umich.edu"
-      location="Ann Arbor, MI"
-      degree="PhD, Computer Science"
-      when="2019"
-  >}}
-  <i>Dissertation:
-    <a href="/srv/papers/david-adrian-dissertation.pdf">
-      Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems
-    </a>
-  </i>
-  {{< /education >}}
-  {{< education
-      name="University of Michigan"
-      link="https://umich.edu"
-      location="Ann Arbor, MI"
-      degree="Master of Engineering, Computer Science"
-      when="2016"
-  />}}
-  {{< education
-      name="University of Michigan"
-      link="https://umich.edu"
-      location="Ann Arbor, MI"
-      degree="Bachelor of Engineering, Computer Science"
-      when="2014"
-  />}}
-  {{< paper
-      section="Conference Publications"
-      name="Ten Years of ZMap"
-      link="https://arxiv.org/pdf/2406.15585"
-      authors="Zakir Durumeric, David Adrian, Phillip Stephens, Eric Wustrow, and J. Alex Halderman"
-      conference="ACM Internet Measurement Conference (IMC), November 2024."
-      bibtex="ten-years-of-zmap.bib"
-  />}}
-  {{< paper
-      name="ZDNS: A Fast DNS Toolkit for Internet Measurement"
-      link="https://zakird.com/papers/zdns.pdf"
-      authors="Liz Izhikevich, Gautam Akiwate, Briana Berger, Spencer Drakontaidis, Anna Ascheman, Paul Pearce, David Adrian, and Zakir Durumeric"
-      conference="ACM Internet Measurement Conference (IMC), October 2022."
-      bibtex="zdns-imc22.bib"
-  />}}
-  {{< paper
-      name="On the Origin of Scanning: The Impact of Location on Internet-Wide Scans"
-      link="https://zakird.com/papers/multiperspective.pdf"
-      authors="Gerry Wan, Liz Izhikevich, David Adrian, Katsunari Yoshioka, Ralph Holz, Christian Rossow, and Zakir Durumeric"
-      conference="ACM Internet Measurement Conference (IMC), October 2020."
-      bibtex="origin-imc20.bib"
-  />}}
-  {{< paper
-      name="Tracking Certificate Misissuance in the Wild"
-      link="https://zakird.com/papers/zlint.pdf"
-      authors="Deepak Kumar, Zhengping Wang, Matthew Hyder, Joseph Dickinson, Gabrielle Beck, David Adrian, Zakir Durumeric, J. Alex Halderman and Michael Bailey"
-      conference="IEEE Symposium on Security and Privacy (Oakland), May 2018."
-      bibtex="zlint.bib"
-  />}}
-  {{< paper
-      name="Measuring small subgroup attacks against Diffie-Hellman"
-      link="https://eprint.iacr.org/2016/995.pdf"
-      authors="Luke Valenta, David Adrian, Antonio Sanso, Shaanan Cohney, Joshua Fried, Marcella Hastings, J. Alex Halderman, and Nadia Heninger"
-      conference="Network and Distributed System Security Symposium (NDSS), February 2017."
-      bibtex="subgroup.bib"
-  />}}
-  {{< paper
-      name="An Internet-Wide View of ICS Devices"
-      link="https://jhalderm.com/pub/papers/ics-pst16.pdf"
-      authors="Ariana Mirian, Zane Ma, David Adrian, Matthew Tischer, Thasphon Chuenchujit, Tim Yardley, Robin Bertheier, Josh Mason, Zakir Durumeric, J. Alex Halderman, and Michael Bailey"
-      conference="IEEE Conference on Privacy, Security, and Trust (PST), December 2016"
-      bibtex="ics.bib"
-  />}}
-  {{< paper
-      name="DROWN: Breaking TLS using SSLv2"
-      link="https://drownattack.com/drown-attack-paper.pdf"
-      authors="Nimrod Aviram, Sebastian Schinzel, Juraj Somorovsky, Nadia Heninger, Maik Dankel, Jens Steube, Luke Valenta, David Adrian, J. Alex Halderman, Viktor Dukhovni, Emilia Käsper, Shaanan Cohney, Susanne Engels, Christof Paar, and Yuval Shavitt"
-      conference="USENIX Security Symposium, August 2016."
-      bibtex="drown.bib"
-      award="Internet Defense Prize Finalist."
-  />}}
-  {{< paper
-      name="Neither Snow Nor Rain Nor MITM… An Empirical Analysis of Email Delivery Security"
-      link="https://jhalderm.com/pub/papers/mail-imc15.pdf"
-      authors="Zakir Durumeric, David Adrian, Ariana Mirian, James Kasten, Kurt Thomas, Vijay Eranti, Nicholas Lidzborski, Elie Bursztein, Michael Bailey, and J. Alex Halderman"
-      conference="ACM Internet Measurement Conference (IMC), October 2015."
-      bibtex="mail-imc15.bib"
-      award="IRTF Applied Networking Research Prize."
-  />}}
-  {{< paper
-      name="Censys: A Search Engine Backed by Internet-Wide Scanning"
-      link="https://censys.io/static/censys.pdf"
-      authors="Zakir Durumeric, David Adrian, Ariana Mirian, Michael Bailey, and J. Alex Halderman"
-      conference="ACM Conference on Computer and Communications Security (CCS), October 2015."
-      bibtex="censys.bib"
-  />}}
-  {{< paper
-      name="Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice"
-      link="https://weakdh.org/imperfect-forward-secrecy.pdf"
-      authors="David Adrian, Karthikeyan Bhargavan, Zakir Durumeric, Pierrick Gaudry, Matthew Green, J. Alex Halderman, Nadia Heninger, Drew Springall, and Emmanuel Thomé, Luke Valenta, Benjamin VanderSloot, Eric Wustrow, Santiago Zanella-Béguelin and Paul Zimmermann"
-      conference="ACM Conference on Computer and Communications Security (CCS), October 2015."
-      bibtex="weakdh-ccs15.bib"
-      award="Best Paper Award."
-  />}}
-  {{< paper
-      name="Performance and Energy Consumption Analysis of a Delay-Tolerant Network for Censorship-Resistant Communication"
-      link="https://dadrian.io/srv/papers/1am-mobihoc15.pdf"
-      authors="Yue Liu, David R. Bild, David Adrian, Gulshan Singh, Robert P. Dick, Dan S. Wallach, and Z. Morley Mao"
-      conference="ACM International Symposium on Mobile Ad Hoc Networking and Computing (MobiHoc), June 2015."
-      bibtex="1am-mobihoc15.bib"
-  />}}
-  {{< paper
-      name="The Matter of Heartbleed"
-      link="https://jhalderm.com/pub/papers/heartbleed-imc14.pdf"
-      authors="Zakir Durumeric, Frank Li, James Kasten, Johanna Amann, Jethro Beekman, Mathias Payer, Nicolas Weaver, David Adrian, Vern Paxson, Michael Bailey, and J. Alex Halderman"
-      conference="ACM Internet Measurement Conference (IMC), November 2014."
-      bibtex="heartbleed-imc14.bib"
-      award="Best Paper Award."
-  />}}
-  {{< paper
-      section="Workshop Publications"
-      name="Zippier ZMap: Internet-Wide Scanning at 10 Gbps"
-      link="https://jhalderm.com/pub/papers/zmap10gig-woot14.pdf"
-      authors="David Adrian, Zakir Durumeric, Gulshan Singh, and J. Alex Halderman"
-      conference="USENIX Workshop on Offensive Technologies (WOOT), August 2014"
-      bibtex="zmap10gig-woot14.bib"
-  />}}
-  <tr>
-    <td>
-      <b>Program Committees</b>
-    </td>
-    <td>
-    PC Member
-    <ul class="dad-cv-ul">
-      <li>
-        USENIX Security
-        <br />
-        <i>2021</i>
-      </li>
-      <li>
-        USENIX Workshop on Offensive Security (WOOT)
-        <br />
-        <i>2018, 2019</i>
-      </li>
-      <li>
-        BlackHat USA Review Board
-        <br />
-        <i>2018&ndash;Present</i>
-      </li>
-    </ul>
-    <br />
-    </td>
-  </tr>
+<section>
+<h2>Education</h2>
 
-  {{< talk
-      section="Talks"
-      name="Untitled."
-      conference="Monktoberfest, October 2024"
-  />}}
-  {{< talk
-      name="Didn't Chrome Already Have a Root Store?"
-      conference="Strangeloop, September 2023"
-      pdf="strangeloop-2023.pdf"
-      gdrive="https://docs.google.com/presentation/d/1LgGyDXBMhYkojoLdCA7UWXoZf0BFaYBs9rdW7u76ENQ/edit?resourcekey=0-1sHPAhsDAtCthrY7r5Onww"
-  />}}
-  {{< talk
-      name="Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems"
-      conference="University of Michigan PhD Defense, December 2019"
-      pdf="defense.pdf"
-      gdrive="https://docs.google.com/presentation/d/1HPi8z32jzAN1Ce6Tk3K9PBJ2dLKYbB5Y5njXoEYBPRM/edit#slide=id.p"
-  />}}
-  {{< talk
-      name="Fixing OCSP for Fun and Profit"
-      conference="USENIX Security Rump Session, August 2016"
-      pdf="suspect-staple.pdf"
-      key="suspect-staple.key"
-  />}}
-  {{< talk
-      name="A Retrospective on the Use of Export Cryptography"
-      conference="BlackHat USA, August 2016."
-      pdf="black-hat-2016-export-crypto.pdf"
-      key="black-hat-2016-export-crypto.key"
-  />}}
-  {{< talk
-      name="F**k It, Let's Do It Wide! Security Applications of Internet-Wide Scanning"
-      conference="Eastern Michigan University, February 2016."
-      pdf="zmap-emu.pdf"
-      key="zmap-emu.key"
-  />}}
-  {{< talk
-      name="Imperfect Forward Secrecy"
-      conference="Hushcon, December 2015."
-      pdf="ifs-hushcon.pdf"
-      key="ifs-hushcon.key"
-  />}}
-  {{< talk
-      name="A Search Engine Backed by Internet-Wide Scanning"
-      conference="ACM CCS, October 2015."
-      pdf="censys-ccs.pdf"
-      key="censys-ccs.key"
-  />}}
-  {{< talk
-      name="Were It So Easy: TLS in the Real World"
-      conference="Duo Tech Talk, July 2015."
-      pdf="wereitsoeasy-duo.pdf"
-      key="wereitsoeasy-duo.key"
-      youtube="https://www.youtube.com/watch?v=Skp8g_xFqpA"
-      conference2="ARBSEC a2y.asm, September 2015."
-      pdf2="wereitsoeasy-a2y.pdf"
-      key2="wereitsoeasy-a2y.key"
-  />}}
-  {{< talk
-      name="Zippier ZMap: Internet-Wide Scanning at 10 Gbps"
-      conference="WOOT, August 2014."
-      pdf="zmap10gig-woot14.pdf"
-      pptx="zmap10gig-woot14.pptx"
-  />}}
+{{< education
+    school="University of Michigan"
+    link="https://umich.edu"
+    location="Ann Arbor, MI"
+    name="Ph.D. in Computer Science"
+    when="2019"
+>}}
+Dissertation:
+  <a href="/srv/papers/david-adrian-dissertation.pdf">
+    Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems
+  </a>
+{{< /education >}}
+{{< education
+    school="University of Michigan"
+    link="https://umich.edu"
+    location="Ann Arbor, MI"
+    name="Master of Engineering, Computer Science"
+    when="2016"
+/>}}
+{{< education
+    school="University of Michigan"
+    link="https://umich.edu"
+    location="Ann Arbor, MI"
+    name="Bachelor of Engineering, Computer Science"
+    when="2014"
+/>}}
+</section>
 
-  {{% experience
-      section="Relevant Experience"
-      name="Google"
-      link="https://google.com"
-      where="Boulder, CO and Washington, DC"
-      position="Product Manager"
-      year="2022+"
-  %}}
-  I work on [Chrome
-  Security](https://www.chromium.org/Home/chromium-security/), focusing on
-  network security and PKI, web platform security, and memory safety. Being a PM
-  is my way to contribute to Chrome Security without having to write C++.
-  {{% /experience %}}
-  {{% experience
-      name="Nametag"
-      link="https://getnametag.com"
-      where="Remote"
-      position="Principal Engineer"
-      year="2020-2022"
-  %}}
-  Nametag mediates PII between users and companies via a push notification approval flow (Stripe crossed with Duo for PII).
-  I was recruited to join by [Ross Kinder](https://crewjam.com) after I left
-  Censys. I was the second employee and first non-executive hire, and focused on
-  backend system design and security architecture.
-  {{% /experience %}}
-  {{% experience
-      name="Censys"
-      link="https://censys.io"
-      where="Ann Arbor, MI"
-      position="Cofounder"
-      year="2017-2020"
-  %}}
-  I cofounded Censys, a security company in the threat-hunting / attack-surface
-  management / Internet intelligence space. Censys began as a research project
-  during my PhD, and myself and my cofounders spun it out of the University of
-  Michigan. I built the initial product(s), grew the company to $3MM in revenue
-  and around 50 employees, and then left during the Series A.
-  {{% /experience %}}
-  {{% experience
-      name="Google"
-      link="https://google.com"
-      where="Mountain View, CA"
-      position="Software Engineering Intern"
-      year="2016"
-  %}}
-  Intern on the Chrome Security team.
-  {{% /experience %}}
-  {{% experience
-      name="Duo Security"
-      link="https://duosecurity.com"
-      where="Ann Arbor, MI"
-      position="Software Engineering Intern"
-      year="2013"
-  %}}
-  Somehow, I am best known for being a former Duo intern.
-  {{% /experience %}}
-  {{% experience
-      name="Whisper Project"
-      where="University of Michigan"
-      position="Undergraduate Research with Professor Robert Dick"
-      year="2011-2012"
-  %}}
-  We tried to make ad-hoc wireless networking a thing on Android. It didn't work
-  out, but we did [publish something at
-  MobiHoc](https://dadrian.io/srv/papers/1am-mobihoc15.pdf), eventually.
-  {{% /experience %}}
-  {{% experience
-      name="CAEN"
-      where="University of Michigan College of Engineering"
-      position="Network Technician"
-      year="2011-2012"
-  %}}
-  In undergrad, I helped migrate the University of Michigan College of
-  Engineering campus (also known as North Campus) to fancy new Cisco wireless
-  routers. I also worked networking help desk. Everyone in software should work
-  a help desk, at some point.
-  {{% /experience %}}
+<section>
+<h2>Conference Publications</h2>
+{{< paper
+    name="Ten Years of ZMap"
+    link="https://arxiv.org/pdf/2406.15585"
+    authors="Zakir Durumeric, David Adrian, Phillip Stephens, Eric Wustrow, and J. Alex Halderman"
+    conference="ACM Internet Measurement Conference (IMC), November 2024."
+    bibtex="ten-years-of-zmap.bib"
+/>}}
+{{< paper
+    name="ZDNS: A Fast DNS Toolkit for Internet Measurement"
+    link="https://zakird.com/papers/zdns.pdf"
+    authors="Liz Izhikevich, Gautam Akiwate, Briana Berger, Spencer Drakontaidis, Anna Ascheman, Paul Pearce, David Adrian, and Zakir Durumeric"
+    conference="ACM Internet Measurement Conference (IMC), October 2022."
+    bibtex="zdns-imc22.bib"
+/>}}
+{{< paper
+    name="On the Origin of Scanning: The Impact of Location on Internet-Wide Scans"
+    link="https://zakird.com/papers/multiperspective.pdf"
+    authors="Gerry Wan, Liz Izhikevich, David Adrian, Katsunari Yoshioka, Ralph Holz, Christian Rossow, and Zakir Durumeric"
+    conference="ACM Internet Measurement Conference (IMC), October 2020."
+    bibtex="origin-imc20.bib"
+/>}}
+{{< paper
+    name="Tracking Certificate Misissuance in the Wild"
+    link="https://zakird.com/papers/zlint.pdf"
+    authors="Deepak Kumar, Zhengping Wang, Matthew Hyder, Joseph Dickinson, Gabrielle Beck, David Adrian, Zakir Durumeric, J. Alex Halderman and Michael Bailey"
+    conference="IEEE Symposium on Security and Privacy (Oakland), May 2018."
+    bibtex="zlint.bib"
+/>}}
+{{< paper
+    name="Measuring small subgroup attacks against Diffie-Hellman"
+    link="https://eprint.iacr.org/2016/995.pdf"
+    authors="Luke Valenta, David Adrian, Antonio Sanso, Shaanan Cohney, Joshua Fried, Marcella Hastings, J. Alex Halderman, and Nadia Heninger"
+    conference="Network and Distributed System Security Symposium (NDSS), February 2017."
+    bibtex="subgroup.bib"
+/>}}
+{{< paper
+    name="An Internet-Wide View of ICS Devices"
+    link="https://jhalderm.com/pub/papers/ics-pst16.pdf"
+    authors="Ariana Mirian, Zane Ma, David Adrian, Matthew Tischer, Thasphon Chuenchujit, Tim Yardley, Robin Bertheier, Josh Mason, Zakir Durumeric, J. Alex Halderman, and Michael Bailey"
+    conference="IEEE Conference on Privacy, Security, and Trust (PST), December 2016"
+    bibtex="ics.bib"
+/>}}
+{{< paper
+    name="DROWN: Breaking TLS using SSLv2"
+    link="https://drownattack.com/drown-attack-paper.pdf"
+    authors="Nimrod Aviram, Sebastian Schinzel, Juraj Somorovsky, Nadia Heninger, Maik Dankel, Jens Steube, Luke Valenta, David Adrian, J. Alex Halderman, Viktor Dukhovni, Emilia Käsper, Shaanan Cohney, Susanne Engels, Christof Paar, and Yuval Shavitt"
+    conference="USENIX Security Symposium, August 2016."
+    bibtex="drown.bib"
+    award="Internet Defense Prize Finalist."
+/>}}
+{{< paper
+    name="Neither Snow Nor Rain Nor MITM… An Empirical Analysis of Email Delivery Security"
+    link="https://jhalderm.com/pub/papers/mail-imc15.pdf"
+    authors="Zakir Durumeric, David Adrian, Ariana Mirian, James Kasten, Kurt Thomas, Vijay Eranti, Nicholas Lidzborski, Elie Bursztein, Michael Bailey, and J. Alex Halderman"
+    conference="ACM Internet Measurement Conference (IMC), October 2015."
+    bibtex="mail-imc15.bib"
+    award="IRTF Applied Networking Research Prize."
+/>}}
+{{< paper
+    name="Censys: A Search Engine Backed by Internet-Wide Scanning"
+    link="https://censys.io/static/censys.pdf"
+    authors="Zakir Durumeric, David Adrian, Ariana Mirian, Michael Bailey, and J. Alex Halderman"
+    conference="ACM Conference on Computer and Communications Security (CCS), October 2015."
+    bibtex="censys.bib"
+/>}}
+{{< paper
+    name="Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice"
+    link="https://weakdh.org/imperfect-forward-secrecy.pdf"
+    authors="David Adrian, Karthikeyan Bhargavan, Zakir Durumeric, Pierrick Gaudry, Matthew Green, J. Alex Halderman, Nadia Heninger, Drew Springall, and Emmanuel Thomé, Luke Valenta, Benjamin VanderSloot, Eric Wustrow, Santiago Zanella-Béguelin and Paul Zimmermann"
+    conference="ACM Conference on Computer and Communications Security (CCS), October 2015."
+    bibtex="weakdh-ccs15.bib"
+    award="Best Paper Award."
+/>}}
+{{< paper
+    name="Performance and Energy Consumption Analysis of a Delay-Tolerant Network for Censorship-Resistant Communication"
+    link="https://dadrian.io/srv/papers/1am-mobihoc15.pdf"
+    authors="Yue Liu, David R. Bild, David Adrian, Gulshan Singh, Robert P. Dick, Dan S. Wallach, and Z. Morley Mao"
+    conference="ACM International Symposium on Mobile Ad Hoc Networking and Computing (MobiHoc), June 2015."
+    bibtex="1am-mobihoc15.bib"
+/>}}
+{{< paper
+    name="The Matter of Heartbleed"
+    link="https://jhalderm.com/pub/papers/heartbleed-imc14.pdf"
+    authors="Zakir Durumeric, Frank Li, James Kasten, Johanna Amann, Jethro Beekman, Mathias Payer, Nicolas Weaver, David Adrian, Vern Paxson, Michael Bailey, and J. Alex Halderman"
+    conference="ACM Internet Measurement Conference (IMC), November 2014."
+    bibtex="heartbleed-imc14.bib"
+    award="Best Paper Award."
+/>}}
+{{< paper
+    section="Workshop Publications"
+    name="Zippier ZMap: Internet-Wide Scanning at 10 Gbps"
+    link="https://jhalderm.com/pub/papers/zmap10gig-woot14.pdf"
+    authors="David Adrian, Zakir Durumeric, Gulshan Singh, and J. Alex Halderman"
+    conference="USENIX Workshop on Offensive Technologies (WOOT), August 2014"
+    bibtex="zmap10gig-woot14.bib"
+/>}}
+</section>
 
-  {{% teaching
-      section="Teaching Experience"
-      course="EECS 388: Introduction to Computer Security"
-      position="Lecturer"
-      when="2016"
-  %}}
-  Due to a shortage in faculty, one of my grad school semesters I had to be one
-  of the lecturers for the undergrad security course. It was a fun opportunity
-  to get paid double the usual grad student rate. I cotaught with Professor
-  Halderman and Professor Honeyman. I introduced course material on padding
-  oracles because we had extra time in the cryptography lectures. This course
-  material is now canon at Michigan.
-  {{% /teaching %}}
-  {{% teaching
-      course="EECS 388: Introduction to Computer Security"
-      position="Graduate Student Instructor (GSI)"
-      when="2015"
-  %}}
-  Head teaching assistant for the undergrad computer security course. Added in a
-  homework problem about the e=3 attack.
-  {{% /teaching %}}
-  {{% teaching
-      course="EECS 588: Advanced Computer Security"
-      position="Graduate Student Instructor (GSI)"
-      when="2015"
-  %}}
-  This is the graduate student course on computer security, where everyone reads
-  and discusses papers. Being a TA was basically automated by the paper review
-  submission system. I continued the tradition of guest-lecturing on
-  cryptography for the first class of the semester, because Professor Halderman
-  was inevitably still traveling.
-  {{% /teaching %}}
-  {{% teaching
-      course="EECS 281: Introduction to Algorithms"
-      position="Instructional Aide (IA)"
-      when="2014"
-  %}}
-  I was an undergrad teaching assistant for the introductory course on
-  algorithms, taught in C++. Covered runtime complexity, sorts, trees, heaps,
-  and basic search and graph algorithms. This is how I came to terms with the
-  fact I am not an algorithms person.
-  {{% /teaching %}}
-  {{% teaching
-      course="EECS 280: Programming and Data Structures"
-      position="Instructional Aide (IA)"
-      when="2013"
-  %}}
-  I was an undergrad teaching assistant for the introductory course on data
-  structures, taught in C++. Covered recursion, pointers, structs and classes,
-  inheritance and dynamic memory. This course is part of why I now have a strong
-  aversion to C++.
-  {{% /teaching %}}
+<section>
+<h2>Program Committees</h2>
+{{< pc
+    conference="Usenix Security"
+    when="2021"
+/>}}
+{{< pc
+    conference="USENIX Workshop on Offensive Security (WOOT)"
+    when="2018&ndash;2019"
+/>}}
+{{< pc
+    conference="BlackHat USA"
+    when="2018&ndash;Present"
+/>}}
+</section>
 
-  {{% lineitem
-      section="Leadership, Service, and Honors"
-      title="Best Paper Award"
-      class="dad-cv-lineitem"
-  %}}
-  - 22nd ACM Conference on Computer and Communications Security (CCS 2015)
-    - Awarded for "Imperfect Forward Secrecy"
-  - 14th ACM Internet Measurement Conference (IMC 2014)
-    - Awarded for "The Matter of Heartbleed"
-  {{% /lineitem %}}
+<section>
+<h2>Talks</h2>
+{{< talk
+    name="Untitled."
+    conference="Monktoberfest, October 2024"
+/>}}
+{{< talk
+    name="Didn't Chrome Already Have a Root Store?"
+    conference="Strangeloop, September 2023"
+    pdf="strangeloop-2023.pdf"
+    gdrive="https://docs.google.com/presentation/d/1LgGyDXBMhYkojoLdCA7UWXoZf0BFaYBs9rdW7u76ENQ/edit?resourcekey=0-1sHPAhsDAtCthrY7r5Onww"
+/>}}
+{{< talk
+    name="Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems"
+    conference="University of Michigan PhD Defense, December 2019"
+    pdf="defense.pdf"
+    gdrive="https://docs.google.com/presentation/d/1HPi8z32jzAN1Ce6Tk3K9PBJ2dLKYbB5Y5njXoEYBPRM/edit#slide=id.p"
+/>}}
+{{< talk
+    name="Fixing OCSP for Fun and Profit"
+    conference="USENIX Security Rump Session, August 2016"
+    pdf="suspect-staple.pdf"
+    key="suspect-staple.key"
+/>}}
+{{< talk
+    name="A Retrospective on the Use of Export Cryptography"
+    conference="BlackHat USA, August 2016."
+    pdf="black-hat-2016-export-crypto.pdf"
+    key="black-hat-2016-export-crypto.key"
+/>}}
+{{< talk
+    name="F**k It, Let's Do It Wide! Security Applications of Internet-Wide Scanning"
+    conference="Eastern Michigan University, February 2016."
+    pdf="zmap-emu.pdf"
+    key="zmap-emu.key"
+/>}}
+{{< talk
+    name="Imperfect Forward Secrecy"
+    conference="Hushcon, December 2015."
+    pdf="ifs-hushcon.pdf"
+    key="ifs-hushcon.key"
+/>}}
+{{< talk
+    name="A Search Engine Backed by Internet-Wide Scanning"
+    conference="ACM CCS, October 2015."
+    pdf="censys-ccs.pdf"
+    key="censys-ccs.key"
+/>}}
+{{< talk
+    name="Were It So Easy: TLS in the Real World"
+    conference="Duo Tech Talk, July 2015."
+    pdf="wereitsoeasy-duo.pdf"
+    key="wereitsoeasy-duo.key"
+    youtube="https://www.youtube.com/watch?v=Skp8g_xFqpA"
+    conference2="ARBSEC a2y.asm, September 2015."
+    pdf2="wereitsoeasy-a2y.pdf"
+    key2="wereitsoeasy-a2y.key"
+/>}}
+{{< talk
+    name="Zippier ZMap: Internet-Wide Scanning at 10 Gbps"
+    conference="WOOT, August 2014."
+    pdf="zmap10gig-woot14.pdf"
+    pptx="zmap10gig-woot14.pptx"
+/>}}
+</section>
 
-  {{% lineitem
-      title="Pwnie Award"
-      link="http://pwnies.com/"
-      class="dad-cv-lineitem"
-  %}}
-  - Best Crypto Attack, Black Hat 2016
-    - SSLv2 Crypto Attack (DROWN)
-  - Most Innovative Research, Black Hat 2015
-    - Logjam
-  {{% /lineitem %}}
-  {{% lineitem
-      title="IRTF Applied Networking Research Prize (ANRP)"
-      class="dad-cv-lineitem"
-  %}}
-  - Awarded for "Neither Snow Nor Rain Nor MITM…"
-  {{% /lineitem %}}
-  {{% lineitem
-      title="Facebook Internet Defense Prize"
-      link="https://internetdefenseprize.org/"
-      class="dad-cv-lineitem"
-  %}}
-  - Finalist with "DROWN: Breaking TLS using SSLv2", did not win.
-  {{% /lineitem %}}
-  {{% lineitem
-      title="Eta Kappa Nu, Beta Epsilon Chapter"
-      link="https://hkn.eecs.umich.edu/"
-      class="dad-cv-lineitem"
-  %}}
-  - Joined in 2013
-  {{% /lineitem %}}
-  {{% lineitem
-      title="Tau Beta Pi, Michigan Gamma Chapter"
-      link="https://tbp.engin.umich.edu/"
-      class="dad-cv-lineitem"
-  %}}
-  - Joined in 2016
-  {{% /lineitem %}}
-  {{% lineitem
-      title="Erdos Number: 3"
-      class="dad-cv-lineitem"
-  %}}
-  - David Adrian – Emmanuel Thomé – Peter Montgomery – Paul Erdos
-  {{% /lineitem %}}
-  {{% lineitem
-      class="dad-cv-lineitem"
-  %}}
-  [Training for Intervention ProcedureS (TIPS)](http://www.tipsalcohol.com) Certified Bartender
-  {{% /lineitem %}}
-</table>
+<section>
+<h2>Relevant Experience</h2>
+{{% experience
+    name="Google"
+    link="https://google.com"
+    where="Boulder, CO and Washington, DC"
+    position="Product Manager"
+    year="2022+"
+    class="dad-cv-exp"
+%}}
+I work on [Chrome
+Security](https://www.chromium.org/Home/chromium-security/), focusing on
+network security and PKI, web platform security, and memory safety. Being a PM
+is my way to contribute to Chrome Security without having to write C++.
+{{% /experience %}}
+{{% experience
+    name="Nametag"
+    link="https://getnametag.com"
+    where="Remote"
+    position="Principal Engineer"
+    year="2020-2022"
+    class="dad-cv-exp"
+%}}
+Nametag mediates PII between users and companies via a push notification approval flow (Stripe crossed with Duo for PII).
+I was recruited to join by [Ross Kinder](https://crewjam.com) after I left
+Censys. I was the second employee and first non-executive hire, and focused on
+backend system design and security architecture.
+{{% /experience %}}
+{{% experience
+    name="Censys"
+    link="https://censys.io"
+    where="Ann Arbor, MI"
+    position="Cofounder"
+    year="2017-2020"
+    class="dad-cv-exp"
+%}}
+I cofounded Censys, a security company in the threat-hunting / attack-surface
+management / Internet intelligence space. Censys began as a research project
+during my PhD, and myself and my cofounders spun it out of the University of
+Michigan. I built the initial product(s), grew the company to $3MM in revenue
+and around 50 employees, and then left during the Series A.
+{{% /experience %}}
+{{% experience
+    name="Google"
+    link="https://google.com"
+    where="Mountain View, CA"
+    position="Software Engineering Intern"
+    year="2016"
+    class="dad-cv-exp"
+%}}
+Intern on the Chrome Security team.
+{{% /experience %}}
+{{% experience
+    name="Duo Security"
+    link="https://duosecurity.com"
+    where="Ann Arbor, MI"
+    position="Software Engineering Intern"
+    year="2013"
+    class="dad-cv-exp"
+%}}
+Somehow, I am best known for being a former Duo intern.
+{{% /experience %}}
+{{% experience
+    name="Whisper Project"
+    where="University of Michigan"
+    position="Undergraduate Research with Professor Robert Dick"
+    year="2011-2012"
+    class="dad-cv-exp"
+%}}
+We tried to make ad-hoc wireless networking a thing on Android. It didn't work
+out, but we did [publish something at
+MobiHoc](https://dadrian.io/srv/papers/1am-mobihoc15.pdf), eventually.
+{{% /experience %}}
+{{% experience
+    name="CAEN"
+    where="University of Michigan College of Engineering"
+    position="Network Technician"
+    year="2011-2012"
+    class="dad-cv-exp"
+%}}
+In undergrad, I helped migrate the University of Michigan College of
+Engineering campus (also known as North Campus) to fancy new Cisco wireless
+routers. I also worked networking help desk. Everyone in software should work
+a help desk, at some point.
+{{% /experience %}}
+</section>
+
+<section>
+<h2>Teaching Experience</h2>
+{{% teaching
+    section="Teaching Experience"
+    course="EECS 388: Introduction to Computer Security"
+    position="Lecturer"
+    when="2016"
+%}}
+Due to a shortage in faculty, one of my grad school semesters I had to be one
+of the lecturers for the undergrad security course. It was a fun opportunity
+to get paid double the usual grad student rate. I cotaught with Professor
+Halderman and Professor Honeyman. I introduced course material on padding
+oracles because we had extra time in the cryptography lectures. This course
+material is now canon at Michigan.
+{{% /teaching %}}
+{{% teaching
+    course="EECS 388: Introduction to Computer Security"
+    position="Graduate Student Instructor (GSI)"
+    when="2015"
+%}}
+Head teaching assistant for the undergrad computer security course. Added in a
+homework problem about the e=3 attack.
+{{% /teaching %}}
+{{% teaching
+    course="EECS 588: Advanced Computer Security"
+    position="Graduate Student Instructor (GSI)"
+    when="2015"
+%}}
+This is the graduate student course on computer security, where everyone reads
+and discusses papers. Being a TA was basically automated by the paper review
+submission system. I continued the tradition of guest-lecturing on
+cryptography for the first class of the semester, because Professor Halderman
+was inevitably still traveling.
+{{% /teaching %}}
+{{% teaching
+    course="EECS 281: Introduction to Algorithms"
+    position="Instructional Aide (IA)"
+    when="2014"
+%}}
+I was an undergrad teaching assistant for the introductory course on
+algorithms, taught in C++. Covered runtime complexity, sorts, trees, heaps,
+and basic search and graph algorithms. This is how I came to terms with the
+fact I am not an algorithms person.
+{{% /teaching %}}
+{{% teaching
+    course="EECS 280: Programming and Data Structures"
+    position="Instructional Aide (IA)"
+    when="2013"
+%}}
+I was an undergrad teaching assistant for the introductory course on data
+structures, taught in C++. Covered recursion, pointers, structs and classes,
+inheritance and dynamic memory. This course is part of why I now have a strong
+aversion to C++.
+{{% /teaching %}}
+<section>
+
+<section>
+<h2>Leadership, Service, and Honors</h2>
+
+<h4>Best Paper Award</h4>
+<ul>
+<li>Awarded for "Imperfect Forward Secrecy"
+  <br><i>ACM Conference on Computer and Communications Security (CCS), 2015</i>
+</li>
+<li>Awarded for "The Matter of Heartbleed"
+  <br><i>ACM Internet Measurement Conference (IMC), 2014</i>
+</li>
+</ul>
+
+<h4><a href="http://pwnies.com">Pwnie Award</a></h4>
+<ul>
+<li>Best Crypto Attack for "SSLv2 Crypto Attack" (DROWN)
+  <br><i>Black Hat 2016</i>
+</li>
+<li>Most Innovative Research for "Logjam"
+  <br><i>Black Hat 2015</i>
+</li>
+</ul>
+
+<h4>IRTF Applied Networking Research Prize (ANRP)</h4>
+<ul>
+<li>Awarded for "Neither Snow Nor Rain Nor MITM…"
+  <br><i>ACM Internet Measurement Conference (IMC), 2015.</i>
+</li>
+</ul>
+
+<h4><a href="https://internetdefenseprize.org">Facebook Internet Defense Prize</a></h4>
+<ul>
+<li>Finalist with "DROWN: Breaking TLS using SSLv2", did not win.
+<br><i>Usenix Security, 2016.</i>
+</li>
+</ul>
+
+{{% lineitem
+    title="Eta Kappa Nu, Beta Epsilon Chapter"
+    link="https://hkn.eecs.umich.edu/"
+    when="Joined 2013"
+%}}
+{{% /lineitem %}}
+{{% lineitem
+    title="Tau Beta Pi, Michigan Gamma Chapter"
+    link="https://tbp.engin.umich.edu/"
+    when="Joined 2016"
+%}}
+{{% /lineitem %}}
+{{% lineitem
+    title="Erdos Number: 3"
+    class="dad-cv-lineitem"
+    label="David Adrian&ndash;Emmanuel Thomé&ndash;Peter Montgomery&ndash;Paul Erdos"
+%}}
+
+{{% /lineitem %}}
+{{% lineitem
+    class="dad-cv-lineitem"
+%}}
+[Training for Intervention ProcedureS (TIPS)](http://www.tipsalcohol.com) Certified Bartender
+{{% /lineitem %}}
+</section>
 
 <p style="text-align:center">[<a href="/srv/resume.pdf">PDF</a>]
 </p>

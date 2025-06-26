@@ -1,22 +1,20 @@
-<tr>
-<td>
-  {{ with .Get "section" }}
-  <b>{{ . }}</b>
-  {{ end }}
-</td>
-<td>
+<div class="dad-margin-bottom">
   {{ if and (.Get "title") (.Get "link") }}
-    <a href="{{ .Get "link"}}">{{ .Get "title" }}</a>{{ with .Get "subtitle" }}{{ . }}{{ end }}
+    <h4><a href="{{ .Get "link"}}">{{ .Get "title" }}</a> {{ with .Get "subtitle" }}{{ . }}{{ end }}</h4>
   {{ else }}
-    {{ with .Get "title" }}{{ . }}{{ end }}
+    <h4>{{ .Get "title" }} {{ with .Get "subtitle" }}{{ . }}{{ end }}</h4>
   {{ end }}
-  <div {{ with .Get "class" }}class="{{ . }}"{{ end }}>
+  <p>
+  {{ with .Get "label" }}
+  {{ . | safeHTML }}
+  {{ end }}
+  {{ with .Get "when" }}
+  <i>{{ . | safeHTML }}</i>
+  {{ end }}
+  </p>
+  {{ if .Inner }}
+  <div class="{{ .Get "class" }}">
     {{ .Inner | markdownify}}
   </div>
-</td>
-<td>
-  {{ with .Get "when" }}
-    <i>{{ . }}</i>
   {{ end }}
-</td>
-</tr>
+</div>

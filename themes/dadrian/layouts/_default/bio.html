@@ -1,4 +1,10 @@
 {{ define "page-css" }}
+{{ range .Param "css" }}
+  <style>
+  {{- partial . | safeCSS }}
+  </style>
+{{ end }}
+
 <style>
 @media only screen and (min-width: 1222px) {
     .db {
@@ -30,9 +36,6 @@
 }
 .dn {
     min-width: 368px;
-}
-.da-cv > tbody > tr > td {
-    vertical-align: text-top;
 }
 .dad-name-splash-h1__name {
     font-size: 50pt;
@@ -66,29 +69,6 @@ ul {
     margin: 0px;
     margin-left: 4px;
     padding-left: 12px;
-}
-.dad-cv-lineitem {
-    margin: 0px;
-    margin-bottom: 4px;
-}
-.dad-cv-teaching {
-    margin-bottom: 8px;
-    padding-left: 8px;
-    border-left-width: 2px;
-    border-left-style: solid;
-}
-.dad-cv-experience {
-    margin-bottom: 8px;
-    padding-left: 8px;
-    border-left-width: 2px;
-    border-left-style: solid;
-}
-.dad-cv-year {
-    min-width: 72px;
-    text-align: right;
-}
-.dad-cv-talk-subtitle {
-    margin-bottom: 8px;
 }
 main {
     margin: 8px;

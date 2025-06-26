@@ -1,29 +1,18 @@
-<tr>
-<td>
-  {{ with .Get "section" }}
-  <b>{{ . }}</b>
-  {{ end }}
-</td>
-<td>
-  <b><a href="{{ .Get "link" }}">{{ .Get "name" }}</a></b>
-  <br />
-  {{ .Get "authors" }}
-  <br />
-  {{ with .Get "conference" }}
-  <i>{{ . }}</i>
-  {{ end }}
-  {{ with .Get "award" }}
-  <br />
-  <b>{{ . }}</b>
-  {{ end }}
-  {{ with .Inner }}
-    <br />
-    {{ . }}
-  {{ end }}
-</td>
-<td>
-  {{ with .Get "bibtex" }}
-  [<a href="{{ printf "srv/bib/%s" . | absURL }}">bibtex</a>]
-  {{ end }}
-</td>
-</tr>
+<div class="dad-margin-bottom">
+<p>
+<b><a href="{{ .Get "link" }}">{{ .Get "name" }}</a></b>
+<br>{{ .Get "authors" }}
+{{ with .Get "conference" }}
+<br><i>{{ . }}</i>
+{{ end }}
+{{ with .Get "award" }}
+<br><b>{{ . }}</b>
+{{ end }}
+{{ with .Get "bibtex" }}
+[<a href="{{ printf "srv/bib/%s" . | absURL }}">bibtex</a>]
+{{ end }}
+{{ with .Inner }}
+{{ . }}
+{{ end }}
+</p>
+</div>

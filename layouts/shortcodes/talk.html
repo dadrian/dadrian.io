@@ -1,57 +1,43 @@
-<tr>
-<td>
-  {{ with .Get "section" }}
-  <b>{{ . }}</b>
-  {{ end }}
-</td>
-<td>
-  {{ .Get "name" }}
-  <br />
-  <div class="dad-cv-talk-subtitle">
-  {{ with .Get "conference" }}
-  <i>{{ . }}</i>
-  {{ end }}
-  {{ with .Get "pdf" }}
-  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pdf</a>]
-  {{ end }}
-  {{ with .Get "key" }}
-  [<a href="{{ printf "srv/talks/%s" . | absURL }}">key</a>]
-  {{ end }}
-  {{ with .Get "pptx" }}
-  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pptx</a>]
-  {{ end }}
-  {{ with .Get "gdrive" }}
-  [<a href="{{ . }}">Google Drive</a>]
-  {{ end }}
-  {{ with .Get "youtube" }}
-  [<a href="{{ . }}">YouTube</a>]
-  {{ end }}
+<div class="dad-margin-bottom">
+<p>
+<b>{{ .Get "name" }}</b>
+{{ with .Get "conference" }}<br><i>{{ . }}</i>{{ end }}
+{{ with .Get "pdf" }}
+[<a href="{{ printf "srv/talks/%s" . | absURL }}">pdf</a>]
+{{ end }} {{ with .Get "key" }}
+[<a href="{{ printf "srv/talks/%s" . | absURL }}">key</a>]
+{{ end }}
+{{ with .Get "pptx" }}
+[<a href="{{ printf "srv/talks/%s" . | absURL }}">pptx</a>]
+{{ end }}
+{{ with .Get "gdrive" }}
+[<a href="{{ . }}">Google Drive</a>]
+{{ end }}
+{{ with .Get "youtube" }}
+[<a href="{{ . }}">YouTube</a>]
+{{ end }}
 
+{{ with .Get "conference2" }}
+<br><i>{{ . }}</i>
+{{ end }}
 
-  {{ with .Get "conference2" }}
-  <br />
-  <i>{{ . }}</i>
-  {{ end }}
+{{ with .Get "pdf2" }}
+[<a href="{{ printf "srv/talks/%s" . | absURL }}">pdf</a>]
+{{ end }}
+{{ with .Get "key2" }}
+[<a href="{{ printf "srv/talks/%s" . | absURL }}">key</a>]
+{{ end }}
+{{ with .Get "pptx2" }}
+[<a href="{{ printf "srv/talks/%s" . | absURL }}">pptx</a>]
+{{ end }}
+{{ with .Get "youtube2" }}
+[<a href="{{ . }}">YouTube</a>]
+{{ end }}
+</p>
 
-  {{ with .Get "pdf2" }}
-  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pdf</a>]
-  {{ end }}
-  {{ with .Get "key2" }}
-  [<a href="{{ printf "srv/talks/%s" . | absURL }}">key</a>]
-  {{ end }}
-  {{ with .Get "pptx2" }}
-  [<a href="{{ printf "srv/talks/%s" . | absURL }}">pptx</a>]
-  {{ end }}
-  {{ with .Get "youtube2" }}
-  [<a href="{{ . }}">YouTube</a>]
-  {{ end }}
-
-  {{ with .Inner }}
-    <br />
-    {{ . }}
-  {{ end }}
-  </div>
-</td>
-<td>
-</td>
-</tr>
+{{ if .Inner }}
+<div class="{{ .Get "class" }}">
+{{ .InnerDeindent | markdownify }}
+</div>
+{{ end }}
+</div>

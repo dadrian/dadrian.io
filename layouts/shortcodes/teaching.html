@@ -1,23 +1,14 @@
-<tr>
-<td>
-  {{ with .Get "section" }}
-  <b>{{ . }}</b>
-  {{ end }}
-</td>
-<td>
-  <b>{{ .Get "course" }}</b>
-  <br />
-  {{ with .Get "position" }}
-  <i>{{ . }}</i>
-  {{ end }}
-  <div class="dad-cv-teaching">
+<div class="dad-margin-bottom">
+  <p>
+    <b>{{ .Get "course" }}</b>
+    {{ with .Get "position" }}
+    <br>{{ . }}
+    {{ end }}
+    {{ with .Get "when" }}
+    <br><i>{{ . }}</i>
+    {{ end }}
+  </p>
+  <div class="{{ .Get "class" }}">
   {{ .Inner | markdownify }}
-  <br />
   </div>
-</td>
-<td class="dad-cv-year">
-  {{ with .Get "when" }}
-    <i>{{ . }}</i>
-  {{ end }}
-</td>
-</tr>
+</div>

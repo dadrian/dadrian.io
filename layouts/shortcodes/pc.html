@@ -1,0 +1,5 @@
+<div class="dad-cv-pc">
+  <h4>{{ .Get "conference" }}</h4>
+  <p><i>{{ .Get "when" | safeHTML }}</i></p>
+  {{ with .Inner }}{{ . }}{{ end }}
+</div>
