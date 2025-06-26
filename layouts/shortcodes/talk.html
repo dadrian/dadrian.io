@@ -7,6 +7,7 @@
 <td>
   {{ .Get "name" }}
   <br />
+  <div class="dad-cv-talk-subtitle">
   {{ with .Get "conference" }}
   <i>{{ . }}</i>
   {{ end }}
@@ -44,10 +45,12 @@
   {{ with .Get "youtube2" }}
   [<a href="{{ . }}">YouTube</a>]
   {{ end }}
+
   {{ with .Inner }}
     <br />
     {{ . }}
   {{ end }}
+  </div>
 </td>
 <td>
 </td>

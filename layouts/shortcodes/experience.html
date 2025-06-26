@@ -10,11 +10,11 @@
   {{ with .Get "position" }}
     <i>{{ . }}</i>
   {{ end }}
-  <div class="dad-cv-ul__wrapper">
+  <div class="dad-cv-experience">
     {{ .Inner | markdownify }}
   </div>
 </td>
-<td>
+<td class="dad-cv-year">
   {{ with .Get "year" }}
     <i>{{ . }}</i>
   {{ end }}

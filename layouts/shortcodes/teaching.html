@@ -5,16 +5,17 @@
   {{ end }}
 </td>
 <td>
-  {{ .Get "course" }}
+  <b>{{ .Get "course" }}</b>
   <br />
   {{ with .Get "position" }}
   <i>{{ . }}</i>
   {{ end }}
-  <div class="dad-cv-ul__wrapper">
+  <div class="dad-cv-teaching">
   {{ .Inner | markdownify }}
+  <br />
   </div>
 </td>
-<td>
+<td class="dad-cv-year">
   {{ with .Get "when" }}
     <i>{{ . }}</i>
   {{ end }}
