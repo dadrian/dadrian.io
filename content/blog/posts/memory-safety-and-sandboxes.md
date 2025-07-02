@@ -238,19 +238,75 @@ region. This looks very similar to the [WebAssembly security model][wasm-sec].
 One attempt to do this is via the [V8 sandbox][v8-sandbox], which is a
 rearchiteture of V8 to never directly generate a raw load instruction. Instead,
 all generated (JITed) code uses indicies that are loaded relative to a base
-address stored in a specific register that is never loaded into memory. The V8
-runtime then needs to enforce that any communication between the untrusted
-sandboxed region and trusted V8 runtime code is santized, and that there are no
-edges (function calls via pointer) that are functionally equivalent to arbitrary
-read or write.
+address stored in a specific register that is never loaded into memory, a
+variant of pointer swizzling. The V8 runtime then needs to enforce that any
+communication between the untrusted sandboxed region and trusted V8 runtime code
+is santized, and that there are no edges (function calls via pointer) that are
+functionally equivalent to arbitrary read or write.
 
-### Hardware-enforced in-process sandboxes
+If you assume bugs in V8 don't cause V8 to generate arbitrary
+attacker-controlled assembly, but instead bugs in V8 still generate valid
+assembly, but assembly that makes incorrect assumptions about the underlying
+data its operating on, then the pointer swizzling approach is effectively a data
+sandbox. The memory region controlled by the JIT can stomp around itself all it
+wants, but the access are limited to defined range, limiting the weird machine
+to a constrained machine that's computationally equivalent to anything you could
+already write in Javascript.
 
-\TODO
+This looks very similar to the [WebAssembly memory model][wasm-security] on
+paper[^10]---all loads are limited to a bounded range, so worst case you stomp
+around your own data, but you probably had that capability anyway, since you
+control source.
+
+The problem with these in-process sandboxes is that _their implementations can
+still have bugs_. The V8 sandbox, while a huge improvement in security, is (as
+of 2025), still not hardened enough to be considered a security boundary that
+would enable type confusion in V8 to be considered highly-mitigated and
+therefore only a medium severity bug in Chrome, rather than high severity. It
+also required touching nearly the entirety of V8, as all interactions need to be
+routed through new APIs that respect the security model. In a legacy C++
+codebase, this is hard (or impossible?) to enforce at compile-time.
+
+Even if V8 were in Rust, like Wasmtime, it would still be difficult to ensure
+the sandbox is bug-free, in the same way it's difficult to ensure the compiler
+itself is bug-free. This isn't a reason to not _try_ to implement more security
+in JITs, particularly given the extremely low overhead of the sandbox (one add
+per load). But what can we do about this?
 
 ### What are you gonna do, trap my syscalls?
 
-\TODO
+Barring simply not JITing code, if we assume there can still be bugs in the JIT,
+we need hardware support to enforce the memory model that the in-process
+sandboxes are building. The way this works is the trusted runtime would
+designate regions of memory as sandboxed, and explicitly jump to those regions.
+Within the region, whenever the code attempts to access or jump to a
+non-sandboxed memory region, either directly (via a jmp, load, or store), or
+indirectly via a syscall, the hardware would trap and return control back to a
+handler in the trusted runtime, which would be responsible for validating the
+access.
+
+Fundamentally, this looks very similar to what MMUs do for the kernel/userspace
+boundary, but instead of trapping on a page fault and returning control to the
+kernel from userspace, the memory regions are more fine-grained and control
+returns to different userspace code.
+
+This doesn't mean that you magically get safe JITs---leveraging such a sandbox
+effectively works best when paired with an architecture that looks like the V8
+sandbox. However, hardware support is required to catch the errors at runtime
+when there's a bug implementing the memory model for the sandbox.
+
+This approach risks bugs in the userland handler for managing communication[^11]
+between the JITed code and the runtime, however that code can be much smaller,
+written in a type-safe language, and potentially formally verified far easier
+than an entire JIT.
+
+### If I were hardware, I would simply isolate faults
+
+\TODO: write about if any of this stuff exists
+
+## What about control-flow mitigations?
+
+\TODO: say something about CFI and CET. Might want to do this earlier?
 
 [mmu]: https://en.wikipedia.org/wiki/Memory_management_unit
 [mmio]: https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O
@@ -272,6 +328,7 @@ read or write.
 [cranelift]: https://cranelift.dev/
 [wasmtime]: https://github.com/bytecodealliance/wasmtime
 [wasm-sec]: https://webassembly.org/docs/security/
+[wasm-security]: https://webassembly.org/docs/security/
 
 [^1]: \TODO expand on how Zig or Jai tooling makes your program more likely to be correct
 [^2]: Spoiler alert! It's JITs.
@@ -304,3 +361,6 @@ read or write.
   no security boundary difference between the compiler and the binary. In other
   words, it doesn't matter if the attacker can trigger a bug in the compiler if
   they could also just run arbitrary machine code out of the box.
+[^10]: In practice, every WebAssembly implementation worth its salt is a JIT
+  with the exact same problems I've been describing in this post.
+[^11]: It's turtles all the way down.
