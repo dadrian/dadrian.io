@@ -1,6 +1,6 @@
 ---
 title: "Sandboxes? In my process? It's more likely than you think."
-date: 2025-06-20T08:55:08-04:00
+date: 2025-07-05T15:44:08-04:00
 uses: ["code"]
 ---
 
@@ -28,6 +28,8 @@ things in open-source, and that's [part of the fun of it][avery-gift].
 But it's clear that memory safety is more important to some projects than
 others. Let's break that down into three categories: programs, platforms, and
 insane bullshit[^2].
+
+\TODO get a definition of RCE in here somewhere
 
 ### Programs
 
@@ -254,7 +256,7 @@ to a constrained machine that's computationally equivalent to anything you could
 already write in Javascript.
 
 This looks very similar to the [WebAssembly memory model][wasm-security] on
-paper[^10]---all loads are limited to a bounded range, so worst case you stomp
+paper---all loads are limited to a bounded range[^10]. Worst case you stomp
 around your own data, but you probably had that capability anyway, since you
 control source.
 
@@ -288,7 +290,9 @@ access.
 Fundamentally, this looks very similar to what MMUs do for the kernel/userspace
 boundary, but instead of trapping on a page fault and returning control to the
 kernel from userspace, the memory regions are more fine-grained and control
-returns to different userspace code.
+returns to different userspace code. Another way to think about this is [ARM's
+"realms"][arm-realms] ([POE][poe]) extended to userland without context
+switches, rather than primarily being used for TrustZone / TEEs / TPMs.
 
 This doesn't mean that you magically get safe JITs---leveraging such a sandbox
 effectively works best when paired with an architecture that looks like the V8
@@ -302,9 +306,61 @@ than an entire JIT.
 
 ### If I were hardware, I would simply isolate faults
 
-\TODO: write about if any of this stuff exists
+Narayan et al\. introduced [hardware fault isolation (HFI)][hfi-paper] as a way
+to do hardware-assisted in-process isolation on x86 processors. Partnering with
+Intel, they were able to add instructions to designate "sandboxed" regions of
+both data memory and insturction memory, and trap accesses, effectively
+implementing the Wasm memory-model in hardware such that it can be leveraged by
+a runtime to perform in-process isolation. Unfortunately, these instructions so
+far only exist in Intel's simulator, not on real hardware.
 
-## What about control-flow mitigations?
+There is a risk that hardware support for in-process sandboxing will somehow
+always be 3-5 years away. However, there's clearly demand for this type of
+isolation beyond securing web browsers. Any [cloud provider with a workers
+platform][cloudflare-workers] is currently in-between a bit of a rock and a hard
+place---process-level isolation is too slow to spin up workers without having
+the [cold-start problem][lambda-cold-start]. The model of worker
+where everything is Javascript or WebAssembly is implemented by [relying on the
+abstractions of the underlying JIT runtime][cf-isolates][^13], which means that
+isolation does not have any hardware or operating system support, but instead
+relies on the runtime code itself to not have bugs. Unfortunately, as discussed
+earlier, JITs and JIT runtimes are full of bugs.
+
+Luckily, these worker platforms have not been targets of exploitation (that we
+know of!), however if they do become a more attractive target[^14] for
+[well-funded attackers][vigilant-labs], that might change. At which point, the
+worker platforms are really going to be between a rock and a hard place unless
+they can buy hardware that helps secure their runtimes.
+
+### CHERI, can you come out tonight?
+
+Punting addressing memory-safety to hardware is usually a case of wishful
+thinking, hoping if we ignore the problem, it will go away or a magical solution
+will appear in the future that will be easier to adopt than a memory-safe
+language.
+
+Solutions like HFI are not replacements for migrating to memory-safe languagues
+or implementing user-level software sandboxing abstractions, they are a
+supplement to it for the particularly difficult to secure case where code is
+compiled at runtime, where any logic bug ends up being equivalent to RCE.
+
+It is not a good idea to assume hardware features such as [MTE][mte] or
+[CHERI][cheri] will somehow allow legacy code to suddenly become memory
+safe[^12], nor are they particularly applicable to the JIT use case. MTE
+requires a lot of physical space on the chip, and provides only probabilistic
+defense that isn't suitable for the case where an attacker can retry an exploit
+multiple times against the same memory space, such as a web browser renderer
+process. CHERI requires source rewriting and effective use of capability domains
+to be effective. This is an option for "normal" programs, but correctly using
+capability domains between the JIT runtime and JIT-generated code is the same
+shape of problem that we already see with the V8 sandbox---simply implementing
+it correctly _is hard_. At minimum, `*JSArray`, `*JSString`, and `*JSObject`
+would all need to be separate capability domains on both sides of the runtime.
+
+That doesn't mean these technologies are bad, but they're not an effective use
+of hardware for the JIT-problem, specifically.
+
+### What about control-flow mitigations?
 
 \TODO: say something about CFI and CET. Might want to do this earlier?
 
@@ -329,6 +385,14 @@ than an entire JIT.
 [wasmtime]: https://github.com/bytecodealliance/wasmtime
 [wasm-sec]: https://webassembly.org/docs/security/
 [wasm-security]: https://webassembly.org/docs/security/
+[mte]: https://developer.arm.com/documentation/108035/0100/Introduction-to-the-Memory-Tagging-Extension
+[cheri]: https://en.wikipedia.org/wiki/Capability_Hardware_Enhanced_RISC_Instructions
+[hfi-paper]: https://cseweb.ucsd.edu/~tullsen/hfi.pdf
+[arm-realms]: https://learn.arm.com/learning-paths/servers-and-cloud-computing/cca-container/overview/
+[poe]: https://developer.arm.com/documentation/102376/0200/Permission-indirection-and-permission-overlay-extensions
+[cloudflare-workers]: https://developers.cloudflare.com/workers/
+[lambda-cold-start]: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html#cold-start-latency
+[vigilant-labs]: https://www.vigilantlabs.com/
 
 [^1]: \TODO expand on how Zig or Jai tooling makes your program more likely to be correct
 [^2]: Spoiler alert! It's JITs.
@@ -364,3 +428,10 @@ than an entire JIT.
 [^10]: In practice, every WebAssembly implementation worth its salt is a JIT
   with the exact same problems I've been describing in this post.
 [^11]: It's turtles all the way down.
+[^13]: I'm ragging on Cloudflare a little here because they're a notable V8
+  user, but it's not just them. Fastly's workers rely on Wasmtime and Cranelift
+  not having bugs (which they also do).
+[^14]: I'm not saying state-sponsored attackers don't go after platforms, but
+  most of the time it's much more economical, less risky, and there exist
+  well-lit legal paths (warrants) for law-enforcement to just go own someone's
+  phone.
