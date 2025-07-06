@@ -407,7 +407,7 @@ hardware we need to help with this is not MTE or some other ineffective
 mitigation we're hoping will let us bury our heads in the sand instead of
 finding ways to write new code in memory safe languages. Instead, hardware can
 help with _new_ primitives like HFI that let us go _beyond_ the security
-guarantees of compile-time memory safety.
+guarantees of compile-time memory safety[^12].
 
 [mmu]: https://en.wikipedia.org/wiki/Memory_management_unit
 [mmio]: https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O
@@ -447,6 +447,8 @@ guarantees of compile-time memory safety.
 [miracle-ptr]: https://security.googleblog.com/2022/09/use-after-freedom-miracleptr.html
 [wasmtime-bugs]: https://github.com/bytecodealliance/wasmtime/security/advisories
 [rust-thesis]: https://research.ralfj.de/thesis.html
+[deian]: https://cseweb.ucsd.edu/~dstefan/
+[shravan]: https://shravanrn.com/
 
 [^1]: When I say safer language, I don't necessarily mean Rust. For programs
   that need to be native, the safer language can be Rust or it could be
@@ -495,6 +497,9 @@ guarantees of compile-time memory safety.
 [^10]: In practice, every WebAssembly implementation worth its salt is a JIT
   with the exact same problems I've been describing in this post.
 [^11]: It's turtles all the way down.
+[^12]: For the love of god, just give [Shravan Narayan][shravan] and [Deian
+  Stefan][deian] money. If you're a processor company, just do whatever they
+  tell you.
 [^13]: I'm ragging on Cloudflare a little here because they're a notable V8
   user, but it's not just them. Fastly's workers rely on Wasmtime and Cranelift
   not having bugs. Unfortunately, despite the Rust, they still have
