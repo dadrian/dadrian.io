@@ -11,5 +11,7 @@ pagerSize = 100
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
 [params]
   images = [ "img/david4.jpg" ]

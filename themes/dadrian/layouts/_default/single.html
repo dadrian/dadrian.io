@@ -6,6 +6,18 @@
 
 {{ define "page-css" }}
 {{ with .Page.Params }}
+  <style>
+  h2[id]::before,
+  h3[id]::before,
+  h4[id]::before {
+    content: "〉";
+    display: inline-block;
+    text-decoration: none;
+    width: 1em;
+    height: 1em;
+    margin-right: -0.2em;
+   }
+  </style>
   {{ if in .uses "figures" }}
   <style>
   figure.df {
