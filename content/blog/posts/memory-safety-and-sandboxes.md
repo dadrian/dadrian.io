@@ -14,7 +14,7 @@ existing programs to safer languages. And sometimes people [just do things in
 open-source][fish-rewrite], and that's [part of the fun of it][avery-gift].
 
 But given that we have a limited amount of total effort, where should we be
-looking at rewriting code in memory safe languagues, how can we apply rewrites
+looking at rewriting code in memory safe languages, how can we apply rewrites
 effectively, and in what cases do we need to go even _beyond_ compile-time
 memory safety? And what does this have to do with in-process sandboxes?
 
@@ -39,7 +39,7 @@ contexts will not have a history of security vulnerabilities due to memory
 unsafety, and so making them memory safe will not reduce the number of
 vulnerabilities. There may be ecosystem benefits to [migrating tools like
 coreutils to Rust][alex-coreutils], but `ls` is not an entry nor a
-prilege-escalation (LPE) vector, and so the security argument is pretty weak.
+privilege-escalation (LPE) vector, and so the security argument is pretty weak.
 
 I will further claim that this category includes some common server
 infrastructure like Postgres! While it is extremely important for Postgres to
@@ -67,7 +67,7 @@ any program that runs other untrusted code, manages an untrusted network, or
 communicates with untrusted hardware. Some examples include operating systems,
 web browsers, virtual machine monitors (VMMs), hypervisors, and serverless
 worker cloud environments[^4]. In these cases, implementations using a memory
-safe languague for new code can expect to have [significantly fewer
+safe language for new code can expect to have [significantly fewer
 vulnerabilities][android-msl] than implementations that are unsafe by
 default[^16].
 
@@ -238,18 +238,18 @@ you to zero bugs. This brings us to in-process sandboxes.
 
 ### In-process sandboxes
 
-What is an in-process sandbox, anyway? Basically, you want to restric some
+What is an in-process sandbox, anyway? Basically, you want to restrict some
 memory region containing executable code to only be able to access data in some
 other memory region, and tightly control any inputs and outputs from that
 region. This looks very similar to the [WebAssembly security model][wasm-sec].
 
 One attempt to do this is via the [V8 sandbox][v8-sandbox], which is a
-rearchiteture of V8 to never directly generate a raw load instruction. Instead,
-all generated (JITed) code uses indicies that are loaded relative to a base
+rearchitecture of V8 to never directly generate a raw load instruction. Instead,
+all generated (JITed) code uses indices that are loaded relative to a base
 address stored in a specific register that is never loaded into memory, a
 variant of pointer swizzling. The V8 runtime then needs to enforce that any
 communication between the untrusted sandboxed region and trusted V8 runtime code
-is santized, and that there are no edges (function calls via pointer) that are
+is sanitized, and that there are no edges (function calls via pointer) that are
 functionally equivalent to arbitrary read or write.
 
 If you assume bugs in V8 don't cause V8 to generate arbitrary
@@ -305,7 +305,7 @@ effectively works best when paired with an architecture that looks like the V8
 sandbox. However, hardware support is required to catch the errors at runtime
 when there's a bug implementing the memory model for the sandbox.
 
-This approach risks bugs in the userland handler for managing communication[^11]
+This approach risks bugs in the userspace handler for managing communication[^11]
 between the JITed code and the runtime, however that code can be much smaller,
 written in a type-safe language, and potentially formally verified far easier
 than an entire JIT.
@@ -315,7 +315,7 @@ than an entire JIT.
 Narayan et al\. introduced [hardware fault isolation (HFI)][hfi-paper] as a way
 to do hardware-assisted in-process isolation on x86 processors. Partnering with
 Intel, they were able to add instructions to designate "sandboxed" regions of
-both data memory and insturction memory, and trap accesses, effectively
+both data memory and instruction memory, and trap accesses, effectively
 implementing the Wasm memory-model in hardware such that it can be leveraged by
 a runtime to perform in-process isolation. Unfortunately, these instructions so
 far only exist in Intel's simulator, not on real hardware.
@@ -345,7 +345,7 @@ thinking, hoping if we ignore the problem, it will go away or a magical solution
 will appear in the future that will be easier to adopt than a memory-safe
 language.
 
-Solutions like HFI are not replacements for migrating to memory-safe languagues
+Solutions like HFI are not replacements for migrating to memory-safe languages
 or implementing user-level software sandboxing abstractions, they are a
 supplement to it for the particularly difficult to secure case where code is
 compiled at runtime, where any logic bug ends up being equivalent to RCE.
@@ -459,7 +459,7 @@ guarantees of compile-time memory safety[^12].
   When the toolchain doesn't hate the developer, it can actually be possible to
   detect more bugs up front. The Zig toolchain basically comes with
   [MiraclePtr][miracle-ptr] built in because o how it handles allocators in the
-  languague. Jai is limited to just Jonathan Blow and friends, but being able to
+  language. Jai is limited to just Jonathan Blow and friends, but being able to
   run compile-time metaprograms means you can enforce invariants and inject
   safer patterns to as part of the regular development process, with a fast
   feedback loop that doesn't involve [uploading your C++ to Skynet to get it to
@@ -479,7 +479,7 @@ guarantees of compile-time memory safety[^12].
   program if the attacker is able to enter a weird machine from the unsafe code,
   is not nearly as risky as unsafe C/C++ code generally, in which an attacker
   can potentially entire a weird machine from _any_ line of code.
-[^7]: You can probably drop the alisasing requirement if you do something like
+[^7]: You can probably drop the aliasing requirement if you do something like
   [*Scan][starscan], but like, at some point you're just writing a deeply
   inefficient garbage collector. If it can be bolted on to legacy codebases,
   this might be useful, but it's likely the reason we're still using that
