@@ -6,12 +6,12 @@ images:
   - img/memory-violence-shield-crab.png
 ---
 
-Discussions around memory safety often focus on choice of language, and how the
-language can provide memory safety guarantees. Unfortunately, choosing a
-language is a decision made at the start of a project.  Migrating an existing C
-or C++ project to a safer language is much harder than starting a new project in
-a safe language[^1]. I'm not going to say this is impossible, or that you
-_can't_ or _shouldn't_ migrate existing programs to safer languages. And
+Discussions around [memory safety][alex-vps] often focus on choice of language,
+and how the language can provide memory safety guarantees. Unfortunately,
+choosing a language is a decision made at the start of a project.  Migrating an
+existing C or C++ project to a safer language is much harder than starting a new
+project in a safe language[^1]. I'm not going to say this is impossible, or that
+you _can't_ or _shouldn't_ migrate existing programs to safer languages. And
 sometimes people [just do things in open-source][fish-rewrite], and that's [part
 of the fun of it][avery-gift].
 
@@ -456,6 +456,7 @@ guarantees of compile-time memory safety[^12].
 [rust-thesis]: https://research.ralfj.de/thesis.html
 [deian]: https://cseweb.ucsd.edu/~dstefan/
 [shravan]: https://shravanrn.com/
+[alex-vps]: https://alexgaynor.net/2019/aug/12/introduction-to-memory-unsafety-for-vps-of-engineering/
 
 [^1]: When I say safer language, I don't necessarily mean Rust. For programs
   that need to be native, the safer language can be Rust or it could be
