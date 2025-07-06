@@ -7,16 +7,15 @@ images:
 ---
 
 Discussions around memory safety often focus on choice of language, and how the
-language can provide memory safety guarantees.
+language can provide memory safety guarantees. Unfortunately, choosing a
+language is a decision made at the start of a project.  Migrating an existing C
+or C++ project to a safer language is much harder than starting a new project in
+a safe language[^1]. I'm not going to say this is impossible, or that you
+_can't_ or _shouldn't_ migrate existing programs to safer languages. And
+sometimes people [just do things in open-source][fish-rewrite], and that's [part
+of the fun of it][avery-gift].
 
-Unfortunately, choosing a language is a decision made at the start of a project.
-Migrating an existing C or C++ project to a safer language is much harder than
-starting a new project in a safe language[^1]. I'm not going to say this is
-impossible, or that you _can't_ or _shouldn't_ migrate existing programs to
-safer languages. And sometimes people [just do things in
-open-source][fish-rewrite], and that's [part of the fun of it][avery-gift].
-
-But given that we have a limited amount of total effort, where should we be
+Given that we have a limited amount of total effort, where should we be
 looking at rewriting code in memory safe languages, how can we apply rewrites
 effectively, and in what cases do we need to go even _beyond_ compile-time
 memory safety? And what does this have to do with in-process sandboxes?
