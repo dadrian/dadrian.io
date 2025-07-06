@@ -5,12 +5,13 @@ uses: ["code"]
 ---
 
 Discussions around memory safety often focus on choice of language, and how the
-language can provide memory safety guarantees.  Unfortunately, choosing a
-language is inherently a decision that is made at the start of a project. It is
-much harder to migrate an existing project in C or C++ to a safer language over
-time, than it is to start a new project today in a safe language[^1]. I'm not
-going to say this is impossible, or that you _can't_ or _shouldn't_ migrate
-existing programs to safer languages. And sometimes people [just do things in
+language can provide memory safety guarantees.
+
+Unfortunately, choosing a language is a decision made at the start of a project.
+Migrating an existing C or C++ project to a safer language is much harder than
+starting a new project in a safe language[^1]. I'm not going to say this is
+impossible, or that you _can't_ or _shouldn't_ migrate existing programs to
+safer languages. And sometimes people [just do things in
 open-source][fish-rewrite], and that's [part of the fun of it][avery-gift].
 
 But given that we have a limited amount of total effort, where should we be
@@ -34,8 +35,9 @@ attacker][heartbleed], even if they don't allow for RCE.
 If a program primarily runs on a single computer or a server, does not talk to
 _arbitrary_ network or hardware clients, and does not execute untrusted code,
 there is limited security benefit to removing memory-safety vulnerabilities.
-Programs with constrained attack surfaces that aren't used in security-relevant
-contexts will not have a history of security vulnerabilities due to memory
+
+Programs with constrained attack surfaces that aren’t used in security-relevant
+contexts typically don’t have a history of vulnerabilities caused by memory
 unsafety, and so making them memory safe will not reduce the number of
 vulnerabilities. There may be ecosystem benefits to [migrating tools like
 coreutils to Rust][alex-coreutils], but `ls` is not an entry nor a
@@ -60,8 +62,8 @@ aren't _platforms_.
 
 ### Platforms
 
-The code where memory safety really matters is in platforms, which I'm defining
-as anything that manages _capabilities_---the permissions and access for another
+The code where memory safety matters most is in platforms, which I'm defining as
+anything that manages _capabilities_---the permissions and access for another
 program or process to perform operations on some resource. A platform could be
 any program that runs other untrusted code, manages an untrusted network, or
 communicates with untrusted hardware. Some examples include operating systems,
@@ -112,7 +114,7 @@ The best description of this property comes from [Thomas Dullien][halvar] in his
 program is, in theory, intended to be a finite-state machine and do some sort of
 computational task, as written by the programmer. During the execution, the
 program follows a set of transitions in the state space defined by the
-programmer. An attackers goal is to find some way to transition the state
+programmer. An attacker's goal is to find some way to transition the state
 machine off of its intended path and into a weird state, such that as it follows
 the transitions defined by the programmer, it gets into weirder and weirder
 states that eventually do something the attacker intends (such as run malicious
@@ -120,7 +122,7 @@ code), rather than what the programmer intended.
 
 The set of states most programs can be in is impossibly large, but it is still
 considerably smaller than the set of states a computer _could possibly_ be in.
-Once an attacker find a memory-safety bug, they begin the process of walking the
+Once an attacker finds a memory-safety bug, they begin the process of walking the
 weird state machine. Memory safety attempts to build another wall between "the
 set of states the programmer intended" and "the set of states". This would be
 "the set of memory-safe states", defined as the states in which all pointers
@@ -173,8 +175,9 @@ situation would we ever have a semi-trusted compiler but untrusted source code?
 
 Enter Just-In-Time compilers (JITs). These are compilers that write out machine
 code _into the current process_. While originally, JITs were often used in the
-context of a runtime for your own code (e.g. the JVM, or PyPy), JITs have grown
-to be used web browsers and serverless worker (function-as-a-service) platforms.
+context of a runtime for your own code (e.g. the JVM, or PyPy), JITs are now
+commonly used in web browsers and serverless worker (function-as-a-service)
+platforms.
 
 Similarly, often time the way in which GPU drivers load and run shaders today is
 effectively a JIT. The userspace program provides source or
@@ -204,9 +207,9 @@ model to work out:
   malicious code directly on their own computer.
 
 The failure case for the JIT in these situations is that a logic bug results in
-machine code that can be leveraged to create a weird machine. It's rare that a
-JIT will output fully invalid or directly attacker-controlled machine code, but
-instead it will have a logic bug that can be triggered in such a way that we
+machine code that can be leveraged to create a weird machine. JITs rarely output
+fully invalid or directly attacker-controlled machine code when they have a bug.
+Instead, a JIT will have a logic bug that can be triggered in such a way that we
 move from the expected finite state machine and into a weird machine.
 
 What makes this difficult to defend against is the fact that this can and does
@@ -234,7 +237,7 @@ cases, we can do this by writing minimally sized, safe VMMs. For other use
 cases, like the worker platforms and web browsers, we have to try other
 solutions, ranging from "just write less bugs" to "in-process, software-enforced
 sandboxes". While prioritizing correctness can help a lot, it's unlikely to get
-you to zero bugs. This brings us to in-process sandboxes.
+you to zero bugs. That brings us to in-process sandboxes.
 
 ### In-process sandboxes
 
@@ -300,10 +303,11 @@ returns to different userspace code. Another way to think about this is [ARM's
 "realms"][arm-realms] ([POE][poe]) extended to userland without context
 switches, rather than primarily being used for TrustZone / TEEs / TPMs.
 
-This doesn't mean that you magically get safe JITs---leveraging such a sandbox
-effectively works best when paired with an architecture that looks like the V8
-sandbox. However, hardware support is required to catch the errors at runtime
-when there's a bug implementing the memory model for the sandbox.
+This doesn't mean JITs become magically safe---such a sandbox work best when
+paired with a code architecture that looks like the software V8 sandbox.
+Hardware support for in-process sandboxing enables the software sandbox catch
+errors at runtime when there's a bug in the implementation of the memory model
+for the JIT generated code.
 
 This approach risks bugs in the userspace handler for managing communication[^11]
 between the JITed code and the runtime, however that code can be much smaller,
@@ -473,8 +477,8 @@ guarantees of compile-time memory safety[^12].
 [^4]: [It's called an isolate, what do you mean it's not sandboxed?][dadrian-isolate-tweet]
 [^5]: If it was trusted, you could just give it direct access and not have a
   capability in the first place.
-[^6]: If you think of memory safety as trying to reduce the ways an attacker can
-  get into a weird machine, than it's clear that the existence of unsafe blocks,
+[^6]: If you think of memory safety as trying to reduce the paths an attacker can
+  use to enter a weird machine, than it's clear that the existence of unsafe blocks,
   while they could potentially violate the safety guarantees of the rest of the
   program if the attacker is able to enter a weird machine from the unsafe code,
   is not nearly as risky as unsafe C/C++ code generally, in which an attacker
