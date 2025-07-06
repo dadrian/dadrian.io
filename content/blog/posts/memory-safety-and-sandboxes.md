@@ -8,9 +8,9 @@ Discussions around memory safety often focus on choice of language, and how the
 language can provide memory safety guarantees.  Unfortunately, choosing a
 language is inherently a decision that is made at the start of a project. It is
 much harder to migrate an existing project in C or C++ to a safer language over
-time, than it is to start a new project today in a safe language. I'm not going
-to say this is impossible, or that you _can't_ or _shouldn't_ migrate existing
-programs to safer languages. And sometimes people [just do things in
+time, than it is to start a new project today in a safe language[^1]. I'm not
+going to say this is impossible, or that you _can't_ or _shouldn't_ migrate
+existing programs to safer languages. And sometimes people [just do things in
 open-source][fish-rewrite], and that's [part of the fun of it][avery-gift].
 
 But given that we have a limited amount of total effort, where should we be
@@ -68,7 +68,8 @@ communicates with untrusted hardware. Some examples include operating systems,
 web browsers, virtual machine monitors (VMMs), hypervisors, and serverless
 worker cloud environments[^4]. In these cases, implementations using a memory
 safe languague for new code can expect to have [significantly fewer
-vulnerabilities][android-msl] than implementations that are unsafe by default.
+vulnerabilities][android-msl] than implementations that are unsafe by
+default[^16].
 
 Breaking this down further, this is basically three types of programs that all
 manage some sort of capability:
@@ -136,8 +137,8 @@ compile-time checks of properties that we believe (or have proved!) are
 equivalent to memory-safety. The Rust borrow checker enforces that there is only
 one mutable reference to any object at a time, and no references are dangling,
 and that a reference of one type cannot be switched to a reference of another
-type. In practice, this results in a memory-safe program (subject to the use of
-`unsafe`[^6]). \TODO check if this is proved
+type. In practice ([and in theory][rust-thesis]), this results in a memory-safe
+program (subject to the use of `unsafe`[^6]).
 
 You can also have the compiler shift some responsibility to runtime. For
 example, you could instrument every load and store, and enforce pointer
@@ -368,12 +369,45 @@ programs, CHERI is not as effective as using a type-safe memory safe language,
 but still requires source-rewriting. And MTE can be bypassed with an information
 leak or by trying an exploit multiple times.
 
-## A grand unified theory
+## A grand unified strategy
 
-\TODO conclusion
+Platforms should be migrating towards memory safety by default for new code.
+[Chrome][chrome-rust] and [Windows][windows-rust] are adopting more and more
+Rust, and Android is [using memory safe languages for all new
+projects][android-msl]. All platforms should be trying to figure out how to make
+safe languages the default for new code. This problem is particularly hard for
+monolithic codebases---Chromium has over 66 million lines of C++, they're
+not all gonna be winners.
 
----
+Mitigations like CFI and CET are important to raise the bar for exploitation on
+existing C and C++ code[^15]. The quicker you can enable CFI on a codebase, even
+if it's functionally bypassable (e.g. with a JIT), the easier it will be to
+maintain and expand over time. If you're working in C++, adopting advanced
+allocator mitigations like [MiraclePtr][miracle-ptr] can drastically reduce the
+exploitability of many common use-after-free vulnerabilities. Safer coding
+patterns and compiler extensions like `-fbounds-safety` and
+`-Wunsafe-buffer-usage` help prevent invalid iterators and out-of-bounds memory
+errors (sometimes referred to as _[spanification][spanification]_).
 
+Software isolation, like the V8 sandbox, is important to make JITs as secure as
+possible on as many platforms. Memory safe JIT implementations like also move
+the bar forwards, as they reduce the chance of vulnerabilities in the runtime
+itself when properly leveraged.
+
+As a society, we have empirically revealed that we cannot write codebases in C++
+that are large and secure. In some ways, any sort of software solution to JIT
+isolation is just another variant of the same problem---**you can't fully secure
+C++ by writing more C++**. However, we still need to put in this effort both because
+_something_ is better than nothing, and because properly architecting a JIT in
+software is key to effectively leveraging in-process hardware isolation when
+it's available.
+
+Moral of the story---we have a well-understood memory safety problem, and
+hardware we need to help with this is not MTE or some other ineffective
+mitigation we're hoping will let us bury our heads in the sand instead of
+finding ways to write new code in memory safe languages. Instead, hardware can
+help with _new_ primitives like HFI that let us go _beyond_ the security
+guarantees of compile-time memory safety.
 
 [mmu]: https://en.wikipedia.org/wiki/Memory_management_unit
 [mmio]: https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O
@@ -407,8 +441,27 @@ leak or by trying an exploit multiple times.
 [fish-rewrite]: https://fishshell.com/blog/rustport/
 [heartbleed]: https://www.heartbleed.com/
 [android-msl]: https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html
+[chrome-rust]: https://chromium.googlesource.com/chromium/src/+/refs/heads/main/docs/rust.md
+[windows-rust]: https://github.com/dwizzzle/Presentations/blob/master/David%20Weston%20-%20Windows%2011%20Security%20by-default%20-%20Bluehat%20IL%202023.pdf
+[history-langs]: https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html
+[miracle-ptr]: https://security.googleblog.com/2022/09/use-after-freedom-miracleptr.html
+[wasmtime-bugs]: https://github.com/bytecodealliance/wasmtime/security/advisories
+[rust-thesis]: https://research.ralfj.de/thesis.html
 
-[^1]: \TODO expand on how Zig or Jai tooling makes your program more likely to be correct
+[^1]: When I say safer language, I don't necessarily mean Rust. For programs
+  that need to be native, the safer language can be Rust or it could be
+  something like Zig or Jai. If you can handle a garbage collector, there's
+  plenty of options with performance, such as Go or a JVM-based language. And if
+  you don't care about efficiency at all, there's Typescript and Python. Not all
+  of these languages are as "safe" as Rust, but _all_ are better than C and C++.
+  When the toolchain doesn't hate the developer, it can actually be possible to
+  detect more bugs up front. The Zig toolchain basically comes with
+  [MiraclePtr][miracle-ptr] built in because o how it handles allocators in the
+  languague. Jai is limited to just Jonathan Blow and friends, but being able to
+  run compile-time metaprograms means you can enforce invariants and inject
+  safer patterns to as part of the regular development process, with a fast
+  feedback loop that doesn't involve [uploading your C++ to Skynet to get it to
+  compile][history-langs].
 [^2]: Spoiler alert! The "insane bullshit" is JITs.
 [^3]: A high severity bug is loosely defined as a memory safety bug that could
   potentially lead to RCE in the renderer. A stable-impacting bug means that the
@@ -444,24 +497,24 @@ leak or by trying an exploit multiple times.
 [^11]: It's turtles all the way down.
 [^13]: I'm ragging on Cloudflare a little here because they're a notable V8
   user, but it's not just them. Fastly's workers rely on Wasmtime and Cranelift
-  not having bugs (which they also do).
+  not having bugs. Unfortunately, despite the Rust, they still have
+  [type-confusion bugs in the JITed code][wasmtime-bugs], even if they don't
+  have memory safety bugs in the runtime itself.
 [^14]: I'm not saying state-sponsored attackers don't go after platforms, but
-  most of the time it's much more economical, less risky, and there exist
-  well-lit legal paths (warrants) for law-enforcement to just go own someone's
-  phone.
-
-## SCRATCH
-
-Some operations, such as managing an [MMU][mmu] or [memory-mapped IO][mmio] are
-fundamentally unsafe, and programs that need to do unsafe operations do not
-benefit as much from memory safe languages. But it's clear that the vast
-majority of programs that are _not_ managing fundamentally unsafe operations
-should adopt a safer languague than C or C++.
-
-It seems clear that many programs can be written in a safer language than C or
-C++. For programs that need to be native, the safer language can be Rust, Zig,
-Jai or others. If you can handle a garbage collector, there's plenty of options
-with performance.  And if you don't care about efficiency at all, there's
-Typescript and Python.  Not all of these languages are as "safe" as Rust, but
-_all_ are better than C and C++, at minimum because the tooling doesn't actively
-hate the developer[^1].
+  most of the time it's much more economical and less risky to just go own
+  someone's phone. For the law enforcement case, there's well-lit legal paths
+  (warrants) for to go after an individual phone, whereas exploiting _an entire
+  platform_ is clearly much more legally murky.
+[^15]: CFI and friends should also be enabled for safe code, but usually that's
+  much easier and likely comes out of the box when you're not aliasing all the
+  time, jumping to a `void*`, or overwriting your own return address.
+[^16]: Some operations, such as managing an [MMU][mmu] or [memory-mapped
+  IO][mmio] are fundamentally unsafe, and programs that need to do unsafe
+  operations do not benefit as much from memory safe languages. But even in
+  these cases, limiting the unsafety to as small of a core as possible, and
+  interacting with it from safer wrappers is still an improvement over the base
+  case, where literally everything is unsafe. This doesn't necessarily even need
+  to be `unsafe` the Rust keyword---it might be a smaller C kernel core for the
+  lowest-level code, surrounded by a safe language everywhere else at high
+  privilege, with well-defined communication methods between the core and the
+  safe code.
