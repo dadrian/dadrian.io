@@ -385,8 +385,8 @@ monolithic codebases---Chromium has over 66 million lines of C++, they're
 not all gonna be winners.
 
 Mitigations like CFI and CET are important to raise the bar for exploitation on
-existing C and C++ code[^15]. The quicker you can enable CFI on a codebase, even
-if it's functionally bypassable (e.g. with a JIT), the easier it will be to
+existing C and C++ code. The quicker you can enable CFI on a codebase, even if
+it's functionally bypassable (e.g. with a JIT), the easier it will be to
 maintain and expand over time. It's a marathon, not a sprint.
 
 If you're working in C++, adopting advanced allocator mitigations like
