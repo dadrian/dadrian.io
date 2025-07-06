@@ -409,12 +409,12 @@ _something_ is better than nothing, and because properly architecting a JIT in
 software is key to effectively leveraging in-process hardware isolation when
 it's available.
 
-Moral of the story---we have a well-understood memory safety problem, and
-hardware we need to help with this is not MTE or some other ineffective
-mitigation we're hoping will let us bury our heads in the sand instead of
-finding ways to write new code in memory safe languages. Instead, hardware can
-help with _new_ primitives like HFI that let us go _beyond_ the security
-guarantees of compile-time memory safety[^12].
+Moral of the story---we have a well-understood memory safety problem.  The
+hardware we need to help us solve the problem is _not_ MTE or some other
+ineffective mitigation that we're hoping will let us bury our heads in the sand
+instead of finding ways to write new code in memory safe languages. Instead,
+hardware can help with _new_ primitives like HFI that let us go _beyond_ the
+security guarantees of compile-time memory safety[^12].
 
 [mmu]: https://en.wikipedia.org/wiki/Memory_management_unit
 [mmio]: https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O
