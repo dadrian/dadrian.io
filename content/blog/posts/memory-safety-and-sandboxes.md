@@ -452,6 +452,7 @@ security guarantees of compile-time memory safety[^12].
 [windows-rust]: https://github.com/dwizzzle/Presentations/blob/master/David%20Weston%20-%20Windows%2011%20Security%20by-default%20-%20Bluehat%20IL%202023.pdf
 [history-langs]: https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html
 [miracle-ptr]: https://security.googleblog.com/2022/09/use-after-freedom-miracleptr.html
+[spanification]: https://chromium.googlesource.com/chromium/src/+/main/docs/unsafe_buffers.md
 [wasmtime-bugs]: https://github.com/bytecodealliance/wasmtime/security/advisories
 [rust-thesis]: https://research.ralfj.de/thesis.html
 [deian]: https://cseweb.ucsd.edu/~dstefan/
