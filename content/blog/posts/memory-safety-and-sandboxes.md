@@ -4,41 +4,42 @@ date: 2025-07-05T15:44:08-04:00
 uses: ["code"]
 ---
 
-Discussions around memory safety often focus on choice of language. While it's
-clear that the vast majority of programs that do not fundamentally need to do
-unsafe operations, such as programs that manage an [MMU][mmu] or [memory-mapped
-IO][mmio], should adopt a safer language than C or C++. For programs that need
-to be native, this can be Rust, Zig, Jai or others. If you can handle a garbage
-collector, there's plenty of options with performance. And if you don't care
-about efficiency at all, there's Typescript and Python. Not all of these
-languages are as "safe" as Rust, but _all_ are better than C and C++, at minimum
-because the tooling doesn't actively hate the developer[^1]. I don't want to
-wade into that discussion here.
+Discussions around memory safety often focus on choice of language, and how the
+language can provide memory safety guarantees.  Unfortunately, choosing a
+language is inherently a decision that is made at the start of a project. It is
+much harder to migrate an existing project in C or C++ to a safer language over
+time, than it is to start a new project today in a safe language. I'm not going
+to say this is impossible, or that you _can't_ or _shouldn't_ migrate existing
+programs to safer languages. And sometimes people [just do things in
+open-source][fish-rewrite], and that's [part of the fun of it][avery-gift].
 
-Choosing a language is inherently a decision that is made at the start of a
-project. It is much harder to migrate an existing project in C or C++ to a safer
-language over time, than it is to start a new project today in a safe language.
+But given that we have a limited amount of total effort, where should we be
+looking at rewriting code in memory safe languagues, how can we apply rewrites
+effectively, and in what cases do we need to go even _beyond_ compile-time
+memory safety? And what does this have to do with in-process sandboxes?
 
-I'm not going to say this is impossible, or that you _can't_ or _shouldn't_
-migrate existing programs to safer languages. And sometimes people just do
-things in open-source, and that's [part of the fun of it][avery-gift].
+## Defining the category
 
-\TODO connect back to why this question is related to the previous
-
-But it's clear that memory safety is more important to some projects than
-others. Let's break that down into three categories: programs, platforms, and
-insane bullshit[^2].
-
-\TODO get a definition of RCE in here somewhere
+Memory safety is more important to some projects than others. Let's break that
+down into three categories: programs, platforms, and insane bullshit[^2].
 
 ### Programs
 
 Most programs do not need to be rewritten or migrated to a memory-safe language.
+The primary risk from a memory safety bug is that it is vulnerability that can
+give an attacker the ability to remotely execute code (RCE). The secondary risk
+is that memory-safety vulnerabilities might [leak data to a remote
+attacker][heartbleed], even if they don't allow for RCE.
+
 If a program primarily runs on a single computer or a server, does not talk to
 _arbitrary_ network or hardware clients, and does not execute untrusted code,
 there is limited security benefit to removing memory-safety vulnerabilities.
-There may be ecosystem benefits to [migrating tools like coreutils to
-Rust][alex-coreutils], but `ls` is not an entry nor LPE vector.
+Programs with constrained attack surfaces that aren't used in security-relevant
+contexts will not have a history of security vulnerabilities due to memory
+unsafety, and so making them memory safe will not reduce the number of
+vulnerabilities. There may be ecosystem benefits to [migrating tools like
+coreutils to Rust][alex-coreutils], but `ls` is not an entry nor a
+prilege-escalation (LPE) vector, and so the security argument is pretty weak.
 
 I will further claim that this category includes some common server
 infrastructure like Postgres! While it is extremely important for Postgres to
@@ -60,19 +61,23 @@ aren't _platforms_.
 ### Platforms
 
 The code where memory safety really matters is in platforms, which I'm defining
-as anything that runs other untrusted code, manages an untrusted network, or
+as anything that manages _capabilities_---the permissions and access for another
+program or process to perform operations on some resource. A platform could be
+any program that runs other untrusted code, manages an untrusted network, or
 communicates with untrusted hardware. Some examples include operating systems,
 web browsers, virtual machine monitors (VMMs), hypervisors, and serverless
-worker cloud environments[^4].
-
-\TODO define capability
+worker cloud environments[^4]. In these cases, implementations using a memory
+safe languague for new code can expect to have [significantly fewer
+vulnerabilities][android-msl] than implementations that are unsafe by default.
 
 Breaking this down further, this is basically three types of programs that all
 manage some sort of capability:
 - **Programs with the specific purpose of running other people's code.**
   Operating systems run arbitrary programs and apps of dubious provence and
-  provide them capabilities, such as \TK. Web browsers do the same, but the code
-  is implemented in Javascript and WebAssembly and the DOM, and isn't native.
+  provide them capabilities, such as a clean memory region, and access to the
+  filesystem, network, and TPM. Web browsers provide similar capabilities to
+  websites, but the sites are implemented in Javascript and WebAssembly and the
+  DOM, rather than as native binaries.
 - **Programs that need to manage external hardware** are also effectively
   providing a capability to other programs on the same device, and in some
   cases, also directly executing code or managing memory, but in a different
@@ -92,11 +97,11 @@ architecture becomes irrelevant][ian-beer-bugs].
 
 There's a final class of programs that usually exist in the context of some
 platform, but have such odd execution properties that rewriting them in a
-memory-safe language doesn't actually achieve what we normally mean when we say
-a program is memory-safe.
+memory safe language doesn't actually achieve what we normally mean when we say
+a program is memory safe.
 
 This raises the question---what is the actual security property we get from
-memory-safety anyway? If we take the usual description of memory-safety that all
+memory safety anyway? If we take the usual description of memory-safety that all
 pointers are guaranteed to only point at live objects of the same type (size)
 that they were pointing to when the memory was allocated, without any new
 allocations in between, what do we actually gain from this?
@@ -230,7 +235,7 @@ solutions, ranging from "just write less bugs" to "in-process, software-enforced
 sandboxes". While prioritizing correctness can help a lot, it's unlikely to get
 you to zero bugs. This brings us to in-process sandboxes.
 
-## In-process Sandboxes
+### In-process sandboxes
 
 What is an in-process sandbox, anyway? Basically, you want to restric some
 memory region containing executable code to only be able to access data in some
@@ -358,11 +363,17 @@ it correctly _is hard_. At minimum, `*JSArray`, `*JSString`, and `*JSObject`
 would all need to be separate capability domains on both sides of the runtime.
 
 That doesn't mean these technologies are bad, but they're not an effective use
-of hardware for the JIT-problem, specifically.
+of hardware for the JIT-problem, specifically. And when it comes to "normal"
+programs, CHERI is not as effective as using a type-safe memory safe language,
+but still requires source-rewriting. And MTE can be bypassed with an information
+leak or by trying an exploit multiple times.
 
-### What about control-flow mitigations?
+## A grand unified theory
 
-\TODO: say something about CFI and CET. Might want to do this earlier?
+\TODO conclusion
+
+---
+
 
 [mmu]: https://en.wikipedia.org/wiki/Memory_management_unit
 [mmio]: https://en.wikipedia.org/wiki/Memory-mapped_I/O_and_port-mapped_I/O
@@ -393,10 +404,13 @@ of hardware for the JIT-problem, specifically.
 [cloudflare-workers]: https://developers.cloudflare.com/workers/
 [lambda-cold-start]: https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html#cold-start-latency
 [vigilant-labs]: https://www.vigilantlabs.com/
+[fish-rewrite]: https://fishshell.com/blog/rustport/
+[heartbleed]: https://www.heartbleed.com/
+[android-msl]: https://security.googleblog.com/2024/09/eliminating-memory-safety-vulnerabilities-Android.html
 
 [^1]: \TODO expand on how Zig or Jai tooling makes your program more likely to be correct
-[^2]: Spoiler alert! It's JITs.
-[^3]: A high severity bug is loosely defined as a memory-safety bug that could
+[^2]: Spoiler alert! The "insane bullshit" is JITs.
+[^3]: A high severity bug is loosely defined as a memory safety bug that could
   potentially lead to RCE in the renderer. A stable-impacting bug means that the
   bug is present in a stable release Chrome, meaning any security bug that is
   only ever present in HEAD but is fixed before ever being released is excluded.
@@ -435,3 +449,19 @@ of hardware for the JIT-problem, specifically.
   most of the time it's much more economical, less risky, and there exist
   well-lit legal paths (warrants) for law-enforcement to just go own someone's
   phone.
+
+## SCRATCH
+
+Some operations, such as managing an [MMU][mmu] or [memory-mapped IO][mmio] are
+fundamentally unsafe, and programs that need to do unsafe operations do not
+benefit as much from memory safe languages. But it's clear that the vast
+majority of programs that are _not_ managing fundamentally unsafe operations
+should adopt a safer languague than C or C++.
+
+It seems clear that many programs can be written in a safer language than C or
+C++. For programs that need to be native, the safer language can be Rust, Zig,
+Jai or others. If you can handle a garbage collector, there's plenty of options
+with performance.  And if you don't care about efficiency at all, there's
+Typescript and Python.  Not all of these languages are as "safe" as Rust, but
+_all_ are better than C and C++, at minimum because the tooling doesn't actively
+hate the developer[^1].
