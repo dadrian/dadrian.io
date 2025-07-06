@@ -2,6 +2,8 @@
 title: "Sandboxes? In my process? It's more likely than you think."
 date: 2025-07-06T11:31:00-04:00
 uses: ["code"]
+images:
+  - img/memory-violence-shield-crab.png
 ---
 
 Discussions around memory safety often focus on choice of language, and how the
