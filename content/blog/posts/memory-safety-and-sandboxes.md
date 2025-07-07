@@ -132,7 +132,7 @@ reduces the attackers ability to enter a weird machine[^6], if, once they find a
 bug, they are still forced to stay within the memory-safe states, rather than
 any state. Other mitigations and technologies such as [W^X][wxorx] and
 [control-flow integrity][CFI] (CFI), also attempt to constrain the state space,
-but empirical evidence suggests they do not constraint the state space enough to
+but empirical evidence suggests they do not constrain the state space enough to
 be as as effective as memory safety.
 
 The main way in which we achieve strong memory safety (and performance) is
@@ -392,7 +392,7 @@ maintain and expand over time. It's a marathon, not a sprint.
 If you're working in C++, adopting advanced allocator mitigations like
 [MiraclePtr][miracle-ptr] can drastically reduce the exploitability of many
 common use-after-free vulnerabilities. Safer coding patterns and compiler
-extensions like `-fbounds-safety` and `-Wunsafe-buffer-usage` help prevent
+extensions like `-fbounds-safety`, `-fsanitize=array-bounds` and `-Wunsafe-buffer-usage` help prevent
 invalid iterators and out-of-bounds memory errors (sometimes referred to as
 _[spanification][spanification]_).
 
