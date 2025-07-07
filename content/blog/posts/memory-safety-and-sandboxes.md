@@ -357,7 +357,7 @@ compiled at runtime, where any logic bug ends up being equivalent to RCE.
 
 It is not a good idea to assume hardware features such as [MTE][mte] or
 [CHERI][cheri] will somehow allow legacy code to suddenly become memory
-safe[^12], nor are they particularly applicable to the JIT use case. MTE
+safe, nor are they particularly applicable to the JIT use case. MTE
 requires a lot of physical space on the chip, and provides only probabilistic
 defense that isn't suitable for the case where an attacker can retry an exploit
 multiple times against the same memory space, such as a web browser renderer
