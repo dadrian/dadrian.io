@@ -128,7 +128,7 @@ weird state machine. Memory safety attempts to build another wall between "the
 set of states the programmer intended" and "the set of states". This would be
 "the set of memory-safe states", defined as the states in which all pointers
 still all have the memory-safety property defined above. This drastically
-reduces the attackers ability to enter a weird machine[^6], if, once they find a
+reduces the attackers ability to enter a weird machine, if, once they find a
 bug, they are still forced to stay within the memory-safe states, rather than
 any state. Other mitigations and technologies such as [W^X][wxorx] and
 [control-flow integrity][CFI] (CFI), also attempt to constrain the state space,
