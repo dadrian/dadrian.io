@@ -21,3 +21,5 @@ layout = "bio"
 16. You can increase state/bureaucratic capacity by reducing rules.
 17. Sometimes you just have to define the game and let God sort 'em out.
 18. Belt-tightening can't make you smart. It just makes you short-term thrifty.
+19. If it's a problem, solve it.
+20. If it's broken, fix it.
