@@ -67,9 +67,9 @@ So where does this leave us for revocation? There are two options:
   functions as public documentation of all revocations. CRLs are both useful for
   analysis, and provide a basis for browser vendors to preprocess revocations
   and ship condensed information to their clients. Firefox does this via
-  [CRLite][crlite]. Safari has [Valid][safari-valid]. Chrome does this by only
-  shipping differential updates of revocations with the "key compromise" reason
-  code[^6]. None of these systems scale particularly well, meaning if there are
+  [CRLite][crlite]. Chrome does this by only shipping differential updates of
+  revocations with the "key compromise" reason code[^6]. Apple has their own
+  scheme. None of these systems scale particularly well, meaning if there are
   too many concurrent revocations, no browser is capable of shipping all of them
   to all of their clients on a timely basis.
 2. **Short-lived certificates.** If certificate lifetimes are on par with former
@@ -134,3 +134,5 @@ this without introducing a new centralized and trusted party at scale.
 [crl]: https://en.wikipedia.org/wiki/Certificate_revocation_list
 [ocsp]: https://en.wikipedia.org/wiki/Online_Certificate_Status_Protocol
 [sc81]: https://cabforum.org/2025/04/11/ballot-sc081v3-introduce-schedule-of-reducing-validity-and-data-reuse-periods/
+[ari]: https://letsencrypt.org/2023/03/23/improving-resliiency-and-reliability-with-ari
+[crlite]: https://research.mozilla.org/files/2025/04/clubcards_for_the_webpki.pdf
