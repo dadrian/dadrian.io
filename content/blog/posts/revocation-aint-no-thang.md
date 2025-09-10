@@ -101,31 +101,10 @@ certificate is issued, and when it expires. Shortening the validity window and
 enforcing a revalidation is the best way to reduce that risk.
 
 The only way to get better revocation than a short-lived certificate would be to
-drastically rethink the connectivity model of the Web PKI.
+drastically rethink the connectivity model of the Web PKI. It is difficult to do
+this without introducing a new centralized and trusted party at scale.
 
-## Drastically Rethinking the Connectivity Model of the Web PKI
-
-The best way to ensure a connection is not revoked is to issue a credential that
-is only valid for a single connection. This can be implemented by having the
-authorizing party get a new credential for each connection, by having some sort
-of three-way dance between a third-party with knowledge of keys and revocations
-who mediates between the relying party and authorizing party. The three-way
-dance could be a client querying a revocation server, or it could be a
-credential from the authorizing party that is functionally countersigned by a
-party trusted to enforce revocation.
-
-You can see why this isn't a great fit for the web---you need a trusted party at
-scale. You could imagine a system where sites prove domain ownership to CAs,
-then browser vendors would reverify the domain validation from the CA, and
-countersign a unique credential for each of their users. You can also
-immediately see the hordes of Slashdot users, led by Cory Doctorow, coming to my
-house with pitchforks, torches, and a copy of "Enshittification", simply for
-suggesting that a browser vendor, such as Chrome, be the entity responsible for
-authenticating HTTPS connections.
-
-By which I mean, the connectivity model is kind of fundamental to the web...
-
-# Takeaways
+## Takeaways
 
 - Short-lived certificates are the answer for the public Web PKI
 - Other PKIs may have other needs and potential solutions. Not all PKIs are the Web PKI.
