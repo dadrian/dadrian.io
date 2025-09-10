@@ -104,10 +104,31 @@ drastically rethink the connectivity model of the Web PKI.
 
 ## Drastically Rethinking the Connectivity Model of the Web PKI
 
+The best way to ensure a connection is not revoked is to issue a credential that
+is only valid for a single connection. This can be implemented by having the
+authorizing party get a new credential for each connection, by having some sort
+of three-way dance between a third-party with knowledge of keys and revocations
+who mediates between the relying party and authorizing party. The three-way
+dance could be a client querying a revocation server, or it could be a
+credential from the authorization party that is functionally countersigned by a
+party trusted to enforce revocation.
+
+You can see why this isn't a great fit for the web---you need a trusted party at
+scale. You could imagine a system where sites prove domain ownership to CAs, and
+then browser vendors double-check the domain validation and countersign a unique
+credential for each of their users. You can also immediately see the hordes of
+Slashdot users, led by Cory Doctorow, coming to my house with pitchforks,
+torches, and a copy of "Enshittification", simply for suggesting that a browser
+vendor, such as Chrome, be responsible for authenticating HTTPS connections.
+
+By which I mean, the connectivity model is kind of fundamental to the web...
+
 # Takeaways
 
 - Short-lived certificates are the answer for the public Web PKI
 - Other PKIs may have other needs and potential solutions. Not all PKIs are the Web PKI.
+- We do not need another marginally better CRL compression scheme.
+- We need to keep reducing certificate lifetimes.
 
 [^1]: Which is its own bag of worms, especially since OCSP is not over HTTPS.
 [^2]: With things like [ARI][ari], servers should communicate with their CA much
