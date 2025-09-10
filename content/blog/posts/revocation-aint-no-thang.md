@@ -29,23 +29,24 @@ mechanism that allows them to periodically fetch data from their vendor[^3], but
 they cannot _guarantee connectivity_ at any given time[^4].
 
 Servers are the authenticating party (AP). Servers are expected to have an
-out-of-band relationship with a CA, but similarly to clients, they are not
-expected to have a reliable connection to the CA. They are expected to be able
+out-of-band relationship with a CA, but similar to clients, they are not
+expected to have a _reliable_ connection to the CA. They are expected to be able
 to communicate with _at least one CA_ and acquire a replacement certificate once
-every certificate lifetime[^2]. This is fairly weak requirement, even if
+every certificate lifetime[^2]. This is a fairly weak requirement, even if
 certificate lifetimes were to be only 24 hours. Servers prioritize availability;
 CAs cannot be blocking for availability outside of certificate issuance.
 
 The failure of both OCSP and CRLs from the client perspective are clearly
 downstream from these connectivity constraints. They also explain the failure of
-OCSP Must-Staple_. OCSP stapling is the act of having the server periodically
+OCSP Must-Staple. OCSP stapling is the act of having the server periodically
 fetch OCSP responses, cache them, and serve them to clients. OCSP Must-Staple is
-a certificate flag that prevents the requires the certificate to be stapled
-alongside a valid OCSP response.  However, if you cannot assume the presence of
-a reliable connection to any _single_ CA outside of a timeframe suitable for
-issuance, then a server cannot have a reliable connection to any _specific_ OCSP
-server outside the same time frame. This is actually a stronger constraint than
-the connectivity required for issuance, as a server can always round-robin their
+a certificate flag that requires a valid OCSP response to be stapled alongside
+the certificate for the certificate to be considered valid.  However, if you
+cannot assume the presence of a reliable connection to any _single_ CA outside
+of a timeframe suitable for issuance, then you similarly cannot assume the
+server will have a reliable connection to that _specific_ CA's OCSP server
+within the same timeframe. This is actually a stronger constraint than the
+connectivity required for issuance, as a server can always round-robin their
 certificate acquisition or change CA operators to acquire a new certificate,
 whereas the OCSP response must come from the same CA that issued the original
 certificate. This is equivalent to making the CA blocking for availability[^5].
@@ -54,7 +55,7 @@ In the connectivity model of the web, this means that information about the
 validity of a certificate must come from the server at the time of the
 connection, or periodically in the background from the browser vendor.
 Since server operators only have guaranteed connectivity to the CA at the time
-of issuance, then means servers can only provide information about validity at
+of issuance, this means servers can only provide information about validity at
 the time the certificate was issued, in the form of the `NotBefore` and
 `NotAfter` timestamps defining the certificate validity window. Since browser
 vendors have no guaranteed connectivity, this means you can at best ship a fixed
@@ -63,25 +64,25 @@ set of data to all clients on an hourly to daily rate, depending on data size.
 So where does this leave us for revocation? There are two options:
 1. **Condense all revocation information down into something a browser vendor
   can ship daily.** CRLs are now required for all CAs. This is beneficial, as it
-  functions as public documentation of all revocations, which is useful for
-  analysis, but also provides a basis for browser vendors to preprocess
-  revocations and ship condensed information to their clients. Firefox does this
-  via [CRLite][crlite]. Safari has [Valid][safari-valid]. Chrome does this by
-  only shipping differential updates of revocations with the "key compromise"
-  reason code[^6]. None of these systems scale particularly well, meaning
-  if there are too many concurrent revocations, no browser is capable of
-  shipping all of them to all of their clients on a timely basis.
+  functions as public documentation of all revocations. CRLs are both useful for
+  analysis, and provide a basis for browser vendors to preprocess revocations
+  and ship condensed information to their clients. Firefox does this via
+  [CRLite][crlite]. Safari has [Valid][safari-valid]. Chrome does this by only
+  shipping differential updates of revocations with the "key compromise" reason
+  code[^6]. None of these systems scale particularly well, meaning if there are
+  too many concurrent revocations, no browser is capable of shipping all of them
+  to all of their clients on a timely basis.
 2. **Short-lived certificates.** If certificate lifetimes are on par with former
   OCSP response validity windows (10 days), or better yet, browser revocation
   information update periods (24-48 hours), then any revocation information that
   can be provided within the web connectivity model is equivalent to knowing
   whether or not a certificate is unexpired.
 
-This is certainly not an ideal world, as it still leaves a roughly day long
-maximum compromise window for any certificate. However, it is the best possible
-end state under the current connectivity model. Not only is it the theoretical
-best, but we're also likely to achieve it. The ecosystem has been slowly
-marching towards short-lived certificates over the last decade:
+This is certainly not an ideal world, as it still leaves a roughly day-long
+maximum compromise window for any certificate. However, short-lived certificates
+are the best possible end state under the current connectivity model. Not only
+are they the theoretical best, but we're also likely to achieve it. The ecosystem
+has been slowly marching towards short-lived certificates over the last decade:
 
 - Certificate lifetimes were reduced to 39 months in 2015, 825 days in 2018, and
   then 398 days in 2020. More recently, certificate lifetimes are scheduled to
@@ -110,16 +111,17 @@ authorizing party get a new credential for each connection, by having some sort
 of three-way dance between a third-party with knowledge of keys and revocations
 who mediates between the relying party and authorizing party. The three-way
 dance could be a client querying a revocation server, or it could be a
-credential from the authorization party that is functionally countersigned by a
+credential from the authorizing party that is functionally countersigned by a
 party trusted to enforce revocation.
 
 You can see why this isn't a great fit for the web---you need a trusted party at
-scale. You could imagine a system where sites prove domain ownership to CAs, and
-then browser vendors double-check the domain validation and countersign a unique
-credential for each of their users. You can also immediately see the hordes of
-Slashdot users, led by Cory Doctorow, coming to my house with pitchforks,
-torches, and a copy of "Enshittification", simply for suggesting that a browser
-vendor, such as Chrome, be responsible for authenticating HTTPS connections.
+scale. You could imagine a system where sites prove domain ownership to CAs,
+then browser vendors would reverify the domain validation from the CA, and
+countersign a unique credential for each of their users. You can also
+immediately see the hordes of Slashdot users, led by Cory Doctorow, coming to my
+house with pitchforks, torches, and a copy of "Enshittification", simply for
+suggesting that a browser vendor, such as Chrome, be the entity responsible for
+authenticating HTTPS connections.
 
 By which I mean, the connectivity model is kind of fundamental to the web...
 
