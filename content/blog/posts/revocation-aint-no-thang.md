@@ -1,6 +1,7 @@
 ---
 title: "Revocation ain't no thang."
 date: 2025-09-10T04:00:00-04:00
+uses: ["code"]
 ---
 
 Adam Langley wrote about how [revocation for in the Web PKI doesn't
