@@ -8,7 +8,7 @@ Adam Langley wrote about how [revocation in the Web PKI doesn't
 work][agl-revocation] over 10 years ago. Since then, the Web PKI has drastically
 changed for the better, despite not appearing to "solve" revocation.
 Unfortunately, many people interpret Adam's post to mean "we must build a better
-revocation system for the Web PKI, today", when in fact, the reality is that
+revocation system for the Web PKI, today". In reality,
 _revocation does not make sense to solve anymore_, and people should stop trying
 to solve it directly, because **the actual solution to revocation in the public
 Web PKI is short-lived certificates**.
@@ -16,18 +16,19 @@ Web PKI is short-lived certificates**.
 The short version of why revocation doesn't work in practice is that
 [OCSP][ocsp] is too slow and unreliable to be blocking, and too much of a
 privacy leak to be used consistently without proxying[^1]. [CRLs][crl] are too
-big to downloaded consistently (or at all!) by clients.
+big download consistently (or at all!) by clients.
 
-The web has specific connectivity constraints between clients, servers, and
-certification authorities (CAs). On the web, browser clients are the relying
-party (RP), cannot be assumed to have connectivity with the CA. For one, at the
-scale of the web, CAs cannot handle the load if they were to be in-path for
-every (or even a small percentage!) of network connections. The failure and
-[subsequent deprecation of OCSP][ocsp-gone] is proof this connectivity doesn't
-exist. We can also only assume the clients have connectivity to the server
-they're _currently_ talking to. Clients may have some out-of-band communication
-mechanism that allows them to periodically fetch data from their vendor[^3], but
-they cannot _guarantee connectivity_ at any given time[^4].
+The long version is the web has specific connectivity constraints between
+clients, servers, and certification authorities (CAs). On the web, browser
+clients are the relying party (RP), and cannot be assumed to have connectivity
+with the CA. For one, at the scale of the web, CAs cannot handle the load if
+they were to be in the blocking path for every (or even a small percentage of!)
+network connections. The failure and [subsequent deprecation of OCSP][ocsp-gone]
+is proof this connectivity doesn't exist. The only guaranteed connectivity a
+client has is to the server they're _currently_ talking to. Clients may have
+some out-of-band communication mechanism that allows them to periodically fetch
+data from their vendor[^3], but they cannot _guarantee connectivity_ at any
+given time[^4].
 
 Servers are the authenticating party (AP). Servers are expected to have an
 out-of-band relationship with a CA, but similar to clients, they are not
@@ -67,7 +68,7 @@ So where does this leave us for revocation? There are two options:
   can ship daily.** CRLs are now required for all CAs. This is beneficial, as it
   functions as public documentation of all revocations. CRLs are both useful for
   analysis, and provide a basis for browser vendors to preprocess revocations
-  and ship condensed information to their clients. Firefox does this via
+  and ship the condensed information to their clients. Firefox does this via
   [CRLite][crlite]. Chrome does this by only shipping differential updates of
   revocations with the "key compromise" reason code[^6]. Apple has their own
   scheme. None of these systems scale particularly well, meaning if there are
@@ -107,7 +108,7 @@ this without introducing a new centralized and trusted party at scale.
 
 ## Takeaways
 
-- Revocation does need need to be "solved", for the public web PKI. We have the solution.
+- Revocation does not need to be "solved", for the public web PKI. We have the solution.
 - Short-lived certificates are the solution for revocation in the public Web PKI
 - Other PKIs may have other needs and potential solutions. Not all PKIs are the Web PKI.
 - We certainly do not need another marginally better CRL compression scheme. Please stop publishing them.
