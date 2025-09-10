@@ -3,14 +3,14 @@ title: "Revocation ain't no thang."
 date: 2025-09-10T04:00:00-04:00
 ---
 
-It is well-known that revocation for HTTPS doesn't work. Adam Langley [wrote
-about it][agl-revocation] over 10 years ago. Since then, the Web PKI has
-drastically changed for the better, despite not "solving" revocation.
+Adam Langley wrote about how [revocation for in the Web PKI doesn't
+work][agl-revocation] over 10 years ago. Since then, the Web PKI has drastically
+changed for the better, despite not initially appear to "solve" revocation.
 Unfortunately, many people interpret Adam's post to mean "we must build a better
 revocation system for the Web PKI, today", when in fact, the reality is that
-_revocation does not make sense to solve_, and people should stop trying to
-solve it directly, because **the actual solution to revocation in the public Web
-PKI is short-lived certificates**.
+_revocation does not make sense to solve anymore_, and people should stop trying
+to solve it directly, because **the actual solution to revocation in the public
+Web PKI is short-lived certificates**.
 
 The short version of why revocation doesn't work in practice is that
 [OCSP][ocsp] is too slow and unreliable to be blocking, and too much of a
@@ -109,7 +109,7 @@ this without introducing a new centralized and trusted party at scale.
 - Revocation does need need to be "solved", for the public web PKI. We have the solution.
 - Short-lived certificates are the solution for revocation in the public Web PKI
 - Other PKIs may have other needs and potential solutions. Not all PKIs are the Web PKI.
-- We do not need another marginally better CRL compression scheme.
+- We certainly do not need another marginally better CRL compression scheme. Please stop publishing them.
 - We need to keep reducing certificate lifetimes.
 
 [^1]: Which is its own bag of worms, especially since OCSP is not over HTTPS.
