@@ -4,9 +4,9 @@ date: 2025-09-10T04:00:00-04:00
 uses: ["code"]
 ---
 
-Adam Langley wrote about how [revocation for in the Web PKI doesn't
+Adam Langley wrote about how [revocation in the Web PKI doesn't
 work][agl-revocation] over 10 years ago. Since then, the Web PKI has drastically
-changed for the better, despite not initially appear to "solve" revocation.
+changed for the better, despite not appearing to "solve" revocation.
 Unfortunately, many people interpret Adam's post to mean "we must build a better
 revocation system for the Web PKI, today", when in fact, the reality is that
 _revocation does not make sense to solve anymore_, and people should stop trying
