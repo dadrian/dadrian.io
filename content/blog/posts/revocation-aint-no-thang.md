@@ -111,7 +111,7 @@ this without introducing a new centralized and trusted party at scale.
 - Revocation does not need to be "solved", for the public Web PKI. We have the solution.
 - Short-lived certificates are the solution for revocation in the public Web PKI
 - We have good-enough browser-mediated revocation for the Web PKI in all browsing engines, right now.
-- We do not need another marginally better CRL compression scheme for the Web PKI. Please stop publishing them.
+- Revocation in the Web PKI will not be "fixed" by a marginally better CRL compression scheme.
 - Other PKIs may have other needs and potential solutions. Not all PKIs are the Web PKI.
 - We need to keep reducing certificate lifetimes.
 
