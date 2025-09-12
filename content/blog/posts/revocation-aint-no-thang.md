@@ -16,7 +16,7 @@ Web PKI is short-lived certificates**.
 The short version of why revocation doesn't work in practice is that
 [OCSP][ocsp] is too slow and unreliable to be blocking, and too much of a
 privacy leak to be used consistently without proxying[^1]. [CRLs][crl] are too
-big download consistently (or at all!) by clients.
+big to download consistently (or at all!) by clients.
 
 The long version is the web has specific connectivity constraints between
 clients, servers, and certification authorities (CAs). On the web, browser
