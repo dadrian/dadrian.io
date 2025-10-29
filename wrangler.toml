@@ -1,5 +1,6 @@
 [build]
 command = "hugo --gc --minify"
+output_dir = "./public"
 
 [env.preview]
 build.command = "hugo --gc --minify --buildFuture --buildDrafts -b ${CF_PAGES_URL}"
