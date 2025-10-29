@@ -1,0 +1,8 @@
+[build]
+command = "hugo --gc --minify"
+
+[env.preview]
+build.command = "hugo --gc --minify --buildFuture --buildDrafts -b ${CF_PAGES_URL}"
+
+[env.production.vars]
+HUGO_BASEURL = "https://dadrian.io"
