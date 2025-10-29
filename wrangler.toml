@@ -1,9 +1,6 @@
 name = "dadrian-io"
 pages_build_output_dir = "./public"
 
-[build]
-command = "hugo --gc --minify"
-
 [env.preview]
 build.command = "hugo --gc --minify --buildFuture --buildDrafts -b ${CF_PAGES_URL}"
 
