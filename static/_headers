@@ -8,5 +8,5 @@
   Permissions-Policy: *=()
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=63072000; includeSubDomains
-/*.xml
-  Content-Type: application/xml; charset=utf-8
+/blog/index.xml
+  Content-Type: application/rss+xml; charset=utf-8
