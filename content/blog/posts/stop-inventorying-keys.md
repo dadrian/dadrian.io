@@ -1,7 +1,8 @@
 ---
 title: "Stop inventorying keys."
 date: 2026-01-11T21:01:00-05:00
-image: img/key-tree.png
+images:
+- img/key-tree.png
 ---
 
 If you have [a reason to migrate to post-quantum cryptography
