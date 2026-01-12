@@ -55,7 +55,7 @@ of HTTPS, now that all handshakes have perfect forward secrecy as of TLS 1.3,
 the key in the certificate is only used for authentication and is only relevant
 to preventing MITM attacks. For a quantum computer to be used to MITM a
 connection, the computer necessarily needs to exist at the time of the
-conversation, since the causality of time prevents you from performing an MITM
+conversation, since the causality of time prevents you from performing a MITM
 attack on a conversation that has already finished[^3].
 
 Inventorying all keys might reveal all corresponding certificates. However, the
