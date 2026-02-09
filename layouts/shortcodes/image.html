@@ -1,4 +1,4 @@
-{{ $image := $.Page.Resources.GetMatch "layoff-diagram.jpg" }}
+{{ $image := $.Page.Resources.GetMatch (.Get "src") }}
 {{ with .Get "resize" }}
   {{ $image = $image.Resize . }}
 {{ end }}
