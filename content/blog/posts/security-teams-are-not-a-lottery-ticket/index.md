@@ -1,7 +1,6 @@
 ---
 title: "Security teams are not a lottery ticket"
-date: 2026-02-09T14:37:00-09:00
-uses: ["figures"]
+date: 2026-02-14T07:05:00-06:00
 ---
 
 Peter Thiel has a four-quadrant framework for how people think about the future,
@@ -12,7 +11,8 @@ in startups. Instead, let’s use Thiel’s framework to understand security tea
 including both [teams that secure products and teams that secure
 organizations][dadrian-teams]. To do this, we’ll first go through the framework
 and the four quadrants themselves, then we’ll map security teams and well-known
-security initiatives to the quadrants.
+security initiatives to the quadrants. You can do this, even if you think [Thiel
+is the antichrist][thiel-ross].
 
 ## The four futures
 
@@ -49,7 +49,9 @@ _indeterminate_ views of the future on the x-axis.
   because things will never get any easier.
 
 {{% rawhtml %}}
-<img />
+<div class="svg-wrapper">
+  <object data="four-futures-examples.svg" type="image/svg+xml"></object>
+</div>
 {{% /rawhtml %}}
 
 Thiel makes the case that optimistic, determinate views of the future where you
@@ -88,7 +90,9 @@ Let’s map security teams into the quadrants.
   itself and is solely a cost of doing business.
 
 {{% rawhtml %}}
-<img />
+<div class="svg-wrapper">
+  <object data="four-futures-security.svg" type="image/svg+xml"></object>
+</div>
 {{% /rawhtml %}}
 
 ### Determinate Optimism
@@ -163,11 +167,12 @@ outcomes can neither be predicted nor improved. It is portfolio thinking, but
 without hope. These are the security teams that believe they can at best, slow
 the decline. These security teams will fail.
 
-[Michał Zalewski][lcamtuf] (lcamtuf) describes a team sliding from indeterminate optimism
-to indeterminate pessimism in his post ["How Security Teams Fail"][lcamtuf-fail]. Initially, if
-the security team contains enough smart people doing enough work, there’s a
-decent chance the portfolio is initially successful and security outcomes
-improved in some ways, even if no one has any particular opinions on how or why.
+[Michał Zalewski][lcamtuf] (lcamtuf) describes a team sliding from indeterminate
+optimism to indeterminate pessimism in his post ["How Security Teams
+Fail"][lcamtuf-fail]. Initially, if the security team contains enough smart
+people doing enough work, there’s a decent chance the portfolio is initially
+successful and security outcomes improved in some ways, even if no one has any
+particular opinions on how or why.
 
 As the security team grows from small and scrappy, to large and established, it
 can accumulate a set of projects and culture that are disconnected from the
@@ -285,10 +290,11 @@ Do your job.
 
 
 [sxsw-thiel]: https://www.youtube.com/watch?v=iZM_JmZdqCw
+[thiel-ross]: https://www.nytimes.com/2025/06/26/opinion/peter-thiel-antichrist-ross-douthat.html
 [dadrian-teams]: https://dadrian.io/blog/posts/security-engineering-roles/
 [worst-so-far]: https://www.youtube.com/watch?v=bfpPArfDTGw
 [dadrian-memory-safety]: https://dadrian.io/blog/posts/memory-safety-and-sandboxes/#programs
 [dadrian-key-inventory]: https://dadrian.io/blog/posts/stop-inventorying-keys/
-[lcamtuf]: \TODO
+[lcamtuf]: https://lcamtuf.coredump.cx/
 [lcamtuf-fail]: https://lcamtuf.substack.com/p/how-security-teams-fail
 [dadrian-hg-tweet]: https://x.com/dadrian/status/1774466067177361818?s=20
