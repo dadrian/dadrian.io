@@ -1,6 +1,6 @@
 ---
 title: "Security teams are not a lottery ticket"
-date: 2026-02-14T07:05:00-06:00
+date: 2026-02-14T07:05:00-05:00
 ---
 
 Peter Thiel has a four-quadrant framework for how people think about the future,
