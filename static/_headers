@@ -10,3 +10,5 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains
 /blog/index.xml
   Content-Type: application/rss+xml; charset=utf-8
+/blog/blog/posts/security-teams-are-not-a-lottery-ticket/*.svg
+  Content-Type: image/svg+xml
