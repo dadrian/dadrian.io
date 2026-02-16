@@ -35,11 +35,15 @@
   figure.df > figcaption > h4 {
     margin: 0px;
   }
-  .dsvg {}
-  @media (prefers-color-scheme: dark) {
-    .dsvg {
-      color: #f8f8f8;
-    }
+  </style>
+  {{ end }}
+
+  {{ if in .uses "svg" }}
+  <style>
+  .svg-wrapper > object {
+    height: auto;
+    width: auto;
+    max-width: 100%;
   }
   </style>
   {{ end }}
