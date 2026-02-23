@@ -38,6 +38,16 @@
   </style>
   {{ end }}
 
+  {{ if in .uses "svg" }}
+  <style>
+  .svg-wrapper > object {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+  }
+  </style>
+  {{ end }}
+
   {{ if in .uses "code" }}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" />
   <style>
@@ -63,7 +73,7 @@
   }
   </style>
   {{ end }}
-<style>
+  <style>
 p {
   line-height: 16pt;
 }

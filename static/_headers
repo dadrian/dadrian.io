@@ -1,8 +1,8 @@
 /*
-  X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-Hey-Kid: I'm a computer; Stop all the downloadin'!
-  Content-Security-Policy: default-src 'none'; script-src-elem 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; style-src-attr 'unsafe-inline'; img-src 'self'; base-uri https://dadrian.io
+  X-Frame-Options: SAMEORIGIN
+  Content-Security-Policy: default-src 'self'; script-src-elem 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; style-src-attr 'unsafe-inline'; img-src 'self'; base-uri https://dadrian.io
   Cross-Origin-Embedder-Policy: credentialless
   Cross-Origin-Opener-Policy: same-origin
   Permissions-Policy: *=()
@@ -10,3 +10,5 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains
 /blog/index.xml
   Content-Type: application/rss+xml; charset=utf-8
+/blog/blog/posts/security-teams-are-not-a-lottery-ticket/*.svg
+  Content-Type: image/svg+xml

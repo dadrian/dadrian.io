@@ -1,8 +1,5 @@
 name = "dadrian-io"
 pages_build_output_dir = "./public"
 
-[env.preview]
-build.command = "hugo --gc --minify --buildFuture --buildDrafts -b ${CF_PAGES_URL}"
-
 [env.production.vars]
 HUGO_BASEURL = "https://dadrian.io"
