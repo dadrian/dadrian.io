@@ -13,14 +13,13 @@ in startups. Instead, let’s use Thiel’s framework to understand security tea
 including both [teams that secure products and teams that secure
 organizations][dadrian-teams]. To do this, we’ll first go through the framework
 and the four quadrants themselves, then we’ll map security teams and well-known
-security initiatives to the quadrants. You can do this, even if you think [Thiel
-is the antichrist][thiel-ross].
+security initiatives to the quadrants.
 
 ## The four futures
 
 {{% rawhtml %}}
 <div class="svg-wrapper">
-  <object data="four-futures-names.svg" type="image/svg+xml"></object>
+  <object data="four-futures-names.svg" type="image/svg+xml" role="image"></object>
 </div>
 {{% /rawhtml %}}
 
@@ -28,31 +27,31 @@ Thiel’s four quadrants are the cross-product between _pessimistic_ and
 _optimistic_ views of the future on the y-axis, and _determinate_ and
 _indeterminate_ views of the future on the x-axis.
 
-1. **Determinate Optimism:** The belief that the future will be better, and that
+1. **Determinate Optimistic:** The belief that the future will be better, and that
   we can plan for it, specifically. You commit to a concrete vision, make a
   plan, and keep working towards it. These futures have explicit end states,
   rather than vague ideas of “progress”, and are represented by major postwar
   infrastructure and engineering projects such as the moon landing and
   interstate highway system.
-2. **Indeterminate Optimism:** The belief that the future will be better, but we
+2. **Indeterminate Optimistic:** The belief that the future will be better, but we
   don’t know how. We try to “hedge” and build a portfolio or take a cut of
   everything, to share in the generic upside. This leads to a focus on finance,
   law, and process, rather than on doing specific things. There doesn’t need to
   be a plan, we can just be iterative. You can’t justify any single bet as a
   winner, only the idea that something in the portfolio will win.
-3. **Indeterminate Pessimism:** The belief that no matter what anyone does,
+3. **Indeterminate Pessimistic:** The belief that no matter what anyone does,
   things will simply [get worse][worst-so-far], but in a way that is unknown
   enough that there is no clear plan to fix it. This leads to stoicism, an
   acceptance of a negative outcome, possibly paired with an increased desire to
   insure or hedge against every possible downside.
-4. **Determinate Pessimism:** The belief that the future is known, but the best
+4. **Determinate Pessimistic:** The belief that the future is known, but the best
   you can do is what we have now. In this world, you should copy what works best
   now, because things will never get better, and you should save for the future,
   because things will never get any easier.
 
 {{% rawhtml %}}
 <div class="svg-wrapper">
-  <object data="four-futures-examples.svg" type="image/svg+xml"></object>
+  <object data="four-futures-examples.svg" type="image/svg+xml" role="image"></object>
 </div>
 {{% /rawhtml %}}
 
@@ -93,7 +92,7 @@ Let’s map security teams into the quadrants.
 
 {{% rawhtml %}}
 <div class="svg-wrapper">
-  <object data="four-futures-security.svg" type="image/svg+xml"></object>
+  <object data="four-futures-security.svg" type="image/svg+xml" role="image"></object>
 </div>
 {{% /rawhtml %}}
 
@@ -134,12 +133,12 @@ is doing something that in isolation seems reasonable. The hope is that in
 aggregate, the security outcomes will be positive. For some particularly
 technically competent teams in high-tech, relatively straightforward product
 organizations, this can work out. But in many cases, it just feels like progress
-because the activity is high, and yet there’s no actual change in the zero to
-one---the fundamental underlying security problems all still exist exactly the
-same as they did before. Bottom-up security work without an end state is more
-portfolio thinking. Every engineer and project is a bet, and the team is hoping
-that success emerges statistically. This is rational only if you believe
-outcomes are fundamentally unpredictable and not engineerable.
+because the activity is high, and yet there’s no actual change in the
+zero-to-one---the fundamental underlying security problems all still exist
+exactly the same as they did before. Bottom-up security work without an end
+state is more portfolio thinking. Every engineer and project is a bet, and the
+team is hoping that success emerges statistically. This is rational only if you
+believe outcomes are fundamentally unpredictable and not engineerable.
 
 Ironically, the “Secure by Design” push from CISA during the Biden
 administration, while an optimistic view of the future where products cannot
@@ -229,7 +228,7 @@ this, but in reality, assume breach means XDR and a SOC and an incident-response
 team rebranded as threat hunting that looks inward.
 
 While these things aren’t bad, and this flavor of assume breach is better than
-burying your hand in the sand while using a firewall as the first and only line
+burying your head in the sand while using a firewall as the first and only line
 of defense, this approach isn’t actually building towards resolving any
 problems. It is at best, the security equivalent of buying business interruption
 insurance. An assume-breach strategy that starts with buying telemetry and
@@ -249,9 +248,9 @@ authorities without understanding if those practices are relevant to their own
 unique product or organization. At many organizations, security is increasingly
 viewed as similar to finance---a documentation, compliance, and controls
 organization, rather than as an engineering function. It is not considered an
-engineering function that designs and builds safe systems. This is inline with
+engineering function that designs and builds safe systems. This is in line with
 the increasing financialization and focus on process and law that begins in the
-indeterminate futures and solidifies in the deterministic pessimistic future.
+indeterminate futures and solidifies in the determinate pessimistic future.
 
 These teams are stable, but sterile. They hit their compliance guidelines, buy
 their cyberinsurance, and ideally, maintain breach costs below some financially
@@ -267,26 +266,27 @@ chart, and claim some value by being more precise or accurate. That’s ultimate
 not very useful. What’s useful is recognizing that only one quadrant produces
 results.
 
-Determinate optimistic teams are not implementing processes and policies without
-owning outcomes. They are not a portfolio of bottom-up security work that hopes
-for the best. They’re not fatalists and they’re not shirking responsibility.
-They’re not an extension of finance.
-
 In other words, the value is not in classifying all the things, it’s in
 understanding what needs to change to get from where you are now, to a world
 where you’re building the right future. The winners all look the same. Good
 security teams all resemble one another, each bad security team is failing in
 its own way.
 
-What’s the difference between your security team and one that’s in the
-determinate optimistic quadrant? If you have a portfolio, make sure that you
-have an actual plan. Make sure that you know what you’re fixing, not just what
-you’re doing. Don’t begin from a position of the attackers have already
-won---begin from a position of how you’re going to stop classes of them,
-permanently.
+Determinate optimistic teams are not implementing processes and policies without
+owning outcomes. They are not a portfolio of bottom-up security work or
+arbitrary products, hoping for the best. They're not fatalists and they haven't
+given up.
 
-If you’re on a security team and you’re not executing on a plan to win, then you
-are not doing your job.
+What’s the difference between your security team and one that’s in the
+determinate optimistic quadrant? One way to check this is to see if you can
+articulate what will be better in 1-3 years than it is now, and be able to
+provide a hypothesis about how you're going to make that happen. Can you
+describe a specific end-state and a mechanism to get there? If you can't, and
+instead you expect to do more of the same, you probably have a portfolio and no
+real goals and you're not actually trying to win.
+
+If you’re on a security team and you’re not executing a real strategy to win,
+then you are not doing your job.
 
 Do your job.
 
