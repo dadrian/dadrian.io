@@ -13,7 +13,7 @@ in startups. Instead, let’s use Thiel’s framework to understand security tea
 including both [teams that secure products and teams that secure
 organizations][dadrian-teams]. To do this, we’ll first go through the framework
 and the four quadrants themselves, then we’ll map security teams and well-known
-security initiatives to the quadrants.
+security initiatives to the quadrants[^1].
 
 ## The four futures
 
@@ -300,3 +300,6 @@ Do your job.
 [lcamtuf]: https://lcamtuf.coredump.cx/
 [lcamtuf-fail]: https://lcamtuf.substack.com/p/how-security-teams-fail
 [dadrian-hg-tweet]: https://x.com/dadrian/status/1774466067177361818?s=20
+
+[^1]: You can do this regardless of what you think of Thiel's political
+  opinions, including even if you think [Thiel is the antichrist][thiel-ross].
