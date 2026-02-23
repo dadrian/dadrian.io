@@ -1,6 +1,6 @@
 ---
 title: "Security teams are not a lottery ticket"
-date: 2026-02-22T17:53:00-07:00
+date: 2026-02-22T21:07:00-07:00
 uses:
   - svg
 ---
@@ -147,19 +147,19 @@ variant of the hope approach. While many organizations signed the secure by
 design pledge, the lack of definitions and requirements from CISA around what it
 means to be secure by design make the pledge vacuous. Signing the pledge is a
 way to signal virtue without doing any work. What little guidance CISA does
-provide is unhelpful, making vague high-level recommendations like [“have a
-memory safety roadmap”][cisa-mem-safety], without explaining how to identify software that
-[actually needs memory safety][dadrian-memory-safety]. Some of the guidance is
-nonsensical, like suggesting the best way to migrate to post-quantum
-cryptography is to [inventory keys][dadrian-key-inventory].
+provide is unhelpful and non-binding, making vague high-level recommendations
+like [“have a memory safety roadmap”][cisa-mem-safety], without explaining how
+to identify software that [actually needs memory safety][dadrian-memory-safety].
+Some of the guidance is nonsensical, like suggesting the best way to migrate to
+post-quantum cryptography is to [inventory keys][dadrian-key-inventory].
 
 This is a classic example of portfolio thinking. Secure by Design is a desired
 upside and outcome---who doesn’t want secure products!---but it barely defines
-mechanisms and avoids commitment to a specific path and allows each signer to
-interpret compliance however they want. It’s asking everyone to invest in
-something that seems like security, and then leaving them space to take credit
-for the winners. No one who signed the pledge has to say what class of security
-issues will be solved, by what change, on what timeline, and with what impact.
+mechanisms and avoids commitments, enabling each signer to interpret compliance
+however they want. It’s asking everyone to invest in something that seems like
+security, and then leaving them space to take credit for the winners. No one who
+signed the pledge has to say what class of security issues will be solved, by
+what change, on what timeline, and with what impact.
 
 ### Indeterminate Pessimism
 
