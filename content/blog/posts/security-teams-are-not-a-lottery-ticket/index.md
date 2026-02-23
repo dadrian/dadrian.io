@@ -147,10 +147,10 @@ variant of the hope approach. While many organizations signed the secure by
 design pledge, the lack of definitions and requirements from CISA around what it
 means to be secure by design make the pledge vacuous. Signing the pledge is a
 way to signal virtue without doing any work. What little guidance CISA does
-provide is unhelpful, making vague high-level recommendations like “have a
-memory safety roadmap”, without explaining how to identify software that
+provide is unhelpful, making vague high-level recommendations like [“have a
+memory safety roadmap”][cisa-mem-safety], without explaining how to identify software that
 [actually needs memory safety][dadrian-memory-safety]. Some of the guidance is
-actively harmful, like suggesting the best way to migrate to post-quantum
+nonsensical, like suggesting the best way to migrate to post-quantum
 cryptography is to [inventory keys][dadrian-key-inventory].
 
 This is a classic example of portfolio thinking. Secure by Design is a desired
@@ -300,6 +300,7 @@ Do your job.
 [lcamtuf]: https://lcamtuf.coredump.cx/
 [lcamtuf-fail]: https://lcamtuf.substack.com/p/how-security-teams-fail
 [dadrian-hg-tweet]: https://x.com/dadrian/status/1774466067177361818?s=20
+[cisa-mem-safety]: https://www.cisa.gov/news-events/news/urgent-need-memory-safety-software-products
 
 [^1]: You can do this regardless of what you think of Thiel's political
   opinions, including even if you think [Thiel is the antichrist][thiel-ross].
