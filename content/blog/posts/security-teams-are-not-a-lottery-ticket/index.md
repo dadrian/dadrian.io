@@ -261,10 +261,9 @@ monitoring services after a class-action lawsuit.
 ## So what?
 
 This framing is nothing more than security team archetype botany. You can argue
-the exact positioning of any particular security team archetype in the quad
-chart, and claim some value by being more precise or accurate. That’s ultimately
-not very useful. What’s useful is recognizing that only one quadrant produces
-results.
+about which quadrant any particular security team archetype belongs to, and
+claim some value by being more precise or accurate. That’s ultimately not very
+useful. What’s useful is recognizing that only one quadrant produces results.
 
 In other words, the value is not in classifying all the things, it’s in
 understanding what needs to change to get from where you are now, to a world
