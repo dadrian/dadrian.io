@@ -1,6 +1,6 @@
 ---
 title: "Security teams are not a lottery ticket"
-date: 2026-02-14T07:05:00-05:00
+date: 2026-02-22T17:53:00-07:00
 uses:
   - svg
 ---
