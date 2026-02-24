@@ -190,10 +190,10 @@ ownership of outcomes.
 An indeterminate pessimistic security team might even have identified the
 correct problems, but been unable to address them because the team never made an
 actual plan for the determinative optimistic future where the problems were
-solved. This could be because it would have required the security to have to
-work on projects they didn’t like, or change how they operate. If your identity
-is defined by the problems, then any solution can feel like an attack. Besides,
-who wants to work on tooling?
+solved. This could be because it would have required the security team to work
+on projects they didn’t like, or change how they operate. If your identity is
+defined by the problems, then any solution can feel like an attack. Besides, who
+wants to work on tooling?
 
 When security teams view security as a game of pure luck/odds rather than a
 solvable engineering problem, it leads to fatalism about their own efficacy and
