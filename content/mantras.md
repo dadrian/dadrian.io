@@ -23,3 +23,5 @@ layout = "bio"
 18. Belt-tightening can't make you smart. It just makes you short-term thrifty.
 19. If it's a problem, solve it.
 20. If it's broken, fix it.
+21. Product management is storytelling? No! Compliance is storytelling!
+22. Writing academic papers is also storytelling. So is pitching a startup.
