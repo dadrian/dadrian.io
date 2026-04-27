@@ -1,6 +1,6 @@
 ---
 title: "Proxies all the way down."
-date: 2026-04-26T20:21:00-04:00
+date: 2026-04-27T18:02:00-04:00
 uses:
   - code
 ---
