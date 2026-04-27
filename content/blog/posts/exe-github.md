@@ -5,15 +5,15 @@ uses:
   - code
 ---
 
-A couple days ago, [exe.dev][exe] raised a lot of money[^1]. I decided to poke
+A couple of days ago, [exe.dev][exe] raised a lot of money[^1]. I decided to poke
 around with it a little, and signed up. Their trial is 7 days long, so despite
-having no actual plans, I just started doing stuff.  In doing so, I noticed a
+having no actual plans, I just started doing stuff. In doing so, I noticed a
 few interesting things that I thought were worth a quick writeup:
 
 1. I didn't have to configure an SSH key to be able to `ssh exe.dev`.
 2. I could SSH to my VM despite not having a unique IP and no support for
    [SNI][sni] in SSH.
-3. The [Github Integration][exe-github-docs], which allowed me to clone private
+3. The [GitHub Integration][exe-github-docs], which allowed me to clone private
    repositories, didn't require any host-side configuration.
 
 The second item, SSH with non-unique IPs, despite SSH having no host header or
@@ -29,37 +29,37 @@ involved.
 I was surprised that I could SSH into exe.dev despite never telling them what my
 public key was. Conveniently, they explain it to you in the control plane shell
 you get when you log in---when I created my account with Google OIDC, exe.dev took
-my email and [looked up the Github account](github-davidcadrian-email) for it,
-and then used that to [look up my public keys](https://github.com/dadrian.keys).
+my email and [looked up the GitHub account][github-davidcadrian-email] for it,
+and then used that to [look up my public keys][github-dadrian-keys].
 You can do it, too! The links in the previous sentence are literally to the
 endpoints that give you this information for my email. These endpoints are
 accessible without authentication[^2]. This isn't that novel, but it is clever.
 This does mean that if you use `IdentitiesOnly yes` in your SSH config for `Host
 *`, or have a custom `IdentityFile` you use for `Host github.com`, you'll still
-have to explicitly configure _offering_ the same key that you use with Github.
+have to explicitly configure _offering_ the same key that you use with GitHub.
 But that's already on you for wanting to configure IdentityFile[^3].
 
-## Github Integration
+## GitHub Integration
 
-exe.dev also has a [Github Integration][exe-github-docs], which, once enabled in the
+exe.dev also has a [GitHub Integration][exe-github-docs], which, once enabled in the
 dashboard via an OAuth flow, allows you to clone private repositories from your
 exe.dev VMs, without configuring anything other than the initial git clone. I
 initially assumed this put some credentials somewhere on the VM via whatever
-base image they were using, however it turns out this is not the case.
+base image they were using; however, it turns out this is not the case.
 
-The key trick that exe.dev plays to make this work, is that they replace the
-hostname for Github with a proxy that is local to your VM. So instead of running
+The key trick that exe.dev plays to make this work is that they replace the
+hostname for GitHub with a proxy that is local to your VM. So instead of running
 `git clone git@github.com:...`, you run `git clone
 my-integration-name.int.exe.dev`. You might say this is cheating---didn't I just
 say there was no configuration? Yes, but it's the _same_ configuration you'd be
-doing for Github as well---if you're going to clone a repository, you have to
+doing for GitHub as well---if you're going to clone a repository, you have to
 provide the URL of the host you're cloning from at some point. Credit to exe.dev for
 using the one pre-existing and necessary joint and figuring out how to build off
 of it.
 
 Having not seen any of their code, let's dive into how I assume this works.
 
-- The hostname `int.exe.eyz` doesn't exist and doesn't even have an NS. However,
+- The hostname `int.exe.xyz` doesn't exist and doesn't even have an NS. However,
   we can assume that `int` is short for integration, and all subdomains of it
   point to RFC 1918 space that has some sort of meaning when accessed from an
   exe.dev VM, because...
@@ -70,18 +70,18 @@ Having not seen any of their code, let's dive into how I assume this works.
   an EXE VM to resolve it. This is the added side benefit of meaning that you
   can use an [ACME DNS challenge][acme-dns] to get a certificate for the domain,
   or better yet, a [wildcard certificate][int-cert] for `*.int.exe.xyz`.
-- In this case, it's a git+https non-transparent proxy for Github repos. Well,
+- In this case, it's a git+https non-transparent proxy for GitHub repos. Well,
   once git opens the connection via HTTPS to the proxy host, exe.dev can make the
-  equivalent requests your git client would make to Github, but inject one of
+  equivalent requests your git client would make to GitHub, but inject one of
   those pesky access tokens. This way, the access token never needs to touch
   your VM, meaning you've successfully outsourced your secrets management
   problem to exe.dev[^6].
-- Where does exe.dev get the tokens from? Well, their Github
+- Where does exe.dev get the tokens from? Well, their GitHub
   Application necessarily has a JWT associated with it, that they can use to get
   an "installation access token" that grants them access on behalf of your
-  Github account (which you authorized while signed into their dashboard via
+  GitHub account (which you authorized while signed into their dashboard via
   OAuth). Then, exe.dev uses this token to access whatever repositories you
-  configured in the integration, on your behalf. This token can be short lived
+  configured in the integration, on your behalf. This token can be short-lived
   (it only needs to be around for the Git operations, not while the Git
   repository is being accessed locally), and can be refreshed dynamically by the
   proxy using the app JWT.
@@ -95,19 +95,19 @@ couple assumptions given the interface:
 
 - You can make a direct TLS connection to the proxy host. In fact, you seem to
   have full L4 connectivity.
-- The standard git tools have no credentials to add
+- The standard git tools have no credentials to add.
 - Therefore, exe.dev must be identifying the connection via some other mechanism,
-  before injecting credentials to proxy.
+  before injecting credentials into the proxy.
 
 The eth0 interface in the VM has an IP in the 10.0.0.0/8 address space, with a
 default route in the same IP space. Presumably, this is taking place inside some
-sort of VPN or SDN wrapper layer, likely Wireguard, which is presenting an
+sort of VPN or SDN wrapper layer, likely WireGuard, which is presenting an
 authenticated IP address that can be mapped back to a customer VM directly to
 the proxy. That way, the proxy can determine which requests come from which
-customers, and then access the correct Github Installation ID for a given
+customers, and then access the correct GitHub installation ID for a given
 customer VM. This works so long as whatever mechanism the VPN layer is using to
 signal to the proxy about the customer identity is not spoofable by the
-customer, which would allow one customer to access the Github integration of
+customer, which would allow one customer to access the GitHub integration of
 another customer.
 
 ## Why did you write this?
@@ -122,9 +122,9 @@ Look, I just thought [it was cool](https://xkcd.com/356/).
 [^3]: Always good to assume that public keys are public!
 [^4]: Through a completely unrelated set of events, I did collaborate on a
   protocol called ["Hop"][hop] that tweaks the SSH transport protocol to add
-  this and some other things, [appearing at Usenix Security 2026][hop-usenix].
+  this and some other things, [appearing at USENIX Security 2026][hop-usenix].
   Credit to [Paul Flammarion][paulf].
-[^5]: Link local relative to whatever potentially virtualized L2 the VM exists
+[^5]: Link-local relative to whatever potentially virtualized L2 the VM exists
   on. It's presumably SDNs all the way down. Blame Martin.
 [^6]: Short-lived credentials and ACLs rule everything around me.
 [^7]: I didn't check, but in theory, they might have forgotten this step and you
