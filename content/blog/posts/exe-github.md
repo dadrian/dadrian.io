@@ -3,6 +3,8 @@ title: "Proxies all the way down."
 date: 2026-04-27T18:02:00-04:00
 uses:
   - code
+images:
+  - img/turtle-stack.png
 ---
 
 A couple of days ago, [exe.dev][exe] raised a lot of money[^1]. I decided to poke
