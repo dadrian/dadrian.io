@@ -25,3 +25,5 @@ layout = "bio"
 20. If it's broken, fix it.
 21. Product management is storytelling? No! Compliance is storytelling!
 22. Writing academic papers is also storytelling. So is pitching a startup.
+23. The best defense against layoffs is to not join useless teams, and to do a good job (estarkism)
+
