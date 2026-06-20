@@ -1,10 +1,25 @@
-{{ $image := $.Page.Resources.GetMatch (.Get "src") }}
-{{ with .Get "resize" }}
-  {{ $image = $image.Resize . }}
-{{ end }}
-<figure class="{{ .Get "class" }}" style="max-width: 600px">
-  {{ with $image }}
-  <img src="{{ .RelPermalink }}"/>
+{{ $src := .Get "src" }}
+{{ $image := $.Page.Resources.GetMatch $src }}
+{{ $staticSrc := "" }}
+{{ with $image }}
+  {{ with $.Get "resize" }}
+    {{ $image = $image.Resize . }}
   {{ end }}
-  <figcaption style="text-align: center"><small><b>{{ .Get "title" }}</b></small></figcaption>
+{{ else }}
+  {{ $staticPath := path.Join "static" (strings.TrimPrefix "/" $src) }}
+  {{ if fileExists $staticPath }}
+    {{ $staticSrc = $src | relURL }}
+  {{ end }}
+{{ end }}
+<figure class="{{ .Get "class" }}" style="max-width: 100%">
+  {{ with $image }}
+  <img src="{{ .RelPermalink }}" style="max-width: 100%; height: auto" />
+  {{ else }}
+  {{ with $staticSrc }}
+  <img src="{{ . }}" style="max-width: 100%; height: auto" />
+  {{ end }}
+  {{ end }}
+  {{ with .Get "title" }}
+  <figcaption style="text-align: center"><small><b>{{ . }}</b></small></figcaption>
+  {{ end }}
 </figure>

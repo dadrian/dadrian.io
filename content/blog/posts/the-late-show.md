@@ -47,6 +47,8 @@ from Jon Batiste][humanism] was top-tier.
 By the end of 2017, many of my closest friends from grad school had moved on
 from Ann Arbor.
 
+{{<image src="/img/late-show-mugs.jpg" class="df">}}
+
 [^1]: We had OTA growing up. It's not like I'd never seen cable channels but we
   didn't have them at home and it was fine.
 [^2]: This was the period where often every online commercial was the same. You
