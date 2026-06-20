@@ -24,7 +24,7 @@ next-to-zero revenue, and will usually raise $1-20M be given a valuation in the
 $5-100M range based on how good of a team and a story the founders can put
 together, and whether or not the [founders are white men][white-male-founders].
 Because the startup probably doesn't have any revenue at this point, it's often
-simpler to just think of Seed rounds in terms of ownership: you give away 15-20%
+simpler to just think of seed rounds in terms of ownership: you give away 15-20%
 of the company in exchange for money, a good story, and maybe some initial
 traction. Including the seed round, a company is usually diluted 20-30% by the
 Series A, and then another 10-20% for the Series B and each round after that.
