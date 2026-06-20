@@ -1,6 +1,6 @@
 ---
 title: "The Late Show"
-date: 2026-06-20T12:04:00-05:00
+date: 2026-06-20T12:04:00-04:00
 images:
 - img/late-show-mugs.jpg
 ---
