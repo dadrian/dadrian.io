@@ -5,7 +5,7 @@ I am currently a product manager at Google, working on adding value to [Chrome
 Security][chromesecurity]. Despite this, I identify both as an engineer and
 security researcher. I cofounded [Censys][censys], an attack-surface management
 security startup. I left Censys after their [Series A][censys-raise]. They've
-since raised a ~~[Series B][censys-raise-b]~~ [Series C][censys-raise-c]! I was
+since raised a ~~[Series B][censys-raise-b][Series C][censys-raise-c]~~[Series D][censys-raise-d]! I was
 employee #2 at [Nametag][nt].  I’m also a core contributor to the [ZMap][zmap]
 open-source project.
 
@@ -22,6 +22,7 @@ podcast with [Deirdre Connolly][deirdre] and [Thomas Ptacek][tqbf].
 [censys-raise]: https://venturebeat.com/2020/08/05/censys-raises-15-5-million-to-bring-attack-surface-management-to-more-companies/
 [censys-raise-b]: https://techcrunch.com/2022/01/27/censys-iot-search-engine-new-ceo/
 [censys-raise-c]: https://techcrunch.com/2023/10/24/censys-lands-new-cash-to-grow-its-threat-detecting-cybersecurity-service/
+[censys-raise-d]: https://censys.com/blog/70-million-strategic-funding/
 [censys-careers]: https://censys.io/careers
 [chromesecurity]: https://chrome.security
 [deirdre]: https://twitter.com/durumcrustulum
