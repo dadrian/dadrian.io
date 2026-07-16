@@ -100,7 +100,7 @@ crime.
 Because hacking is just bugs, that means we have a good defense against
 hacking---don't have bugs. This is certainly easier said than done, but the vast
 majority of exploitable vulnerabilities are due to a specific class of
-vulnerabilities---[memory-safety bugs]---which we do know how to
+vulnerabilities---[memory-safety bugs][memory-safety]---which we do know how to
 _systematically_ prevent. Unfortunately, this requires a lot of work, but you
 won't [patch yourself out of a vulnpocalypse][gaynor-vuln] if you're one of the
 software projects where [memory safety actually matters][dadrian-memory-safety].
