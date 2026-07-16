@@ -15,3 +15,5 @@ pagerSize = 100
       autoHeadingID = true
 [params]
   images = [ "img/david4.jpg" ]
+[security]
+  allowContent = ["^text/markdown$", "^text/html$"]
