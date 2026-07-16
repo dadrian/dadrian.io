@@ -1,5 +1,7 @@
 baseURL = "https://dadrian.io"
-languageCode = "en-us"
+defaultContentLanguage = "en-us"
+languageCode = "en"
+locale = "en-us"
 title = "David Adrian"
 theme = ["dadrian"]
 [pagination]
@@ -15,3 +17,5 @@ pagerSize = 100
       autoHeadingID = true
 [params]
   images = [ "img/david4.jpg" ]
+[security]
+  allowContent = ["^text/markdown$", "^text/html$"]
