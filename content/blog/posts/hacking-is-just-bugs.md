@@ -1,6 +1,6 @@
 ---
 title: "Hacking is Just Bugs"
-date: 2026-07-16T12:01:00-04:00
+date: 2026-07-16T12:45:00-04:00
 images:
 - img/mythos.jpg
 ---
