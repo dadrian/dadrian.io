@@ -45,6 +45,8 @@ This doesn’t have to happen! Defenders also have coding agents and vulnerabili
 
 Producing an endless stream of findings is not a good use of security expertise, human or AI. If all you do is play whack-a-mole, you’re going to lose. We should not view security as an endless supply of mysteries to solve because being a detective is the valued identity. Instead, the role of defenders is to turn failures into new, broader, and stronger invariants, and to encode these invariants into the system so that engineers (and agents) don’t have to constantly rediscover the same class of problems. If that outcome feels like a loss, it’s because identity has displaced security as the goal.
 
+_Thank you to Ryan Lopopolo for first saying "Don't you see? We can play whack-a-mole even faster now!" to me. Thank you to Dev Akhawe, Alex Clemmer, Alex Gaynor, and Matt Riley for feedback on early drafts of this post._
+
 [security-engineering-for-products]: https://dadrian.io/blog/posts/security-engineering-roles/
 [workism]: https://www.theatlantic.com/ideas/archive/2019/02/religion-workism-making-americans-miserable/583441/
 [freakonomics]: https://en.wikipedia.org/wiki/Freakonomics
