@@ -77,6 +77,17 @@
 p {
   line-height: 16pt;
 }
+article content blockquote {
+  margin: 1.5em 0;
+  padding-left: 1em;
+  border-left: 4px solid #999999;
+}
+article content blockquote > :first-child {
+  margin-top: 0;
+}
+article content blockquote > :last-child {
+  margin-bottom: 0;
+}
 article content table {
   width: 100%;
   margin: 1.5em 0;
@@ -101,6 +112,9 @@ article content th {
   }
 }
 @media (prefers-color-scheme: dark) {
+  article content blockquote {
+    border-left-color: #888888;
+  }
   article content table,
   article content th {
     border-color: #606060;
