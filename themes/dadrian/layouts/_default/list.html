@@ -50,6 +50,7 @@ main {
 {{ define "main" }}
 <main>
   <h1 class="blog-title">Closure <small class="blog-subtitle">Thoughts Hoisted to Posts</small></h1>
+  {{ if not .IsPage }}
   {{ range .Paginator.Pages }}
     <article>
       <small class="post-date">
@@ -59,6 +60,9 @@ main {
       </small>
       <h3 class="post-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
     </article>
+  {{ end }}
+  {{ else }}
+  {{ .Content }}
   {{ end }}
 </main>
 {{ end }}
