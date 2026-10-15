@@ -2,7 +2,7 @@
 title: "Everybody is losing their minds about cryptography because of AI"
 date: 2026-10-15T17:25:00-04:00
 images:
-- img/tim-and-eric-mind-blown.avif
+- img/mind-blown.jpg
 ---
 
 Last night, we recorded an episode of “Security, Cryptography, Whatever” discussing the recent AI-driven advances in mathematics, and the discourse around AI potentially breaking cryptography. I wanted to pre-empt the release of the episode with a few thoughts. These are more or less the same opinions I express in the podcast, but condensed down to written form.
