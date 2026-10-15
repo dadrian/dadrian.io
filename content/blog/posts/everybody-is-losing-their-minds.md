@@ -56,7 +56,7 @@ What would improvements in cryptanalysis of RSA look like? It might be advancing
 The other option with RSA is that it somehow advances a complexity class, such as from the current class, L(⅓), into the “next fastest” complexity class, L(¼). Here’s the relative bits of security for various RSA key sizes under the current best algorithms in L(⅓) compared to a hypothetical L(¼), and the current official numbers from NIST. As you can see, the NIST numbers roughly track L(⅓).
 
 | Key bit<br>length | L(1/3)<br>security bits | Hypothetical L(1/4)<br>security bits | NIST SP 800-57<br> security bits |
-| ----- | ----- | ----- | ----- | ----- |
+| ----- | ----- | ----- | ----- |
 | RSA-512 | \~65 | \~45 | — |
 | RSA-896 | \~80 | \~55 | — |
 | RSA-1024 | \~90 | \~60 | 80 |

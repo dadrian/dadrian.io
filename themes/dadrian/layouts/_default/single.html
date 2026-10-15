@@ -77,6 +77,38 @@
 p {
   line-height: 16pt;
 }
+article content table {
+  width: 100%;
+  margin: 1.5em 0;
+  border-collapse: collapse;
+  border: 1px solid #b8b8b8;
+  line-height: 1.4;
+}
+article content th,
+article content td {
+  padding: 0.625em 0.75em;
+  vertical-align: top;
+}
+article content th {
+  background-color: #e8e8e8;
+  border-bottom: 2px solid #b8b8b8;
+  text-align: left;
+}
+@media (max-width: 480px) {
+  article content th,
+  article content td {
+    padding: 0.5em;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  article content table,
+  article content th {
+    border-color: #606060;
+  }
+  article content th {
+    background-color: #303030;
+  }
+}
 sup {
   vertical-align: baseline;
   position: relative;
