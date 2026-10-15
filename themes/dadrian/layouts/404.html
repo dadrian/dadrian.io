@@ -1,0 +1,10 @@
+{{ define "title" }}404 | {{ .Site.Title }}{{ end }}
+
+{{ define "page-css" }}
+{{ partial "bio-css.html" . }}
+{{ end }}
+
+{{ define "main" }}
+{{ $content := printf `<p><strong>Not found.</strong> Go <a href="%s">home</a> or to the <a href="%s">blog</a>.</p>` (absURL "/") (absURL "/blog/") | safeHTML }}
+{{ partial "bio-main.html" (dict "Page" . "Content" $content) }}
+{{ end }}
