@@ -26,10 +26,26 @@ I would suggest that:
 
 Largely, the models are good at two types of searches that yield mathematical results. This is not to downplay the achievements of computing that are the models, or to discard them as stochastic parrots that happened to randomly predict a sentence that disproves the Jacobian conjecture or finds a counter-example to the external force Navier-Stokes equations. However, this does not mean that they are mathematical savants that can find *any* result out of thin air. I would characterize the searches as:
 
-1. **Optimizing some existing thing to a well-specified goal.** This is loosely how the Navier-Stokes counterexample was found. The analogy here to computing is speeding up an implementation of a codec using a profiler against a benchmark. Tedious, complicated, but verifiable and grindable work. More of a depth-first search than a breadth-first search.
-2. **Combining two unexpected things in a straightforward way.** This is more like how OpenAI models proved the hardness reduction from 3SAT to approximate CVP for the lattice problems by going through a code-based construction. No one had thought to connect lattices to codes in this way, and it was relatively unlikely that a single person would have enough expertise in both to do so.
+1. **Optimizing some existing thing to a well-specified goal.** This is loosely
+  how the Navier-Stokes counterexample was found. The analogy here to computing
+  is speeding up an implementation of a codec using a profiler against a
+  benchmark.  Tedious, complicated, but verifiable and grindable work. More of a
+  depth-first search than a breadth-first search.
+2. **Combining two unexpected things.** This is more like how OpenAI models
+  proved the hardness reduction from 3SAT to approximate CVP for the lattice
+  problems by going through a code-based construction. No one had thought to
+  connect lattices to codes in this way, and it was relatively unlikely that a
+  single person would have enough expertise in both to do so.
 
-The results in the original [ten advances in mathematics](https://openai.com/index/ten-advances-in-mathematics/) from August and the later giant math dump in October were also largely in line with things that were already expected, but not yet proven. It may be surprising that *any* of these things were actually proven, in the sense that a proof was found, but the results themselves were not necessarily the most surprising. The scale and speed of the results present a lot of existential questions for mathematicians, which I empathize with. But the arrow of math continues in the same direction we have expected.
+The results in the original [ten advances in
+mathematics](https://openai.com/index/ten-advances-in-mathematics/) from August
+and the later giant math dump in October were also largely in line with things
+that were already expected, but not yet proven, or that if proven, do not upend
+our understanding. It may be surprising that *any* of these things were actually
+proven, in the sense that a proof was found, but the results themselves were not
+necessarily the most surprising. The scale and speed of the results present a
+lot of existential questions for mathematicians, which I empathize with. But the
+arrow of math continues in the same direction we have expected.
 
 So when it comes to cryptography, is there a reason to expect that improvements in cryptanalysis are amenable to being found as a search problem, and if so, where and how, and why? And should we expect them to upend our current understanding, or further reaffirm it?
 
@@ -47,13 +63,13 @@ There exists some extremely impractical public key cryptosystems based on hashes
 
 ## What does this mean for AI?
 
-When it comes to fundamental advancements, you should expect them to broadly be in the pre-quantum cryptography based on algebraic groups, and *not* in lattice-based cryptography. This is because the fundamental mathematical underpinnings of computationally hard problems underpinning lattice-based cryptography are far more grounded in actual mathematical structure than the cryptography from algebraic groups. We know for a fact that the simplified LWE problem over lattices is NP-complete (i.e. as hard as any other hard computing problem), whereas we have no such proof for ECDLP, FFDLP, or factoring. We also have no such proof in the other direction (proving that it is *not* NP-complete), although people suspect that factoring is not NP-complete.
+When it comes to fundamental advancements, you should expect them to broadly be in the pre-quantum cryptography based on algebraic groups, and *not* in lattice-based cryptography. This is because the fundamental mathematical underpinnings of computationally hard problems underpinning lattice-based cryptography are far more grounded in actual mathematical structure than the cryptography from algebraic groups. We know for a fact that the simplified LWE problem over lattices is NP-hard (i.e. as hard as any other hard computing problem), whereas we have no such proof for ECDLP, FFDLP, or factoring. We also have no such proof in the other direction (proving that it is *not* NP-hard), although people suspect that factoring is not NP-hard.
 
 Given all this, we can assume that RSA is the most likely scheme to have cryptanalytic improvements that impact security in a way that allows people to actually compute private keys from public keys, followed by finite-field Diffie-Hellman. In fact, if one of those falls, it’s likely that both will fall. However, elliptic-curve cryptography largely stands alone as the most “ideal” form of algebraic group cryptography.
 
 What would improvements in cryptanalysis of RSA look like? It might be advancing the state of the art with a fundamentally new algorithm in a new, faster complexity class, or it might be simply improving the runtime and constants of the current best algorithm (GNFS). Improvements within the same complexity class can still remove some bits of security off of RSA. Given how close we are to factoring RSA-1024 already, it’s likely we can eke a few more bits out and make it feasible to factor with a non-quantum computer by 2029\.
 
-The other option with RSA is that it somehow advances a complexity class, such as from the current class, L(⅓), into the “next fastest” complexity class, L(¼). Here’s the relative bits of security for various RSA key sizes under the current best algorithms in L(⅓) compared to a hypothetical L(¼), and the current official numbers from NIST. As you can see, the NIST numbers roughly track L(⅓).
+The other option with RSA is that it somehow advances advances in its runtime complexity, as from the current complexity, L(⅓), into the “next fastest” complexity, L(¼). Here’s the relative bits of security for various RSA key sizes under the current best algorithms in L(⅓) compared to a hypothetical L(¼), and the current official numbers from NIST. As you can see, the NIST numbers roughly track L(⅓).
 
 | Key bit<br>length | L(1/3)<br>security bits | Hypothetical L(1/4)<br>security bits | NIST SP 800-57<br> security bits |
 | ----- | ----- | ----- | ----- |
@@ -64,9 +80,43 @@ The other option with RSA is that it somehow advances a complexity class, such a
 | RSA-3072 | \~140 | \~90 | 128 |
 | RSA-4096 | \~155 | \~95 | \~140–150 |
 
-An L(¼) seems like the most likely possible increase for an actual computational complexity improvement in RSA, but it is also **very unlikely to happen**. Not for any particular fundamental mathematical reason that prevents it from existing, but because there’s no particular mathematical reason that it would or should exist either, and therefore it doesn’t seem to be amenable to be found via the type of search problem that AI is good at. Were an L(¼) algorithm with similar constants to the current L(⅓) algorithms to be discovered, then RSA-3072 would have the same security that RSA-1024 does today, RSA-1024 could be broken on a home GPU in a day, and RSA-512 could be factored nearly instantly. I’m not betting that this happens.
+While finding L(¼) algorithm seems like the most straightforward advancement for
+AI to make, it would actually represent a _massive_ leap in progress, on a problem that
+has gotten a lot of human attention for a long time (even if the current group
+of experts is primarily a few underpaid mathematicians in France).  I think this
+is **very unlikely to happen**. Not for any particular fundamental mathematical
+reason that prevents such an algorithm from existing, but because there’s no
+particular mathematical reason that it _would_ or _should_ exist either, and
+therefore it doesn’t seem to be amenable to be found via the type of search
+problem that AI is good at. If an L(¼) algorithm with similar constants to the
+current L(⅓) algorithms to be discovered, then RSA-3072 would have the same
+security that RSA-1024 does today, RSA-1024 could be broken on a home GPU in a
+day, and RSA-512 could be factored nearly instantly. I’m not betting that this
+happens, and certainly not on any timeframe that would short circuit that
+natural migration to lattice cryptography to mitigate the threat of a CQRC.
 
-For what it’s worth, over the course of 36 hours, I spent a week’s quota of the max tier ChatGPT Pro account on GPT-6 Astra Ultra trying to get it to come up with a L(¼) algorithm for factoring and use it to factor a 512-bit RSA key. While it wrote a lot of Lean, and proved a lot of intermediate impossibility results, it effectively made no progress. To get it to do this, I had to be very careful with my prompting to avoid oppressive security guardrails, as [Daybreak Blue](https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/) does not apply to GPT-6 Astra. I consider this another empirical point that perhaps the AI is not going to magic up a fast factoring algorithm.
+For what it’s worth, over the course of 36 hours, I spent a week’s quota of the
+max tier ChatGPT Pro account on GPT-6 Astra Ultra trying to get it to come up
+with a L(¼) algorithm for factoring and use it to factor a 512-bit RSA key.
+While it wrote a lot of Lean, and proved a lot of intermediate impossibility
+results, it effectively made no progress. To get it to do this, I had to be very
+careful with my prompting to avoid oppressive security guardrails, as [Daybreak
+Blue](https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/)
+does not apply to GPT-6 Astra. I consider this another empirical point that
+perhaps the AI is not going to magic up a fast factoring algorithm.
+
+For elliptic curves and lattices, we may also lose a few bits of security,
+however this will represent and be due to different causes. Losing a few bits of
+security on elliptic curves would probably come from some flawed assumption that
+slightly weakens the premise, but elliptic curve cryptography is strong enough
+that a few bits isn't moving deployed systems anywhere near practical. At worst,
+it moves some of the curves with tight bounds to 128-bit security to be slightly
+_under_ 128-bit security, which is purely a conventional wisdom threshold.
+Lattices, on the other hand, have a much stronger and more understand
+mathematical foundation, and so losing a few bits of security would likely be
+due to tightening up the baseline. In either case, I don't think we have any
+reason to worry nearly as much as RSA (which I'm not really worrying about,
+anyway).
 
 ## What should we do?
 
