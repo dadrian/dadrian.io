@@ -132,7 +132,7 @@ perhaps the AI is not going to magic up a fast factoring algorithm.
 
 It's tempting to compare token spend to human-year salary, and try to figure out
 when [how much token spend is needed to surpass the total human work in the
-field][https://bitsofwork.com]. It's not clear that this is meaningful. Not only
+field](https://bitsofwork.org). It's not clear that this is meaningful. Not only
 is it difficult to estimate how much "human work" has gone in, but tokens do not
 work as "credits" towards any particular mathematical result, especially if it
 turns out that there is no result. The question of "why would AI be good at this
