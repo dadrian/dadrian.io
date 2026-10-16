@@ -19,9 +19,9 @@ cryptography.
 
 I would expect:
 
-* A few bits of improvement on RSA cryptanalysis, leading to feasible RSA-1024. Arguably, this has already happened via the AI ports of CADO-NFS to run on giant GPU clusters.
+* A few bits of improvement on RSA cryptanalysis due to code optimization, leading to feasible RSA-1024. Arguably, this has already happened via the AI ports of CADO-NFS to run on giant GPU clusters.
 * This will extend to finite-field Diffie-Hellman, but no one will bother to look or care.
-* Elliptic-curve cryptography stays strong to everything except a CQRC, and at worst loses a couple bits of security.
+* Elliptic-curve cryptography stays strong to everything except a CQRC
 * Lattice-cryptography overall stays strong. Currently standardized schemes like ML-KEM remain strong and at worst lose a couple bits of security.
 * Symmetric cryptography stays strong, and AES, specifically, stays strong.
 
