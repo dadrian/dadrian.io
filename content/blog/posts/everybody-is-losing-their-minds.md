@@ -106,13 +106,13 @@ does not apply to GPT-6 Astra. I consider this another empirical point that
 perhaps the AI is not going to magic up a fast factoring algorithm.
 
 For elliptic curves and lattices, we may also lose a few bits of security,
-however this will represent and be due to different causes. Losing a few bits of
+however this will likely be due to different causes. Losing a few bits of
 security on elliptic curves would probably come from some flawed assumption that
 slightly weakens the premise, but elliptic curve cryptography is strong enough
 that a few bits isn't moving deployed systems anywhere near practical. At worst,
 it moves some of the curves with tight bounds to 128-bit security to be slightly
 _under_ 128-bit security, which is purely a conventional wisdom threshold.
-Lattices, on the other hand, have a much stronger and more understand
+Lattices, on the other hand, have a much stronger and more understood
 mathematical foundation, and so losing a few bits of security would likely be
 due to tightening up the baseline. In either case, I don't think we have any
 reason to worry nearly as much as RSA (which I'm not really worrying about,
