@@ -157,7 +157,25 @@ If we want to have more faith in the cryptography used on the Internet today, bo
 
 It’s clear that Anthropic has already used Claude to evaluate many of the submissions to the previous and current iterations of the NIST post-quantum cryptography standardization competitions. However, all the labs could probably do more to formalize such a partnership, rather than relying on the spare time and good graces of a few Anthropic security engineers. At minimum, they could ensure that their users who are cryptographers aren’t getting guardrailed. We should do the same thing for RSA, and ensure that leading cryptographers working on factoring and cryptanalysis, and the authors of CADO-NFS have the tokens required to use modern AI models for research.
 
-We could also probably spend some time thinking about if we’re formalizing some of these problems correctly. Ben Recht, a professor of Electrical Engineering at Berkeley, [raises some extremely valid points](https://www.argmin.net/p/faster-fourier-transforms) about the practicality of some of the complexity improvements published by OpenAI for the FFT algorithm and integer multiplication. Specifically, that they don’t translate to actual computers and are effectively due to bad formalizations of the algorithmic analysis. Theoretical computer scientists will be [the first to tell you](https://en.wikipedia.org/wiki/Galactic_algorithm) the shortcomings of complexity analysis and the importance of “hidden” constants in the real world, however [Big-O complexity analysis](https://en.wikipedia.org/wiki/Big_O_notation) remains the basis for the field. Perhaps, as math becomes more of a programmable artifact, we will have to rethink how we formalize runtime and performance analysis for more applied systems. They’ll also tell you that P vs NP is not a particularly useful question to ask, and yet it still remains the most prestigious question in the field. You probably [can’t even name](https://x.com/hausdorff_space/status/2107916908616175701) the second-most prestigious question. I know I can’t\!
+We could also probably spend some time thinking about if we’re formalizing some
+of these problems correctly. Ben Recht, a professor of Electrical Engineering at
+Berkeley, [raises some extremely valid
+points](https://www.argmin.net/p/faster-fourier-transforms) about the
+practicality of some of the complexity improvements published by OpenAI for the
+FFT algorithm and integer multiplication. Specifically, that they don’t
+translate to actual computers and are effectively due to bad formalizations of
+the algorithmic analysis. Theoretical computer scientists will be [the first to
+tell you](https://en.wikipedia.org/wiki/Galactic_algorithm) the shortcomings of
+complexity analysis and the importance of “hidden” constants in the real world,
+however [Big-O complexity
+analysis](https://en.wikipedia.org/wiki/Big_O_notation) remains the basis for
+the field. They’ll also tell you that P vs NP is not a particularly useful
+question to ask, and yet it still remains the most prestigious question in the
+field. You probably [can’t even
+name](https://x.com/hausdorff_space/status/2107916908616175701) the second-most
+prestigious question. I know I can’t\! Perhaps, as math becomes more of a
+programmable artifact, we will have to rethink how we formalize runtime and
+performance analysis for more applied systems.
 
 All of this to say, I think [Nadia Heninger](https://cseweb.ucsd.edu/~nadiah/)
 should be given a lot of tokens and unfettered access to the models to try to do
