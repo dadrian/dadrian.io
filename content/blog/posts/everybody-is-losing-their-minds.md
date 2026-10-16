@@ -170,7 +170,7 @@ over the last few months that would confirm or disconfirm the idea that public
 key cryptography is over. That suggests to me that we should maintain the status
 quo. If your status quo was that factoring was never hard in the first place,
 even before AI came into the picture, and we just haven't found the algorithm
-yet, then you should stick with it.
+yet, then you can stick with it.
 
 In the meantime, I find myself quoting Mrs. Granger far too often.
 
