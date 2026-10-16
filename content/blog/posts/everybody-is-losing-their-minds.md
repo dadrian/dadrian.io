@@ -161,7 +161,7 @@ We could also probably spend some time thinking about if we’re formalizing som
 
 All of this to say, I think [Nadia Heninger](https://cseweb.ucsd.edu/~nadiah/)
 should be given a lot of tokens and unfettered access to the models to try to do
-more RSA cryptanalysis and factor RSA 1024\. In the meantime, there’s plenty of
+more RSA cryptanalysis and factor RSA 1024. In the meantime, there’s plenty of
 empirical evidence about what’s possible, how these algorithms work, and what we
 know about AI capabilities. We can make predictions that are based on reality,
 and not based on what we want to be true, or based on the idea of an all-knowing
