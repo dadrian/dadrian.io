@@ -5,7 +5,15 @@ images:
 - img/mind-blown.jpg
 ---
 
-Last night, we recorded an episode of “Security, Cryptography, Whatever” discussing the recent AI-driven advances in mathematics, and the discourse around AI potentially breaking cryptography. I wanted to pre-empt the release of the episode with a few thoughts. These are more or less the same opinions I express in the podcast, but condensed down to written form.
+Last night, we recorded an episode of “Security, Cryptography, Whatever”
+discussing the recent AI-driven advances in mathematics, and the discourse
+around AI potentially breaking cryptography. I wanted to pre-empt the release of
+the episode with a few thoughts. These are more or less the same opinions I
+express in the podcast, but condensed down to written form. It should go without
+saying that I am not a cryptographer specializing in algebraic cryptanalysis.
+This post is based on my discussions with a number of cryptographers and
+computer science theorists, as well as my time working in adjacent spaces in
+cryptography.
 
 ### TLDR
 
