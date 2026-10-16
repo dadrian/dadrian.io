@@ -68,7 +68,7 @@ An L(¼) seems like the most likely possible increase for an actual computationa
 
 For what it’s worth, over the course of 36 hours, I spent a week’s quota of the max tier ChatGPT Pro account on GPT-6 Astra Ultra trying to get it to come up with a L(¼) algorithm for factoring and use it to factor a 512-bit RSA key. While it wrote a lot of Lean, and proved a lot of intermediate impossibility results, it effectively made no progress. To get it to do this, I had to be very careful with my prompting to avoid oppressive security guardrails, as [Daybreak Blue](https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/) does not apply to GPT-6 Astra. I consider this another empirical point that perhaps the AI is not going to magic up a fast factoring algorithm.
 
-### What should we do?
+## What should we do?
 
 If we want to have more faith in the cryptography used on the Internet today, both before and after the transition to post-quantum cryptography, we should ensure that the leading mathematicians and cryptographers in algebraic cryptanalysis, and in lattice cryptography, have access to unguardrailed models and tokens.
 
