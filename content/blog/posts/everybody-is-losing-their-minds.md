@@ -135,7 +135,8 @@ when [how much token spend is needed to surpass the total human work in the
 field][https://bitsofwork.com]. It's not clear that this is meaningful. Not only
 is it difficult to estimate how much "human work" has gone in, but tokens do not
 work as "credits" towards any particular mathematical result, especially if it
-turns out that there is no result.
+turns out that there is no result. The question of "why would AI be good at this
+specific problem" is not something solely answered by token spend.
 
 For elliptic curves and lattices, we may also lose a few bits of security,
 however this will likely be due to different causes. Losing a few bits of
